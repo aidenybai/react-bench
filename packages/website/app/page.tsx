@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ThemeToggle } from "@/components/theme-provider";
+import { GitHubIcon } from "@/components/icons/github-icon";
 import { ReactBenchLogo } from "@/components/icons/react-bench-logo";
 import { ResultsSection } from "@/components/results-section";
 import { benchData } from "@/lib/bench-data";
@@ -16,7 +17,17 @@ const Page = () => (
           <ReactBenchLogo className="size-6" />
           React Bench
         </h1>
-        <ThemeToggle />
+        <div className="flex items-center gap-1">
+          <a
+            href="https://github.com/aidenybai/react-bench"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <GitHubIcon className="size-4" />
+          </a>
+          <ThemeToggle />
+        </div>
       </div>
       <p className="text-sm text-muted-foreground mb-6">
         Evaluating coding agents on React.js tasks.

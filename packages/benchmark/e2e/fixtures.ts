@@ -1,6 +1,13 @@
-import { test as base, expect, Page } from "@playwright/test";
+import { test as base, expect, type Page } from "@playwright/test";
 
-const REACT_GRAB_INIT_TIMEOUT = 15_000;
+const REACT_GRAB_INIT_TIMEOUT_MS = 15_000;
+const INIT_SETTLE_MS = 1000;
+const COPY_SETTLE_MS = 200;
+const SOURCE_RETRY_MS = 500;
+const MAX_SOURCE_RETRIES = 3;
+const ACTIVATE_TIMEOUT_MS = 5_000;
+const HOVER_SETTLE_MS = 500;
+const CLICK_SETTLE_MS = 1000;
 
 interface SourceInfo {
   filePath: string;
@@ -24,21 +31,21 @@ export interface GrabFixture {
   hoverAndGrab: (testId: string) => Promise<GrabResult>;
 }
 
-async function waitForReactGrab(page: Page) {
+const waitForReactGrab = async (page: Page): Promise<void> => {
   await page.waitForFunction(
     () => {
       const api = (window as any).__REACT_GRAB__;
       return api && typeof api.copyElement === "function";
     },
-    { timeout: REACT_GRAB_INIT_TIMEOUT },
+    { timeout: REACT_GRAB_INIT_TIMEOUT_MS },
   );
-  await page.waitForTimeout(1000);
-}
+  // HACK: wait for React Grab internals to finish initializing after the API is exposed
+  await page.waitForTimeout(INIT_SETTLE_MS);
+};
 
 export const test = base.extend<{ grab: GrabFixture }>({
   grab: async ({ page, context }, use) => {
     await context.grantPermissions(["clipboard-read", "clipboard-write"]);
-
     await page.goto("/", { waitUntil: "load" });
     await waitForReactGrab(page);
 
@@ -47,97 +54,96 @@ export const test = base.extend<{ grab: GrabFixture }>({
 
       waitForReactGrab: () => waitForReactGrab(page),
 
-      grabByTestId: async (testId: string) => {
+      grabByTestId: async (testId: string): Promise<GrabResult> => {
         const copySuccess = await page.evaluate(async (tid) => {
-          const el = document.querySelector(`[data-testid="${tid}"]`);
-          if (!el)
+          const element = document.querySelector(`[data-testid="${tid}"]`);
+          if (!element)
             throw new Error(`Element with data-testid="${tid}" not found`);
           const api = (window as any).__REACT_GRAB__;
           if (!api) throw new Error("react-grab not initialized");
-          return api.copyElement(el);
+          return api.copyElement(element);
         }, testId);
 
         if (!copySuccess) {
           throw new Error(`copyElement failed for data-testid="${testId}"`);
         }
 
-        await page.waitForTimeout(200);
+        await page.waitForTimeout(COPY_SETTLE_MS);
 
         const clipboard = await page.evaluate(() =>
           navigator.clipboard.readText(),
         );
 
         let source: SourceInfo | null = null;
-        for (let attempt = 0; attempt < 3; attempt++) {
+        for (let attempt = 0; attempt < MAX_SOURCE_RETRIES; attempt++) {
           source = await page.evaluate(async (tid) => {
-            const el = document.querySelector(`[data-testid="${tid}"]`);
-            if (!el) return null;
+            const element = document.querySelector(`[data-testid="${tid}"]`);
+            if (!element) return null;
             const api = (window as any).__REACT_GRAB__;
             if (!api) return null;
-            return api.getSource(el);
+            return api.getSource(element);
           }, testId);
           if (source) break;
-          await page.waitForTimeout(500);
+          await page.waitForTimeout(SOURCE_RETRY_MS);
         }
 
         const displayName = await page.evaluate((tid) => {
-          const el = document.querySelector(`[data-testid="${tid}"]`);
-          if (!el) return null;
+          const element = document.querySelector(`[data-testid="${tid}"]`);
+          if (!element) return null;
           const api = (window as any).__REACT_GRAB__;
           if (!api) return null;
-          return api.getDisplayName(el);
+          return api.getDisplayName(element);
         }, testId);
 
         return { clipboard, source, displayName };
       },
 
-      getSourceByTestId: async (testId: string) => {
-        return page.evaluate(async (tid) => {
-          const el = document.querySelector(`[data-testid="${tid}"]`);
-          if (!el) return null;
+      getSourceByTestId: async (testId: string): Promise<SourceInfo | null> =>
+        page.evaluate(async (tid) => {
+          const element = document.querySelector(`[data-testid="${tid}"]`);
+          if (!element) return null;
           const api = (window as any).__REACT_GRAB__;
           if (!api) return null;
-          return api.getSource(el);
-        }, testId);
-      },
+          return api.getSource(element);
+        }, testId),
 
       getClipboard: () => page.evaluate(() => navigator.clipboard.readText()),
 
-      activate: async () => {
+      activate: async (): Promise<void> => {
         await page.evaluate(() => {
           const api = (window as any).__REACT_GRAB__;
           api?.activate();
         });
         await page.waitForFunction(
           () => (window as any).__REACT_GRAB__?.isActive() === true,
-          { timeout: 5000 },
+          { timeout: ACTIVATE_TIMEOUT_MS },
         );
       },
 
-      hoverAndGrab: async (testId: string) => {
+      hoverAndGrab: async (testId: string): Promise<GrabResult> => {
         await fixture.activate();
 
-        const el = page.locator(`[data-testid="${testId}"]`).first();
-        await el.hover({ force: true });
-        await page.waitForTimeout(500);
+        const element = page.locator(`[data-testid="${testId}"]`).first();
+        await element.hover({ force: true });
+        await page.waitForTimeout(HOVER_SETTLE_MS);
 
-        await el.click({ force: true });
-        await page.waitForTimeout(1000);
+        await element.click({ force: true });
+        await page.waitForTimeout(CLICK_SETTLE_MS);
 
         const clipboard = await page.evaluate(() =>
           navigator.clipboard.readText(),
         );
 
         const source = await page.evaluate(async (tid) => {
-          const el = document.querySelector(`[data-testid="${tid}"]`);
-          if (!el) return null;
-          return (window as any).__REACT_GRAB__?.getSource(el) ?? null;
+          const element = document.querySelector(`[data-testid="${tid}"]`);
+          if (!element) return null;
+          return (window as any).__REACT_GRAB__?.getSource(element) ?? null;
         }, testId);
 
         const displayName = await page.evaluate((tid) => {
-          const el = document.querySelector(`[data-testid="${tid}"]`);
-          if (!el) return null;
-          return (window as any).__REACT_GRAB__?.getDisplayName(el) ?? null;
+          const element = document.querySelector(`[data-testid="${tid}"]`);
+          if (!element) return null;
+          return (window as any).__REACT_GRAB__?.getDisplayName(element) ?? null;
         }, testId);
 
         await page.evaluate(() => (window as any).__REACT_GRAB__?.deactivate());

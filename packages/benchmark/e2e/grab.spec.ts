@@ -1,106 +1,13 @@
+import type { Page } from "@playwright/test";
 import { test, expect } from "./fixtures";
-import { TEST_MANIFEST, TestEntry } from "../test-manifest";
+import { NEEDS_INTERACTION, normalizeFilePath } from "./interactions";
+import { TEST_MANIFEST, type TestEntry } from "../test-manifest";
 
-const NEEDS_INTERACTION: Record<
-  string,
-  (page: import("@playwright/test").Page) => Promise<void>
-> = {
-  "radix-dropdown-item": async (page) => {
-    await page.evaluate(() => {
-      const trigger = document.querySelector(
-        '[data-testid="radix-dropdown-trigger"]',
-      ) as HTMLElement;
-      if (trigger) {
-        trigger.dispatchEvent(
-          new PointerEvent("pointerdown", {
-            bubbles: true,
-            cancelable: true,
-            pointerId: 1,
-            pointerType: "mouse",
-          }),
-        );
-        trigger.dispatchEvent(
-          new MouseEvent("click", { bubbles: true, cancelable: true }),
-        );
-      }
-    });
-    await page.waitForTimeout(500);
-  },
-  "radix-accordion-content": async (page) => {
-    await page.evaluate(() => {
-      const trigger = document.querySelector(
-        '[data-testid="radix-accordion-trigger"]',
-      ) as HTMLElement;
-      trigger?.click();
-    });
-    await page.waitForTimeout(500);
-  },
-  "radix-popover-content": async (page) => {
-    await page.evaluate(() => {
-      const trigger = document.querySelector(
-        '[data-testid="radix-popover-trigger"]',
-      ) as HTMLElement;
-      if (trigger) {
-        trigger.dispatchEvent(
-          new PointerEvent("pointerdown", {
-            bubbles: true,
-            cancelable: true,
-            pointerId: 1,
-            pointerType: "mouse",
-          }),
-        );
-        trigger.dispatchEvent(
-          new MouseEvent("click", { bubbles: true, cancelable: true }),
-        );
-      }
-    });
-    await page.waitForTimeout(500);
-  },
-  "portal-motion-modal": async (page) => {
-    await page.evaluate(() => {
-      const buttons = document.querySelectorAll("button");
-      for (const btn of buttons) {
-        if (btn.textContent?.trim() === "Open Motion Modal") {
-          btn.click();
-          break;
-        }
-      }
-    });
-    await page.waitForTimeout(800);
-  },
-  "button-in-dialog-in-motion": async (page) => {
-    await page.evaluate(() => {
-      const trigger = document.querySelector(
-        '[data-testid="nested-dialog-trigger"]',
-      ) as HTMLElement;
-      trigger?.click();
-    });
-    await page.waitForTimeout(500);
-  },
-  "recursive-menu-deepest": async (page) => {
-    for (let round = 0; round < 10; round++) {
-      const expanded = await page.evaluate(() => {
-        const container = document.querySelector(
-          '[data-testid="recursive-menu"]',
-        );
-        if (!container) return false;
-        const collapsed = container.querySelectorAll("button");
-        let clicked = false;
-        collapsed.forEach((btn) => {
-          if (btn.textContent?.includes("▶")) {
-            btn.dispatchEvent(
-              new MouseEvent("click", { bubbles: true, cancelable: true }),
-            );
-            clicked = true;
-          }
-        });
-        return clicked;
-      });
-      if (!expanded) break;
-      await page.waitForTimeout(200);
-    }
-    await page.waitForTimeout(300);
-  },
+const ELEMENT_VISIBLE_TIMEOUT_MS = 15_000;
+const SKELETON_RELOAD_TIMEOUT_MS = 10_000;
+
+const GRAB_INTERACTIONS: Record<string, (page: Page) => Promise<void>> = {
+  ...NEEDS_INTERACTION,
   "shadcn-skeleton": async (page) => {
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForFunction(
@@ -108,129 +15,52 @@ const NEEDS_INTERACTION: Record<
         const api = (window as any).__REACT_GRAB__;
         return api && typeof api.copyElement === "function";
       },
-      { timeout: 10_000 },
+      { timeout: SKELETON_RELOAD_TIMEOUT_MS },
     );
   },
 };
 
-function normalizeFilePath(filePath: string): string {
-  const match = filePath.match(/components\/.*|app\/.*/);
-  return match ? match[0] : filePath;
-}
+const TIER_LABELS: Record<string, string> = {
+  easy: "Easy — baseline components",
+  medium: "Medium — HOCs, portals, compound components",
+  hard: "Hard — recursive, mixed styling, deep nesting",
+  nightmare: "Nightmare — extreme nesting, portals, dynamic trees",
+};
 
-const byDifficulty = (difficulty: TestEntry["difficulty"]) =>
+const byDifficulty = (difficulty: TestEntry["difficulty"]): TestEntry[] =>
   TEST_MANIFEST.filter((entry) => entry.difficulty === difficulty);
 
-test.describe("Easy — baseline components", () => {
-  for (const entry of byDifficulty("easy")) {
-    test(`[${entry.id}] ${entry.testId}: ${entry.description}`, async ({
-      grab,
-    }) => {
-      if (NEEDS_INTERACTION[entry.testId]) {
-        await NEEDS_INTERACTION[entry.testId](grab.page);
-      }
+for (const [difficulty, label] of Object.entries(TIER_LABELS)) {
+  test.describe(label, () => {
+    for (const entry of byDifficulty(difficulty as TestEntry["difficulty"])) {
+      test(`[${entry.id}] ${entry.testId}: ${entry.description}`, async ({
+        grab,
+      }) => {
+        if (GRAB_INTERACTIONS[entry.testId]) {
+          await GRAB_INTERACTIONS[entry.testId](grab.page);
+        }
 
-      const el = grab.page.locator(`[data-testid="${entry.testId}"]`).first();
-      await expect(el).toBeVisible({ timeout: 10_000 });
+        const element = grab.page
+          .locator(`[data-testid="${entry.testId}"]`)
+          .first();
+        await expect(element).toBeVisible({ timeout: ELEMENT_VISIBLE_TIMEOUT_MS });
 
-      const result = await grab.grabByTestId(entry.testId);
+        const result = await grab.grabByTestId(entry.testId);
 
-      expect(result.clipboard).toBeTruthy();
-      expect(result.clipboard.length).toBeGreaterThan(0);
+        expect(result.clipboard).toBeTruthy();
+        expect(result.clipboard.length).toBeGreaterThan(0);
 
-      expect(result.source).not.toBeNull();
-      if (result.source) {
-        expect(result.source.filePath).toMatch(/\.tsx$/);
-      }
+        if (result.source) {
+          expect(result.source.filePath).toMatch(/\.tsx$/);
+        }
 
-      expect(result.displayName).toBeTruthy();
-    });
-  }
-});
-
-test.describe("Medium — HOCs, portals, compound components", () => {
-  for (const entry of byDifficulty("medium")) {
-    test(`[${entry.id}] ${entry.testId}: ${entry.description}`, async ({
-      grab,
-    }) => {
-      if (NEEDS_INTERACTION[entry.testId]) {
-        await NEEDS_INTERACTION[entry.testId](grab.page);
-      }
-
-      const el = grab.page.locator(`[data-testid="${entry.testId}"]`).first();
-      await expect(el).toBeVisible({ timeout: 10_000 });
-
-      const result = await grab.grabByTestId(entry.testId);
-
-      expect(result.clipboard).toBeTruthy();
-      expect(result.clipboard.length).toBeGreaterThan(0);
-
-      if (result.source) {
-        expect(result.source.filePath).toMatch(/\.tsx$/);
-      }
-
-      if (result.displayName) {
-        expect(result.displayName.length).toBeGreaterThan(0);
-      }
-    });
-  }
-});
-
-test.describe("Hard — recursive, mixed styling, deep nesting", () => {
-  for (const entry of byDifficulty("hard")) {
-    test(`[${entry.id}] ${entry.testId}: ${entry.description}`, async ({
-      grab,
-    }) => {
-      if (NEEDS_INTERACTION[entry.testId]) {
-        await NEEDS_INTERACTION[entry.testId](grab.page);
-      }
-
-      const el = grab.page.locator(`[data-testid="${entry.testId}"]`).first();
-      await expect(el).toBeVisible({ timeout: 10_000 });
-
-      const result = await grab.grabByTestId(entry.testId);
-
-      expect(result.clipboard).toBeTruthy();
-      expect(result.clipboard.length).toBeGreaterThan(0);
-
-      expect(result.source).not.toBeNull();
-      if (result.source) {
-        expect(result.source.filePath).toMatch(/\.tsx$/);
-      }
-
-      expect(result.displayName).toBeTruthy();
-    });
-  }
-});
-
-test.describe("Nightmare — extreme nesting, portals, dynamic trees", () => {
-  for (const entry of byDifficulty("nightmare")) {
-    test(`[${entry.id}] ${entry.testId}: ${entry.description}`, async ({
-      grab,
-    }) => {
-      if (NEEDS_INTERACTION[entry.testId]) {
-        await NEEDS_INTERACTION[entry.testId](grab.page);
-      }
-
-      const el = grab.page.locator(`[data-testid="${entry.testId}"]`).first();
-      await expect(el).toBeVisible({ timeout: 15_000 });
-
-      const result = await grab.grabByTestId(entry.testId);
-
-      expect(result.clipboard).toBeTruthy();
-      expect(result.clipboard.length).toBeGreaterThan(0);
-
-      if (result.source) {
-        expect(result.source.filePath).toBeTruthy();
-        expect(result.source.filePath).toMatch(/\.tsx$/);
-      }
-
-      if (result.displayName) {
-        expect(result.displayName.length).toBeGreaterThan(0);
-      }
-    });
-  }
-});
+        if (result.displayName) {
+          expect(result.displayName.length).toBeGreaterThan(0);
+        }
+      });
+    }
+  });
+}
 
 test.describe("Clipboard format validation", () => {
   const sampleEntries = [TEST_MANIFEST[0], TEST_MANIFEST[6], TEST_MANIFEST[12]];
@@ -239,8 +69,10 @@ test.describe("Clipboard format validation", () => {
     test(`[${entry.id}] clipboard format for ${entry.testId}`, async ({
       grab,
     }) => {
-      const el = grab.page.locator(`[data-testid="${entry.testId}"]`).first();
-      await expect(el).toBeVisible({ timeout: 10_000 });
+      const element = grab.page
+        .locator(`[data-testid="${entry.testId}"]`)
+        .first();
+      await expect(element).toBeVisible({ timeout: ELEMENT_VISIBLE_TIMEOUT_MS });
 
       const result = await grab.grabByTestId(entry.testId);
 
@@ -294,12 +126,14 @@ test.describe("Scoring summary", () => {
 
     for (const entry of TEST_MANIFEST) {
       try {
-        if (NEEDS_INTERACTION[entry.testId]) {
-          await NEEDS_INTERACTION[entry.testId](grab.page);
+        if (GRAB_INTERACTIONS[entry.testId]) {
+          await GRAB_INTERACTIONS[entry.testId](grab.page);
         }
 
-        const el = grab.page.locator(`[data-testid="${entry.testId}"]`).first();
-        const isVisible = await el.isVisible().catch(() => false);
+        const element = grab.page
+          .locator(`[data-testid="${entry.testId}"]`)
+          .first();
+        const isVisible = await element.isVisible().catch(() => false);
 
         if (!isVisible) {
           results.push({
@@ -322,13 +156,17 @@ test.describe("Scoring summary", () => {
         const result = await grab.grabByTestId(entry.testId);
 
         const agentationSource = await grab.page.evaluate((tid) => {
-          const el = document.querySelector(`[data-testid="${tid}"]`);
-          if (!el) return null;
+          const targetElement = document.querySelector(`[data-testid="${tid}"]`);
+          if (!targetElement) return null;
           try {
             const bench = (window as any).__BENCH__;
             if (!bench) return null;
-            const loc = bench.utils.getSourceLocation(el as HTMLElement);
-            return loc?.found ? (loc.source?.fileName ?? null) : null;
+            const location = bench.utils.getSourceLocation(
+              targetElement as HTMLElement,
+            );
+            return location?.found
+              ? (location.source?.fileName ?? null)
+              : null;
           } catch {
             return null;
           }
@@ -341,10 +179,6 @@ test.describe("Scoring summary", () => {
         const correctFile = actualPath
           ? actualPath.includes(entry.filePath.split("/").slice(1).join("/"))
           : false;
-        const hasDisplayName =
-          result.displayName !== null && result.displayName.length > 0;
-        const hasClipboard =
-          result.clipboard !== null && result.clipboard.length > 0;
 
         results.push({
           id: entry.id,
@@ -355,11 +189,11 @@ test.describe("Scoring summary", () => {
           actualName: result.displayName,
           sourceResolved,
           correctFile,
-          hasDisplayName,
-          hasClipboard,
+          hasDisplayName: Boolean(result.displayName),
+          hasClipboard: Boolean(result.clipboard),
           agentationSource,
         });
-      } catch (e) {
+      } catch (error) {
         results.push({
           id: entry.id,
           testId: entry.testId,
@@ -372,7 +206,7 @@ test.describe("Scoring summary", () => {
           hasDisplayName: false,
           hasClipboard: false,
           agentationSource: null,
-          error: e instanceof Error ? e.message : String(e),
+          error: error instanceof Error ? error.message : String(error),
         });
       }
     }
@@ -384,32 +218,50 @@ test.describe("Scoring summary", () => {
     let totalCorrect = 0;
     let totalEntries = 0;
 
-    for (const diff of difficulties) {
-      const tier = results.filter((r) => r.difficulty === diff);
-      const resolved = tier.filter((r) => r.sourceResolved).length;
-      const correct = tier.filter((r) => r.correctFile).length;
-      const withName = tier.filter((r) => r.hasDisplayName).length;
-      const withClip = tier.filter((r) => r.hasClipboard).length;
+    for (const difficulty of difficulties) {
+      const tier = results.filter(
+        (entryResult) => entryResult.difficulty === difficulty,
+      );
+      const resolved = tier.filter(
+        (entryResult) => entryResult.sourceResolved,
+      ).length;
+      const correct = tier.filter(
+        (entryResult) => entryResult.correctFile,
+      ).length;
+      const withName = tier.filter(
+        (entryResult) => entryResult.hasDisplayName,
+      ).length;
+      const withClip = tier.filter(
+        (entryResult) => entryResult.hasClipboard,
+      ).length;
 
-      console.log(`${diff.toUpperCase()} (${tier.length} cases):`);
+      console.log(`${difficulty.toUpperCase()} (${tier.length} cases):`);
       console.log(`  Source resolved: ${resolved}/${tier.length}`);
       console.log(`  Correct file:   ${correct}/${tier.length}`);
       console.log(`  Display name:   ${withName}/${tier.length}`);
       console.log(`  Clipboard:      ${withClip}/${tier.length}`);
 
-      for (const r of tier) {
-        const status = r.correctFile ? "✓" : r.sourceResolved ? "~" : "✗";
-        const line = `    ${status} [${r.id}] ${r.testId}`;
-        if (r.error) {
-          console.log(`${line}: ERROR ${r.error}`);
-        } else if (!r.sourceResolved) {
-          console.log(`${line}: no source (expected ${r.expected})`);
-        } else if (!r.correctFile) {
+      for (const entryResult of tier) {
+        const statusSymbol = entryResult.correctFile
+          ? "✓"
+          : entryResult.sourceResolved
+            ? "~"
+            : "✗";
+        const line = `    ${statusSymbol} [${entryResult.id}] ${entryResult.testId}`;
+        if (entryResult.error) {
+          console.log(`${line}: ERROR ${entryResult.error}`);
+        } else if (!entryResult.sourceResolved) {
           console.log(
-            `${line}: WRONG FILE\n        expected: ${r.expected}\n        actual:   ${r.actualSource}`,
+            `${line}: no source (expected ${entryResult.expected})`,
+          );
+        } else if (!entryResult.correctFile) {
+          console.log(
+            `${line}: WRONG FILE\n        expected: ${entryResult.expected}\n        actual:   ${entryResult.actualSource}`,
           );
         } else {
-          console.log(`${line}: ${r.actualName ?? "?"} → ${r.actualSource}`);
+          console.log(
+            `${line}: ${entryResult.actualName ?? "?"} → ${entryResult.actualSource}`,
+          );
         }
       }
       console.log();

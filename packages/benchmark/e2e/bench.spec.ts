@@ -1,8 +1,9 @@
 import { test as base, expect, type Page } from "@playwright/test";
 import { exec } from "child_process";
-import { writeFileSync, readFileSync, existsSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import { TEST_MANIFEST, type TestEntry } from "../test-manifest";
+import { NEEDS_INTERACTION, isCorrectFile, normalizeFilePath } from "./interactions";
 
 const CLI_MODEL = process.env.BENCH_MODEL ?? "claude-sonnet-4-6";
 const CLI_TIMEOUT_MS = 180_000;
@@ -269,130 +270,38 @@ const EMPTY_ELEMENT_CONTEXT: ElementContext = {
   agentationClipboard: null,
 };
 
+const BENCH_INIT_TIMEOUT_MS = 15_000;
+const INIT_SETTLE_MS = 1000;
+const SKELETON_RELOAD_TIMEOUT_MS = 10_000;
+
+const BENCH_INTERACTIONS: Record<string, (page: Page) => Promise<void>> = {
+  ...NEEDS_INTERACTION,
+  "shadcn-skeleton": async (page) => {
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await page.waitForFunction(
+      () => (window as any).__BENCH__?.resolveAll,
+      { timeout: SKELETON_RELOAD_TIMEOUT_MS },
+    );
+  },
+};
+
 const test = base.extend<{ page: Page }>({
   page: async ({ page, context }, use) => {
     await context.grantPermissions(["clipboard-read", "clipboard-write"]);
     await page.goto("/", { waitUntil: "load" });
     await page.waitForFunction(
       () => {
-        const b = (window as any).__BENCH__;
-        return b && typeof b.resolveAll === "function" && b.list().length >= 2;
+        const bench = (window as any).__BENCH__;
+        return bench && typeof bench.resolveAll === "function" && bench.list().length >= 2;
       },
-      { timeout: 15_000 },
+      { timeout: BENCH_INIT_TIMEOUT_MS },
     );
-    await page.waitForTimeout(1000);
+    // HACK: wait for all browser resolvers to finish registering after API is ready
+    await page.waitForTimeout(INIT_SETTLE_MS);
     await use(page);
   },
 });
 
-const NEEDS_INTERACTION: Record<string, (page: Page) => Promise<void>> = {
-  "radix-dropdown-item": async (page) => {
-    await page.evaluate(() => {
-      const t = document.querySelector(
-        '[data-testid="radix-dropdown-trigger"]',
-      ) as HTMLElement;
-      if (!t) return;
-      t.dispatchEvent(
-        new PointerEvent("pointerdown", {
-          bubbles: true,
-          cancelable: true,
-          pointerId: 1,
-          pointerType: "mouse",
-        }),
-      );
-      t.dispatchEvent(
-        new MouseEvent("click", { bubbles: true, cancelable: true }),
-      );
-    });
-    await page.waitForTimeout(500);
-  },
-  "radix-accordion-content": async (page) => {
-    await page.evaluate(() =>
-      (
-        document.querySelector(
-          '[data-testid="radix-accordion-trigger"]',
-        ) as HTMLElement
-      )?.click(),
-    );
-    await page.waitForTimeout(500);
-  },
-  "radix-popover-content": async (page) => {
-    await page.evaluate(() => {
-      const t = document.querySelector(
-        '[data-testid="radix-popover-trigger"]',
-      ) as HTMLElement;
-      if (!t) return;
-      t.dispatchEvent(
-        new PointerEvent("pointerdown", {
-          bubbles: true,
-          cancelable: true,
-          pointerId: 1,
-          pointerType: "mouse",
-        }),
-      );
-      t.dispatchEvent(
-        new MouseEvent("click", { bubbles: true, cancelable: true }),
-      );
-    });
-    await page.waitForTimeout(500);
-  },
-  "portal-motion-modal": async (page) => {
-    await page.evaluate(() => {
-      for (const btn of document.querySelectorAll("button")) {
-        if (btn.textContent?.trim() === "Open Motion Modal") {
-          btn.click();
-          break;
-        }
-      }
-    });
-    await page.waitForTimeout(800);
-  },
-  "button-in-dialog-in-motion": async (page) => {
-    await page.evaluate(() =>
-      (
-        document.querySelector(
-          '[data-testid="nested-dialog-trigger"]',
-        ) as HTMLElement
-      )?.click(),
-    );
-    await page.waitForTimeout(500);
-  },
-  "recursive-menu-deepest": async (page) => {
-    for (let i = 0; i < 10; i++) {
-      const clicked = await page.evaluate(() => {
-        let any = false;
-        document
-          .querySelector('[data-testid="recursive-menu"]')
-          ?.querySelectorAll("button")
-          .forEach((b) => {
-            if (b.textContent?.includes("▶")) {
-              b.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-              any = true;
-            }
-          });
-        return any;
-      });
-      if (!clicked) break;
-      await page.waitForTimeout(200);
-    }
-    await page.waitForTimeout(300);
-  },
-  "shadcn-skeleton": async (page) => {
-    await page.reload({ waitUntil: "domcontentloaded" });
-    await page.waitForFunction(() => (window as any).__BENCH__?.resolveAll, {
-      timeout: 10_000,
-    });
-  },
-};
-
-const normalizeFilePath = (filePath: string): string =>
-  filePath.match(/components\/.*|app\/.*/)?.[0] ?? filePath;
-
-const isCorrectFile = (actual: string | null, expected: string): boolean => {
-  if (!actual) return false;
-  const suffix = expected.split("/").slice(1).join("/");
-  return normalizeFilePath(actual).includes(suffix);
-};
 
 const formatTime = (ms: number): string =>
   ms >= 1000 ? `${(ms / 1000).toFixed(1)}s` : `${ms.toFixed(0)}ms`;
@@ -494,8 +403,8 @@ test.describe("Unified benchmark \u2014 all resolvers", () => {
       collected = [];
       for (const entry of TEST_MANIFEST) {
         try {
-          if (NEEDS_INTERACTION[entry.testId])
-            await NEEDS_INTERACTION[entry.testId](page);
+          if (BENCH_INTERACTIONS[entry.testId])
+            await BENCH_INTERACTIONS[entry.testId](page);
 
           const visible = await page
             .locator(`[data-testid="${entry.testId}"]`)

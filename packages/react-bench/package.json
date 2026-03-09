@@ -1,0 +1,17 @@
+{
+  "name": "react-bench",
+  "version": "0.0.0",
+  "description": "Evaluating coding agents on React.js tasks",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "license": "MIT"
+}

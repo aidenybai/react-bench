@@ -1,0 +1,15 @@
+node_modules
+dist
+.next
+.turbo
+*.tsbuildinfo
+
+bench-checkpoint.json
+bench-results.json
+bench-results.svg
+bench-detail.svg
+
+playwright-report
+test-results
+
+pnpm-lock.yaml

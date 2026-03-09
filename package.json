@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo dev",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "format": "oxfmt",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "oxfmt": "^0.27.0",
+    "turbo": "^2.6.3",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "packageManager": "pnpm@10.24.0",
+  "pnpm": {
+    "patchedDependencies": {
+      "agentation@2.3.0": "patches/agentation@2.3.0.patch"
+    }
+  }
+}

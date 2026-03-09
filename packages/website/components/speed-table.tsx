@@ -8,48 +8,33 @@ import {
 } from "@/components/ui/table";
 import { benchData, resolverKeys, controlKey, getResolverColor } from "@/lib/bench-data";
 
-interface ChangeInfo {
-  change: string;
-  bgColor: string;
-}
-
 const CHANGE_THRESHOLD_PERCENT = 0.5;
 
-const EMPTY_CHANGE_INFO: ChangeInfo = { change: "", bgColor: "transparent" };
-
-const getChangeInfo = (
-  controlValue: number,
-  treatmentValue: number,
-  lowerIsBetter: boolean,
-): ChangeInfo => {
-  if (!controlValue || !treatmentValue) return EMPTY_CHANGE_INFO;
-  const percentChange =
-    ((treatmentValue - controlValue) / controlValue) * 100;
-  if (Math.abs(percentChange) < CHANGE_THRESHOLD_PERCENT)
-    return EMPTY_CHANGE_INFO;
-  const isImprovement = lowerIsBetter ? percentChange < 0 : percentChange > 0;
-  const absolutePercent = Math.abs(percentChange);
-  const intensity = Math.min(absolutePercent / 100, 1);
-  const opacity = 0.1 + intensity * 0.3;
-  return {
-    change: `${isImprovement ? "\u2193" : "\u2191"}${Math.round(absolutePercent)}%`,
-    bgColor: isImprovement
-      ? `rgba(100, 200, 150, ${opacity})`
-      : `rgba(240, 120, 120, ${opacity})`,
-  };
+const getRelativeBackgroundColor = (
+  value: number,
+  fastestSpeed: number,
+  speedRange: number,
+): string => {
+  if (!value || speedRange <= 0) return "transparent";
+  const relativePosition = (value - fastestSpeed) / speedRange;
+  const opacity = 0.08 + Math.abs(relativePosition * 2 - 1) * 0.17;
+  if (relativePosition <= 0.5) {
+    return `rgba(100, 200, 150, ${opacity})`;
+  }
+  return `rgba(240, 120, 120, ${opacity})`;
 };
 
 const SpeedTable = () => (
   <Table>
     <TableHeader>
       <TableRow>
-        <TableHead className="text-xs">Test Case</TableHead>
+        <TableHead className="text-[11px]">Test Case</TableHead>
         {resolverKeys.map((resolverKey) => {
           const resolver = benchData.resolvers.find(
             (innerResolver) => innerResolver.key === resolverKey,
           );
           return (
-            <TableHead key={resolverKey} className="text-right text-xs">
+            <TableHead key={resolverKey} className="text-right text-[11px]">
               <span className="inline-flex items-center justify-end gap-1.5">
                 <span
                   className="size-2 shrink-0 rounded-[2px]"
@@ -67,10 +52,19 @@ const SpeedTable = () => (
         const controlResult = controlKey
           ? testCase.results[controlKey as keyof typeof testCase.results]
           : null;
+        const allSpeeds = resolverKeys
+          .map(
+            (key) =>
+              testCase.results[key as keyof typeof testCase.results].speed,
+          )
+          .filter(Boolean);
+        const fastestSpeed = Math.min(...allSpeeds);
+        const speedRange = Math.max(...allSpeeds) - fastestSpeed;
+
         return (
           <TableRow key={testCase.id}>
             <TableCell
-              className="font-medium max-w-[200px] truncate"
+              className="font-medium max-w-[200px] truncate text-[11px]"
               title={testCase.difficulty}
             >
               {testCase.testId}
@@ -79,25 +73,36 @@ const SpeedTable = () => (
               const result =
                 testCase.results[resolverKey as keyof typeof testCase.results];
               const isControl = resolverKey === controlKey;
-              const changeInfo =
-                !isControl && controlResult
-                  ? getChangeInfo(controlResult.speed, result.speed, true)
-                  : EMPTY_CHANGE_INFO;
+              const percentChange =
+                !isControl && controlResult?.speed && result.speed
+                  ? ((result.speed - controlResult.speed) /
+                      controlResult.speed) *
+                    100
+                  : 0;
+              const changeText =
+                Math.abs(percentChange) >= CHANGE_THRESHOLD_PERCENT
+                  ? `${percentChange < 0 ? "\u2193" : "\u2191"}${Math.round(Math.abs(percentChange))}%`
+                  : null;
+
               return (
                 <TableCell
                   key={resolverKey}
-                  className="text-right tabular-nums text-xs"
+                  className="text-right tabular-nums text-[11px]"
                   style={{
                     color: isControl
                       ? "var(--muted-foreground)"
                       : "var(--foreground)",
-                    backgroundColor: changeInfo.bgColor,
+                    backgroundColor: getRelativeBackgroundColor(
+                      result.speed,
+                      fastestSpeed,
+                      speedRange,
+                    ),
                   }}
                 >
                   {result.speed ? `${result.speed}s` : "\u2014"}
-                  {changeInfo.change && (
+                  {changeText && (
                     <span className="ml-1.5 text-[10px] opacity-70">
-                      {changeInfo.change}
+                      {changeText}
                     </span>
                   )}
                 </TableCell>

@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { benchData, resolverKeys, controlKey } from "@/lib/bench-data";
+import { benchData, resolverKeys, controlKey, getResolverColor } from "@/lib/bench-data";
 
 interface ChangeInfo {
   change: string;
@@ -43,14 +43,20 @@ const SpeedTable = () => (
   <Table>
     <TableHeader>
       <TableRow>
-        <TableHead>Test Case</TableHead>
+        <TableHead className="text-xs">Test Case</TableHead>
         {resolverKeys.map((resolverKey) => {
           const resolver = benchData.resolvers.find(
             (innerResolver) => innerResolver.key === resolverKey,
           );
           return (
-            <TableHead key={resolverKey} className="text-right">
-              {resolver?.label ?? resolverKey}
+            <TableHead key={resolverKey} className="text-right text-xs">
+              <span className="inline-flex items-center justify-end gap-1.5">
+                <span
+                  className="size-2 shrink-0 rounded-[2px]"
+                  style={{ backgroundColor: getResolverColor(resolverKey) }}
+                />
+                {resolver?.label ?? resolverKey}
+              </span>
             </TableHead>
           );
         })}

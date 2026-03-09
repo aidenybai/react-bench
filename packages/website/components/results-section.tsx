@@ -20,22 +20,18 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AccuracyTable } from "@/components/accuracy-table";
 import { SpeedTable } from "@/components/speed-table";
-import { benchData, resolverKeys } from "@/lib/bench-data";
-
-const RESOLVER_COLORS: Record<string, string> = {
-  "react-grab+claude": "oklch(0.7 0.25 330)",
-  "agentation+claude": "oklch(0.65 0.2 260)",
-  "claude-code": "oklch(0.7 0.15 50)",
-};
-
-const DEFAULT_CHART_COLOR = "oklch(0.6 0 0)";
+import {
+  benchData,
+  resolverKeys,
+  getResolverColor,
+} from "@/lib/bench-data";
 
 const chartConfig: ChartConfig = Object.fromEntries(
   benchData.resolvers.map((resolver) => [
     resolver.key,
     {
       label: resolver.label,
-      color: RESOLVER_COLORS[resolver.key] ?? DEFAULT_CHART_COLOR,
+      color: getResolverColor(resolver.key),
     },
   ]),
 );
@@ -99,13 +95,13 @@ const ResultsBarChart = ({
         axisLine={false}
         tick={{ fontSize: 10 }}
       />
+      <ChartLegend verticalAlign="top" content={<ChartLegendContent />} />
       <ChartTooltip content={<ChartTooltipContent />} />
-      <ChartLegend content={<ChartLegendContent />} />
       {resolverKeys.map((resolverKey) => (
         <Bar
           key={resolverKey}
           dataKey={resolverKey}
-          fill={RESOLVER_COLORS[resolverKey] ?? DEFAULT_CHART_COLOR}
+          fill={getResolverColor(resolverKey)}
           radius={[0, 3, 3, 0]}
         >
           <LabelList

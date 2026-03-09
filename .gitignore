@@ -13,3 +13,5 @@ playwright-report
 test-results
 
 pnpm-lock.yaml
+.vercel
+.cursor

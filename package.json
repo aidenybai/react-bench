@@ -19,8 +19,7 @@
     "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "node": ">=18"
   },
   "packageManager": "pnpm@10.24.0",
   "pnpm": {

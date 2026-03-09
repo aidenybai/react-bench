@@ -1,32 +1,42 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
-import { StyledComponentsRegistry } from "@/components/providers/styled-registry";
-import { ProviderStack } from "@/components/providers/provider-stack";
-import { BenchHarness } from "@/components/bench-harness";
+import type { Metadata } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
+
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { cn } from "@/lib/utils"
+
+const fontSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const fontMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+})
 
 export const metadata: Metadata = {
-  title: "React Bench - Evaluating coding agents on React.js tasks",
-  description:
-    "Benchmark comparing coding agent element retrieval tools on React.js component resolution tasks",
-};
+  title: "React Bench",
+  description: "Evaluating coding agents on React.js tasks",
+}
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn("antialiased", fontMono.variable, "font-sans", fontSans.variable)}
+    >
       <body>
         <NuqsAdapter>
-          <StyledComponentsRegistry>
-            <ProviderStack>{children}</ProviderStack>
-          </StyledComponentsRegistry>
+          <ThemeProvider>{children}</ThemeProvider>
         </NuqsAdapter>
-        <BenchHarness />
-        <div id="portal-root" />
       </body>
     </html>
-  );
+  )
 }

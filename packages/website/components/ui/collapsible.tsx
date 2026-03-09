@@ -1,74 +1,33 @@
-"use client";
+"use client"
 
-import { useState, useMemo, type ReactElement, type ReactNode } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { Collapsible as CollapsiblePrimitive } from "radix-ui"
 
-interface CollapsibleProps {
-  header: ReactNode;
-  children: ReactNode;
-  defaultExpanded?: boolean;
-  isStreaming?: boolean;
-  autoExpandOnStreaming?: boolean;
+function Collapsible({
+  ...props
+}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {
+  return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />
 }
 
-export const Collapsible = ({
-  header,
-  children,
-  defaultExpanded = true,
-  isStreaming = false,
-  autoExpandOnStreaming = true,
-}: CollapsibleProps): ReactElement => {
-  const [manualExpanded, setManualExpanded] = useState<boolean | null>(null);
-
-  const isExpanded = useMemo(() => {
-    if (manualExpanded !== null) {
-      return manualExpanded;
-    }
-    if (isStreaming && autoExpandOnStreaming) {
-      return true;
-    }
-    return defaultExpanded;
-  }, [manualExpanded, isStreaming, defaultExpanded, autoExpandOnStreaming]);
-
-  const handleToggle = () => {
-    setManualExpanded(!isExpanded);
-  };
-
+function CollapsibleTrigger({
+  ...props
+}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {
   return (
-    <div>
-      <button
-        type="button"
-        onClick={handleToggle}
-        className="w-full text-left group relative focus:outline-none"
-      >
-        <div className="flex items-center text-muted-foreground">
-          {header}
-          <span className="ml-2 opacity-50">
-            {isExpanded ? (
-              <ChevronDown className="w-3 h-3" />
-            ) : (
-              <ChevronRight className="w-3 h-3" />
-            )}
-          </span>
-        </div>
-      </button>
+    <CollapsiblePrimitive.CollapsibleTrigger
+      data-slot="collapsible-trigger"
+      {...props}
+    />
+  )
+}
 
-      <AnimatePresence initial={false}>
-        {isExpanded && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="overflow-hidden"
-          >
-            {children}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+function CollapsibleContent({
+  ...props
+}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {
+  return (
+    <CollapsiblePrimitive.CollapsibleContent
+      data-slot="collapsible-content"
+      {...props}
+    />
+  )
+}
 
-Collapsible.displayName = "Collapsible";
+export { Collapsible, CollapsibleTrigger, CollapsibleContent }

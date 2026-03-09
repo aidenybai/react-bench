@@ -34,27 +34,33 @@ pnpm format
 
 This is a pnpm monorepo with Turborepo:
 
-- `packages/website` - Next.js benchmark harness and results display
+- `packages/benchmark` - Next.js benchmark harness (75-component test app, e2e specs, Playwright)
+- `packages/website` - Next.js results display site (shadcn/ui, charts, tables)
 - `packages/react-bench` - npm placeholder package
 - `packages/reactbench` - npm placeholder package
 
 ## Benchmark
 
-The benchmark harness lives at `packages/website`. It contains:
+The benchmark harness lives at `packages/benchmark`. It contains:
 
-- 75 component test cases at `/harness` (easy, medium, hard, nightmare tiers)
-- Results display at `/` (charts, per-test-case table)
+- 75 component test cases (easy, medium, hard, nightmare tiers)
 - E2E specs in `e2e/` (Playwright)
 - Test manifest in `test-manifest.ts`
 
-Run the dev server:
+Run the harness dev server:
 
 ```bash
-pnpm --filter @react-bench/website dev
+pnpm --filter @react-bench/benchmark dev
 ```
 
 Run benchmarks:
 
 ```bash
-pnpm --filter @react-bench/website test
+pnpm --filter @react-bench/benchmark test
+```
+
+Run the results website:
+
+```bash
+pnpm --filter @react-bench/website dev
 ```

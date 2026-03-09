@@ -30,7 +30,7 @@ jobs:
         run: pnpm install
 
       - name: Install Playwright browsers
-        run: pnpm --filter @react-bench/website exec playwright install chromium --with-deps
+        run: pnpm --filter @react-bench/benchmark exec playwright install chromium --with-deps
 
       - name: Install Claude Code
         run: npm install -g @anthropic-ai/claude-code
@@ -39,7 +39,7 @@ jobs:
         run: pnpm build
 
       - name: Run benchmark
-        run: pnpm --filter @react-bench/website exec playwright test e2e/bench.spec.ts
+        run: pnpm --filter @react-bench/benchmark exec playwright test e2e/bench.spec.ts
         env:
           BENCH_CLAUDE: "1"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

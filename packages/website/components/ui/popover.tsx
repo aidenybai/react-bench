@@ -1,96 +1,89 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
+import { Popover as PopoverPrimitive } from "radix-ui"
 
-interface PopoverProps {
-  children: React.ReactNode;
+import { cn } from "@/lib/utils"
+
+function Popover({
+  ...props
+}: React.ComponentProps<typeof PopoverPrimitive.Root>) {
+  return <PopoverPrimitive.Root data-slot="popover" {...props} />
 }
 
-interface PopoverContextType {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-  triggerRef: React.RefObject<HTMLButtonElement | null>;
+function PopoverTrigger({
+  ...props
+}: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {
+  return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />
 }
 
-const PopoverContext = React.createContext<PopoverContextType>({
-  open: false,
-  setOpen: () => {},
-  triggerRef: { current: null },
-});
-
-export function Popover({ children }: PopoverProps) {
-  const [open, setOpen] = React.useState(false);
-  const triggerRef = React.useRef<HTMLButtonElement>(null);
-
-  React.useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        triggerRef.current &&
-        !triggerRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-    if (open) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [open]);
-
-  return (
-    <PopoverContext.Provider value={{ open, setOpen, triggerRef }}>
-      <div className="relative inline-block">{children}</div>
-    </PopoverContext.Provider>
-  );
-}
-
-export function PopoverTrigger({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const { setOpen, open, triggerRef } = React.useContext(PopoverContext);
-  return (
-    <button
-      ref={triggerRef}
-      className={className}
-      onClick={() => setOpen(!open)}
-      aria-expanded={open}
-    >
-      {children}
-    </button>
-  );
-}
-
-export function PopoverContent({
-  children,
+function PopoverContent({
   className,
   align = "center",
   sideOffset = 4,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  align?: "start" | "center" | "end";
-  sideOffset?: number;
-}) {
-  const { open } = React.useContext(PopoverContext);
-  if (!open) return null;
+  ...props
+}: React.ComponentProps<typeof PopoverPrimitive.Content>) {
+  return (
+    <PopoverPrimitive.Portal>
+      <PopoverPrimitive.Content
+        data-slot="popover-content"
+        align={align}
+        sideOffset={sideOffset}
+        className={cn(
+          "z-50 flex w-72 origin-(--radix-popover-content-transform-origin) flex-col gap-2.5 rounded-lg bg-popover p-2.5 text-sm text-popover-foreground shadow-md ring-1 ring-foreground/10 outline-hidden duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+          className
+        )}
+        {...props}
+      />
+    </PopoverPrimitive.Portal>
+  )
+}
 
-  const alignClass =
-    align === "start"
-      ? "left-0"
-      : align === "end"
-        ? "right-0"
-        : "left-1/2 -translate-x-1/2";
+function PopoverAnchor({
+  ...props
+}: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {
+  return <PopoverPrimitive.Anchor data-slot="popover-anchor" {...props} />
+}
 
+function PopoverHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={`absolute z-50 w-72 rounded-md border bg-white p-4 shadow-md outline-none ${alignClass} ${className ?? ""}`}
-      style={{ marginTop: sideOffset }}
-    >
-      {children}
-    </div>
-  );
+      data-slot="popover-header"
+      className={cn("flex flex-col gap-0.5 text-sm", className)}
+      {...props}
+    />
+  )
+}
+
+function PopoverTitle({ className, ...props }: React.ComponentProps<"h2">) {
+  return (
+    <div
+      data-slot="popover-title"
+      className={cn("font-medium", className)}
+      {...props}
+    />
+  )
+}
+
+function PopoverDescription({
+  className,
+  ...props
+}: React.ComponentProps<"p">) {
+  return (
+    <p
+      data-slot="popover-description"
+      className={cn("text-muted-foreground", className)}
+      {...props}
+    />
+  )
+}
+
+export {
+  Popover,
+  PopoverAnchor,
+  PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
 }

@@ -1,4 +1,4 @@
-import { ClientBenchmarks } from "@/app/harness/client-benchmarks";
+import { ClientBenchmarks } from "@/app/client-benchmarks";
 import { ServerHero } from "@/components/server/server-hero";
 import { ServerWithClientIsland } from "@/components/server/server-with-client-island";
 

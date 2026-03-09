@@ -13,6 +13,7 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "@react-bench/website"
+    "@react-bench/website",
+    "@react-bench/benchmark"
   ]
 }

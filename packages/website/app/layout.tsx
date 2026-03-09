@@ -1,12 +1,12 @@
-import type { Metadata } from "next"
-import { Geist_Mono } from "next/font/google"
-import localFont from "next/font/local"
-import Script from "next/script"
-import { NuqsAdapter } from "nuqs/adapters/next/app"
+import type { Metadata } from "next";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import Script from "next/script";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils"
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
 
 const fontSans = localFont({
   src: [
@@ -17,12 +17,12 @@ const fontSans = localFont({
   ],
   variable: "--font-open-runde",
   display: "swap",
-})
+});
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-})
+});
 
 export const metadata: Metadata = {
   title: "React Bench",
@@ -30,18 +30,23 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo.svg",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", fontSans.variable)}
+      className={cn(
+        "antialiased",
+        fontMono.variable,
+        "font-sans",
+        fontSans.variable,
+      )}
     >
       <head>
         {process.env.NODE_ENV === "development" && (
@@ -58,5 +63,5 @@ export default function RootLayout({
         </NuqsAdapter>
       </body>
     </html>
-  )
+  );
 }

@@ -4,7 +4,6 @@ import { writeFileSync, readFileSync, existsSync } from "fs";
 import { join } from "path";
 import { TEST_MANIFEST, type TestEntry } from "../test-manifest";
 
-const INCLUDE_CLI = Boolean(process.env.BENCH_CLAUDE);
 const CLI_MODEL = process.env.BENCH_MODEL ?? "claude-sonnet-4-6";
 const CLI_TIMEOUT_MS = 180_000;
 const CWD = join(__dirname, "..");
@@ -458,305 +457,9 @@ const loadCheckpoint = (): Checkpoint | null => {
 };
 
 const TIERS = ["easy", "medium", "hard", "nightmare"] as const;
-const TIER_COLORS: Record<string, string> = {
-  easy: "#22c55e",
-  medium: "#eab308",
-  hard: "#f97316",
-  nightmare: "#ef4444",
-};
-const RESOLVER_COLORS = [
-  "#60a5fa",
-  "#f472b6",
-  "#a78bfa",
-  "#34d399",
-  "#fbbf24",
-  "#fb923c",
-  "#f87171",
-  "#38bdf8",
-];
-
-const computeStats = (results: EntryResult[], resolverNames: string[]) =>
-  resolverNames.map((name, resolverIndex) => {
-    const color = RESOLVER_COLORS[resolverIndex % RESOLVER_COLORS.length];
-    const allResults = results
-      .map((entry) => entry.resolvers[name])
-      .filter(Boolean);
-    const correctResults = allResults.filter(
-      (resolverResult) => resolverResult.correct,
-    );
-    const tierBreakdown = TIERS.map((tier) => {
-      const tierEntries = results.filter((entry) => entry.difficulty === tier);
-      const tierResults = tierEntries
-        .map((entry) => entry.resolvers[name])
-        .filter(Boolean);
-      const tierCorrect = tierResults.filter(
-        (resolverResult) => resolverResult.correct,
-      );
-      return {
-        tier,
-        count: tierEntries.length,
-        resolved: tierResults.filter((resolverResult) => resolverResult.found)
-          .length,
-        correct: tierCorrect.length,
-        avgMs: tierCorrect.length
-          ? tierCorrect.reduce(
-              (sum, resolverResult) => sum + resolverResult.ms,
-              0,
-            ) / tierCorrect.length
-          : null,
-      };
-    });
-    return {
-      name,
-      color,
-      resolved: allResults.filter((resolverResult) => resolverResult.found)
-        .length,
-      correct: correctResults.length,
-      total: results.length,
-      avgMs: correctResults.length
-        ? correctResults.reduce(
-            (sum, resolverResult) => sum + resolverResult.ms,
-            0,
-          ) / correctResults.length
-        : null,
-      tierBreakdown,
-    };
-  });
-
-const FONT = `font-family="'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"`;
-
-const generateSummaryChart = (
-  results: EntryResult[],
-  resolverNames: string[],
-): string => {
-  const stats = computeStats(results, resolverNames)
-    .slice()
-    .sort((a, b) => b.correct / b.total - a.correct / a.total);
-
-  const W = 720,
-    PAD = 32;
-  const BAR_H = 36,
-    BAR_GAP = 12,
-    BAR_X = 200,
-    BAR_MAX_W = W - BAR_X - PAD - 60;
-  const SECTION_GAP = 36;
-
-  // --- Header ---
-  const headerH = 70;
-
-  // --- Horizontal bars section ---
-  const barsStartY = headerH;
-  const barsH = stats.length * (BAR_H + BAR_GAP) - BAR_GAP;
-  const maxPct = Math.max(...stats.map((s) => s.correct / s.total), 0.01);
-
-  const bars = stats
-    .map((stat, i) => {
-      const y = barsStartY + i * (BAR_H + BAR_GAP);
-      const pct = stat.correct / stat.total;
-      const barW = (pct / maxPct) * BAR_MAX_W;
-      const pctStr = `${(pct * 100).toFixed(0)}%`;
-      const avgStr = stat.avgMs !== null ? formatTime(stat.avgMs) : "";
-      const detailStr = `${stat.correct}/${stat.total}${avgStr ? ` · ${avgStr}` : ""}`;
-
-      return `<text x="${BAR_X - 12}" y="${y + BAR_H / 2 + 5}" text-anchor="end" fill="${stat.color}" font-size="13" font-weight="600" ${FONT}>${stat.name}</text>
-    <rect x="${BAR_X}" y="${y}" width="${barW}" height="${BAR_H}" fill="${stat.color}" rx="6" opacity="0.2"/>
-    <rect x="${BAR_X}" y="${y}" width="${barW}" height="${BAR_H}" fill="url(#bar-${i})" rx="6"/>
-    <text x="${BAR_X + barW + 8}" y="${y + BAR_H / 2 + 5}" fill="#fff" font-size="15" font-weight="700" ${FONT}>${pctStr}</text>
-    <text x="${BAR_X + 10}" y="${y + BAR_H / 2 + 4}" fill="rgba(255,255,255,0.85)" font-size="11" ${FONT}>${detailStr}</text>`;
-    })
-    .join("\n");
-
-  const gradients = stats
-    .map(
-      (stat, i) =>
-        `<linearGradient id="bar-${i}" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="${stat.color}" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="${stat.color}" stop-opacity="0.5"/>
-    </linearGradient>`,
-    )
-    .join("\n");
-
-  // --- Tier breakdown heatmap ---
-  const heatStartY = barsStartY + barsH + SECTION_GAP;
-  const CELL_W = 100,
-    CELL_H = 32,
-    CELL_GAP = 4;
-  const LABEL_W = 200;
-  const heatHeaderH = 28;
-
-  const tierHeaders = TIERS.map((tier, ti) => {
-    const x = LABEL_W + ti * (CELL_W + CELL_GAP);
-    const count = results.filter((e) => e.difficulty === tier).length;
-    return `<text x="${x + CELL_W / 2}" y="${heatStartY + 16}" text-anchor="middle" fill="${TIER_COLORS[tier]}" font-size="11" font-weight="600" ${FONT}>${tier.toUpperCase()} (${count})</text>`;
-  }).join("\n");
-
-  const heatRows = stats
-    .map((stat, si) => {
-      const y = heatStartY + heatHeaderH + si * (CELL_H + CELL_GAP);
-      const label = `<text x="${LABEL_W - 12}" y="${y + CELL_H / 2 + 4}" text-anchor="end" fill="${stat.color}" font-size="12" font-weight="500" ${FONT}>${stat.name}</text>`;
-      const cells = stat.tierBreakdown
-        .map((bd, ti) => {
-          const x = LABEL_W + ti * (CELL_W + CELL_GAP);
-          const pct = bd.count ? bd.correct / bd.count : 0;
-          const pctStr = bd.count ? `${(pct * 100).toFixed(0)}%` : "\u2014";
-          const detail = bd.count ? `${bd.correct}/${bd.count}` : "";
-          const opacity = 0.15 + pct * 0.65;
-          const textColor = pct >= 0.9 ? "#fff" : pct >= 0.7 ? "#ddd" : "#aaa";
-          return `<rect x="${x}" y="${y}" width="${CELL_W}" height="${CELL_H}" fill="${stat.color}" opacity="${opacity.toFixed(2)}" rx="6"/>
-        <text x="${x + CELL_W / 2}" y="${y + CELL_H / 2 + 1}" text-anchor="middle" fill="${textColor}" font-size="13" font-weight="700" ${FONT}>${pctStr}</text>
-        <text x="${x + CELL_W / 2}" y="${y + CELL_H / 2 + 13}" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9" ${FONT}>${detail}</text>`;
-        })
-        .join("\n");
-      return `${label}\n${cells}`;
-    })
-    .join("\n");
-
-  const heatH = heatHeaderH + stats.length * (CELL_H + CELL_GAP);
-
-  // --- Footer ---
-  const totalH = heatStartY + heatH + 32;
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${totalH}" width="${W}" height="${totalH}">
-  <defs>${gradients}</defs>
-  <rect width="${W}" height="${totalH}" fill="#0d1117" rx="12"/>
-  <text x="${PAD}" y="32" fill="#fff" font-size="18" font-weight="700" ${FONT}>Source Resolution Benchmark</text>
-  <text x="${PAD}" y="52" fill="#8b949e" font-size="12" ${FONT}>${results.length} test cases \u00b7 ${TIERS.length} difficulty tiers \u00b7 ${resolverNames.length} resolvers</text>
-  <line x1="${PAD}" x2="${W - PAD}" y1="64" y2="64" stroke="#21262d"/>
-  ${bars}
-  <line x1="${PAD}" x2="${W - PAD}" y1="${heatStartY - 12}" y2="${heatStartY - 12}" stroke="#21262d"/>
-  ${tierHeaders}
-  ${heatRows}
-</svg>`;
-};
-
-const generateDetailChart = (
-  results: EntryResult[],
-  resolverNames: string[],
-): string => {
-  const W = 900,
-    PAD = 32;
-  const ROW_H = 22,
-    ENTRY_GAP = 8;
-  const HEADER_H = 60;
-  const resolverColorMap: Record<string, string> = {};
-  const sortedStats = computeStats(results, resolverNames)
-    .slice()
-    .sort((a, b) => b.correct / b.total - a.correct / a.total);
-  sortedStats.forEach((s) => {
-    resolverColorMap[s.name] = s.color;
-  });
-
-  let y = HEADER_H;
-  let currentTier = "";
-
-  const entries = results
-    .map((entry) => {
-      const parts: string[] = [];
-
-      // Tier separator
-      if (entry.difficulty !== currentTier) {
-        currentTier = entry.difficulty;
-        const tierCount = results.filter(
-          (e) => e.difficulty === currentTier,
-        ).length;
-        if (y > HEADER_H) y += 12;
-        parts.push(
-          `<line x1="${PAD}" x2="${W - PAD}" y1="${y}" y2="${y}" stroke="#21262d"/>`,
-        );
-        y += 20;
-        parts.push(
-          `<text x="${PAD}" y="${y}" fill="${TIER_COLORS[currentTier]}" font-size="12" font-weight="700" ${FONT}>${currentTier.toUpperCase()} (${tierCount} cases)</text>`,
-        );
-        y += 12;
-      }
-
-      // Entry header
-      const entryY = y;
-      const allCorrect = resolverNames.every(
-        (n) => entry.resolvers[n]?.correct,
-      );
-      const allWrong = resolverNames.every((n) => !entry.resolvers[n]?.correct);
-      const headerColor = allCorrect
-        ? "#3fb950"
-        : allWrong
-          ? "#f85149"
-          : "#c9d1d9";
-      parts.push(
-        `<circle cx="${PAD + 5}" cy="${y + 6}" r="4" fill="${TIER_COLORS[entry.difficulty]}"/>`,
-      );
-      parts.push(
-        `<text x="${PAD + 16}" y="${y + 10}" fill="${headerColor}" font-size="11" font-weight="600" ${FONT}>#${entry.id} ${entry.testId}</text>`,
-      );
-      parts.push(
-        `<text x="${W - PAD}" y="${y + 10}" text-anchor="end" fill="#484f58" font-size="10" ${FONT}>${entry.expected}</text>`,
-      );
-      y += ROW_H;
-
-      // Resolver results
-      for (const name of resolverNames) {
-        const res = entry.resolvers[name];
-        const color = resolverColorMap[name] || "#8b949e";
-        if (!res?.found && !res?.filePath) {
-          parts.push(
-            `<text x="${PAD + 24}" y="${y + 10}" fill="#484f58" font-size="10" ${FONT}>\u2717 ${name}</text>`,
-          );
-          parts.push(
-            `<text x="320" y="${y + 10}" fill="#484f58" font-size="10" ${FONT}>(no result)</text>`,
-          );
-        } else {
-          const icon = res.correct ? "\u2713" : "\u2717";
-          const iconColor = res.correct ? "#3fb950" : "#f85149";
-          const pathColor = res.correct ? "#8b949e" : "#484f58";
-          const normalizedPath = res.filePath
-            ? normalizeFilePath(res.filePath)
-            : "(null)";
-          const timeStr = formatTime(res.ms);
-          parts.push(
-            `<text x="${PAD + 24}" y="${y + 10}" fill="${iconColor}" font-size="10" font-weight="600" ${FONT}>${icon}</text>`,
-          );
-          parts.push(
-            `<text x="${PAD + 38}" y="${y + 10}" fill="${color}" font-size="10" font-weight="500" ${FONT}>${name}</text>`,
-          );
-          parts.push(
-            `<text x="240" y="${y + 10}" fill="${pathColor}" font-size="10" ${FONT}>${normalizedPath}</text>`,
-          );
-          if (!res.correct && res.found) {
-            parts.push(
-              `<text x="580" y="${y + 10}" fill="#f85149" font-size="9" font-weight="600" ${FONT}>WRONG</text>`,
-            );
-          }
-          parts.push(
-            `<text x="${W - PAD}" y="${y + 10}" text-anchor="end" fill="#484f58" font-size="9" ${FONT}>${timeStr}</text>`,
-          );
-        }
-        y += ROW_H - 4;
-      }
-      y += ENTRY_GAP;
-
-      // Subtle background for alternating entries
-      const entryH = y - entryY - ENTRY_GAP;
-      const bgIdx = results.indexOf(entry);
-      const bg =
-        bgIdx % 2 === 0
-          ? `<rect x="0" y="${entryY - 4}" width="${W}" height="${entryH + 4}" fill="#161b22" rx="0"/>`
-          : "";
-
-      return bg + parts.join("\n");
-    })
-    .join("\n");
-
-  const totalH = y + PAD;
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${totalH}" width="${W}" height="${totalH}">
-  <rect width="${W}" height="${totalH}" fill="#0d1117" rx="12"/>
-  <text x="${PAD}" y="28" fill="#fff" font-size="16" font-weight="700" ${FONT}>Per-Case Results</text>
-  <text x="${PAD}" y="46" fill="#8b949e" font-size="11" ${FONT}>${results.length} cases \u00b7 ${resolverNames.length} resolvers \u00b7 \u2713 correct \u2717 wrong</text>
-  ${entries}
-</svg>`;
-};
 
 test.describe("Unified benchmark \u2014 all resolvers", () => {
-  test.setTimeout(INCLUDE_CLI ? 3_600_000 : 300_000);
+  test.setTimeout(3_600_000);
 
   test("compare all resolvers across full manifest", async ({ page }) => {
     await page.waitForFunction(
@@ -767,9 +470,7 @@ test.describe("Unified benchmark \u2014 all resolvers", () => {
     const browserResolvers: string[] = await page.evaluate(() =>
       (window as any).__BENCH__.list(),
     );
-    const cliResolverNames = INCLUDE_CLI
-      ? CLI_RESOLVERS.map((resolver) => resolver.name)
-      : [];
+    const cliResolverNames = CLI_RESOLVERS.map((resolver) => resolver.name);
     const allResolvers = [...browserResolvers, ...cliResolverNames];
 
     console.log(
@@ -824,9 +525,7 @@ test.describe("Unified benchmark \u2014 all resolvers", () => {
             }
           >;
 
-          const elementCtx = INCLUDE_CLI
-            ? await collectElementContext(page, entry.testId)
-            : EMPTY_ELEMENT_CONTEXT;
+          const elementCtx = await collectElementContext(page, entry.testId);
 
           collected.push({ entry, browserResults, elementCtx });
         } catch (e) {
@@ -845,74 +544,72 @@ test.describe("Unified benchmark \u2014 all resolvers", () => {
     }
 
     const cliTasks: CliTask[] = [];
-    if (INCLUDE_CLI) {
-      for (
-        let collectedIndex = 0;
-        collectedIndex < collected.length;
-        collectedIndex++
+    for (
+      let collectedIndex = 0;
+      collectedIndex < collected.length;
+      collectedIndex++
+    ) {
+      const { entry, elementCtx, error } = collected[collectedIndex];
+      if (error) continue;
+      for (const cliResolver of CLI_RESOLVERS) {
+        const taskKey = `${entry.id}:${cliResolver.name}`;
+        if (cliCompleted[taskKey]) continue;
+        cliTasks.push({
+          entryIndex: collectedIndex,
+          resolverName: cliResolver.name,
+          prompt: cliResolver.buildPrompt(entry, elementCtx),
+        });
+      }
+    }
+
+    const skippedCount = Object.keys(cliCompleted).length;
+    if (skippedCount > 0)
+      console.log(`  Resumed ${skippedCount} CLI tasks from checkpoint`);
+    console.log(
+      `  Running ${cliTasks.length} CLI tasks (concurrency: ${CLI_CONCURRENCY})...\n`,
+    );
+
+    const cliResults = await pool(
+      cliTasks.map(
+        (task) => () =>
+          runCli(task.prompt).then((result) => {
+            const taskKey = `${collected[task.entryIndex].entry.id}:${task.resolverName}`;
+            cliCompleted[taskKey] = result;
+            saveCheckpoint({ browserCollected: collected, cliCompleted });
+            return result;
+          }),
+      ),
+      CLI_CONCURRENCY,
+    );
+
+    for (let taskIndex = 0; taskIndex < cliTasks.length; taskIndex++) {
+      const task = cliTasks[taskIndex];
+      const cliResult = cliResults[taskIndex];
+      if (!collected[task.entryIndex].browserResults[task.resolverName]) {
+        collected[task.entryIndex].browserResults[task.resolverName] = {
+          filePath: cliResult.filePath,
+          componentName: cliResult.componentName,
+          found: Boolean(cliResult.filePath),
+          ms: cliResult.ms,
+        };
+      }
+    }
+
+    for (const [taskKey, result] of Object.entries(cliCompleted)) {
+      const [idStr, resolverName] = taskKey.split(":");
+      const collectedIndex = collected.findIndex(
+        (c) => c.entry.id === parseInt(idStr, 10),
+      );
+      if (
+        collectedIndex >= 0 &&
+        !collected[collectedIndex].browserResults[resolverName]
       ) {
-        const { entry, elementCtx, error } = collected[collectedIndex];
-        if (error) continue;
-        for (const cliResolver of CLI_RESOLVERS) {
-          const taskKey = `${entry.id}:${cliResolver.name}`;
-          if (cliCompleted[taskKey]) continue;
-          cliTasks.push({
-            entryIndex: collectedIndex,
-            resolverName: cliResolver.name,
-            prompt: cliResolver.buildPrompt(entry, elementCtx),
-          });
-        }
-      }
-
-      const skippedCount = Object.keys(cliCompleted).length;
-      if (skippedCount > 0)
-        console.log(`  Resumed ${skippedCount} CLI tasks from checkpoint`);
-      console.log(
-        `  Running ${cliTasks.length} CLI tasks (concurrency: ${CLI_CONCURRENCY})...\n`,
-      );
-
-      const cliResults = await pool(
-        cliTasks.map(
-          (task) => () =>
-            runCli(task.prompt).then((result) => {
-              const taskKey = `${collected[task.entryIndex].entry.id}:${task.resolverName}`;
-              cliCompleted[taskKey] = result;
-              saveCheckpoint({ browserCollected: collected, cliCompleted });
-              return result;
-            }),
-        ),
-        CLI_CONCURRENCY,
-      );
-
-      for (let taskIndex = 0; taskIndex < cliTasks.length; taskIndex++) {
-        const task = cliTasks[taskIndex];
-        const cliResult = cliResults[taskIndex];
-        if (!collected[task.entryIndex].browserResults[task.resolverName]) {
-          collected[task.entryIndex].browserResults[task.resolverName] = {
-            filePath: cliResult.filePath,
-            componentName: cliResult.componentName,
-            found: Boolean(cliResult.filePath),
-            ms: cliResult.ms,
-          };
-        }
-      }
-
-      for (const [taskKey, result] of Object.entries(cliCompleted)) {
-        const [idStr, resolverName] = taskKey.split(":");
-        const collectedIndex = collected.findIndex(
-          (c) => c.entry.id === parseInt(idStr, 10),
-        );
-        if (
-          collectedIndex >= 0 &&
-          !collected[collectedIndex].browserResults[resolverName]
-        ) {
-          collected[collectedIndex].browserResults[resolverName] = {
-            filePath: result.filePath,
-            componentName: result.componentName,
-            found: Boolean(result.filePath),
-            ms: result.ms,
-          };
-        }
+        collected[collectedIndex].browserResults[resolverName] = {
+          filePath: result.filePath,
+          componentName: result.componentName,
+          found: Boolean(result.filePath),
+          ms: result.ms,
+        };
       }
     }
 
@@ -1013,23 +710,17 @@ test.describe("Unified benchmark \u2014 all resolvers", () => {
     console.log();
 
     const outputDir = join(__dirname, "..");
-    const paths = {
-      json: join(outputDir, "e2e/bench-results.json"),
-      svg: join(outputDir, "e2e/bench-results.svg"),
-      detail: join(outputDir, "e2e/bench-detail.svg"),
-    };
-    writeFileSync(
-      paths.json,
-      JSON.stringify({ resolverNames: allResolvers, results }, null, 2),
-    );
+    const resultsJsonPath = join(outputDir, "e2e/bench-results.json");
     const cliOnlyResolvers = allResolvers.filter(
       (name) => !["react-grab", "agentation", "baseline"].includes(name),
     );
     const chartResolvers =
       cliOnlyResolvers.length > 0 ? cliOnlyResolvers : allResolvers;
-    writeFileSync(paths.svg, generateSummaryChart(results, chartResolvers));
-    writeFileSync(paths.detail, generateDetailChart(results, chartResolvers));
-    for (const filePath of Object.values(paths)) console.log(`  ${filePath}`);
+    writeFileSync(
+      resultsJsonPath,
+      JSON.stringify({ resolverNames: allResolvers, results }, null, 2),
+    );
+    console.log(`  ${resultsJsonPath}`);
 
     // Generate website data.json for the benchmarks page
     const TIER_LABELS: Record<string, string> = {
@@ -1116,7 +807,6 @@ test.describe("Unified benchmark \u2014 all resolvers", () => {
       "..",
       "website",
       "app",
-      "benchmarks",
       "data.json",
     );
     writeFileSync(websiteDataPath, JSON.stringify(websiteData, null, 2));

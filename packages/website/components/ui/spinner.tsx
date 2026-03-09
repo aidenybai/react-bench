@@ -3,8 +3,10 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-interface SpinnerProps
-  extends Omit<React.ComponentPropsWithoutRef<"svg">, "display" | "opacity"> {
+interface SpinnerProps extends Omit<
+  React.ComponentPropsWithoutRef<"svg">,
+  "display" | "opacity"
+> {
   size?: "sm" | "default" | "md" | "lg";
   speed?: "slow" | "normal" | "fast";
   className?: string;

@@ -73,15 +73,17 @@ export function ShimmerText({
             variantMap[variant],
             className,
           )}
-          style={{
-            WebkitTextFillColor: "transparent",
-            background:
-              "currentColor linear-gradient(to right, currentColor 0%, var(--shimmer-contrast) 40%, var(--shimmer-contrast) 60%, currentColor 100%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "50% 200%",
-          } as React.CSSProperties}
+          style={
+            {
+              WebkitTextFillColor: "transparent",
+              background:
+                "currentColor linear-gradient(to right, currentColor 0%, var(--shimmer-contrast) 40%, var(--shimmer-contrast) 60%, currentColor 100%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "50% 200%",
+            } as React.CSSProperties
+          }
           initial={{
             backgroundPositionX: "250%",
           }}

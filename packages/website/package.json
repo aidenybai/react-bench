@@ -1,8 +1,8 @@
 {
   "name": "@react-bench/website",
   "version": "0.0.1",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

@@ -41,7 +41,6 @@ jobs:
       - name: Run benchmark
         run: pnpm --filter @react-bench/benchmark exec playwright test e2e/bench.spec.ts
         env:
-          BENCH_CLAUDE: "1"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Commit and push updated data

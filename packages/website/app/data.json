@@ -126,7 +126,6 @@
     {
       "id": 1,
       "testId": "plain-styled-card",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 9.8,
@@ -140,12 +139,12 @@
           "speed": 10,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-card.tsx"
     },
     {
       "id": 2,
       "testId": "plain-styled-button",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 13.8,
@@ -159,12 +158,12 @@
           "speed": 9.6,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-button.tsx"
     },
     {
       "id": 3,
       "testId": "plain-styled-badge",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 14.1,
@@ -178,12 +177,12 @@
           "speed": 11.6,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-badge.tsx"
     },
     {
       "id": 4,
       "testId": "radix-tabs-trigger",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 11.6,
@@ -197,12 +196,12 @@
           "speed": 7.9,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/radix/radix-tabs.tsx"
     },
     {
       "id": 5,
       "testId": "plain-animated-card",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 14.1,
@@ -216,12 +215,12 @@
           "speed": 7.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/motion/animated-card.tsx"
     },
     {
       "id": 6,
       "testId": "provider-child",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 46.1,
@@ -235,12 +234,12 @@
           "speed": 10.9,
           "correct": false
         }
-      }
+      },
+      "filePath": "app/page.tsx"
     },
     {
       "id": 7,
       "testId": "plain-tw-card",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 7.4,
@@ -254,12 +253,12 @@
           "speed": 7.6,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/tailwind/tw-card.tsx"
     },
     {
       "id": 8,
       "testId": "plain-tw-button",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 31.9,
@@ -273,12 +272,12 @@
           "speed": 7.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/tailwind/tw-button.tsx"
     },
     {
       "id": 9,
       "testId": "plain-tw-badge",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 15.9,
@@ -292,12 +291,12 @@
           "speed": 9.6,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/tailwind/tw-badge.tsx"
     },
     {
       "id": 10,
       "testId": "plain-module-card",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 20,
@@ -311,12 +310,12 @@
           "speed": 7.7,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/modules/module-card.tsx"
     },
     {
       "id": 11,
       "testId": "plain-inline-card",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 33.3,
@@ -330,12 +329,12 @@
           "speed": 7.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/mixed/inline-card.tsx"
     },
     {
       "id": 12,
       "testId": "shadcn-profile-card",
-      "difficulty": "easy",
       "results": {
         "claude-code": {
           "speed": 36,
@@ -349,12 +348,12 @@
           "speed": 8.7,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/shadcn/shadcn-profile-card.tsx"
     },
     {
       "id": 13,
       "testId": "tracked-styled-card",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 18,
@@ -368,12 +367,12 @@
           "speed": 18.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-card.tsx"
     },
     {
       "id": 14,
       "testId": "memo-forwardref-button",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 24.3,
@@ -387,12 +386,12 @@
           "speed": 12.4,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-button.tsx"
     },
     {
       "id": 15,
       "testId": "radix-dialog-trigger",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 18.4,
@@ -406,12 +405,12 @@
           "speed": 13.6,
           "correct": false
         }
-      }
+      },
+      "filePath": "components/radix/radix-dialog.tsx"
     },
     {
       "id": 16,
       "testId": "radix-dropdown-item",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 9.6,
@@ -425,12 +424,12 @@
           "speed": 13.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/radix/radix-dropdown.tsx"
     },
     {
       "id": 17,
       "testId": "radix-accordion-content",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 12.9,
@@ -444,12 +443,12 @@
           "speed": 11.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/radix/radix-accordion.tsx"
     },
     {
       "id": 18,
       "testId": "animated-list-item",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 14.2,
@@ -463,12 +462,12 @@
           "speed": 9.8,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/motion/animated-list.tsx"
     },
     {
       "id": 19,
       "testId": "radix-popover-content",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 0,
@@ -482,12 +481,12 @@
           "speed": 0,
           "correct": false
         }
-      }
+      },
+      "filePath": "components/radix/radix-popover.tsx"
     },
     {
       "id": 20,
       "testId": "fragment-tree-avatar",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 63.8,
@@ -501,12 +500,12 @@
           "speed": 8,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-avatar.tsx"
     },
     {
       "id": 21,
       "testId": "suspense-lazy-content",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 12,
@@ -520,12 +519,12 @@
           "speed": 12.4,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/wrappers/suspense-lazy-loader.tsx"
     },
     {
       "id": 22,
       "testId": "stagger-grid-child",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 17.9,
@@ -539,12 +538,12 @@
           "speed": 11.8,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/motion/stagger-grid.tsx"
     },
     {
       "id": 23,
       "testId": "radix-tabs-panel-content",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 16,
@@ -558,12 +557,12 @@
           "speed": 13.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/radix/radix-tabs.tsx"
     },
     {
       "id": 24,
       "testId": "styled-data-cell",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 10,
@@ -577,12 +576,12 @@
           "speed": 10.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-data-cell.tsx"
     },
     {
       "id": 25,
       "testId": "tw-stat-revenue",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 30,
@@ -596,12 +595,12 @@
           "speed": 7.9,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/tailwind/tw-dashboard.tsx"
     },
     {
       "id": 26,
       "testId": "tw-nav-active",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 43.2,
@@ -615,12 +614,12 @@
           "speed": 20.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/tailwind/tw-nav.tsx"
     },
     {
       "id": 27,
       "testId": "module-table-badge",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 32.2,
@@ -634,12 +633,12 @@
           "speed": 14.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/modules/module-table.tsx"
     },
     {
       "id": 28,
       "testId": "module-nav-active",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 26.5,
@@ -653,12 +652,12 @@
           "speed": 19.4,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/modules/module-nav.tsx"
     },
     {
       "id": 29,
       "testId": "inline-list-first-item",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 19.1,
@@ -672,12 +671,12 @@
           "speed": 11.2,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/mixed/inline-list.tsx"
     },
     {
       "id": 30,
       "testId": "shadcn-input-name",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 15.7,
@@ -691,12 +690,12 @@
           "speed": 25,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/shadcn/shadcn-form.tsx"
     },
     {
       "id": 31,
       "testId": "recursive-tree-leaf",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 21.1,
@@ -710,12 +709,12 @@
           "speed": 12.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/recursive/recursive-tree.tsx"
     },
     {
       "id": 32,
       "testId": "recursive-menu-deepest",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 26.2,
@@ -729,12 +728,12 @@
           "speed": 9.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/recursive/recursive-menu.tsx"
     },
     {
       "id": 33,
       "testId": "fractal-innermost",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 39.6,
@@ -748,12 +747,12 @@
           "speed": 8.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/recursive/fractal-layout.tsx"
     },
     {
       "id": 34,
       "testId": "hoc-motion-styled-card",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 37.7,
@@ -767,12 +766,12 @@
           "speed": 10.8,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/motion/animated-card.tsx"
     },
     {
       "id": 35,
       "testId": "tooltip-hoc-styled-button",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 13.9,
@@ -786,12 +785,12 @@
           "speed": 11.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-button.tsx"
     },
     {
       "id": 36,
       "testId": "portal-motion-modal",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 21.4,
@@ -805,12 +804,12 @@
           "speed": 11,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/motion/animated-modal.tsx"
     },
     {
       "id": 37,
       "testId": "dynamic-renderer",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 98.7,
@@ -824,12 +823,12 @@
           "speed": 11.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/computed/dynamic-renderer.tsx"
     },
     {
       "id": 38,
       "testId": "conditional-tree-leaf",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 29,
@@ -843,12 +842,12 @@
           "speed": 12.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/computed/conditional-tree.tsx"
     },
     {
       "id": 39,
       "testId": "animated-tab-indicator",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 12,
@@ -862,12 +861,12 @@
           "speed": 11.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/motion/animated-tabs.tsx"
     },
     {
       "id": 40,
       "testId": "button-in-dialog-in-motion",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 51.3,
@@ -881,12 +880,12 @@
           "speed": 12,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/styled/styled-button.tsx"
     },
     {
       "id": 41,
       "testId": "style-clash-button",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 35.9,
@@ -900,12 +899,12 @@
           "speed": 11,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/mixed/style-clash.tsx"
     },
     {
       "id": 42,
       "testId": "tw-styled-hybrid-button",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 22.7,
@@ -919,12 +918,12 @@
           "speed": 11.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/mixed/tw-styled-hybrid.tsx"
     },
     {
       "id": 43,
       "testId": "module-tw-hybrid-item",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 33,
@@ -938,12 +937,12 @@
           "speed": 10.9,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/mixed/module-tw-hybrid.tsx"
     },
     {
       "id": 44,
       "testId": "inline-motion-button",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 23.7,
@@ -957,12 +956,12 @@
           "speed": 11.7,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/mixed/inline-motion-hybrid.tsx"
     },
     {
       "id": 45,
       "testId": "gauntlet-button",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 23.5,
@@ -976,12 +975,12 @@
           "speed": 10,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/challenge/the-gauntlet.tsx"
     },
     {
       "id": 46,
       "testId": "russian-doll-button",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 23.2,
@@ -995,12 +994,12 @@
           "speed": 9.7,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/challenge/russian-doll.tsx"
     },
     {
       "id": 47,
       "testId": "portal-inception-badge",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 0,
@@ -1014,12 +1013,12 @@
           "speed": 0,
           "correct": false
         }
-      }
+      },
+      "filePath": "components/challenge/portal-inception.tsx"
     },
     {
       "id": 48,
       "testId": "animation-maze-content",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 25.3,
@@ -1033,12 +1032,12 @@
           "speed": 11.2,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/challenge/animation-maze.tsx"
     },
     {
       "id": 49,
       "testId": "identity-depth-11",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 25.9,
@@ -1052,12 +1051,12 @@
           "speed": 13.7,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/challenge/identity-crisis.tsx"
     },
     {
       "id": 50,
       "testId": "identity-depth-1",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 24.9,
@@ -1071,12 +1070,12 @@
           "speed": 13.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/challenge/identity-crisis.tsx"
     },
     {
       "id": 51,
       "testId": "shapeshifter",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 9,
@@ -1090,12 +1089,12 @@
           "speed": 11,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/challenge/shapeshifter.tsx"
     },
     {
       "id": 52,
       "testId": "style-clash-badge",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 31.3,
@@ -1109,12 +1108,12 @@
           "speed": 17.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/mixed/style-clash.tsx"
     },
     {
       "id": 53,
       "testId": "shadcn-tooltip-button",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 32.3,
@@ -1128,12 +1127,12 @@
           "speed": 32.6,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/shadcn/shadcn-data-display.tsx"
     },
     {
       "id": 54,
       "testId": "shadcn-skeleton",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 20.9,
@@ -1147,12 +1146,12 @@
           "speed": 22.4,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/shadcn/shadcn-data-display.tsx"
     },
     {
       "id": 55,
       "testId": "tw-mini-table",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 17.8,
@@ -1166,12 +1165,12 @@
           "speed": 12.6,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/tailwind/tw-dashboard.tsx"
     },
     {
       "id": 56,
       "testId": "factory-revenue-widget",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 12.5,
@@ -1185,12 +1184,12 @@
           "speed": 12.7,
           "correct": true
         }
-      }
+      },
+      "filePath": "lib/create-widget.tsx"
     },
     {
       "id": 57,
       "testId": "factory-users-widget",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 14,
@@ -1204,12 +1203,12 @@
           "speed": 9.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "lib/create-widget.tsx"
     },
     {
       "id": 58,
       "testId": "hook-confirm-dialog",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 14.1,
@@ -1223,12 +1222,12 @@
           "speed": 8.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "hooks/use-confirm-dialog.tsx"
     },
     {
       "id": 59,
       "testId": "provider-status-badge",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 14.1,
@@ -1242,12 +1241,12 @@
           "speed": 6.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/providers/notification-provider.tsx"
     },
     {
       "id": 60,
       "testId": "barrel-primary-action",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 40,
@@ -1261,12 +1260,12 @@
           "speed": 14.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/core/interactive/primary-action.tsx"
     },
     {
       "id": 61,
       "testId": "deep-confirm-booking",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 12.7,
@@ -1280,12 +1279,12 @@
           "speed": 13,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/features/booking/actions/confirm-booking-button.tsx"
     },
     {
       "id": 62,
       "testId": "deep-display-name-field",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 11.2,
@@ -1299,12 +1298,12 @@
           "speed": 14.2,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/features/settings/profile/fields/display-name-field.tsx"
     },
     {
       "id": 63,
       "testId": "deep-metric-chart",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 15.7,
@@ -1318,12 +1317,12 @@
           "speed": 7.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/features/analytics/charts/metric-chart.tsx"
     },
     {
       "id": 64,
       "testId": "deep-rich-text-block",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 13,
@@ -1337,12 +1336,12 @@
           "speed": 12.3,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/features/editor/blocks/rich-text-block.tsx"
     },
     {
       "id": 65,
       "testId": "deep-system-banner",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 12.9,
@@ -1356,12 +1355,12 @@
           "speed": 17.9,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/features/notifications/banners/system-banner.tsx"
     },
     {
       "id": 66,
       "testId": "util-status-indicator",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 13.4,
@@ -1375,12 +1374,12 @@
           "speed": 10.7,
           "correct": true
         }
-      }
+      },
+      "filePath": "lib/render-utils.tsx"
     },
     {
       "id": 67,
       "testId": "util-formatted-currency",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 21.9,
@@ -1394,12 +1393,12 @@
           "speed": 13,
           "correct": true
         }
-      }
+      },
+      "filePath": "lib/data-formatters.tsx"
     },
     {
       "id": 68,
       "testId": "generated-integration-card",
-      "difficulty": "nightmare",
       "results": {
         "claude-code": {
           "speed": 29,
@@ -1413,12 +1412,12 @@
           "speed": 10.6,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/generated/integration-registry.tsx"
     },
     {
       "id": 69,
       "testId": "server-hero",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 23.4,
@@ -1432,12 +1431,12 @@
           "speed": 8.4,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/server/server-hero.tsx"
     },
     {
       "id": 70,
       "testId": "server-stats",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 14.7,
@@ -1451,12 +1450,12 @@
           "speed": 7.6,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/server/server-stats.tsx"
     },
     {
       "id": 71,
       "testId": "server-stat-users",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 12,
@@ -1470,12 +1469,12 @@
           "speed": 9.2,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/server/server-stat-card.tsx"
     },
     {
       "id": 72,
       "testId": "server-feature-list",
-      "difficulty": "medium",
       "results": {
         "claude-code": {
           "speed": 13.7,
@@ -1489,12 +1488,12 @@
           "speed": 9,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/server/server-feature-list.tsx"
     },
     {
       "id": 73,
       "testId": "server-feature-item",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 10.3,
@@ -1508,12 +1507,12 @@
           "speed": 8.8,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/server/server-feature-item.tsx"
     },
     {
       "id": 74,
       "testId": "server-with-client-island",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 33.9,
@@ -1527,12 +1526,12 @@
           "speed": 10.1,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/server/server-with-client-island.tsx"
     },
     {
       "id": 75,
       "testId": "client-island-button",
-      "difficulty": "hard",
       "results": {
         "claude-code": {
           "speed": 52.8,
@@ -1546,7 +1545,8 @@
           "speed": 10.5,
           "correct": true
         }
-      }
+      },
+      "filePath": "components/server/client-island.tsx"
     }
   ]
 }

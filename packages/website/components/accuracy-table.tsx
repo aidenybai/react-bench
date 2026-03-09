@@ -35,11 +35,15 @@ const AccuracyTable = () => (
       {benchData.testCases.map((testCase) => {
         return (
           <TableRow key={testCase.id}>
-            <TableCell
-              className="font-medium max-w-[200px] truncate text-[11px]"
-              title={testCase.difficulty}
-            >
-              {testCase.testId}
+            <TableCell className="font-medium max-w-[200px] truncate text-[11px]">
+              <a
+                href={`https://github.com/aidenybai/react-bench/blob/main/packages/benchmark/${testCase.filePath}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {testCase.testId}
+              </a>
             </TableCell>
             {resolverKeys.map((resolverKey) => {
               const result =

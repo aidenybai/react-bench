@@ -40,10 +40,7 @@ const pointerClickTriggerByTestId = async (
   await page.waitForTimeout(INTERACTION_SETTLE_MS);
 };
 
-export const NEEDS_INTERACTION: Record<
-  string,
-  (page: Page) => Promise<void>
-> = {
+const NEEDS_INTERACTION: Record<string, (page: Page) => Promise<void>> = {
   "radix-dropdown-item": (page) =>
     pointerClickTriggerByTestId(page, "radix-dropdown-trigger"),
 
@@ -93,11 +90,4 @@ export const NEEDS_INTERACTION: Record<
   },
 };
 
-export const normalizeFilePath = (filePath: string): string =>
-  filePath.match(/components\/.*|app\/.*/)?.[0] ?? filePath;
-
-export const isCorrectFile = (actual: string | null, expected: string): boolean => {
-  if (!actual) return false;
-  const suffix = expected.split("/").slice(1).join("/");
-  return normalizeFilePath(actual).includes(suffix);
-};
+export { NEEDS_INTERACTION };

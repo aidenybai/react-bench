@@ -2,12 +2,11 @@
 
 import { execSync } from "child_process";
 import { writeFileSync } from "fs";
-import { TEST_MANIFEST, type TestEntry } from "../test-manifest";
+import { TEST_MANIFEST, type TestEntry } from "./test-cases";
 
 const CWD = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
-const DISALLOWED_TOOLS = "Edit,Write,NotebookEdit,Bash";
+const ALLOWED_TOOLS = "Read,Grep,Glob,Bash";
 const CLI_TIMEOUT_MS = 120_000;
-const MAX_BUDGET_USD = "0.50";
 
 const SCHEMA = JSON.stringify({
   type: "object",
@@ -26,7 +25,6 @@ const SCHEMA = JSON.stringify({
 interface Result {
   id: number;
   testId: string;
-  difficulty: string;
   expected: string;
   actual: string | null;
   correct: boolean;
@@ -50,17 +48,17 @@ const runClaude = (
   const flags = [
     `-p`,
     `--output-format json`,
-    `--no-session-persistence`,
-    `--disallowed-tools "${DISALLOWED_TOOLS}"`,
+    `--tools "${ALLOWED_TOOLS}"`,
     `--json-schema '${SCHEMA}'`,
-    `--max-budget-usd ${MAX_BUDGET_USD}`,
     model ? `--model ${model}` : "",
   ]
     .filter(Boolean)
     .join(" ");
 
   const start = performance.now();
-  const output = execSync(`claude ${flags} -- ${JSON.stringify(text)}`, {
+  const output = execSync(
+    `echo "" | claude ${flags} -- ${JSON.stringify(text)}`,
+    {
     cwd: CWD,
     encoding: "utf-8",
     timeout: CLI_TIMEOUT_MS,
@@ -108,20 +106,16 @@ const normalizePath = (path: string): string =>
 
 const parseArgs = (): { entries: TestEntry[]; model: string | undefined } => {
   const args = process.argv.slice(2);
-  let difficulty: string | null = null;
   let ids: number[] | null = null;
   let model: string | undefined;
 
   for (let argIndex = 0; argIndex < args.length; argIndex++) {
-    if (args[argIndex] === "--difficulty") difficulty = args[++argIndex];
-    else if (args[argIndex] === "--ids")
+    if (args[argIndex] === "--ids")
       ids = args[++argIndex].split(",").map(Number);
     else if (args[argIndex] === "--model") model = args[++argIndex];
   }
 
   let entries = [...TEST_MANIFEST];
-  if (difficulty)
-    entries = entries.filter((entry) => entry.difficulty === difficulty);
   if (ids) entries = entries.filter((entry) => ids!.includes(entry.id));
   return { entries, model };
 };
@@ -147,7 +141,6 @@ for (const entry of entries) {
     results.push({
       id: entry.id,
       testId: entry.testId,
-      difficulty: entry.difficulty,
       expected: entry.filePath,
       actual: filePath,
       correct: isCorrect,
@@ -163,7 +156,6 @@ for (const entry of entries) {
     results.push({
       id: entry.id,
       testId: entry.testId,
-      difficulty: entry.difficulty,
       expected: entry.filePath,
       actual: null,
       correct: false,

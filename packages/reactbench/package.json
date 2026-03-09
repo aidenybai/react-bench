@@ -1,11 +1,13 @@
 {
   "name": "reactbench",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Evaluating coding agents on React.js tasks",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit"

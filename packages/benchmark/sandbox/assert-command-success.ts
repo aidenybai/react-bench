@@ -5,9 +5,18 @@ export const assertCommandSuccess = async (
   label: string,
 ): Promise<void> => {
   if (command.exitCode !== 0) {
-    const stderr = await command.stderr();
+    const [stdout, stderr] = await Promise.all([
+      command.stdout(),
+      command.stderr(),
+    ]);
+    const output = [
+      stderr ? `stderr:\n${stderr}` : "",
+      stdout ? `stdout (last 2000 chars):\n${stdout.slice(-2000)}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n\n");
     throw new Error(
-      `${label} failed with exit code ${command.exitCode}: ${stderr}`,
+      `${label} failed with exit code ${command.exitCode}:\n${output}`,
     );
   }
 };

@@ -53,6 +53,11 @@ const AccuracyTable = ({ resolverKeys }: AccuracyTableProps) => (
                   {testCase.description}
                 </p>
               )}
+              {testCase.rationale && (
+                <p className="text-[10px] text-muted-foreground/70 font-normal mt-0.5 whitespace-normal italic">
+                  {testCase.rationale}
+                </p>
+              )}
               <p className="text-[9px] text-muted-foreground/60 font-normal mt-0.5 font-mono whitespace-normal">
                 {testCase.componentName && (
                   <span>{testCase.componentName} · </span>

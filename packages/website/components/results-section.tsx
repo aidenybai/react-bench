@@ -95,8 +95,21 @@ const ResultsBarChart = ({
 const formatSpeed = (value: number) => `${value}s`;
 const formatAccuracy = (value: number) => `${value}%`;
 
-const SPEED_TICKS = [0, 5, 10, 15, 20, 25, 30];
+const SPEED_TICK_INTERVAL_S = 5;
+const SPEED_PADDING_S = 2;
 const ACCURACY_TICKS = [0, 25, 50, 75, 100];
+
+const buildSpeedScale = (
+  data: ChartDataEntry[],
+): { domain: [number, number]; ticks: number[] } => {
+  const maxValue = Math.max(...data.map((entry) => entry.value), 0);
+  const ceiling = Math.ceil((maxValue + SPEED_PADDING_S) / SPEED_TICK_INTERVAL_S) * SPEED_TICK_INTERVAL_S;
+  const ticks = Array.from(
+    { length: ceiling / SPEED_TICK_INTERVAL_S + 1 },
+    (_, index) => index * SPEED_TICK_INTERVAL_S,
+  );
+  return { domain: [0, ceiling], ticks };
+};
 
 const buildChartData = (
   filteredResolverKeys: string[],
@@ -147,6 +160,11 @@ const ResultsSection = () => {
     [filteredResolverKeys],
   );
 
+  const speedScale = useMemo(
+    () => buildSpeedScale(speedChartData),
+    [speedChartData],
+  );
+
   const accuracyChartData = useMemo(
     () => buildChartData(filteredResolverKeys, "accuracy", true),
     [filteredResolverKeys],
@@ -185,8 +203,8 @@ const ResultsSection = () => {
         </p>
         <ResultsBarChart
           data={speedChartData}
-          domain={[0, 30]}
-          ticks={SPEED_TICKS}
+          domain={speedScale.domain}
+          ticks={speedScale.ticks}
           formatValue={formatSpeed}
         />
         <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">

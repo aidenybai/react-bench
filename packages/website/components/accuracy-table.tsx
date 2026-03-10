@@ -6,6 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { TestCaseCell } from "@/components/test-case-cell";
 import { benchData, getResolverColor } from "@/lib/bench-data";
 
 interface AccuracyTableProps {
@@ -36,59 +37,39 @@ const AccuracyTable = ({ resolverKeys }: AccuracyTableProps) => (
       </TableRow>
     </TableHeader>
     <TableBody>
-      {benchData.testCases.map((testCase) => {
-        return (
-          <TableRow key={testCase.id}>
-            <TableCell className="font-medium text-[11px] max-w-[300px]">
-              <a
-                href={`https://github.com/aidenybai/react-bench/blob/main/packages/benchmark/${testCase.filePath}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                {testCase.testId}
-              </a>
-              {testCase.description && (
-                <p className="text-[10px] text-muted-foreground font-normal mt-0.5 whitespace-normal">
-                  {testCase.description}
-                </p>
-              )}
-              {testCase.rationale && (
-                <p className="text-[10px] text-muted-foreground/70 font-normal mt-0.5 whitespace-normal italic">
-                  {testCase.rationale}
-                </p>
-              )}
-              <p className="text-[9px] text-muted-foreground/60 font-normal mt-0.5 font-mono whitespace-normal">
-                {testCase.componentName && (
-                  <span>{testCase.componentName} · </span>
-                )}
-                {testCase.filePath}
-              </p>
-            </TableCell>
-            {resolverKeys.map((resolverKey) => {
-              const result =
-                testCase.results[resolverKey as keyof typeof testCase.results];
+      {benchData.testCases.map((testCase) => (
+        <TableRow key={testCase.id}>
+          <TableCell className="font-medium text-[11px] max-w-[300px]">
+            <TestCaseCell
+              testId={testCase.testId}
+              description={testCase.description}
+              componentName={testCase.componentName}
+              filePath={testCase.filePath}
+            />
+          </TableCell>
+          {resolverKeys.map((resolverKey) => {
+            const result =
+              testCase.results[resolverKey as keyof typeof testCase.results];
 
-              return (
-                <TableCell
-                  key={resolverKey}
-                  className="text-right tabular-nums text-[11px]"
-                  style={{
-                    color: result.correct
-                      ? "var(--foreground)"
-                      : "var(--muted-foreground)",
-                    backgroundColor: result.correct
-                      ? "rgba(100, 200, 150, 0.15)"
-                      : "rgba(240, 120, 120, 0.15)",
-                  }}
-                >
-                  {result.correct ? "\u2713" : "\u2717"}
-                </TableCell>
-              );
-            })}
-          </TableRow>
-        );
-      })}
+            return (
+              <TableCell
+                key={resolverKey}
+                className="text-right tabular-nums text-[11px]"
+                style={{
+                  color: result.correct
+                    ? "var(--foreground)"
+                    : "var(--muted-foreground)",
+                  backgroundColor: result.correct
+                    ? "rgba(100, 200, 150, 0.15)"
+                    : "rgba(240, 120, 120, 0.15)",
+                }}
+              >
+                {result.correct ? "\u2713" : "\u2717"}
+              </TableCell>
+            );
+          })}
+        </TableRow>
+      ))}
     </TableBody>
   </Table>
 );

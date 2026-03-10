@@ -6,6 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { TestCaseCell } from "@/components/test-case-cell";
 import { benchData, getResolverColor } from "@/lib/bench-data";
 
 const CHANGE_THRESHOLD_PERCENT = 0.5;
@@ -69,30 +70,12 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
         return (
           <TableRow key={testCase.id}>
             <TableCell className="font-medium text-[11px] max-w-[300px]">
-              <a
-                href={`https://github.com/aidenybai/react-bench/blob/main/packages/benchmark/${testCase.filePath}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                {testCase.testId}
-              </a>
-              {testCase.description && (
-                <p className="text-[10px] text-muted-foreground font-normal mt-0.5 whitespace-normal">
-                  {testCase.description}
-                </p>
-              )}
-              {testCase.rationale && (
-                <p className="text-[10px] text-muted-foreground/70 font-normal mt-0.5 whitespace-normal italic">
-                  {testCase.rationale}
-                </p>
-              )}
-              <p className="text-[9px] text-muted-foreground/60 font-normal mt-0.5 font-mono whitespace-normal">
-                {testCase.componentName && (
-                  <span>{testCase.componentName} · </span>
-                )}
-                {testCase.filePath}
-              </p>
+              <TestCaseCell
+                testId={testCase.testId}
+                description={testCase.description}
+                componentName={testCase.componentName}
+                filePath={testCase.filePath}
+              />
             </TableCell>
             {resolverKeys.map((resolverKey) => {
               const result =

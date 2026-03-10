@@ -39,8 +39,15 @@ const runDetached = async (
     detached: true,
   });
 
-  for await (const log of handle.logs()) {
-    process.stdout.write(log.data);
+  try {
+    for await (const log of handle.logs()) {
+      process.stdout.write(log.data);
+    }
+  } catch {
+    // HACK: Bun's fetch has a BrotliDecompressionError bug with long-running
+    // streamed responses. If log streaming breaks, we fall back to waiting
+    // for the command to finish without live output.
+    console.log(`  (log stream interrupted, waiting for ${label} to finish...)`);
   }
 
   const finished = await handle.wait();
@@ -87,7 +94,7 @@ const commitAndPushInSandbox = async (sandbox: Sandbox): Promise<void> => {
       cmd: "sh",
       args: [
         "-c",
-        "git fetch --unshallow origin main 2>/dev/null; git fetch origin main && git rebase origin/main && git push",
+        "git checkout -- . && git clean -fd && git fetch --unshallow origin main 2>/dev/null; git fetch origin main && git rebase origin/main && git push",
       ],
       cwd: WORKING_DIRECTORY,
       detached: true,
@@ -137,7 +144,7 @@ const runBenchmark = async () => {
     );
   }
 
-  const githubToken = process.env.GITHUB_TOKEN ?? process.env.GH_TOKEN;
+  const githubToken = process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN;
 
   const sandboxEnv: Record<string, string> = {
     ANTHROPIC_API_KEY: anthropicApiKey,

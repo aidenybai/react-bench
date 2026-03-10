@@ -1,4 +1,4 @@
-export const SANDBOX_TIMEOUT_MS = 1_800_000;
+export const SANDBOX_TIMEOUT_MS = 3_600_000;
 export const SNAPSHOT_TIMEOUT_MS = 600_000;
 export const GIT_CLONE_DEPTH = 1;
 export const MAX_PUSH_ATTEMPTS = 3;

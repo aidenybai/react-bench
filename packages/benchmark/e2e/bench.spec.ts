@@ -73,7 +73,6 @@ interface ResolverResult {
   found: boolean;
   ms: number;
   correct: boolean;
-  earlyAborted: boolean;
 }
 
 const EMPTY_RESOLVER_RESULT: ResolverResult = {
@@ -82,7 +81,6 @@ const EMPTY_RESOLVER_RESULT: ResolverResult = {
   found: false,
   ms: 0,
   correct: false,
-  earlyAborted: false,
 };
 
 interface EntryResult {
@@ -163,7 +161,6 @@ const runCliPhase = async (
     entryIndex: number;
     resolver: (typeof CLI_RESOLVERS)[number];
     prompt: string;
-    expectedFilePath: string;
   }
 
   const cliTasks: CliTask[] = [];
@@ -181,7 +178,6 @@ const runCliPhase = async (
         entryIndex: collectedIndex,
         resolver: cliResolver,
         prompt: cliResolver.buildPrompt(entry, elementContext),
-        expectedFilePath: entry.filePath,
       });
     }
   }
@@ -196,7 +192,7 @@ const runCliPhase = async (
   await pool(
     cliTasks.map(
       (task) => () =>
-        task.resolver.run(task.prompt, task.expectedFilePath).then((result) => {
+        task.resolver.run(task.prompt).then((result) => {
           const taskKey = `${collected[task.entryIndex].entry.id}:${task.resolver.name}`;
           cliCompleted[taskKey] = result;
           saveCheckpoint({ browserCollected: collected, cliCompleted });
@@ -220,7 +216,6 @@ const runCliPhase = async (
         componentName: result.componentName,
         found: Boolean(result.filePath),
         ms: result.ms,
-        earlyAborted: result.earlyAborted,
       };
     }
   }
@@ -242,7 +237,6 @@ const buildResults = (
       const resolverResult = browserResults[resolverName];
       resolvers[resolverName] = {
         ...resolverResult,
-        earlyAborted: resolverResult.earlyAborted ?? false,
         correct: isCorrectFile(resolverResult.filePath, entry.filePath),
       };
     }
@@ -297,9 +291,6 @@ const printResults = (
     const correctEntries = results.filter(
       (entryResult) => entryResult.resolvers[resolverName]?.correct,
     );
-    const earlyAbortedCount = results.filter(
-      (entryResult) => entryResult.resolvers[resolverName]?.earlyAborted,
-    ).length;
     const geometricMeanTiming =
       correctEntries.length > 0
         ? formatTime(
@@ -312,12 +303,8 @@ const printResults = (
             ),
           )
         : "\u2014";
-    const autoStopInfo =
-      earlyAbortedCount > 0
-        ? ` \u2014 auto-stop: ${earlyAbortedCount}/${results.length}`
-        : "";
     console.log(
-      `  ${resolverName.padEnd(22)} ${correctEntries.length}/${results.length} correct (${((correctEntries.length / results.length) * 100).toFixed(0)}%) \u2014 geomean ${geometricMeanTiming}${autoStopInfo}`,
+      `  ${resolverName.padEnd(22)} ${correctEntries.length}/${results.length} correct (${((correctEntries.length / results.length) * 100).toFixed(0)}%) \u2014 geomean ${geometricMeanTiming}`,
     );
   }
   console.log();

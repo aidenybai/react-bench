@@ -25,7 +25,6 @@ interface CliResult {
   filePath: string | null;
   componentName: string | null;
   ms: number;
-  earlyAborted: boolean;
 }
 
 interface PromptStrategy {
@@ -36,14 +35,14 @@ interface PromptStrategy {
 interface CliBackend {
   name: string;
   model: string;
-  runOnce: (prompt: string, expectedFilePath?: string) => Promise<CliResult>;
+  runOnce: (prompt: string) => Promise<CliResult>;
 }
 
 interface CliResolver {
   name: string;
   backend: string;
   buildPrompt: (entry: TestEntry, context: ElementContext) => string;
-  run: (prompt: string, expectedFilePath?: string) => Promise<CliResult>;
+  run: (prompt: string) => Promise<CliResult>;
 }
 
 const EMPTY_ELEMENT_CONTEXT: ElementContext = {

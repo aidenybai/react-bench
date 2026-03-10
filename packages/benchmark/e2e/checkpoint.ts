@@ -14,7 +14,6 @@ interface BrowserCollected {
       componentName: string | null;
       found: boolean;
       ms: number;
-      earlyAborted?: boolean;
     }
   >;
   elementContext: ElementContext;
@@ -25,7 +24,6 @@ interface CliCompleted {
   filePath: string | null;
   componentName: string | null;
   ms: number;
-  earlyAborted: boolean;
 }
 
 interface Checkpoint {

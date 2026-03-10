@@ -4,60 +4,34 @@ import type { CliResult } from "./types";
 const DEFAULT_TIMEOUT_MS = 180_000;
 const MAX_RETRIES = 1;
 
+const TARGET_FILE_PREAMBLE =
+  "Output the file path you believe is correct in <target_file>path/to/file.tsx</target_file> tags.";
+
 interface StreamingResult {
   stdout: string;
   ms: number;
-  bootMs: number;
-  earlyAborted: boolean;
+  targetFile: string | null;
 }
 
-const FILE_READ_COMMANDS = ["cat ", "head ", "tail ", "nl ", "sed "];
+const TARGET_FILE_REGEX = /<target_file>(.*?)<\\?\/target_file>/;
 
-const containsFileAccess = (
-  stdout: string,
-  expectedFilePath: string,
-): boolean => {
-  const lines = stdout.split("\n").filter(Boolean);
-  for (const line of lines) {
-    try {
-      const parsed = JSON.parse(line);
-
-      if (parsed.type === "assistant" && parsed.message?.content) {
-        for (const block of parsed.message.content) {
-          if (block.type !== "tool_use") continue;
-
-          if (block.name === "Read" || block.name === "Grep") {
-            const inputPath =
-              block.input?.file_path ?? block.input?.path ?? "";
-            if (inputPath.includes(expectedFilePath)) return true;
-          }
-        }
-      }
-
-      if (parsed.type === "item.started" || parsed.type === "item.completed") {
-        const item = parsed.item;
-        if (
-          item?.type === "command_execution" &&
-          typeof item.command === "string" &&
-          item.command.includes(expectedFilePath) &&
-          FILE_READ_COMMANDS.some((readCommand) =>
-            item.command.includes(readCommand),
-          )
-        ) {
-          return true;
-        }
-      }
-    } catch {
-      continue;
-    }
-  }
-  return false;
+const extractTargetFile = (stdout: string): string | null => {
+  const match = stdout.match(TARGET_FILE_REGEX);
+  return match?.[1]?.trim() ?? null;
 };
+
+const buildResult = (
+  stdout: string,
+  startTime: number,
+): StreamingResult => ({
+  stdout,
+  ms: performance.now() - startTime,
+  targetFile: extractTargetFile(stdout),
+});
 
 const runStreamingCommand = (
   command: string,
   cwd: string,
-  expectedFilePath?: string,
   timeoutMs = DEFAULT_TIMEOUT_MS,
 ): Promise<StreamingResult> =>
   new Promise((resolve) => {
@@ -69,7 +43,6 @@ const runStreamingCommand = (
 
     let stdout = "";
     let didResolve = false;
-    let firstChunkAt = 0;
 
     const resolveOnce = (result: StreamingResult): void => {
       if (didResolve) return;
@@ -78,43 +51,21 @@ const runStreamingCommand = (
     };
 
     child.stdout.on("data", (chunk: Buffer) => {
-      if (!firstChunkAt) firstChunkAt = performance.now();
       stdout += chunk.toString();
 
-      if (
-        expectedFilePath &&
-        !didResolve &&
-        containsFileAccess(stdout, expectedFilePath)
-      ) {
+      const targetFile = extractTargetFile(stdout);
+      if (!didResolve && targetFile) {
         child.kill();
-        const now = performance.now();
-        resolveOnce({
-          stdout,
-          ms: now - start,
-          bootMs: firstChunkAt - start,
-          earlyAborted: true,
-        });
+        resolveOnce({ stdout, ms: performance.now() - start, targetFile });
       }
     });
 
     child.on("close", () => {
-      const now = performance.now();
-      resolveOnce({
-        stdout,
-        ms: now - start,
-        bootMs: firstChunkAt ? firstChunkAt - start : now - start,
-        earlyAborted: false,
-      });
+      resolveOnce(buildResult(stdout, start));
     });
 
     child.on("error", () => {
-      const now = performance.now();
-      resolveOnce({
-        stdout,
-        ms: now - start,
-        bootMs: firstChunkAt ? firstChunkAt - start : now - start,
-        earlyAborted: false,
-      });
+      resolveOnce(buildResult(stdout, start));
     });
 
     setTimeout(() => {
@@ -123,16 +74,15 @@ const runStreamingCommand = (
   });
 
 const runWithRetries = async (
-  runOnce: (prompt: string, expectedFilePath?: string) => Promise<CliResult>,
+  runOnce: (prompt: string) => Promise<CliResult>,
   prompt: string,
-  expectedFilePath?: string,
 ): Promise<CliResult> => {
-  const result = await runOnce(prompt, expectedFilePath);
+  const result = await runOnce(prompt);
   if (result.filePath) return result;
 
   for (let retry = 0; retry < MAX_RETRIES; retry++) {
     const retryPrompt = `${prompt}\n\nIMPORTANT: You must find and READ the actual source file. The component definitely exists in this codebase. Try searching with different patterns, then READ the file you find.`;
-    const retryResult = await runOnce(retryPrompt, expectedFilePath);
+    const retryResult = await runOnce(retryPrompt);
     if (retryResult.filePath) {
       return { ...retryResult, ms: result.ms + retryResult.ms };
     }
@@ -158,5 +108,5 @@ const pool = async <T>(
   return results;
 };
 
-export { runStreamingCommand, runWithRetries, pool };
+export { runStreamingCommand, runWithRetries, pool, TARGET_FILE_PREAMBLE };
 export type { StreamingResult };

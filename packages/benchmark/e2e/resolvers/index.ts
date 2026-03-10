@@ -16,8 +16,7 @@ const CLI_RESOLVERS: CliResolver[] = BACKENDS.flatMap((backend) =>
     name: resolverName(strategy.name, backend.name),
     backend: backend.name,
     buildPrompt: strategy.buildPrompt,
-    run: (prompt: string, expectedFilePath?: string) =>
-      runWithRetries(backend.runOnce, prompt, expectedFilePath),
+    run: (prompt: string) => runWithRetries(backend.runOnce, prompt),
   })),
 );
 

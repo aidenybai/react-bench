@@ -1,6 +1,6 @@
 import { join } from "path";
 import type { CliBackend, CliResult } from "./types";
-import { runStreamingCommand } from "./streaming-runner";
+import { runStreamingCommand, TARGET_FILE_PREAMBLE } from "./streaming-runner";
 
 const MODEL = process.env.BENCH_MODEL ?? "claude-sonnet-4-6";
 const TIMEOUT_MS = 180_000;
@@ -49,31 +49,21 @@ const parseOutput = (
   return { filePath: null, componentName: null };
 };
 
-const runOnce = async (
-  prompt: string,
-  expectedFilePath?: string,
-): Promise<CliResult> => {
-  const command = `echo "" | claude ${FLAGS} -- ${JSON.stringify(prompt)}`;
-  const result = await runStreamingCommand(
-    command,
-    CWD,
-    expectedFilePath,
-    TIMEOUT_MS,
-  );
+const runOnce = async (prompt: string): Promise<CliResult> => {
+  const promptWithPreamble = `${TARGET_FILE_PREAMBLE}\n\n${prompt}`;
+  const command = `echo "" | claude ${FLAGS} -- ${JSON.stringify(promptWithPreamble)}`;
+  const result = await runStreamingCommand(command, CWD, TIMEOUT_MS);
 
-  const reasoningMs = result.ms - result.bootMs;
-
-  if (result.earlyAborted) {
+  if (result.targetFile) {
     return {
-      filePath: expectedFilePath!,
+      filePath: result.targetFile,
       componentName: null,
-      ms: reasoningMs,
-      earlyAborted: true,
+      ms: result.ms,
     };
   }
 
   const { filePath, componentName } = parseOutput(result.stdout);
-  return { filePath, componentName, ms: reasoningMs, earlyAborted: false };
+  return { filePath, componentName, ms: result.ms };
 };
 
 const claudeBackend: CliBackend = {

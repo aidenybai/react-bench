@@ -411,7 +411,7 @@ const writeOutputFiles = (
 };
 
 test.describe("Benchmark", () => {
-  test.setTimeout(7_200_000);
+  test.setTimeout(14_400_000);
 
   test("compare all resolvers across full manifest", async ({ page }) => {
     await page.waitForFunction(

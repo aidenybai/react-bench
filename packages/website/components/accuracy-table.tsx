@@ -39,7 +39,7 @@ const AccuracyTable = ({ resolverKeys }: AccuracyTableProps) => (
       {benchData.testCases.map((testCase) => {
         return (
           <TableRow key={testCase.id}>
-            <TableCell className="font-medium max-w-[200px] truncate text-[11px]">
+            <TableCell className="font-medium text-[11px] max-w-[260px]">
               <a
                 href={`https://github.com/aidenybai/react-bench/blob/main/packages/benchmark/${testCase.filePath}`}
                 target="_blank"
@@ -48,6 +48,11 @@ const AccuracyTable = ({ resolverKeys }: AccuracyTableProps) => (
               >
                 {testCase.testId}
               </a>
+              {testCase.description && (
+                <p className="text-[10px] text-muted-foreground font-normal mt-0.5 whitespace-normal">
+                  {testCase.description}
+                </p>
+              )}
             </TableCell>
             {resolverKeys.map((resolverKey) => {
               const result =

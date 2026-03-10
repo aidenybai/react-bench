@@ -88,6 +88,7 @@ const EMPTY_RESOLVER_RESULT: ResolverResult = {
 interface EntryResult {
   id: number;
   testId: string;
+  description: string;
   expected: string;
   resolvers: Record<string, ResolverResult>;
   error?: string;
@@ -248,6 +249,7 @@ const buildResults = (
     return {
       id: entry.id,
       testId: entry.testId,
+      description: entry.description,
       expected: entry.filePath,
       resolvers,
       ...(error ? { error } : {}),
@@ -387,6 +389,7 @@ const writeOutputFiles = (
     testCases: results.map((entryResult) => ({
       id: entryResult.id,
       testId: entryResult.testId,
+      description: entryResult.description,
       filePath: entryResult.expected,
       results: Object.fromEntries(
         resolverNames.map((resolverName) => {

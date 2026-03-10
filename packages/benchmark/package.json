@@ -8,7 +8,9 @@
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "typecheck": "tsc --noEmit",
-    "lint": "oxlint"
+    "lint": "oxlint",
+    "sandbox:snapshot": "bun sandbox/create-snapshot.ts",
+    "sandbox:run": "bun sandbox/run-in-sandbox.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.7",
@@ -38,6 +40,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vercel/sandbox": "^1.8.0",
     "oxlint": "^0.16.0",
     "tailwindcss": "^4",
     "typescript": "^5"

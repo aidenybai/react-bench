@@ -12,5 +12,7 @@ bench-detail.svg
 playwright-report
 test-results
 
+.env.local
+
 .vercel
 .cursor

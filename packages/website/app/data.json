@@ -82,7 +82,8 @@
           "speed": 69.2,
           "correct": true
         }
-      }
+      },
+      "description": "Motion list item inside AnimatePresence"
     },
     {
       "id": 2,
@@ -109,7 +110,8 @@
           "speed": 49.3,
           "correct": true
         }
-      }
+      },
+      "description": "Animation Maze: AnimatePresence -> motion -> styled -> Radix Accordion -> forceMount -> motion -> styled -> content"
     },
     {
       "id": 3,
@@ -136,7 +138,8 @@
           "speed": 17.7,
           "correct": true
         }
-      }
+      },
+      "description": "A base badge component re-exported through 3 barrel files with different names at each level (BaseBadge → CommonBadge → UIBadge)"
     },
     {
       "id": 4,
@@ -163,7 +166,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "A base button component re-exported through 3 barrel index.ts files (primitives → common → ui) with name changes at each level"
     },
     {
       "id": 5,
@@ -190,7 +194,8 @@
           "speed": 26.3,
           "correct": true
         }
-      }
+      },
+      "description": "A base input component re-exported through 3 barrel index.ts files with name aliases at each re-export level"
     },
     {
       "id": 6,
@@ -217,7 +222,8 @@
           "speed": 7.6,
           "correct": true
         }
-      }
+      },
+      "description": "Primary action button re-exported through 3 barrel index.ts files"
     },
     {
       "id": 7,
@@ -244,7 +250,8 @@
           "speed": 13.4,
           "correct": true
         }
-      }
+      },
+      "description": "Styled-button inside Radix Dialog inside motion card"
     },
     {
       "id": 8,
@@ -271,7 +278,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "Client component button rendered inside a server component wrapper (server → client boundary crossing)"
     },
     {
       "id": 9,
@@ -298,7 +306,8 @@
           "speed": 8,
           "correct": true
         }
-      }
+      },
+      "description": "An icon+label inline component used across multiple parent components in different modules"
     },
     {
       "id": 10,
@@ -325,7 +334,8 @@
           "speed": 7.6,
           "correct": true
         }
-      }
+      },
+      "description": "A key-value pair display component used in multiple different parent containers"
     },
     {
       "id": 11,
@@ -352,7 +362,8 @@
           "speed": 8.8,
           "correct": true
         }
-      }
+      },
+      "description": "A tiny colored status dot component shared across many parent components"
     },
     {
       "id": 12,
@@ -379,7 +390,8 @@
           "speed": 4.6,
           "correct": true
         }
-      }
+      },
+      "description": "An empty state SVG illustration component defined inside lib/empty-state-config.tsx alongside empty state configuration"
     },
     {
       "id": 13,
@@ -406,7 +418,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "An error fallback UI component defined inside lib/error-config.tsx alongside error boundary configuration"
     },
     {
       "id": 14,
@@ -433,7 +446,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A skeleton loading block component defined inside lib/skeleton-config.tsx alongside skeleton configuration constants"
     },
     {
       "id": 15,
@@ -460,7 +474,8 @@
           "speed": 7.5,
           "correct": true
         }
-      }
+      },
+      "description": "ApiKeyRow component deeply nested at 6 directory levels"
     },
     {
       "id": 16,
@@ -487,7 +502,8 @@
           "speed": 7.3,
           "correct": true
         }
-      }
+      },
+      "description": "ApprovalButton component deeply nested at 6 directory levels"
     },
     {
       "id": 17,
@@ -514,7 +530,8 @@
           "speed": 4.7,
           "correct": true
         }
-      }
+      },
+      "description": "BuildStatus component deeply nested at 6 directory levels"
     },
     {
       "id": 18,
@@ -541,7 +558,8 @@
           "speed": 9.7,
           "correct": true
         }
-      }
+      },
+      "description": "CalendarCell component deeply nested at 6 directory levels"
     },
     {
       "id": 19,
@@ -568,7 +586,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "ChannelBadge component deeply nested at 6 directory levels"
     },
     {
       "id": 20,
@@ -595,7 +614,8 @@
           "speed": 11.3,
           "correct": true
         }
-      }
+      },
+      "description": "ChecklistItem component deeply nested at 6 directory levels"
     },
     {
       "id": 21,
@@ -622,7 +642,8 @@
           "speed": 7.4,
           "correct": true
         }
-      }
+      },
+      "description": "CommentBubble component deeply nested at 6 directory levels"
     },
     {
       "id": 22,
@@ -649,7 +670,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "CommitMessage component deeply nested at 6 directory levels"
     },
     {
       "id": 23,
@@ -676,7 +698,8 @@
           "speed": 7.2,
           "correct": true
         }
-      }
+      },
+      "description": "ConditionRow component deeply nested at 6 directory levels"
     },
     {
       "id": 24,
@@ -703,7 +726,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "CouponInput component deeply nested at 6 directory levels"
     },
     {
       "id": 25,
@@ -730,7 +754,8 @@
           "speed": 8.1,
           "correct": true
         }
-      }
+      },
+      "description": "CronDisplay component deeply nested at 6 directory levels"
     },
     {
       "id": 26,
@@ -757,7 +782,8 @@
           "speed": 7.7,
           "correct": true
         }
-      }
+      },
+      "description": "DiffHeader component deeply nested at 6 directory levels"
     },
     {
       "id": 27,
@@ -784,7 +810,8 @@
           "speed": 8.7,
           "correct": true
         }
-      }
+      },
+      "description": "FilterChip component deeply nested at 6 directory levels"
     },
     {
       "id": 28,
@@ -811,7 +838,8 @@
           "speed": 7.8,
           "correct": true
         }
-      }
+      },
+      "description": "FunnelStep component deeply nested at 6 directory levels"
     },
     {
       "id": 29,
@@ -838,7 +866,8 @@
           "speed": 8.1,
           "correct": true
         }
-      }
+      },
+      "description": "An invoice row component deeply nested in features/billing/invoices/rows/"
     },
     {
       "id": 30,
@@ -865,7 +894,8 @@
           "speed": 7.1,
           "correct": true
         }
-      }
+      },
+      "description": "A log entry row component deeply nested in features/monitoring/logs/entries/"
     },
     {
       "id": 31,
@@ -892,7 +922,8 @@
           "speed": 8.5,
           "correct": true
         }
-      }
+      },
+      "description": "MediaThumb component deeply nested at 6 directory levels"
     },
     {
       "id": 32,
@@ -919,7 +950,8 @@
           "speed": 7.8,
           "correct": true
         }
-      }
+      },
+      "description": "MentionTag component deeply nested at 6 directory levels"
     },
     {
       "id": 33,
@@ -946,7 +978,8 @@
           "speed": 7.5,
           "correct": true
         }
-      }
+      },
+      "description": "SVG bar chart component in features/analytics/charts/"
     },
     {
       "id": 34,
@@ -973,7 +1006,8 @@
           "speed": 6.6,
           "correct": true
         }
-      }
+      },
+      "description": "MetricSparkline component deeply nested at 6 directory levels"
     },
     {
       "id": 35,
@@ -1000,7 +1034,8 @@
           "speed": 6.8,
           "correct": true
         }
-      }
+      },
+      "description": "A permission chip component 5 directories deep in features/admin/roles/permissions/"
     },
     {
       "id": 36,
@@ -1027,7 +1062,8 @@
           "speed": 8.1,
           "correct": true
         }
-      }
+      },
+      "description": "A pipeline stage indicator component in features/ci/pipelines/stages/"
     },
     {
       "id": 37,
@@ -1054,7 +1090,8 @@
           "speed": 8.8,
           "correct": true
         }
-      }
+      },
+      "description": "ReactionChip component deeply nested at 6 directory levels"
     },
     {
       "id": 38,
@@ -1081,7 +1118,8 @@
           "speed": 7.7,
           "correct": true
         }
-      }
+      },
+      "description": "RoleSelector component deeply nested at 6 directory levels"
     },
     {
       "id": 39,
@@ -1108,7 +1146,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "SegmentPill component deeply nested at 6 directory levels"
     },
     {
       "id": 40,
@@ -1135,7 +1174,8 @@
           "speed": 6.9,
           "correct": true
         }
-      }
+      },
+      "description": "A shipping label component 5 directories deep in features/orders/shipping/labels/"
     },
     {
       "id": 41,
@@ -1162,7 +1202,8 @@
           "speed": 8.6,
           "correct": true
         }
-      }
+      },
+      "description": "SortButton component deeply nested at 6 directory levels"
     },
     {
       "id": 42,
@@ -1189,7 +1230,8 @@
           "speed": 9.2,
           "correct": true
         }
-      }
+      },
+      "description": "SubscriptionBadge component deeply nested at 6 directory levels"
     },
     {
       "id": 43,
@@ -1216,7 +1258,8 @@
           "speed": 5.6,
           "correct": true
         }
-      }
+      },
+      "description": "TagInput component deeply nested at 6 directory levels"
     },
     {
       "id": 44,
@@ -1243,7 +1286,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "TaxLine component deeply nested at 6 directory levels"
     },
     {
       "id": 45,
@@ -1270,7 +1314,8 @@
           "speed": 7.4,
           "correct": true
         }
-      }
+      },
+      "description": "A message thread bubble component deeply nested in features/messaging/threads/ directory"
     },
     {
       "id": 46,
@@ -1297,7 +1342,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "A circle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
     },
     {
       "id": 47,
@@ -1324,7 +1370,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A diamond icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
     },
     {
       "id": 48,
@@ -1351,7 +1398,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A large widget dynamically resolved from a registry object by size key at runtime"
     },
     {
       "id": 49,
@@ -1378,7 +1426,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A medium widget selected at runtime from a component registry — the registry maps string keys to React components"
     },
     {
       "id": 50,
@@ -1405,7 +1454,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "Dynamic renderer with computed component selection via styled-components"
     },
     {
       "id": 51,
@@ -1432,7 +1482,8 @@
           "speed": 7.9,
           "correct": true
         }
-      }
+      },
+      "description": "A sidebar layout dynamically resolved from a layout registry — one of 5 possible layout variants"
     },
     {
       "id": 52,
@@ -1459,7 +1510,8 @@
           "speed": 6.6,
           "correct": true
         }
-      }
+      },
+      "description": "A single layout dynamically resolved from a layout registry — one of 5 possible layout variants"
     },
     {
       "id": 53,
@@ -1486,7 +1538,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A small widget selected at runtime from a registry map in widget-registry.tsx — one of 3 possible sizes"
     },
     {
       "id": 54,
@@ -1513,7 +1566,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A square icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
     },
     {
       "id": 55,
@@ -1540,7 +1594,8 @@
           "speed": 6.7,
           "correct": true
         }
-      }
+      },
+      "description": "A stacked layout dynamically resolved from a layout registry — one of 5 possible layout variants"
     },
     {
       "id": 56,
@@ -1567,7 +1622,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "A star icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
     },
     {
       "id": 57,
@@ -1594,7 +1650,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "A three layout dynamically resolved from a layout registry — one of 5 possible layout variants"
     },
     {
       "id": 58,
@@ -1621,7 +1678,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "A triangle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
     },
     {
       "id": 59,
@@ -1648,7 +1706,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "A two layout dynamically resolved from a layout registry — one of 5 possible layout variants"
     },
     {
       "id": 60,
@@ -1675,7 +1734,8 @@
           "speed": 11,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated average session duration display created by createDisplay() in a lib file"
     },
     {
       "id": 61,
@@ -1702,7 +1762,8 @@
           "speed": 12.1,
           "correct": false
         }
-      }
+      },
+      "description": "Factory-generated conversion rate display created by createDisplay() in a lib file"
     },
     {
       "id": 62,
@@ -1729,7 +1790,8 @@
           "speed": 6,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated CPU metric card created by createCard() in a lib file"
     },
     {
       "id": 63,
@@ -1756,7 +1818,8 @@
           "speed": 8,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated delete action button created by createAction() in a lib file"
     },
     {
       "id": 64,
@@ -1783,7 +1846,8 @@
           "speed": 13.3,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated Details tab button created by createTab() in a lib file"
     },
     {
       "id": 65,
@@ -1810,7 +1874,8 @@
           "speed": 7.5,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated Disk metric card created by createCard() in a lib file"
     },
     {
       "id": 66,
@@ -1837,7 +1902,8 @@
           "speed": 8.6,
           "correct": false
         }
-      }
+      },
+      "description": "Factory-generated error count display created by createDisplay() in a lib file"
     },
     {
       "id": 67,
@@ -1864,7 +1930,8 @@
           "speed": 11.3,
           "correct": false
         }
-      }
+      },
+      "description": "Factory-generated History tab button created by createTab() in a lib file"
     },
     {
       "id": 68,
@@ -1891,7 +1958,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated info alert component created by createAlert() in a lib file"
     },
     {
       "id": 69,
@@ -1918,7 +1986,8 @@
           "speed": 13.6,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated Latency metric card created by createCard() in a lib file"
     },
     {
       "id": 70,
@@ -1945,7 +2014,8 @@
           "speed": 10.4,
           "correct": false
         }
-      }
+      },
+      "description": "Factory-generated Logs tab button created by createTab() in a lib file"
     },
     {
       "id": 71,
@@ -1972,7 +2042,8 @@
           "speed": 6.6,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated Memory metric card created by createCard() in a lib file"
     },
     {
       "id": 72,
@@ -1999,7 +2070,8 @@
           "speed": 6,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated notes textarea field created by createField() in a lib file"
     },
     {
       "id": 73,
@@ -2026,7 +2098,8 @@
           "speed": 10.7,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated Overview tab button created by createTab() in a lib file"
     },
     {
       "id": 74,
@@ -2053,7 +2126,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated priority badge component created by createBadge() in a lib file"
     },
     {
       "id": 75,
@@ -2080,7 +2154,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated revenue metric widget created by createWidget() in a lib file"
     },
     {
       "id": 76,
@@ -2107,7 +2182,8 @@
           "speed": 9.9,
           "correct": false
         }
-      }
+      },
+      "description": "Factory-generated role badge component created by createBadge() in a lib file"
     },
     {
       "id": 77,
@@ -2134,7 +2210,8 @@
           "speed": 16.7,
           "correct": false
         }
-      }
+      },
+      "description": "Factory-generated search input field created by createField() in a lib file"
     },
     {
       "id": 78,
@@ -2161,7 +2238,8 @@
           "speed": 5.6,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated Settings tab button created by createTab() in a lib file"
     },
     {
       "id": 79,
@@ -2188,7 +2266,8 @@
           "speed": 8.6,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated status badge component created by createBadge() in a lib file"
     },
     {
       "id": 80,
@@ -2215,7 +2294,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated success alert component created by createAlert() in a lib file"
     },
     {
       "id": 81,
@@ -2242,7 +2322,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated Throughput metric card created by createCard() in a lib file"
     },
     {
       "id": 82,
@@ -2269,7 +2350,8 @@
           "speed": 11.2,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated total sales display created by createDisplay() in a lib file"
     },
     {
       "id": 83,
@@ -2296,7 +2378,8 @@
           "speed": 6.8,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated Uptime metric card created by createCard() in a lib file"
     },
     {
       "id": 84,
@@ -2323,7 +2406,8 @@
           "speed": 17.7,
           "correct": false
         }
-      }
+      },
+      "description": "Factory-generated URL input field created by createField() in a lib file"
     },
     {
       "id": 85,
@@ -2350,7 +2434,8 @@
           "speed": 7.5,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated active users widget created by createWidget() in a lib file"
     },
     {
       "id": 86,
@@ -2377,7 +2462,8 @@
           "speed": 11.2,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated version badge component created by createBadge() in a lib file"
     },
     {
       "id": 87,
@@ -2404,7 +2490,8 @@
           "speed": 12.8,
           "correct": true
         }
-      }
+      },
+      "description": "Factory-generated warning alert component created by createAlert() in a lib file"
     },
     {
       "id": 88,
@@ -2431,7 +2518,8 @@
           "speed": 9.3,
           "correct": true
         }
-      }
+      },
+      "description": "Innermost cell in fractal subdividing grid"
     },
     {
       "id": 89,
@@ -2458,7 +2546,8 @@
           "speed": 6.4,
           "correct": true
         }
-      }
+      },
+      "description": "Integration card from auto-generated registry file with component lookup by slug"
     },
     {
       "id": 90,
@@ -2485,7 +2574,8 @@
           "speed": 5.8,
           "correct": true
         }
-      }
+      },
+      "description": "A alert notification component in components/feedback/notification-box.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 91,
@@ -2512,7 +2602,8 @@
           "speed": 6.9,
           "correct": true
         }
-      }
+      },
+      "description": "A card footer component in components/layout/panel-actions.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 92,
@@ -2539,7 +2630,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "A chart bar component in components/data-display/metric-bar.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 93,
@@ -2566,7 +2658,8 @@
           "speed": 4.7,
           "correct": true
         }
-      }
+      },
+      "description": "A checkbox component in components/forms/agreement-check.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 94,
@@ -2593,7 +2686,8 @@
           "speed": 5.8,
           "correct": true
         }
-      }
+      },
+      "description": "A code snippet component in components/data-display/source-preview.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 95,
@@ -2620,7 +2714,8 @@
           "speed": 5.8,
           "correct": true
         }
-      }
+      },
+      "description": "A card displaying a single metric value with label"
     },
     {
       "id": 96,
@@ -2647,7 +2742,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A date cell component in components/data-display/calendar-entry.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 97,
@@ -2674,7 +2770,8 @@
           "speed": 9.9,
           "correct": true
         }
-      }
+      },
+      "description": "A drawer sheet component in components/overlays/slide-panel.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 98,
@@ -2701,7 +2798,8 @@
           "speed": 8.3,
           "correct": false
         }
-      }
+      },
+      "description": "A dropdown menu component in components/overlays/action-menu.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 99,
@@ -2728,7 +2826,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A file icon component in components/data-display/document-icon.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 100,
@@ -2755,7 +2854,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A footer text component in components/layout/page-footer.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 101,
@@ -2782,7 +2882,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A grid cell displaying a KPI value with trend indicator"
     },
     {
       "id": 102,
@@ -2809,7 +2910,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A tooltip that appears on hover with contextual information"
     },
     {
       "id": 103,
@@ -2836,7 +2938,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "A icon button component in components/actions/tool-trigger.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 104,
@@ -2863,7 +2966,8 @@
           "speed": 8.5,
           "correct": true
         }
-      }
+      },
+      "description": "A link button component in components/actions/redirect-action.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 105,
@@ -2890,7 +2994,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A list tile component in components/data-display/item-tile.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 106,
@@ -2917,7 +3022,8 @@
           "speed": 4.6,
           "correct": true
         }
-      }
+      },
+      "description": "A spinning loading indicator for async operations"
     },
     {
       "id": 107,
@@ -2944,7 +3050,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "A menu item component in components/navigation/command-item.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 108,
@@ -2971,7 +3078,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A modal dialog for handling user interrupts and confirmations"
     },
     {
       "id": 109,
@@ -2998,7 +3106,8 @@
           "speed": 7.1,
           "correct": true
         }
-      }
+      },
+      "description": "A navigation link that handles route transitions"
     },
     {
       "id": 110,
@@ -3025,7 +3134,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "A single breadcrumb segment in a navigation trail"
     },
     {
       "id": 111,
@@ -3052,7 +3162,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A popover panel component in components/overlays/info-panel.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 112,
@@ -3079,7 +3190,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "A progress bar component in components/feedback/progress-tracker.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 113,
@@ -3106,7 +3218,8 @@
           "speed": 10,
           "correct": true
         }
-      }
+      },
+      "description": "A radio option component in components/forms/plan-selector.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 114,
@@ -3133,7 +3246,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "A search bar component in components/navigation/query-input.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 115,
@@ -3160,7 +3274,8 @@
           "speed": 4.5,
           "correct": true
         }
-      }
+      },
+      "description": "A select dropdown component in components/forms/option-picker.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 116,
@@ -3187,7 +3302,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "A horizontal divider separating content sections"
     },
     {
       "id": 117,
@@ -3214,7 +3330,8 @@
           "speed": 5.5,
           "correct": true
         }
-      }
+      },
+      "description": "A sidebar link component in components/navigation/drawer-entry.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 118,
@@ -3241,7 +3358,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "A slider component in components/forms/range-picker.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 119,
@@ -3268,7 +3386,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "A colored tag showing process status (running/stopped/error)"
     },
     {
       "id": 120,
@@ -3295,7 +3414,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "A step circle component in components/feedback/milestone-dot.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 121,
@@ -3322,7 +3442,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A submit button component that triggers form submission"
     },
     {
       "id": 122,
@@ -3349,7 +3470,8 @@
           "speed": 4.6,
           "correct": true
         }
-      }
+      },
+      "description": "A switch component in components/forms/binary-toggle.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 123,
@@ -3376,7 +3498,8 @@
           "speed": 5.5,
           "correct": true
         }
-      }
+      },
+      "description": "A button inside a segmented control / tab bar"
     },
     {
       "id": 124,
@@ -3403,7 +3526,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "A table row component in components/data-display/record-row.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 125,
@@ -3430,7 +3554,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "A tag list component in components/data-display/label-group.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 126,
@@ -3457,7 +3582,8 @@
           "speed": 7.4,
           "correct": true
         }
-      }
+      },
+      "description": "A text area component in components/forms/content-editor.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 127,
@@ -3484,7 +3610,8 @@
           "speed": 7.8,
           "correct": true
         }
-      }
+      },
+      "description": "A text input with built-in validation and error display"
     },
     {
       "id": 128,
@@ -3511,7 +3638,8 @@
           "speed": 6.4,
           "correct": true
         }
-      }
+      },
+      "description": "A toast bar component in components/feedback/snack-message.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 129,
@@ -3538,7 +3666,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A toggle switch for enabling/disabling a feature flag"
     },
     {
       "id": 130,
@@ -3565,7 +3694,8 @@
           "speed": 7.2,
           "correct": true
         }
-      }
+      },
+      "description": "A chip/token component with a remove button"
     },
     {
       "id": 131,
@@ -3592,7 +3722,8 @@
           "speed": 13.9,
           "correct": true
         }
-      }
+      },
+      "description": "A upload zone component in components/forms/drop-target.tsx — file name and directory don't match what you'd search for"
     },
     {
       "id": 132,
@@ -3619,7 +3750,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "An avatar component showing the current user session"
     },
     {
       "id": 133,
@@ -3646,7 +3778,8 @@
           "speed": 13.1,
           "correct": true
         }
-      }
+      },
+      "description": "HOC-wrapped motion card inside styled layout wrappers"
     },
     {
       "id": 134,
@@ -3673,7 +3806,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "A 'Copied!' feedback component defined inside hooks/use-clipboard-copy.tsx alongside a clipboard hook"
     },
     {
       "id": 135,
@@ -3700,7 +3834,8 @@
           "speed": 4.7,
           "correct": true
         }
-      }
+      },
+      "description": "Confirmation dialog component defined inside a React hook file"
     },
     {
       "id": 136,
@@ -3727,7 +3862,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "A drag handle grip component defined inside hooks/use-drag-drop.tsx alongside a drag-and-drop hook"
     },
     {
       "id": 137,
@@ -3754,7 +3890,8 @@
           "speed": 8.5,
           "correct": true
         }
-      }
+      },
+      "description": "A pagination navigation component defined inside a React hook file (use-pagination.tsx)"
     },
     {
       "id": 138,
@@ -3781,7 +3918,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "A resize grip corner component defined inside hooks/use-resizable.tsx alongside a resizable panel hook"
     },
     {
       "id": 139,
@@ -3808,7 +3946,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "A keyboard shortcut hint badge defined inside hooks/use-keyboard-shortcuts.tsx alongside a keyboard shortcut hook"
     },
     {
       "id": 140,
@@ -3835,7 +3974,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "A toast notification message component defined inside a React hook file (use-toast-queue.tsx)"
     },
     {
       "id": 141,
@@ -3862,7 +4002,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "An undo action toast component defined inside hooks/use-undo-stack.tsx alongside an undo stack hook"
     },
     {
       "id": 142,
@@ -3889,7 +4030,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "A wizard step indicator component defined inside a React hook file (use-wizard.tsx)"
     },
     {
       "id": 143,
@@ -3916,7 +4058,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "Identity Crisis depth-1: same DOM output as depth-11 but at shallowest depth"
     },
     {
       "id": 144,
@@ -3943,7 +4086,8 @@
           "speed": 5.6,
           "correct": true
         }
-      }
+      },
+      "description": "Identity Crisis depth-11: same button component buried under HOCs + fragments + memo"
     },
     {
       "id": 145,
@@ -3970,7 +4114,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "First item in pure inline-styled list"
     },
     {
       "id": 146,
@@ -3997,7 +4142,8 @@
           "speed": 6.1,
           "correct": true
         }
-      }
+      },
+      "description": "motion.button with whileHover/whileTap and pure inline styles"
     },
     {
       "id": 147,
@@ -4024,7 +4170,8 @@
           "speed": 7.1,
           "correct": true
         }
-      }
+      },
+      "description": "Styled-components button inside memo + forwardRef (withTooltip HOC)"
     },
     {
       "id": 148,
@@ -4051,7 +4198,8 @@
           "speed": 4.5,
           "correct": true
         }
-      }
+      },
+      "description": "A button component defined inside hooks/use-action-sheet.tsx alongside a custom hook"
     },
     {
       "id": 149,
@@ -4078,7 +4226,8 @@
           "speed": 7.6,
           "correct": true
         }
-      }
+      },
+      "description": "A card component defined in lib/ui-primitives.tsx — a utility file, not the components directory"
     },
     {
       "id": 150,
@@ -4105,7 +4254,8 @@
           "speed": 7.2,
           "correct": true
         }
-      }
+      },
+      "description": "A list component defined inside lib/layout-config.tsx — a configuration file that also exports React components"
     },
     {
       "id": 151,
@@ -4132,7 +4282,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "CSS Module status badge inside table row"
     },
     {
       "id": 152,
@@ -4159,7 +4310,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "List item with CSS Module transition class AND Tailwind layout classes"
     },
     {
       "id": 153,
@@ -4186,7 +4338,8 @@
           "speed": 7.5,
           "correct": true
         }
-      }
+      },
+      "description": "Top-level motion animated-card"
     },
     {
       "id": 154,
@@ -4213,7 +4366,8 @@
           "speed": 8.1,
           "correct": true
         }
-      }
+      },
+      "description": "Card using only inline React styles (zero class names)"
     },
     {
       "id": 155,
@@ -4240,7 +4394,8 @@
           "speed": 7,
           "correct": true
         }
-      }
+      },
+      "description": "Plain styled-components badge with no nesting"
     },
     {
       "id": 156,
@@ -4267,7 +4422,8 @@
           "speed": 5.6,
           "correct": true
         }
-      }
+      },
+      "description": "Plain styled-components button at top level"
     },
     {
       "id": 157,
@@ -4294,7 +4450,8 @@
           "speed": 7.1,
           "correct": true
         }
-      }
+      },
+      "description": "Plain styled-components card with no wrapping complexity"
     },
     {
       "id": 158,
@@ -4321,7 +4478,8 @@
           "speed": 6.7,
           "correct": true
         }
-      }
+      },
+      "description": "Plain Tailwind badge component"
     },
     {
       "id": 159,
@@ -4348,7 +4506,8 @@
           "speed": 8.1,
           "correct": true
         }
-      }
+      },
+      "description": "Plain Tailwind button with variant classes"
     },
     {
       "id": 160,
@@ -4375,7 +4534,8 @@
           "speed": 7.3,
           "correct": true
         }
-      }
+      },
+      "description": "Plain Tailwind utility-class card"
     },
     {
       "id": 161,
@@ -4402,7 +4562,8 @@
           "speed": 15.5,
           "correct": true
         }
-      }
+      },
+      "description": "Portal modal with motion enter/exit animation"
     },
     {
       "id": 162,
@@ -4429,7 +4590,8 @@
           "speed": 5.9,
           "correct": true
         }
-      }
+      },
+      "description": "A banner rendered via createPortal to document.body, exported under a different name than its internal definition"
     },
     {
       "id": 163,
@@ -4456,7 +4618,8 @@
           "speed": 6.2,
           "correct": true
         }
-      }
+      },
+      "description": "An auth status badge component exported from a context provider file alongside the AuthProvider"
     },
     {
       "id": 164,
@@ -4483,7 +4646,8 @@
           "speed": 4.7,
           "correct": true
         }
-      }
+      },
+      "description": "A network connectivity status dot component exported from a connectivity context provider file"
     },
     {
       "id": 165,
@@ -4510,7 +4674,8 @@
           "speed": 6.3,
           "correct": true
         }
-      }
+      },
+      "description": "A feature flag status badge exported from a feature flag context provider file"
     },
     {
       "id": 166,
@@ -4537,7 +4702,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "A locale display label component exported from a locale context provider file"
     },
     {
       "id": 167,
@@ -4564,7 +4730,8 @@
           "speed": 5.5,
           "correct": true
         }
-      }
+      },
+      "description": "Status badge component exported from a context provider file alongside the provider itself"
     },
     {
       "id": 168,
@@ -4591,7 +4758,8 @@
           "speed": 8.5,
           "correct": true
         }
-      }
+      },
+      "description": "Radix Accordion content panel"
     },
     {
       "id": 169,
@@ -4618,7 +4786,8 @@
           "speed": 9.9,
           "correct": true
         }
-      }
+      },
+      "description": "Radix Dropdown menu item (portal + compound component)"
     },
     {
       "id": 170,
@@ -4645,7 +4814,8 @@
           "speed": 11.5,
           "correct": true
         }
-      }
+      },
+      "description": "Radix Tabs panel content inside tab container"
     },
     {
       "id": 171,
@@ -4672,7 +4842,8 @@
           "speed": 9.9,
           "correct": true
         }
-      }
+      },
+      "description": "Radix Tabs trigger button (no deep nesting)"
     },
     {
       "id": 172,
@@ -4699,7 +4870,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "Deepest item in 10-level recursive menu"
     },
     {
       "id": 173,
@@ -4726,7 +4898,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "Recursive tree leaf at depth=8 (one of 256 identical leaves)"
     },
     {
       "id": 174,
@@ -4753,7 +4926,8 @@
           "speed": 7,
           "correct": true
         }
-      }
+      },
+      "description": "Russian Doll: 15+ HOC layers wrapping a single styled motion button"
     },
     {
       "id": 175,
@@ -4780,7 +4954,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "Server component list rendered inside ServerHero, iterating over data with nested ServerFeatureItem children"
     },
     {
       "id": 176,
@@ -4807,7 +4982,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "Top-level server component section with nested server children, no 'use client' directive"
     },
     {
       "id": 177,
@@ -4834,7 +5010,8 @@
           "speed": 7.8,
           "correct": true
         }
-      }
+      },
+      "description": "Server stat card at 3 levels deep in server component tree (ServerHero → ServerStats → ServerStatCard)"
     },
     {
       "id": 178,
@@ -4861,7 +5038,8 @@
           "speed": 7.5,
           "correct": true
         }
-      }
+      },
+      "description": "Server component that wraps a client island component across the server/client boundary"
     },
     {
       "id": 179,
@@ -4888,7 +5066,8 @@
           "speed": 11.5,
           "correct": true
         }
-      }
+      },
+      "description": "shadcn/ui Card + Avatar + Badge + Button composite"
     },
     {
       "id": 180,
@@ -4915,7 +5094,8 @@
           "speed": 5.9,
           "correct": true
         }
-      }
+      },
+      "description": "shadcn/ui Skeleton inside Card that conditionally renders based on loading state"
     },
     {
       "id": 181,
@@ -4942,7 +5122,8 @@
           "speed": 7.7,
           "correct": true
         }
-      }
+      },
+      "description": "shadcn/ui Tooltip trigger button inside Card with Skeleton loading state and Radix portal"
     },
     {
       "id": 182,
@@ -4969,7 +5150,8 @@
           "speed": 7.2,
           "correct": true
         }
-      }
+      },
+      "description": "Shapeshifter: component that changes its entire tree shape on a timer"
     },
     {
       "id": 183,
@@ -4996,7 +5178,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "AwayIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
     },
     {
       "id": 184,
@@ -5023,7 +5206,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "BusyIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
     },
     {
       "id": 185,
@@ -5050,7 +5234,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "A churn rate stat card — one of 5 similar stat card components in the same file"
     },
     {
       "id": 186,
@@ -5077,7 +5262,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "CpuTile — one of 5 similar components in the same file (metric-tiles.tsx)"
     },
     {
       "id": 187,
@@ -5104,7 +5290,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "CreateButton — one of 4 similar components in the same file (crud-buttons.tsx)"
     },
     {
       "id": 188,
@@ -5131,7 +5318,8 @@
           "speed": 4.6,
           "correct": true
         }
-      }
+      },
+      "description": "DeleteButton — one of 4 similar components in the same file (crud-buttons.tsx)"
     },
     {
       "id": 189,
@@ -5158,7 +5346,8 @@
           "speed": 5.6,
           "correct": true
         }
-      }
+      },
+      "description": "DiskTile — one of 5 similar components in the same file (metric-tiles.tsx)"
     },
     {
       "id": 190,
@@ -5185,7 +5374,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "DndIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
     },
     {
       "id": 191,
@@ -5212,7 +5402,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "GpuTile — one of 5 similar components in the same file (metric-tiles.tsx)"
     },
     {
       "id": 192,
@@ -5239,7 +5430,8 @@
           "speed": 4.7,
           "correct": true
         }
-      }
+      },
+      "description": "HelpIcon — one of 6 similar components in the same file (nav-icons.tsx)"
     },
     {
       "id": 193,
@@ -5266,7 +5458,8 @@
           "speed": 5.8,
           "correct": true
         }
-      }
+      },
+      "description": "HomeIcon — one of 6 similar components in the same file (nav-icons.tsx)"
     },
     {
       "id": 194,
@@ -5293,7 +5486,8 @@
           "speed": 4.5,
           "correct": true
         }
-      }
+      },
+      "description": "LogoutIcon — one of 6 similar components in the same file (nav-icons.tsx)"
     },
     {
       "id": 195,
@@ -5320,7 +5514,8 @@
           "speed": 5.5,
           "correct": true
         }
-      }
+      },
+      "description": "An MRR stat card — one of 5 similar stat card components in a shared file"
     },
     {
       "id": 196,
@@ -5347,7 +5542,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "OfflineIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
     },
     {
       "id": 197,
@@ -5374,7 +5570,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "OnlineIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
     },
     {
       "id": 198,
@@ -5401,7 +5598,8 @@
           "speed": 5.5,
           "correct": true
         }
-      }
+      },
+      "description": "An orders stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)"
     },
     {
       "id": 199,
@@ -5428,7 +5626,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "ProfileIcon — one of 6 similar components in the same file (nav-icons.tsx)"
     },
     {
       "id": 200,
@@ -5455,7 +5654,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "RamTile — one of 5 similar components in the same file (metric-tiles.tsx)"
     },
     {
       "id": 201,
@@ -5482,7 +5682,8 @@
           "speed": 5.5,
           "correct": true
         }
-      }
+      },
+      "description": "A retention stat card — one of 5 similar stat card components defined in the same file"
     },
     {
       "id": 202,
@@ -5509,7 +5710,8 @@
           "speed": 6.2,
           "correct": true
         }
-      }
+      },
+      "description": "A revenue stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)"
     },
     {
       "id": 203,
@@ -5536,7 +5738,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "SearchIcon — one of 6 similar components in the same file (nav-icons.tsx)"
     },
     {
       "id": 204,
@@ -5563,7 +5766,8 @@
           "speed": 4.7,
           "correct": true
         }
-      }
+      },
+      "description": "SettingsIcon — one of 6 similar components in the same file (nav-icons.tsx)"
     },
     {
       "id": 205,
@@ -5590,7 +5794,8 @@
           "speed": 5,
           "correct": true
         }
-      }
+      },
+      "description": "UpdateButton — one of 4 similar components in the same file (crud-buttons.tsx)"
     },
     {
       "id": 206,
@@ -5617,7 +5822,8 @@
           "speed": 9.4,
           "correct": true
         }
-      }
+      },
+      "description": "Motion stagger-grid child with delay animation"
     },
     {
       "id": 207,
@@ -5644,7 +5850,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "Style Clash badge: styled-components span with Tailwind + inline styles + CSS Module parent - 4 styling systems on one element"
     },
     {
       "id": 208,
@@ -5671,7 +5878,8 @@
           "speed": 9.7,
           "correct": true
         }
-      }
+      },
+      "description": "Button with styled-components + Tailwind + CSS Modules + inline styles on same elements"
     },
     {
       "id": 209,
@@ -5698,7 +5906,8 @@
           "speed": 7.6,
           "correct": true
         }
-      }
+      },
+      "description": "Styled-components data-cell inside compound table structure"
     },
     {
       "id": 210,
@@ -5725,7 +5934,8 @@
           "speed": 5.6,
           "correct": true
         }
-      }
+      },
+      "description": "Suspense-wrapped lazy-loaded component"
     },
     {
       "id": 211,
@@ -5752,7 +5962,8 @@
           "speed": 15.1,
           "correct": true
         }
-      }
+      },
+      "description": "Radix Tooltip on styled button inside withTooltip HOC"
     },
     {
       "id": 212,
@@ -5779,7 +5990,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "Styled-components card wrapped in withTracking HOC"
     },
     {
       "id": 213,
@@ -5806,7 +6018,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "Tailwind MiniTable nested inside TwDashboard - inner component has no direct export, only accessible via parent"
     },
     {
       "id": 214,
@@ -5833,7 +6046,8 @@
           "speed": 6.7,
           "correct": true
         }
-      }
+      },
+      "description": "Tailwind stat card nested inside dashboard grid"
     },
     {
       "id": 215,
@@ -5860,7 +6074,8 @@
           "speed": 7.3,
           "correct": true
         }
-      }
+      },
+      "description": "Button with Tailwind classes AND styled-components hover/active behavior"
     },
     {
       "id": 216,
@@ -5887,7 +6102,8 @@
           "speed": 5.3,
           "correct": true
         }
-      }
+      },
+      "description": "An overlapping avatar stack component defined inside lib/avatar-utils.tsx among avatar generation utilities"
     },
     {
       "id": 217,
@@ -5914,7 +6130,8 @@
           "speed": 6.5,
           "correct": true
         }
-      }
+      },
+      "description": "A color swatch component defined inside lib/color-swatch.tsx among color conversion utilities"
     },
     {
       "id": 218,
@@ -5941,7 +6158,8 @@
           "speed": 5.5,
           "correct": true
         }
-      }
+      },
+      "description": "A copy-to-clipboard button component defined inside lib/clipboard-helpers.tsx among clipboard utilities"
     },
     {
       "id": 219,
@@ -5968,7 +6186,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "A notification count badge component defined inside lib/counter-utils.tsx among counting utilities"
     },
     {
       "id": 220,
@@ -5995,7 +6214,8 @@
           "speed": 5.6,
           "correct": true
         }
-      }
+      },
+      "description": "A diff line component defined inside lib/diff-renderer.tsx among diff computation utilities"
     },
     {
       "id": 221,
@@ -6022,7 +6242,8 @@
           "speed": 6,
           "correct": true
         }
-      }
+      },
+      "description": "A human-readable duration label defined inside lib/duration-utils.tsx among time duration utilities"
     },
     {
       "id": 222,
@@ -6049,7 +6270,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "An empty state placeholder component defined inside lib/placeholder-utils.tsx among placeholder generation utilities"
     },
     {
       "id": 223,
@@ -6076,7 +6298,8 @@
           "speed": 6.4,
           "correct": true
         }
-      }
+      },
+      "description": "An external link component with icon defined inside lib/link-utils.tsx among URL utilities"
     },
     {
       "id": 224,
@@ -6103,7 +6326,8 @@
           "speed": 4.9,
           "correct": true
         }
-      }
+      },
+      "description": "Formatted currency component defined inside lib/data-formatters.tsx among formatting utilities"
     },
     {
       "id": 225,
@@ -6130,7 +6354,8 @@
           "speed": 5.9,
           "correct": true
         }
-      }
+      },
+      "description": "A keyboard hotkey label component defined inside lib/hotkey-registry.tsx among hotkey registration utilities"
     },
     {
       "id": 226,
@@ -6157,7 +6382,8 @@
           "speed": 5.7,
           "correct": true
         }
-      }
+      },
+      "description": "A markdown preview component defined inside lib/markdown-utils.tsx among markdown parsing utilities"
     },
     {
       "id": 227,
@@ -6184,7 +6410,8 @@
           "speed": 5.1,
           "correct": true
         }
-      }
+      },
+      "description": "A conditional permission gate component defined inside lib/permission-utils.tsx among authorization utilities"
     },
     {
       "id": 228,
@@ -6211,7 +6438,8 @@
           "speed": 5.2,
           "correct": true
         }
-      }
+      },
+      "description": "A circular progress ring SVG component defined inside lib/progress-helpers.tsx among utility functions"
     },
     {
       "id": 229,
@@ -6238,7 +6466,8 @@
           "speed": 4.8,
           "correct": true
         }
-      }
+      },
+      "description": "A relative time display (e.g. '2 hours ago') component defined inside lib/date-helpers.tsx among date formatting utilities"
     },
     {
       "id": 230,
@@ -6265,7 +6494,8 @@
           "speed": 4.7,
           "correct": true
         }
-      }
+      },
+      "description": "A scroll progress indicator component defined inside lib/scroll-indicator.tsx among scroll position utilities"
     },
     {
       "id": 231,
@@ -6292,7 +6522,8 @@
           "speed": 5.4,
           "correct": true
         }
-      }
+      },
+      "description": "Status indicator component defined inside lib/render-utils.tsx among utility functions"
     },
     {
       "id": 232,
@@ -6319,7 +6550,8 @@
           "speed": 5.8,
           "correct": true
         }
-      }
+      },
+      "description": "A timeline dot marker component defined inside lib/timeline-utils.tsx among time formatting utilities"
     },
     {
       "id": 233,
@@ -6346,7 +6578,8 @@
           "speed": 4.4,
           "correct": true
         }
-      }
+      },
+      "description": "A text truncation component defined inside lib/text-helpers.tsx among text manipulation utilities"
     }
   ]
 }

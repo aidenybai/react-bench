@@ -33,7 +33,7 @@ jobs:
         run: pnpm install
 
       - name: Run benchmark in sandbox
-        run: pnpm --filter @react-bench/benchmark sandbox:run
+        run: pnpm benchmark
         env:
           SANDBOX_SNAPSHOT_ID: ${{ secrets.SANDBOX_SNAPSHOT_ID }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

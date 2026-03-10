@@ -68,7 +68,7 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
 
         return (
           <TableRow key={testCase.id}>
-            <TableCell className="font-medium text-[11px] max-w-[260px]">
+            <TableCell className="font-medium text-[11px] max-w-[300px]">
               <a
                 href={`https://github.com/aidenybai/react-bench/blob/main/packages/benchmark/${testCase.filePath}`}
                 target="_blank"
@@ -82,6 +82,12 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
                   {testCase.description}
                 </p>
               )}
+              <p className="text-[9px] text-muted-foreground/60 font-normal mt-0.5 font-mono whitespace-normal">
+                {testCase.componentName && (
+                  <span>{testCase.componentName} · </span>
+                )}
+                {testCase.filePath}
+              </p>
             </TableCell>
             {resolverKeys.map((resolverKey) => {
               const result =

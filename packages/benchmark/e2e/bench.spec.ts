@@ -89,6 +89,7 @@ interface EntryResult {
   id: number;
   testId: string;
   description: string;
+  componentName: string;
   expected: string;
   resolvers: Record<string, ResolverResult>;
   error?: string;
@@ -250,6 +251,7 @@ const buildResults = (
       id: entry.id,
       testId: entry.testId,
       description: entry.description,
+      componentName: entry.componentName,
       expected: entry.filePath,
       resolvers,
       ...(error ? { error } : {}),
@@ -390,6 +392,7 @@ const writeOutputFiles = (
       id: entryResult.id,
       testId: entryResult.testId,
       description: entryResult.description,
+      componentName: entryResult.componentName,
       filePath: entryResult.expected,
       results: Object.fromEntries(
         resolverNames.map((resolverName) => {

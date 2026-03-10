@@ -83,7 +83,8 @@
           "correct": true
         }
       },
-      "description": "Motion list item inside AnimatePresence"
+      "description": "Motion list item inside AnimatePresence",
+      "componentName": "AnimatedList"
     },
     {
       "id": 2,
@@ -111,7 +112,8 @@
           "correct": true
         }
       },
-      "description": "Animation Maze: AnimatePresence -> motion -> styled -> Radix Accordion -> forceMount -> motion -> styled -> content"
+      "description": "Animation Maze: AnimatePresence -> motion -> styled -> Radix Accordion -> forceMount -> motion -> styled -> content",
+      "componentName": "AnimationMaze"
     },
     {
       "id": 3,
@@ -139,7 +141,8 @@
           "correct": true
         }
       },
-      "description": "A base badge component re-exported through 3 barrel files with different names at each level (BaseBadge → CommonBadge → UIBadge)"
+      "description": "A base badge component re-exported through 3 barrel files with different names at each level (BaseBadge → CommonBadge → UIBadge)",
+      "componentName": "BaseBadge"
     },
     {
       "id": 4,
@@ -167,7 +170,8 @@
           "correct": true
         }
       },
-      "description": "A base button component re-exported through 3 barrel index.ts files (primitives → common → ui) with name changes at each level"
+      "description": "A base button component re-exported through 3 barrel index.ts files (primitives → common → ui) with name changes at each level",
+      "componentName": "BaseButton"
     },
     {
       "id": 5,
@@ -195,7 +199,8 @@
           "correct": true
         }
       },
-      "description": "A base input component re-exported through 3 barrel index.ts files with name aliases at each re-export level"
+      "description": "A base input component re-exported through 3 barrel index.ts files with name aliases at each re-export level",
+      "componentName": "BaseInput"
     },
     {
       "id": 6,
@@ -223,7 +228,8 @@
           "correct": true
         }
       },
-      "description": "Primary action button re-exported through 3 barrel index.ts files"
+      "description": "Primary action button re-exported through 3 barrel index.ts files",
+      "componentName": "PrimaryAction"
     },
     {
       "id": 7,
@@ -251,7 +257,8 @@
           "correct": true
         }
       },
-      "description": "Styled-button inside Radix Dialog inside motion card"
+      "description": "Styled-button inside Radix Dialog inside motion card",
+      "componentName": "StyledButton"
     },
     {
       "id": 8,
@@ -279,7 +286,8 @@
           "correct": true
         }
       },
-      "description": "Client component button rendered inside a server component wrapper (server → client boundary crossing)"
+      "description": "Client component button rendered inside a server component wrapper (server → client boundary crossing)",
+      "componentName": "ClientIsland"
     },
     {
       "id": 9,
@@ -307,7 +315,8 @@
           "correct": true
         }
       },
-      "description": "An icon+label inline component used across multiple parent components in different modules"
+      "description": "An icon+label inline component used across multiple parent components in different modules",
+      "componentName": "IconLabel"
     },
     {
       "id": 10,
@@ -335,7 +344,8 @@
           "correct": true
         }
       },
-      "description": "A key-value pair display component used in multiple different parent containers"
+      "description": "A key-value pair display component used in multiple different parent containers",
+      "componentName": "KeyValue"
     },
     {
       "id": 11,
@@ -363,7 +373,8 @@
           "correct": true
         }
       },
-      "description": "A tiny colored status dot component shared across many parent components"
+      "description": "A tiny colored status dot component shared across many parent components",
+      "componentName": "StatusDot"
     },
     {
       "id": 12,
@@ -391,7 +402,8 @@
           "correct": true
         }
       },
-      "description": "An empty state SVG illustration component defined inside lib/empty-state-config.tsx alongside empty state configuration"
+      "description": "An empty state SVG illustration component defined inside lib/empty-state-config.tsx alongside empty state configuration",
+      "componentName": "EmptyIllustration"
     },
     {
       "id": 13,
@@ -419,7 +431,8 @@
           "correct": true
         }
       },
-      "description": "An error fallback UI component defined inside lib/error-config.tsx alongside error boundary configuration"
+      "description": "An error fallback UI component defined inside lib/error-config.tsx alongside error boundary configuration",
+      "componentName": "ErrorFallback"
     },
     {
       "id": 14,
@@ -447,7 +460,8 @@
           "correct": true
         }
       },
-      "description": "A skeleton loading block component defined inside lib/skeleton-config.tsx alongside skeleton configuration constants"
+      "description": "A skeleton loading block component defined inside lib/skeleton-config.tsx alongside skeleton configuration constants",
+      "componentName": "SkeletonBlock"
     },
     {
       "id": 15,
@@ -475,7 +489,8 @@
           "correct": true
         }
       },
-      "description": "ApiKeyRow component deeply nested at 6 directory levels"
+      "description": "ApiKeyRow component deeply nested at 6 directory levels",
+      "componentName": "ApiKeyRow"
     },
     {
       "id": 16,
@@ -503,7 +518,8 @@
           "correct": true
         }
       },
-      "description": "ApprovalButton component deeply nested at 6 directory levels"
+      "description": "ApprovalButton component deeply nested at 6 directory levels",
+      "componentName": "ApprovalButton"
     },
     {
       "id": 17,
@@ -531,7 +547,8 @@
           "correct": true
         }
       },
-      "description": "BuildStatus component deeply nested at 6 directory levels"
+      "description": "BuildStatus component deeply nested at 6 directory levels",
+      "componentName": "BuildStatus"
     },
     {
       "id": 18,
@@ -559,7 +576,8 @@
           "correct": true
         }
       },
-      "description": "CalendarCell component deeply nested at 6 directory levels"
+      "description": "CalendarCell component deeply nested at 6 directory levels",
+      "componentName": "CalendarCell"
     },
     {
       "id": 19,
@@ -587,7 +605,8 @@
           "correct": true
         }
       },
-      "description": "ChannelBadge component deeply nested at 6 directory levels"
+      "description": "ChannelBadge component deeply nested at 6 directory levels",
+      "componentName": "ChannelBadge"
     },
     {
       "id": 20,
@@ -615,7 +634,8 @@
           "correct": true
         }
       },
-      "description": "ChecklistItem component deeply nested at 6 directory levels"
+      "description": "ChecklistItem component deeply nested at 6 directory levels",
+      "componentName": "ChecklistItem"
     },
     {
       "id": 21,
@@ -643,7 +663,8 @@
           "correct": true
         }
       },
-      "description": "CommentBubble component deeply nested at 6 directory levels"
+      "description": "CommentBubble component deeply nested at 6 directory levels",
+      "componentName": "CommentBubble"
     },
     {
       "id": 22,
@@ -671,7 +692,8 @@
           "correct": true
         }
       },
-      "description": "CommitMessage component deeply nested at 6 directory levels"
+      "description": "CommitMessage component deeply nested at 6 directory levels",
+      "componentName": "CommitMessage"
     },
     {
       "id": 23,
@@ -699,7 +721,8 @@
           "correct": true
         }
       },
-      "description": "ConditionRow component deeply nested at 6 directory levels"
+      "description": "ConditionRow component deeply nested at 6 directory levels",
+      "componentName": "ConditionRow"
     },
     {
       "id": 24,
@@ -727,7 +750,8 @@
           "correct": true
         }
       },
-      "description": "CouponInput component deeply nested at 6 directory levels"
+      "description": "CouponInput component deeply nested at 6 directory levels",
+      "componentName": "CouponInput"
     },
     {
       "id": 25,
@@ -755,7 +779,8 @@
           "correct": true
         }
       },
-      "description": "CronDisplay component deeply nested at 6 directory levels"
+      "description": "CronDisplay component deeply nested at 6 directory levels",
+      "componentName": "CronDisplay"
     },
     {
       "id": 26,
@@ -783,7 +808,8 @@
           "correct": true
         }
       },
-      "description": "DiffHeader component deeply nested at 6 directory levels"
+      "description": "DiffHeader component deeply nested at 6 directory levels",
+      "componentName": "DiffHeader"
     },
     {
       "id": 27,
@@ -811,7 +837,8 @@
           "correct": true
         }
       },
-      "description": "FilterChip component deeply nested at 6 directory levels"
+      "description": "FilterChip component deeply nested at 6 directory levels",
+      "componentName": "FilterChip"
     },
     {
       "id": 28,
@@ -839,7 +866,8 @@
           "correct": true
         }
       },
-      "description": "FunnelStep component deeply nested at 6 directory levels"
+      "description": "FunnelStep component deeply nested at 6 directory levels",
+      "componentName": "FunnelStep"
     },
     {
       "id": 29,
@@ -867,7 +895,8 @@
           "correct": true
         }
       },
-      "description": "An invoice row component deeply nested in features/billing/invoices/rows/"
+      "description": "An invoice row component deeply nested in features/billing/invoices/rows/",
+      "componentName": "InvoiceRow"
     },
     {
       "id": 30,
@@ -895,7 +924,8 @@
           "correct": true
         }
       },
-      "description": "A log entry row component deeply nested in features/monitoring/logs/entries/"
+      "description": "A log entry row component deeply nested in features/monitoring/logs/entries/",
+      "componentName": "LogEntry"
     },
     {
       "id": 31,
@@ -923,7 +953,8 @@
           "correct": true
         }
       },
-      "description": "MediaThumb component deeply nested at 6 directory levels"
+      "description": "MediaThumb component deeply nested at 6 directory levels",
+      "componentName": "MediaThumb"
     },
     {
       "id": 32,
@@ -951,7 +982,8 @@
           "correct": true
         }
       },
-      "description": "MentionTag component deeply nested at 6 directory levels"
+      "description": "MentionTag component deeply nested at 6 directory levels",
+      "componentName": "MentionTag"
     },
     {
       "id": 33,
@@ -979,7 +1011,8 @@
           "correct": true
         }
       },
-      "description": "SVG bar chart component in features/analytics/charts/"
+      "description": "SVG bar chart component in features/analytics/charts/",
+      "componentName": "MetricChart"
     },
     {
       "id": 34,
@@ -1007,7 +1040,8 @@
           "correct": true
         }
       },
-      "description": "MetricSparkline component deeply nested at 6 directory levels"
+      "description": "MetricSparkline component deeply nested at 6 directory levels",
+      "componentName": "MetricSparkline"
     },
     {
       "id": 35,
@@ -1035,7 +1069,8 @@
           "correct": true
         }
       },
-      "description": "A permission chip component 5 directories deep in features/admin/roles/permissions/"
+      "description": "A permission chip component 5 directories deep in features/admin/roles/permissions/",
+      "componentName": "PermissionChip"
     },
     {
       "id": 36,
@@ -1063,7 +1098,8 @@
           "correct": true
         }
       },
-      "description": "A pipeline stage indicator component in features/ci/pipelines/stages/"
+      "description": "A pipeline stage indicator component in features/ci/pipelines/stages/",
+      "componentName": "PipelineStage"
     },
     {
       "id": 37,
@@ -1091,7 +1127,8 @@
           "correct": true
         }
       },
-      "description": "ReactionChip component deeply nested at 6 directory levels"
+      "description": "ReactionChip component deeply nested at 6 directory levels",
+      "componentName": "ReactionChip"
     },
     {
       "id": 38,
@@ -1119,7 +1156,8 @@
           "correct": true
         }
       },
-      "description": "RoleSelector component deeply nested at 6 directory levels"
+      "description": "RoleSelector component deeply nested at 6 directory levels",
+      "componentName": "RoleSelector"
     },
     {
       "id": 39,
@@ -1147,7 +1185,8 @@
           "correct": true
         }
       },
-      "description": "SegmentPill component deeply nested at 6 directory levels"
+      "description": "SegmentPill component deeply nested at 6 directory levels",
+      "componentName": "SegmentPill"
     },
     {
       "id": 40,
@@ -1175,7 +1214,8 @@
           "correct": true
         }
       },
-      "description": "A shipping label component 5 directories deep in features/orders/shipping/labels/"
+      "description": "A shipping label component 5 directories deep in features/orders/shipping/labels/",
+      "componentName": "ShippingLabel"
     },
     {
       "id": 41,
@@ -1203,7 +1243,8 @@
           "correct": true
         }
       },
-      "description": "SortButton component deeply nested at 6 directory levels"
+      "description": "SortButton component deeply nested at 6 directory levels",
+      "componentName": "SortButton"
     },
     {
       "id": 42,
@@ -1231,7 +1272,8 @@
           "correct": true
         }
       },
-      "description": "SubscriptionBadge component deeply nested at 6 directory levels"
+      "description": "SubscriptionBadge component deeply nested at 6 directory levels",
+      "componentName": "SubscriptionBadge"
     },
     {
       "id": 43,
@@ -1259,7 +1301,8 @@
           "correct": true
         }
       },
-      "description": "TagInput component deeply nested at 6 directory levels"
+      "description": "TagInput component deeply nested at 6 directory levels",
+      "componentName": "TagInput"
     },
     {
       "id": 44,
@@ -1287,7 +1330,8 @@
           "correct": true
         }
       },
-      "description": "TaxLine component deeply nested at 6 directory levels"
+      "description": "TaxLine component deeply nested at 6 directory levels",
+      "componentName": "TaxLine"
     },
     {
       "id": 45,
@@ -1315,7 +1359,8 @@
           "correct": true
         }
       },
-      "description": "A message thread bubble component deeply nested in features/messaging/threads/ directory"
+      "description": "A message thread bubble component deeply nested in features/messaging/threads/ directory",
+      "componentName": "ThreadBubble"
     },
     {
       "id": 46,
@@ -1343,7 +1388,8 @@
           "correct": true
         }
       },
-      "description": "A circle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
+      "description": "A circle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "componentName": "DynamicIcon"
     },
     {
       "id": 47,
@@ -1371,7 +1417,8 @@
           "correct": true
         }
       },
-      "description": "A diamond icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
+      "description": "A diamond icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "componentName": "DynamicIcon"
     },
     {
       "id": 48,
@@ -1399,7 +1446,8 @@
           "correct": true
         }
       },
-      "description": "A large widget dynamically resolved from a registry object by size key at runtime"
+      "description": "A large widget dynamically resolved from a registry object by size key at runtime",
+      "componentName": "DynamicWidget"
     },
     {
       "id": 49,
@@ -1427,7 +1475,8 @@
           "correct": true
         }
       },
-      "description": "A medium widget selected at runtime from a component registry — the registry maps string keys to React components"
+      "description": "A medium widget selected at runtime from a component registry — the registry maps string keys to React components",
+      "componentName": "DynamicWidget"
     },
     {
       "id": 50,
@@ -1455,7 +1504,8 @@
           "correct": true
         }
       },
-      "description": "Dynamic renderer with computed component selection via styled-components"
+      "description": "Dynamic renderer with computed component selection via styled-components",
+      "componentName": "DynamicRenderer"
     },
     {
       "id": 51,
@@ -1483,7 +1533,8 @@
           "correct": true
         }
       },
-      "description": "A sidebar layout dynamically resolved from a layout registry — one of 5 possible layout variants"
+      "description": "A sidebar layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "componentName": "DynamicLayout"
     },
     {
       "id": 52,
@@ -1511,7 +1562,8 @@
           "correct": true
         }
       },
-      "description": "A single layout dynamically resolved from a layout registry — one of 5 possible layout variants"
+      "description": "A single layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "componentName": "DynamicLayout"
     },
     {
       "id": 53,
@@ -1539,7 +1591,8 @@
           "correct": true
         }
       },
-      "description": "A small widget selected at runtime from a registry map in widget-registry.tsx — one of 3 possible sizes"
+      "description": "A small widget selected at runtime from a registry map in widget-registry.tsx — one of 3 possible sizes",
+      "componentName": "DynamicWidget"
     },
     {
       "id": 54,
@@ -1567,7 +1620,8 @@
           "correct": true
         }
       },
-      "description": "A square icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
+      "description": "A square icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "componentName": "DynamicIcon"
     },
     {
       "id": 55,
@@ -1595,7 +1649,8 @@
           "correct": true
         }
       },
-      "description": "A stacked layout dynamically resolved from a layout registry — one of 5 possible layout variants"
+      "description": "A stacked layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "componentName": "DynamicLayout"
     },
     {
       "id": 56,
@@ -1623,7 +1678,8 @@
           "correct": true
         }
       },
-      "description": "A star icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
+      "description": "A star icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "componentName": "DynamicIcon"
     },
     {
       "id": 57,
@@ -1651,7 +1707,8 @@
           "correct": true
         }
       },
-      "description": "A three layout dynamically resolved from a layout registry — one of 5 possible layout variants"
+      "description": "A three layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "componentName": "DynamicLayout"
     },
     {
       "id": 58,
@@ -1679,7 +1736,8 @@
           "correct": true
         }
       },
-      "description": "A triangle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime"
+      "description": "A triangle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "componentName": "DynamicIcon"
     },
     {
       "id": 59,
@@ -1707,7 +1765,8 @@
           "correct": true
         }
       },
-      "description": "A two layout dynamically resolved from a layout registry — one of 5 possible layout variants"
+      "description": "A two layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "componentName": "DynamicLayout"
     },
     {
       "id": 60,
@@ -1735,7 +1794,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated average session duration display created by createDisplay() in a lib file"
+      "description": "Factory-generated average session duration display created by createDisplay() in a lib file",
+      "componentName": "Display"
     },
     {
       "id": 61,
@@ -1763,7 +1823,8 @@
           "correct": false
         }
       },
-      "description": "Factory-generated conversion rate display created by createDisplay() in a lib file"
+      "description": "Factory-generated conversion rate display created by createDisplay() in a lib file",
+      "componentName": "Display"
     },
     {
       "id": 62,
@@ -1791,7 +1852,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated CPU metric card created by createCard() in a lib file"
+      "description": "Factory-generated CPU metric card created by createCard() in a lib file",
+      "componentName": "Card"
     },
     {
       "id": 63,
@@ -1819,7 +1881,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated delete action button created by createAction() in a lib file"
+      "description": "Factory-generated delete action button created by createAction() in a lib file",
+      "componentName": "Action"
     },
     {
       "id": 64,
@@ -1847,7 +1910,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated Details tab button created by createTab() in a lib file"
+      "description": "Factory-generated Details tab button created by createTab() in a lib file",
+      "componentName": "Tab"
     },
     {
       "id": 65,
@@ -1875,7 +1939,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated Disk metric card created by createCard() in a lib file"
+      "description": "Factory-generated Disk metric card created by createCard() in a lib file",
+      "componentName": "Card"
     },
     {
       "id": 66,
@@ -1903,7 +1968,8 @@
           "correct": false
         }
       },
-      "description": "Factory-generated error count display created by createDisplay() in a lib file"
+      "description": "Factory-generated error count display created by createDisplay() in a lib file",
+      "componentName": "Display"
     },
     {
       "id": 67,
@@ -1931,7 +1997,8 @@
           "correct": false
         }
       },
-      "description": "Factory-generated History tab button created by createTab() in a lib file"
+      "description": "Factory-generated History tab button created by createTab() in a lib file",
+      "componentName": "Tab"
     },
     {
       "id": 68,
@@ -1959,7 +2026,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated info alert component created by createAlert() in a lib file"
+      "description": "Factory-generated info alert component created by createAlert() in a lib file",
+      "componentName": "Alert"
     },
     {
       "id": 69,
@@ -1987,7 +2055,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated Latency metric card created by createCard() in a lib file"
+      "description": "Factory-generated Latency metric card created by createCard() in a lib file",
+      "componentName": "Card"
     },
     {
       "id": 70,
@@ -2015,7 +2084,8 @@
           "correct": false
         }
       },
-      "description": "Factory-generated Logs tab button created by createTab() in a lib file"
+      "description": "Factory-generated Logs tab button created by createTab() in a lib file",
+      "componentName": "Tab"
     },
     {
       "id": 71,
@@ -2043,7 +2113,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated Memory metric card created by createCard() in a lib file"
+      "description": "Factory-generated Memory metric card created by createCard() in a lib file",
+      "componentName": "Card"
     },
     {
       "id": 72,
@@ -2071,7 +2142,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated notes textarea field created by createField() in a lib file"
+      "description": "Factory-generated notes textarea field created by createField() in a lib file",
+      "componentName": "Field"
     },
     {
       "id": 73,
@@ -2099,7 +2171,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated Overview tab button created by createTab() in a lib file"
+      "description": "Factory-generated Overview tab button created by createTab() in a lib file",
+      "componentName": "Tab"
     },
     {
       "id": 74,
@@ -2127,7 +2200,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated priority badge component created by createBadge() in a lib file"
+      "description": "Factory-generated priority badge component created by createBadge() in a lib file",
+      "componentName": "Badge"
     },
     {
       "id": 75,
@@ -2155,7 +2229,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated revenue metric widget created by createWidget() in a lib file"
+      "description": "Factory-generated revenue metric widget created by createWidget() in a lib file",
+      "componentName": "Widget"
     },
     {
       "id": 76,
@@ -2183,7 +2258,8 @@
           "correct": false
         }
       },
-      "description": "Factory-generated role badge component created by createBadge() in a lib file"
+      "description": "Factory-generated role badge component created by createBadge() in a lib file",
+      "componentName": "Badge"
     },
     {
       "id": 77,
@@ -2211,7 +2287,8 @@
           "correct": false
         }
       },
-      "description": "Factory-generated search input field created by createField() in a lib file"
+      "description": "Factory-generated search input field created by createField() in a lib file",
+      "componentName": "Field"
     },
     {
       "id": 78,
@@ -2239,7 +2316,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated Settings tab button created by createTab() in a lib file"
+      "description": "Factory-generated Settings tab button created by createTab() in a lib file",
+      "componentName": "Tab"
     },
     {
       "id": 79,
@@ -2267,7 +2345,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated status badge component created by createBadge() in a lib file"
+      "description": "Factory-generated status badge component created by createBadge() in a lib file",
+      "componentName": "Badge"
     },
     {
       "id": 80,
@@ -2295,7 +2374,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated success alert component created by createAlert() in a lib file"
+      "description": "Factory-generated success alert component created by createAlert() in a lib file",
+      "componentName": "Alert"
     },
     {
       "id": 81,
@@ -2323,7 +2403,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated Throughput metric card created by createCard() in a lib file"
+      "description": "Factory-generated Throughput metric card created by createCard() in a lib file",
+      "componentName": "Card"
     },
     {
       "id": 82,
@@ -2351,7 +2432,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated total sales display created by createDisplay() in a lib file"
+      "description": "Factory-generated total sales display created by createDisplay() in a lib file",
+      "componentName": "Display"
     },
     {
       "id": 83,
@@ -2379,7 +2461,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated Uptime metric card created by createCard() in a lib file"
+      "description": "Factory-generated Uptime metric card created by createCard() in a lib file",
+      "componentName": "Card"
     },
     {
       "id": 84,
@@ -2407,7 +2490,8 @@
           "correct": false
         }
       },
-      "description": "Factory-generated URL input field created by createField() in a lib file"
+      "description": "Factory-generated URL input field created by createField() in a lib file",
+      "componentName": "Field"
     },
     {
       "id": 85,
@@ -2435,7 +2519,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated active users widget created by createWidget() in a lib file"
+      "description": "Factory-generated active users widget created by createWidget() in a lib file",
+      "componentName": "Widget"
     },
     {
       "id": 86,
@@ -2463,7 +2548,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated version badge component created by createBadge() in a lib file"
+      "description": "Factory-generated version badge component created by createBadge() in a lib file",
+      "componentName": "Badge"
     },
     {
       "id": 87,
@@ -2491,7 +2577,8 @@
           "correct": true
         }
       },
-      "description": "Factory-generated warning alert component created by createAlert() in a lib file"
+      "description": "Factory-generated warning alert component created by createAlert() in a lib file",
+      "componentName": "Alert"
     },
     {
       "id": 88,
@@ -2519,7 +2606,8 @@
           "correct": true
         }
       },
-      "description": "Innermost cell in fractal subdividing grid"
+      "description": "Innermost cell in fractal subdividing grid",
+      "componentName": "FractalLayout"
     },
     {
       "id": 89,
@@ -2547,7 +2635,8 @@
           "correct": true
         }
       },
-      "description": "Integration card from auto-generated registry file with component lookup by slug"
+      "description": "Integration card from auto-generated registry file with component lookup by slug",
+      "componentName": "IntegrationCard"
     },
     {
       "id": 90,
@@ -2575,7 +2664,8 @@
           "correct": true
         }
       },
-      "description": "A alert notification component in components/feedback/notification-box.tsx — file name and directory don't match what you'd search for"
+      "description": "A alert notification component in components/feedback/notification-box.tsx — file name and directory don't match what you'd search for",
+      "componentName": "NotificationBox"
     },
     {
       "id": 91,
@@ -2603,7 +2693,8 @@
           "correct": true
         }
       },
-      "description": "A card footer component in components/layout/panel-actions.tsx — file name and directory don't match what you'd search for"
+      "description": "A card footer component in components/layout/panel-actions.tsx — file name and directory don't match what you'd search for",
+      "componentName": "PanelActions"
     },
     {
       "id": 92,
@@ -2631,7 +2722,8 @@
           "correct": true
         }
       },
-      "description": "A chart bar component in components/data-display/metric-bar.tsx — file name and directory don't match what you'd search for"
+      "description": "A chart bar component in components/data-display/metric-bar.tsx — file name and directory don't match what you'd search for",
+      "componentName": "MetricBar"
     },
     {
       "id": 93,
@@ -2659,7 +2751,8 @@
           "correct": true
         }
       },
-      "description": "A checkbox component in components/forms/agreement-check.tsx — file name and directory don't match what you'd search for"
+      "description": "A checkbox component in components/forms/agreement-check.tsx — file name and directory don't match what you'd search for",
+      "componentName": "AgreementCheck"
     },
     {
       "id": 94,
@@ -2687,7 +2780,8 @@
           "correct": true
         }
       },
-      "description": "A code snippet component in components/data-display/source-preview.tsx — file name and directory don't match what you'd search for"
+      "description": "A code snippet component in components/data-display/source-preview.tsx — file name and directory don't match what you'd search for",
+      "componentName": "SourcePreview"
     },
     {
       "id": 95,
@@ -2715,7 +2809,8 @@
           "correct": true
         }
       },
-      "description": "A card displaying a single metric value with label"
+      "description": "A card displaying a single metric value with label",
+      "componentName": "MetricCard"
     },
     {
       "id": 96,
@@ -2743,7 +2838,8 @@
           "correct": true
         }
       },
-      "description": "A date cell component in components/data-display/calendar-entry.tsx — file name and directory don't match what you'd search for"
+      "description": "A date cell component in components/data-display/calendar-entry.tsx — file name and directory don't match what you'd search for",
+      "componentName": "CalendarEntry"
     },
     {
       "id": 97,
@@ -2771,7 +2867,8 @@
           "correct": true
         }
       },
-      "description": "A drawer sheet component in components/overlays/slide-panel.tsx — file name and directory don't match what you'd search for"
+      "description": "A drawer sheet component in components/overlays/slide-panel.tsx — file name and directory don't match what you'd search for",
+      "componentName": "SlidePanel"
     },
     {
       "id": 98,
@@ -2799,7 +2896,8 @@
           "correct": false
         }
       },
-      "description": "A dropdown menu component in components/overlays/action-menu.tsx — file name and directory don't match what you'd search for"
+      "description": "A dropdown menu component in components/overlays/action-menu.tsx — file name and directory don't match what you'd search for",
+      "componentName": "ActionMenu"
     },
     {
       "id": 99,
@@ -2827,7 +2925,8 @@
           "correct": true
         }
       },
-      "description": "A file icon component in components/data-display/document-icon.tsx — file name and directory don't match what you'd search for"
+      "description": "A file icon component in components/data-display/document-icon.tsx — file name and directory don't match what you'd search for",
+      "componentName": "DocumentIcon"
     },
     {
       "id": 100,
@@ -2855,7 +2954,8 @@
           "correct": true
         }
       },
-      "description": "A footer text component in components/layout/page-footer.tsx — file name and directory don't match what you'd search for"
+      "description": "A footer text component in components/layout/page-footer.tsx — file name and directory don't match what you'd search for",
+      "componentName": "PageFooter"
     },
     {
       "id": 101,
@@ -2883,7 +2983,8 @@
           "correct": true
         }
       },
-      "description": "A grid cell displaying a KPI value with trend indicator"
+      "description": "A grid cell displaying a KPI value with trend indicator",
+      "componentName": "KpiCell"
     },
     {
       "id": 102,
@@ -2911,7 +3012,8 @@
           "correct": true
         }
       },
-      "description": "A tooltip that appears on hover with contextual information"
+      "description": "A tooltip that appears on hover with contextual information",
+      "componentName": "HoverTip"
     },
     {
       "id": 103,
@@ -2939,7 +3041,8 @@
           "correct": true
         }
       },
-      "description": "A icon button component in components/actions/tool-trigger.tsx — file name and directory don't match what you'd search for"
+      "description": "A icon button component in components/actions/tool-trigger.tsx — file name and directory don't match what you'd search for",
+      "componentName": "ToolTrigger"
     },
     {
       "id": 104,
@@ -2967,7 +3070,8 @@
           "correct": true
         }
       },
-      "description": "A link button component in components/actions/redirect-action.tsx — file name and directory don't match what you'd search for"
+      "description": "A link button component in components/actions/redirect-action.tsx — file name and directory don't match what you'd search for",
+      "componentName": "RedirectAction"
     },
     {
       "id": 105,
@@ -2995,7 +3099,8 @@
           "correct": true
         }
       },
-      "description": "A list tile component in components/data-display/item-tile.tsx — file name and directory don't match what you'd search for"
+      "description": "A list tile component in components/data-display/item-tile.tsx — file name and directory don't match what you'd search for",
+      "componentName": "ItemTile"
     },
     {
       "id": 106,
@@ -3023,7 +3128,8 @@
           "correct": true
         }
       },
-      "description": "A spinning loading indicator for async operations"
+      "description": "A spinning loading indicator for async operations",
+      "componentName": "AsyncSpinner"
     },
     {
       "id": 107,
@@ -3051,7 +3157,8 @@
           "correct": true
         }
       },
-      "description": "A menu item component in components/navigation/command-item.tsx — file name and directory don't match what you'd search for"
+      "description": "A menu item component in components/navigation/command-item.tsx — file name and directory don't match what you'd search for",
+      "componentName": "CommandItem"
     },
     {
       "id": 108,
@@ -3079,7 +3186,8 @@
           "correct": true
         }
       },
-      "description": "A modal dialog for handling user interrupts and confirmations"
+      "description": "A modal dialog for handling user interrupts and confirmations",
+      "componentName": "InterruptDialog"
     },
     {
       "id": 109,
@@ -3107,7 +3215,8 @@
           "correct": true
         }
       },
-      "description": "A navigation link that handles route transitions"
+      "description": "A navigation link that handles route transitions",
+      "componentName": "RouteLink"
     },
     {
       "id": 110,
@@ -3135,7 +3244,8 @@
           "correct": true
         }
       },
-      "description": "A single breadcrumb segment in a navigation trail"
+      "description": "A single breadcrumb segment in a navigation trail",
+      "componentName": "PathSegment"
     },
     {
       "id": 111,
@@ -3163,7 +3273,8 @@
           "correct": true
         }
       },
-      "description": "A popover panel component in components/overlays/info-panel.tsx — file name and directory don't match what you'd search for"
+      "description": "A popover panel component in components/overlays/info-panel.tsx — file name and directory don't match what you'd search for",
+      "componentName": "InfoPanel"
     },
     {
       "id": 112,
@@ -3191,7 +3302,8 @@
           "correct": true
         }
       },
-      "description": "A progress bar component in components/feedback/progress-tracker.tsx — file name and directory don't match what you'd search for"
+      "description": "A progress bar component in components/feedback/progress-tracker.tsx — file name and directory don't match what you'd search for",
+      "componentName": "ProgressTracker"
     },
     {
       "id": 113,
@@ -3219,7 +3331,8 @@
           "correct": true
         }
       },
-      "description": "A radio option component in components/forms/plan-selector.tsx — file name and directory don't match what you'd search for"
+      "description": "A radio option component in components/forms/plan-selector.tsx — file name and directory don't match what you'd search for",
+      "componentName": "PlanSelector"
     },
     {
       "id": 114,
@@ -3247,7 +3360,8 @@
           "correct": true
         }
       },
-      "description": "A search bar component in components/navigation/query-input.tsx — file name and directory don't match what you'd search for"
+      "description": "A search bar component in components/navigation/query-input.tsx — file name and directory don't match what you'd search for",
+      "componentName": "QueryInput"
     },
     {
       "id": 115,
@@ -3275,7 +3389,8 @@
           "correct": true
         }
       },
-      "description": "A select dropdown component in components/forms/option-picker.tsx — file name and directory don't match what you'd search for"
+      "description": "A select dropdown component in components/forms/option-picker.tsx — file name and directory don't match what you'd search for",
+      "componentName": "OptionPicker"
     },
     {
       "id": 116,
@@ -3303,7 +3418,8 @@
           "correct": true
         }
       },
-      "description": "A horizontal divider separating content sections"
+      "description": "A horizontal divider separating content sections",
+      "componentName": "ContentDivider"
     },
     {
       "id": 117,
@@ -3331,7 +3447,8 @@
           "correct": true
         }
       },
-      "description": "A sidebar link component in components/navigation/drawer-entry.tsx — file name and directory don't match what you'd search for"
+      "description": "A sidebar link component in components/navigation/drawer-entry.tsx — file name and directory don't match what you'd search for",
+      "componentName": "DrawerEntry"
     },
     {
       "id": 118,
@@ -3359,7 +3476,8 @@
           "correct": true
         }
       },
-      "description": "A slider component in components/forms/range-picker.tsx — file name and directory don't match what you'd search for"
+      "description": "A slider component in components/forms/range-picker.tsx — file name and directory don't match what you'd search for",
+      "componentName": "RangePicker"
     },
     {
       "id": 119,
@@ -3387,7 +3505,8 @@
           "correct": true
         }
       },
-      "description": "A colored tag showing process status (running/stopped/error)"
+      "description": "A colored tag showing process status (running/stopped/error)",
+      "componentName": "ProcessTag"
     },
     {
       "id": 120,
@@ -3415,7 +3534,8 @@
           "correct": true
         }
       },
-      "description": "A step circle component in components/feedback/milestone-dot.tsx — file name and directory don't match what you'd search for"
+      "description": "A step circle component in components/feedback/milestone-dot.tsx — file name and directory don't match what you'd search for",
+      "componentName": "MilestoneDot"
     },
     {
       "id": 121,
@@ -3443,7 +3563,8 @@
           "correct": true
         }
       },
-      "description": "A submit button component that triggers form submission"
+      "description": "A submit button component that triggers form submission",
+      "componentName": "SubmitButton"
     },
     {
       "id": 122,
@@ -3471,7 +3592,8 @@
           "correct": true
         }
       },
-      "description": "A switch component in components/forms/binary-toggle.tsx — file name and directory don't match what you'd search for"
+      "description": "A switch component in components/forms/binary-toggle.tsx — file name and directory don't match what you'd search for",
+      "componentName": "BinaryToggle"
     },
     {
       "id": 123,
@@ -3499,7 +3621,8 @@
           "correct": true
         }
       },
-      "description": "A button inside a segmented control / tab bar"
+      "description": "A button inside a segmented control / tab bar",
+      "componentName": "SegmentButton"
     },
     {
       "id": 124,
@@ -3527,7 +3650,8 @@
           "correct": true
         }
       },
-      "description": "A table row component in components/data-display/record-row.tsx — file name and directory don't match what you'd search for"
+      "description": "A table row component in components/data-display/record-row.tsx — file name and directory don't match what you'd search for",
+      "componentName": "RecordRow"
     },
     {
       "id": 125,
@@ -3555,7 +3679,8 @@
           "correct": true
         }
       },
-      "description": "A tag list component in components/data-display/label-group.tsx — file name and directory don't match what you'd search for"
+      "description": "A tag list component in components/data-display/label-group.tsx — file name and directory don't match what you'd search for",
+      "componentName": "LabelGroup"
     },
     {
       "id": 126,
@@ -3583,7 +3708,8 @@
           "correct": true
         }
       },
-      "description": "A text area component in components/forms/content-editor.tsx — file name and directory don't match what you'd search for"
+      "description": "A text area component in components/forms/content-editor.tsx — file name and directory don't match what you'd search for",
+      "componentName": "ContentEditor"
     },
     {
       "id": 127,
@@ -3611,7 +3737,8 @@
           "correct": true
         }
       },
-      "description": "A text input with built-in validation and error display"
+      "description": "A text input with built-in validation and error display",
+      "componentName": "ValidatedInput"
     },
     {
       "id": 128,
@@ -3639,7 +3766,8 @@
           "correct": true
         }
       },
-      "description": "A toast bar component in components/feedback/snack-message.tsx — file name and directory don't match what you'd search for"
+      "description": "A toast bar component in components/feedback/snack-message.tsx — file name and directory don't match what you'd search for",
+      "componentName": "SnackMessage"
     },
     {
       "id": 129,
@@ -3667,7 +3795,8 @@
           "correct": true
         }
       },
-      "description": "A toggle switch for enabling/disabling a feature flag"
+      "description": "A toggle switch for enabling/disabling a feature flag",
+      "componentName": "FeatureToggle"
     },
     {
       "id": 130,
@@ -3695,7 +3824,8 @@
           "correct": true
         }
       },
-      "description": "A chip/token component with a remove button"
+      "description": "A chip/token component with a remove button",
+      "componentName": "RemovableToken"
     },
     {
       "id": 131,
@@ -3723,7 +3853,8 @@
           "correct": true
         }
       },
-      "description": "A upload zone component in components/forms/drop-target.tsx — file name and directory don't match what you'd search for"
+      "description": "A upload zone component in components/forms/drop-target.tsx — file name and directory don't match what you'd search for",
+      "componentName": "DropTarget"
     },
     {
       "id": 132,
@@ -3751,7 +3882,8 @@
           "correct": true
         }
       },
-      "description": "An avatar component showing the current user session"
+      "description": "An avatar component showing the current user session",
+      "componentName": "SessionAvatar"
     },
     {
       "id": 133,
@@ -3779,7 +3911,8 @@
           "correct": true
         }
       },
-      "description": "HOC-wrapped motion card inside styled layout wrappers"
+      "description": "HOC-wrapped motion card inside styled layout wrappers",
+      "componentName": "AnimatedCard"
     },
     {
       "id": 134,
@@ -3807,7 +3940,8 @@
           "correct": true
         }
       },
-      "description": "A 'Copied!' feedback component defined inside hooks/use-clipboard-copy.tsx alongside a clipboard hook"
+      "description": "A 'Copied!' feedback component defined inside hooks/use-clipboard-copy.tsx alongside a clipboard hook",
+      "componentName": "ClipboardFeedback"
     },
     {
       "id": 135,
@@ -3835,7 +3969,8 @@
           "correct": true
         }
       },
-      "description": "Confirmation dialog component defined inside a React hook file"
+      "description": "Confirmation dialog component defined inside a React hook file",
+      "componentName": "ConfirmDialogContent"
     },
     {
       "id": 136,
@@ -3863,7 +3998,8 @@
           "correct": true
         }
       },
-      "description": "A drag handle grip component defined inside hooks/use-drag-drop.tsx alongside a drag-and-drop hook"
+      "description": "A drag handle grip component defined inside hooks/use-drag-drop.tsx alongside a drag-and-drop hook",
+      "componentName": "DragHandle"
     },
     {
       "id": 137,
@@ -3891,7 +4027,8 @@
           "correct": true
         }
       },
-      "description": "A pagination navigation component defined inside a React hook file (use-pagination.tsx)"
+      "description": "A pagination navigation component defined inside a React hook file (use-pagination.tsx)",
+      "componentName": "PaginationNav"
     },
     {
       "id": 138,
@@ -3919,7 +4056,8 @@
           "correct": true
         }
       },
-      "description": "A resize grip corner component defined inside hooks/use-resizable.tsx alongside a resizable panel hook"
+      "description": "A resize grip corner component defined inside hooks/use-resizable.tsx alongside a resizable panel hook",
+      "componentName": "ResizeGrip"
     },
     {
       "id": 139,
@@ -3947,7 +4085,8 @@
           "correct": true
         }
       },
-      "description": "A keyboard shortcut hint badge defined inside hooks/use-keyboard-shortcuts.tsx alongside a keyboard shortcut hook"
+      "description": "A keyboard shortcut hint badge defined inside hooks/use-keyboard-shortcuts.tsx alongside a keyboard shortcut hook",
+      "componentName": "ShortcutHint"
     },
     {
       "id": 140,
@@ -3975,7 +4114,8 @@
           "correct": true
         }
       },
-      "description": "A toast notification message component defined inside a React hook file (use-toast-queue.tsx)"
+      "description": "A toast notification message component defined inside a React hook file (use-toast-queue.tsx)",
+      "componentName": "ToastMessage"
     },
     {
       "id": 141,
@@ -4003,7 +4143,8 @@
           "correct": true
         }
       },
-      "description": "An undo action toast component defined inside hooks/use-undo-stack.tsx alongside an undo stack hook"
+      "description": "An undo action toast component defined inside hooks/use-undo-stack.tsx alongside an undo stack hook",
+      "componentName": "UndoToast"
     },
     {
       "id": 142,
@@ -4031,7 +4172,8 @@
           "correct": true
         }
       },
-      "description": "A wizard step indicator component defined inside a React hook file (use-wizard.tsx)"
+      "description": "A wizard step indicator component defined inside a React hook file (use-wizard.tsx)",
+      "componentName": "WizardStep"
     },
     {
       "id": 143,
@@ -4059,7 +4201,8 @@
           "correct": true
         }
       },
-      "description": "Identity Crisis depth-1: same DOM output as depth-11 but at shallowest depth"
+      "description": "Identity Crisis depth-1: same DOM output as depth-11 but at shallowest depth",
+      "componentName": "IdentityCrisis"
     },
     {
       "id": 144,
@@ -4087,7 +4230,8 @@
           "correct": true
         }
       },
-      "description": "Identity Crisis depth-11: same button component buried under HOCs + fragments + memo"
+      "description": "Identity Crisis depth-11: same button component buried under HOCs + fragments + memo",
+      "componentName": "IdentityCrisis"
     },
     {
       "id": 145,
@@ -4115,7 +4259,8 @@
           "correct": true
         }
       },
-      "description": "First item in pure inline-styled list"
+      "description": "First item in pure inline-styled list",
+      "componentName": "InlineList"
     },
     {
       "id": 146,
@@ -4143,7 +4288,8 @@
           "correct": true
         }
       },
-      "description": "motion.button with whileHover/whileTap and pure inline styles"
+      "description": "motion.button with whileHover/whileTap and pure inline styles",
+      "componentName": "InlineMotionHybrid"
     },
     {
       "id": 147,
@@ -4171,7 +4317,8 @@
           "correct": true
         }
       },
-      "description": "Styled-components button inside memo + forwardRef (withTooltip HOC)"
+      "description": "Styled-components button inside memo + forwardRef (withTooltip HOC)",
+      "componentName": "StyledButton"
     },
     {
       "id": 148,
@@ -4199,7 +4346,8 @@
           "correct": true
         }
       },
-      "description": "A button component defined inside hooks/use-action-sheet.tsx alongside a custom hook"
+      "description": "A button component defined inside hooks/use-action-sheet.tsx alongside a custom hook",
+      "componentName": "ActionSheetButton"
     },
     {
       "id": 149,
@@ -4227,7 +4375,8 @@
           "correct": true
         }
       },
-      "description": "A card component defined in lib/ui-primitives.tsx — a utility file, not the components directory"
+      "description": "A card component defined in lib/ui-primitives.tsx — a utility file, not the components directory",
+      "componentName": "PrimitiveCard"
     },
     {
       "id": 150,
@@ -4255,7 +4404,8 @@
           "correct": true
         }
       },
-      "description": "A list component defined inside lib/layout-config.tsx — a configuration file that also exports React components"
+      "description": "A list component defined inside lib/layout-config.tsx — a configuration file that also exports React components",
+      "componentName": "ConfigList"
     },
     {
       "id": 151,
@@ -4283,7 +4433,8 @@
           "correct": true
         }
       },
-      "description": "CSS Module status badge inside table row"
+      "description": "CSS Module status badge inside table row",
+      "componentName": "ModuleTable"
     },
     {
       "id": 152,
@@ -4311,7 +4462,8 @@
           "correct": true
         }
       },
-      "description": "List item with CSS Module transition class AND Tailwind layout classes"
+      "description": "List item with CSS Module transition class AND Tailwind layout classes",
+      "componentName": "ModuleTwHybrid"
     },
     {
       "id": 153,
@@ -4339,7 +4491,8 @@
           "correct": true
         }
       },
-      "description": "Top-level motion animated-card"
+      "description": "Top-level motion animated-card",
+      "componentName": "AnimatedCard"
     },
     {
       "id": 154,
@@ -4367,7 +4520,8 @@
           "correct": true
         }
       },
-      "description": "Card using only inline React styles (zero class names)"
+      "description": "Card using only inline React styles (zero class names)",
+      "componentName": "InlineCard"
     },
     {
       "id": 155,
@@ -4395,7 +4549,8 @@
           "correct": true
         }
       },
-      "description": "Plain styled-components badge with no nesting"
+      "description": "Plain styled-components badge with no nesting",
+      "componentName": "StyledBadge"
     },
     {
       "id": 156,
@@ -4423,7 +4578,8 @@
           "correct": true
         }
       },
-      "description": "Plain styled-components button at top level"
+      "description": "Plain styled-components button at top level",
+      "componentName": "StyledButton"
     },
     {
       "id": 157,
@@ -4451,7 +4607,8 @@
           "correct": true
         }
       },
-      "description": "Plain styled-components card with no wrapping complexity"
+      "description": "Plain styled-components card with no wrapping complexity",
+      "componentName": "StyledCard"
     },
     {
       "id": 158,
@@ -4479,7 +4636,8 @@
           "correct": true
         }
       },
-      "description": "Plain Tailwind badge component"
+      "description": "Plain Tailwind badge component",
+      "componentName": "TwBadge"
     },
     {
       "id": 159,
@@ -4507,7 +4665,8 @@
           "correct": true
         }
       },
-      "description": "Plain Tailwind button with variant classes"
+      "description": "Plain Tailwind button with variant classes",
+      "componentName": "TwButton"
     },
     {
       "id": 160,
@@ -4535,7 +4694,8 @@
           "correct": true
         }
       },
-      "description": "Plain Tailwind utility-class card"
+      "description": "Plain Tailwind utility-class card",
+      "componentName": "TwCard"
     },
     {
       "id": 161,
@@ -4563,7 +4723,8 @@
           "correct": true
         }
       },
-      "description": "Portal modal with motion enter/exit animation"
+      "description": "Portal modal with motion enter/exit animation",
+      "componentName": "AnimatedModal"
     },
     {
       "id": 162,
@@ -4591,7 +4752,8 @@
           "correct": true
         }
       },
-      "description": "A banner rendered via createPortal to document.body, exported under a different name than its internal definition"
+      "description": "A banner rendered via createPortal to document.body, exported under a different name than its internal definition",
+      "componentName": "InternalOverlayBanner"
     },
     {
       "id": 163,
@@ -4619,7 +4781,8 @@
           "correct": true
         }
       },
-      "description": "An auth status badge component exported from a context provider file alongside the AuthProvider"
+      "description": "An auth status badge component exported from a context provider file alongside the AuthProvider",
+      "componentName": "AuthBadge"
     },
     {
       "id": 164,
@@ -4647,7 +4810,8 @@
           "correct": true
         }
       },
-      "description": "A network connectivity status dot component exported from a connectivity context provider file"
+      "description": "A network connectivity status dot component exported from a connectivity context provider file",
+      "componentName": "ConnectivityDot"
     },
     {
       "id": 165,
@@ -4675,7 +4839,8 @@
           "correct": true
         }
       },
-      "description": "A feature flag status badge exported from a feature flag context provider file"
+      "description": "A feature flag status badge exported from a feature flag context provider file",
+      "componentName": "FeatureFlagBadge"
     },
     {
       "id": 166,
@@ -4703,7 +4868,8 @@
           "correct": true
         }
       },
-      "description": "A locale display label component exported from a locale context provider file"
+      "description": "A locale display label component exported from a locale context provider file",
+      "componentName": "LocaleLabel"
     },
     {
       "id": 167,
@@ -4731,7 +4897,8 @@
           "correct": true
         }
       },
-      "description": "Status badge component exported from a context provider file alongside the provider itself"
+      "description": "Status badge component exported from a context provider file alongside the provider itself",
+      "componentName": "NotificationStatusBadge"
     },
     {
       "id": 168,
@@ -4759,7 +4926,8 @@
           "correct": true
         }
       },
-      "description": "Radix Accordion content panel"
+      "description": "Radix Accordion content panel",
+      "componentName": "RadixAccordion"
     },
     {
       "id": 169,
@@ -4787,7 +4955,8 @@
           "correct": true
         }
       },
-      "description": "Radix Dropdown menu item (portal + compound component)"
+      "description": "Radix Dropdown menu item (portal + compound component)",
+      "componentName": "RadixDropdown"
     },
     {
       "id": 170,
@@ -4815,7 +4984,8 @@
           "correct": true
         }
       },
-      "description": "Radix Tabs panel content inside tab container"
+      "description": "Radix Tabs panel content inside tab container",
+      "componentName": "RadixTabs"
     },
     {
       "id": 171,
@@ -4843,7 +5013,8 @@
           "correct": true
         }
       },
-      "description": "Radix Tabs trigger button (no deep nesting)"
+      "description": "Radix Tabs trigger button (no deep nesting)",
+      "componentName": "RadixTabs"
     },
     {
       "id": 172,
@@ -4871,7 +5042,8 @@
           "correct": true
         }
       },
-      "description": "Deepest item in 10-level recursive menu"
+      "description": "Deepest item in 10-level recursive menu",
+      "componentName": "RecursiveMenu"
     },
     {
       "id": 173,
@@ -4899,7 +5071,8 @@
           "correct": true
         }
       },
-      "description": "Recursive tree leaf at depth=8 (one of 256 identical leaves)"
+      "description": "Recursive tree leaf at depth=8 (one of 256 identical leaves)",
+      "componentName": "RecursiveTree"
     },
     {
       "id": 174,
@@ -4927,7 +5100,8 @@
           "correct": true
         }
       },
-      "description": "Russian Doll: 15+ HOC layers wrapping a single styled motion button"
+      "description": "Russian Doll: 15+ HOC layers wrapping a single styled motion button",
+      "componentName": "RussianDoll"
     },
     {
       "id": 175,
@@ -4955,7 +5129,8 @@
           "correct": true
         }
       },
-      "description": "Server component list rendered inside ServerHero, iterating over data with nested ServerFeatureItem children"
+      "description": "Server component list rendered inside ServerHero, iterating over data with nested ServerFeatureItem children",
+      "componentName": "ServerFeatureList"
     },
     {
       "id": 176,
@@ -4983,7 +5158,8 @@
           "correct": true
         }
       },
-      "description": "Top-level server component section with nested server children, no 'use client' directive"
+      "description": "Top-level server component section with nested server children, no 'use client' directive",
+      "componentName": "ServerHero"
     },
     {
       "id": 177,
@@ -5011,7 +5187,8 @@
           "correct": true
         }
       },
-      "description": "Server stat card at 3 levels deep in server component tree (ServerHero → ServerStats → ServerStatCard)"
+      "description": "Server stat card at 3 levels deep in server component tree (ServerHero → ServerStats → ServerStatCard)",
+      "componentName": "ServerStatCard"
     },
     {
       "id": 178,
@@ -5039,7 +5216,8 @@
           "correct": true
         }
       },
-      "description": "Server component that wraps a client island component across the server/client boundary"
+      "description": "Server component that wraps a client island component across the server/client boundary",
+      "componentName": "ServerWithClientIsland"
     },
     {
       "id": 179,
@@ -5067,7 +5245,8 @@
           "correct": true
         }
       },
-      "description": "shadcn/ui Card + Avatar + Badge + Button composite"
+      "description": "shadcn/ui Card + Avatar + Badge + Button composite",
+      "componentName": "ShadcnProfileCard"
     },
     {
       "id": 180,
@@ -5095,7 +5274,8 @@
           "correct": true
         }
       },
-      "description": "shadcn/ui Skeleton inside Card that conditionally renders based on loading state"
+      "description": "shadcn/ui Skeleton inside Card that conditionally renders based on loading state",
+      "componentName": "ShadcnDataDisplay"
     },
     {
       "id": 181,
@@ -5123,7 +5303,8 @@
           "correct": true
         }
       },
-      "description": "shadcn/ui Tooltip trigger button inside Card with Skeleton loading state and Radix portal"
+      "description": "shadcn/ui Tooltip trigger button inside Card with Skeleton loading state and Radix portal",
+      "componentName": "ShadcnDataDisplay"
     },
     {
       "id": 182,
@@ -5151,7 +5332,8 @@
           "correct": true
         }
       },
-      "description": "Shapeshifter: component that changes its entire tree shape on a timer"
+      "description": "Shapeshifter: component that changes its entire tree shape on a timer",
+      "componentName": "Shapeshifter"
     },
     {
       "id": 183,
@@ -5179,7 +5361,8 @@
           "correct": true
         }
       },
-      "description": "AwayIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
+      "description": "AwayIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "componentName": "AwayIndicator"
     },
     {
       "id": 184,
@@ -5207,7 +5390,8 @@
           "correct": true
         }
       },
-      "description": "BusyIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
+      "description": "BusyIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "componentName": "BusyIndicator"
     },
     {
       "id": 185,
@@ -5235,7 +5419,8 @@
           "correct": true
         }
       },
-      "description": "A churn rate stat card — one of 5 similar stat card components in the same file"
+      "description": "A churn rate stat card — one of 5 similar stat card components in the same file",
+      "componentName": "ChurnStatCard"
     },
     {
       "id": 186,
@@ -5263,7 +5448,8 @@
           "correct": true
         }
       },
-      "description": "CpuTile — one of 5 similar components in the same file (metric-tiles.tsx)"
+      "description": "CpuTile — one of 5 similar components in the same file (metric-tiles.tsx)",
+      "componentName": "CpuTile"
     },
     {
       "id": 187,
@@ -5291,7 +5477,8 @@
           "correct": true
         }
       },
-      "description": "CreateButton — one of 4 similar components in the same file (crud-buttons.tsx)"
+      "description": "CreateButton — one of 4 similar components in the same file (crud-buttons.tsx)",
+      "componentName": "CreateButton"
     },
     {
       "id": 188,
@@ -5319,7 +5506,8 @@
           "correct": true
         }
       },
-      "description": "DeleteButton — one of 4 similar components in the same file (crud-buttons.tsx)"
+      "description": "DeleteButton — one of 4 similar components in the same file (crud-buttons.tsx)",
+      "componentName": "DeleteButton"
     },
     {
       "id": 189,
@@ -5347,7 +5535,8 @@
           "correct": true
         }
       },
-      "description": "DiskTile — one of 5 similar components in the same file (metric-tiles.tsx)"
+      "description": "DiskTile — one of 5 similar components in the same file (metric-tiles.tsx)",
+      "componentName": "DiskTile"
     },
     {
       "id": 190,
@@ -5375,7 +5564,8 @@
           "correct": true
         }
       },
-      "description": "DndIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
+      "description": "DndIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "componentName": "DndIndicator"
     },
     {
       "id": 191,
@@ -5403,7 +5593,8 @@
           "correct": true
         }
       },
-      "description": "GpuTile — one of 5 similar components in the same file (metric-tiles.tsx)"
+      "description": "GpuTile — one of 5 similar components in the same file (metric-tiles.tsx)",
+      "componentName": "GpuTile"
     },
     {
       "id": 192,
@@ -5431,7 +5622,8 @@
           "correct": true
         }
       },
-      "description": "HelpIcon — one of 6 similar components in the same file (nav-icons.tsx)"
+      "description": "HelpIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "componentName": "HelpIcon"
     },
     {
       "id": 193,
@@ -5459,7 +5651,8 @@
           "correct": true
         }
       },
-      "description": "HomeIcon — one of 6 similar components in the same file (nav-icons.tsx)"
+      "description": "HomeIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "componentName": "HomeIcon"
     },
     {
       "id": 194,
@@ -5487,7 +5680,8 @@
           "correct": true
         }
       },
-      "description": "LogoutIcon — one of 6 similar components in the same file (nav-icons.tsx)"
+      "description": "LogoutIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "componentName": "LogoutIcon"
     },
     {
       "id": 195,
@@ -5515,7 +5709,8 @@
           "correct": true
         }
       },
-      "description": "An MRR stat card — one of 5 similar stat card components in a shared file"
+      "description": "An MRR stat card — one of 5 similar stat card components in a shared file",
+      "componentName": "MrrStatCard"
     },
     {
       "id": 196,
@@ -5543,7 +5738,8 @@
           "correct": true
         }
       },
-      "description": "OfflineIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
+      "description": "OfflineIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "componentName": "OfflineIndicator"
     },
     {
       "id": 197,
@@ -5571,7 +5767,8 @@
           "correct": true
         }
       },
-      "description": "OnlineIndicator — one of 5 similar components in the same file (status-indicators.tsx)"
+      "description": "OnlineIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "componentName": "OnlineIndicator"
     },
     {
       "id": 198,
@@ -5599,7 +5796,8 @@
           "correct": true
         }
       },
-      "description": "An orders stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)"
+      "description": "An orders stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)",
+      "componentName": "OrderStatCard"
     },
     {
       "id": 199,
@@ -5627,7 +5825,8 @@
           "correct": true
         }
       },
-      "description": "ProfileIcon — one of 6 similar components in the same file (nav-icons.tsx)"
+      "description": "ProfileIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "componentName": "ProfileIcon"
     },
     {
       "id": 200,
@@ -5655,7 +5854,8 @@
           "correct": true
         }
       },
-      "description": "RamTile — one of 5 similar components in the same file (metric-tiles.tsx)"
+      "description": "RamTile — one of 5 similar components in the same file (metric-tiles.tsx)",
+      "componentName": "RamTile"
     },
     {
       "id": 201,
@@ -5683,7 +5883,8 @@
           "correct": true
         }
       },
-      "description": "A retention stat card — one of 5 similar stat card components defined in the same file"
+      "description": "A retention stat card — one of 5 similar stat card components defined in the same file",
+      "componentName": "RetentionStatCard"
     },
     {
       "id": 202,
@@ -5711,7 +5912,8 @@
           "correct": true
         }
       },
-      "description": "A revenue stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)"
+      "description": "A revenue stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)",
+      "componentName": "RevenueStatCard"
     },
     {
       "id": 203,
@@ -5739,7 +5941,8 @@
           "correct": true
         }
       },
-      "description": "SearchIcon — one of 6 similar components in the same file (nav-icons.tsx)"
+      "description": "SearchIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "componentName": "SearchIcon"
     },
     {
       "id": 204,
@@ -5767,7 +5970,8 @@
           "correct": true
         }
       },
-      "description": "SettingsIcon — one of 6 similar components in the same file (nav-icons.tsx)"
+      "description": "SettingsIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "componentName": "SettingsIcon"
     },
     {
       "id": 205,
@@ -5795,7 +5999,8 @@
           "correct": true
         }
       },
-      "description": "UpdateButton — one of 4 similar components in the same file (crud-buttons.tsx)"
+      "description": "UpdateButton — one of 4 similar components in the same file (crud-buttons.tsx)",
+      "componentName": "UpdateButton"
     },
     {
       "id": 206,
@@ -5823,7 +6028,8 @@
           "correct": true
         }
       },
-      "description": "Motion stagger-grid child with delay animation"
+      "description": "Motion stagger-grid child with delay animation",
+      "componentName": "StaggerGrid"
     },
     {
       "id": 207,
@@ -5851,7 +6057,8 @@
           "correct": true
         }
       },
-      "description": "Style Clash badge: styled-components span with Tailwind + inline styles + CSS Module parent - 4 styling systems on one element"
+      "description": "Style Clash badge: styled-components span with Tailwind + inline styles + CSS Module parent - 4 styling systems on one element",
+      "componentName": "StyleClash"
     },
     {
       "id": 208,
@@ -5879,7 +6086,8 @@
           "correct": true
         }
       },
-      "description": "Button with styled-components + Tailwind + CSS Modules + inline styles on same elements"
+      "description": "Button with styled-components + Tailwind + CSS Modules + inline styles on same elements",
+      "componentName": "StyleClash"
     },
     {
       "id": 209,
@@ -5907,7 +6115,8 @@
           "correct": true
         }
       },
-      "description": "Styled-components data-cell inside compound table structure"
+      "description": "Styled-components data-cell inside compound table structure",
+      "componentName": "StyledDataCell"
     },
     {
       "id": 210,
@@ -5935,7 +6144,8 @@
           "correct": true
         }
       },
-      "description": "Suspense-wrapped lazy-loaded component"
+      "description": "Suspense-wrapped lazy-loaded component",
+      "componentName": "SuspenseLazyLoader"
     },
     {
       "id": 211,
@@ -5963,7 +6173,8 @@
           "correct": true
         }
       },
-      "description": "Radix Tooltip on styled button inside withTooltip HOC"
+      "description": "Radix Tooltip on styled button inside withTooltip HOC",
+      "componentName": "StyledButton"
     },
     {
       "id": 212,
@@ -5991,7 +6202,8 @@
           "correct": true
         }
       },
-      "description": "Styled-components card wrapped in withTracking HOC"
+      "description": "Styled-components card wrapped in withTracking HOC",
+      "componentName": "StyledCard"
     },
     {
       "id": 213,
@@ -6019,7 +6231,8 @@
           "correct": true
         }
       },
-      "description": "Tailwind MiniTable nested inside TwDashboard - inner component has no direct export, only accessible via parent"
+      "description": "Tailwind MiniTable nested inside TwDashboard - inner component has no direct export, only accessible via parent",
+      "componentName": "TwDashboard"
     },
     {
       "id": 214,
@@ -6047,7 +6260,8 @@
           "correct": true
         }
       },
-      "description": "Tailwind stat card nested inside dashboard grid"
+      "description": "Tailwind stat card nested inside dashboard grid",
+      "componentName": "TwDashboard"
     },
     {
       "id": 215,
@@ -6075,7 +6289,8 @@
           "correct": true
         }
       },
-      "description": "Button with Tailwind classes AND styled-components hover/active behavior"
+      "description": "Button with Tailwind classes AND styled-components hover/active behavior",
+      "componentName": "TwStyledHybrid"
     },
     {
       "id": 216,
@@ -6103,7 +6318,8 @@
           "correct": true
         }
       },
-      "description": "An overlapping avatar stack component defined inside lib/avatar-utils.tsx among avatar generation utilities"
+      "description": "An overlapping avatar stack component defined inside lib/avatar-utils.tsx among avatar generation utilities",
+      "componentName": "AvatarStack"
     },
     {
       "id": 217,
@@ -6131,7 +6347,8 @@
           "correct": true
         }
       },
-      "description": "A color swatch component defined inside lib/color-swatch.tsx among color conversion utilities"
+      "description": "A color swatch component defined inside lib/color-swatch.tsx among color conversion utilities",
+      "componentName": "ColorSwatch"
     },
     {
       "id": 218,
@@ -6159,7 +6376,8 @@
           "correct": true
         }
       },
-      "description": "A copy-to-clipboard button component defined inside lib/clipboard-helpers.tsx among clipboard utilities"
+      "description": "A copy-to-clipboard button component defined inside lib/clipboard-helpers.tsx among clipboard utilities",
+      "componentName": "CopyButton"
     },
     {
       "id": 219,
@@ -6187,7 +6405,8 @@
           "correct": true
         }
       },
-      "description": "A notification count badge component defined inside lib/counter-utils.tsx among counting utilities"
+      "description": "A notification count badge component defined inside lib/counter-utils.tsx among counting utilities",
+      "componentName": "CountBadge"
     },
     {
       "id": 220,
@@ -6215,7 +6434,8 @@
           "correct": true
         }
       },
-      "description": "A diff line component defined inside lib/diff-renderer.tsx among diff computation utilities"
+      "description": "A diff line component defined inside lib/diff-renderer.tsx among diff computation utilities",
+      "componentName": "DiffLine"
     },
     {
       "id": 221,
@@ -6243,7 +6463,8 @@
           "correct": true
         }
       },
-      "description": "A human-readable duration label defined inside lib/duration-utils.tsx among time duration utilities"
+      "description": "A human-readable duration label defined inside lib/duration-utils.tsx among time duration utilities",
+      "componentName": "DurationLabel"
     },
     {
       "id": 222,
@@ -6271,7 +6492,8 @@
           "correct": true
         }
       },
-      "description": "An empty state placeholder component defined inside lib/placeholder-utils.tsx among placeholder generation utilities"
+      "description": "An empty state placeholder component defined inside lib/placeholder-utils.tsx among placeholder generation utilities",
+      "componentName": "EmptyState"
     },
     {
       "id": 223,
@@ -6299,7 +6521,8 @@
           "correct": true
         }
       },
-      "description": "An external link component with icon defined inside lib/link-utils.tsx among URL utilities"
+      "description": "An external link component with icon defined inside lib/link-utils.tsx among URL utilities",
+      "componentName": "ExternalLink"
     },
     {
       "id": 224,
@@ -6327,7 +6550,8 @@
           "correct": true
         }
       },
-      "description": "Formatted currency component defined inside lib/data-formatters.tsx among formatting utilities"
+      "description": "Formatted currency component defined inside lib/data-formatters.tsx among formatting utilities",
+      "componentName": "FormattedCurrency"
     },
     {
       "id": 225,
@@ -6355,7 +6579,8 @@
           "correct": true
         }
       },
-      "description": "A keyboard hotkey label component defined inside lib/hotkey-registry.tsx among hotkey registration utilities"
+      "description": "A keyboard hotkey label component defined inside lib/hotkey-registry.tsx among hotkey registration utilities",
+      "componentName": "HotkeyLabel"
     },
     {
       "id": 226,
@@ -6383,7 +6608,8 @@
           "correct": true
         }
       },
-      "description": "A markdown preview component defined inside lib/markdown-utils.tsx among markdown parsing utilities"
+      "description": "A markdown preview component defined inside lib/markdown-utils.tsx among markdown parsing utilities",
+      "componentName": "MarkdownPreview"
     },
     {
       "id": 227,
@@ -6411,7 +6637,8 @@
           "correct": true
         }
       },
-      "description": "A conditional permission gate component defined inside lib/permission-utils.tsx among authorization utilities"
+      "description": "A conditional permission gate component defined inside lib/permission-utils.tsx among authorization utilities",
+      "componentName": "PermissionGate"
     },
     {
       "id": 228,
@@ -6439,7 +6666,8 @@
           "correct": true
         }
       },
-      "description": "A circular progress ring SVG component defined inside lib/progress-helpers.tsx among utility functions"
+      "description": "A circular progress ring SVG component defined inside lib/progress-helpers.tsx among utility functions",
+      "componentName": "ProgressRing"
     },
     {
       "id": 229,
@@ -6467,7 +6695,8 @@
           "correct": true
         }
       },
-      "description": "A relative time display (e.g. '2 hours ago') component defined inside lib/date-helpers.tsx among date formatting utilities"
+      "description": "A relative time display (e.g. '2 hours ago') component defined inside lib/date-helpers.tsx among date formatting utilities",
+      "componentName": "RelativeTime"
     },
     {
       "id": 230,
@@ -6495,7 +6724,8 @@
           "correct": true
         }
       },
-      "description": "A scroll progress indicator component defined inside lib/scroll-indicator.tsx among scroll position utilities"
+      "description": "A scroll progress indicator component defined inside lib/scroll-indicator.tsx among scroll position utilities",
+      "componentName": "ScrollIndicator"
     },
     {
       "id": 231,
@@ -6523,7 +6753,8 @@
           "correct": true
         }
       },
-      "description": "Status indicator component defined inside lib/render-utils.tsx among utility functions"
+      "description": "Status indicator component defined inside lib/render-utils.tsx among utility functions",
+      "componentName": "StatusIndicator"
     },
     {
       "id": 232,
@@ -6551,7 +6782,8 @@
           "correct": true
         }
       },
-      "description": "A timeline dot marker component defined inside lib/timeline-utils.tsx among time formatting utilities"
+      "description": "A timeline dot marker component defined inside lib/timeline-utils.tsx among time formatting utilities",
+      "componentName": "TimelineDot"
     },
     {
       "id": 233,
@@ -6579,7 +6811,8 @@
           "correct": true
         }
       },
-      "description": "A text truncation component defined inside lib/text-helpers.tsx among text manipulation utilities"
+      "description": "A text truncation component defined inside lib/text-helpers.tsx among text manipulation utilities",
+      "componentName": "TruncatedText"
     }
   ]
 }

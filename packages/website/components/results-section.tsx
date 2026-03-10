@@ -17,18 +17,10 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { AccuracyTable } from "@/components/accuracy-table";
 import { SpeedTable } from "@/components/speed-table";
 import {
   benchData,
-  CODING_MODELS,
   getResolverColor,
   getResolversForModel,
   getControlKeyForModel,
@@ -138,22 +130,23 @@ const buildChartData = (
     );
 };
 
+const DEFAULT_MODEL = "claude";
+
 const ResultsSection = () => {
   const [tab, setTab] = useQueryState(
     "metric",
     parseAsStringLiteral(["speed", "accuracy"] as const).withDefault("speed"),
   );
-  const [model, setModel] = useQueryState(
-    "model",
-    parseAsStringLiteral(["claude", "codex"] as const).withDefault("claude"),
-  );
 
   const filteredResolverKeys = useMemo(
-    () => getResolversForModel(model),
-    [model],
+    () => getResolversForModel(DEFAULT_MODEL),
+    [],
   );
 
-  const controlKey = useMemo(() => getControlKeyForModel(model), [model]);
+  const controlKey = useMemo(
+    () => getControlKeyForModel(DEFAULT_MODEL),
+    [],
+  );
 
   const speedChartData = useMemo(
     () => buildChartData(filteredResolverKeys, "speed", false),
@@ -175,27 +168,10 @@ const ResultsSection = () => {
       value={tab}
       onValueChange={(value) => setTab(value as "speed" | "accuracy")}
     >
-      <div className="flex items-center justify-between">
-        <TabsList variant="line">
-          <TabsTrigger value="speed">Speed</TabsTrigger>
-          <TabsTrigger value="accuracy">Accuracy</TabsTrigger>
-        </TabsList>
-        <Select
-          value={model}
-          onValueChange={(value) => setModel(value as "claude" | "codex")}
-        >
-          <SelectTrigger size="sm">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {CODING_MODELS.map((codingModel) => (
-              <SelectItem key={codingModel.key} value={codingModel.key}>
-                {codingModel.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
+      <TabsList variant="line">
+        <TabsTrigger value="speed">Speed</TabsTrigger>
+        <TabsTrigger value="accuracy">Accuracy</TabsTrigger>
+      </TabsList>
 
       <TabsContent value="speed" className="space-y-6">
         <p className="text-sm text-muted-foreground italic">

@@ -98,7 +98,6 @@ export {
   benchData,
   resolverKeys,
   DEFAULT_CHART_COLOR,
-  CODING_MODELS,
   getResolverColor,
   getResolversForModel,
   getControlKeyForModel,

@@ -217,21 +217,32 @@ const runBenchmark = async (): Promise<void> => {
     await installPlaywright(sandbox);
 
     console.log("\n[5/7] Running benchmark...");
-    await runDetached(sandbox, "benchmark test", "pnpm --filter @react-bench/benchmark test", WORKING_DIRECTORY);
+    let benchmarkFailed = false;
+    try {
+      await runDetached(sandbox, "benchmark test", "pnpm --filter @react-bench/benchmark test", WORKING_DIRECTORY);
+    } catch (benchError) {
+      benchmarkFailed = true;
+      console.error("\n  Benchmark test failed, attempting to read partial results...");
+      console.error(`  ${benchError}`);
+    }
 
     console.log("\n[6/7] Reading and writing results...");
     const { benchResults, websiteData } = await readResultsFromSandbox(sandbox);
     writeResultsLocally(benchResults, websiteData);
 
-    if (githubToken) {
+    if (githubToken && !benchmarkFailed) {
       console.log("\n[7/7] Pushing results...");
       await commitAndPush(sandbox);
     } else {
-      console.log("\n[7/7] No GH_TOKEN set, skipping push.");
+      console.log(`\n[7/7] Skipping push${benchmarkFailed ? " (benchmark failed)" : " (no GH_TOKEN)"}.`);
     }
 
     await sandbox.stop();
-    console.log("\nBenchmark complete!");
+    if (benchmarkFailed) {
+      console.log("\nBenchmark finished with errors (partial results saved locally).");
+    } else {
+      console.log("\nBenchmark complete!");
+    }
   } catch (error) {
     console.error("\nBenchmark failed, stopping sandbox...");
     await sandbox.stop();

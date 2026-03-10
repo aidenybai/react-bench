@@ -11,7 +11,7 @@ export const assertCommandSuccess = async (
     ]);
     const output = [
       stderr ? `stderr:\n${stderr}` : "",
-      stdout ? `stdout (last 2000 chars):\n${stdout.slice(-2000)}` : "",
+      stdout ? `stdout (last 8000 chars):\n${stdout.slice(-8000)}` : "",
     ]
       .filter(Boolean)
       .join("\n\n");

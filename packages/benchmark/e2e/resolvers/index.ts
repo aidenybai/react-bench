@@ -21,7 +21,7 @@ const CLI_RESOLVERS: CliResolver[] = BACKENDS.flatMap((backend) =>
   })),
 );
 
-const CLI_CONCURRENCY = parseInt(process.env.BENCH_CONCURRENCY ?? "10", 10);
+const CLI_CONCURRENCY = parseInt(process.env.BENCH_CONCURRENCY ?? "20", 10);
 
 export { CLI_RESOLVERS, BACKENDS, CLI_CONCURRENCY };
 export { pool } from "./streaming-runner";

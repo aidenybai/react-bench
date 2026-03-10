@@ -10,7 +10,8 @@
     "format": "oxfmt",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "pnpm build && changeset publish"
+    "release": "pnpm build && changeset publish",
+    "benchmark": "pnpm --filter @react-bench/benchmark sandbox:run"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",

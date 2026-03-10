@@ -4,6 +4,7 @@ import { join } from "path";
 import { assertCommandSuccess } from "./assert-command-success";
 import {
   SANDBOX_TIMEOUT_MS,
+  SANDBOX_VCPUS,
   GIT_CLONE_DEPTH,
   MAX_PUSH_ATTEMPTS,
   WORKING_DIRECTORY,
@@ -200,6 +201,7 @@ const runBenchmark = async (): Promise<void> => {
   const sandbox = await Sandbox.create({
     source: { type: "snapshot", snapshotId },
     timeout: SANDBOX_TIMEOUT_MS,
+    resources: { vcpus: SANDBOX_VCPUS },
     env: buildSandboxEnv(anthropicApiKey),
   });
   console.log(`  Sandbox ID: ${sandbox.sandboxId}`);

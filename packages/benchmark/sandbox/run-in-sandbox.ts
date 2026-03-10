@@ -1,4 +1,4 @@
-import { Sandbox } from "@vercel/sandbox";
+import { Sandbox, type Command } from "@vercel/sandbox";
 import { writeFileSync } from "fs";
 import { join } from "path";
 import { assertCommandSuccess } from "./assert-command-success";
@@ -16,6 +16,22 @@ import {
 const buildAuthUrl = (repo: string, token: string): string => {
   const url = repo.startsWith("https://") ? repo : `https://github.com/${repo}`;
   return url.replace("https://", `https://${token}@`);
+};
+
+const isTimeoutError = (error: unknown): boolean =>
+  error instanceof DOMException && error.name === "TimeoutError";
+
+// HACK: Vercel Sandbox SDK's wait() uses HTTP long-polling that can time out
+// on long-running commands. Retry wait() until the command actually finishes.
+const waitWithRetry = async (handle: Command) => {
+  while (true) {
+    try {
+      return await handle.wait();
+    } catch (error) {
+      if (!isTimeoutError(error)) throw error;
+      console.log("  (wait timed out, retrying...)");
+    }
+  }
 };
 
 const runDetached = async (
@@ -42,7 +58,7 @@ const runDetached = async (
     console.log(`  (log stream interrupted, waiting for ${label} to finish...)`);
   }
 
-  const finished = await handle.wait();
+  const finished = await waitWithRetry(handle);
   await assertCommandSuccess(finished, label);
 };
 

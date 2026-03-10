@@ -30,9 +30,9 @@ const RESOLVER_LABELS: Record<string, string> = {
   "claude-code": "Claude Code",
   "agentation+claude": "Agentation + Claude Code",
   "react-grab+claude": "React Grab + Claude Code",
-  codex: "Codex",
-  "agentation+codex": "Agentation + Codex",
-  "react-grab+codex": "React Grab + Codex",
+  // codex: "Codex",
+  // "agentation+codex": "Agentation + Codex",
+  // "react-grab+codex": "React Grab + Codex",
 };
 
 const BENCH_INTERACTIONS: Record<string, (page: Page) => Promise<void>> = {
@@ -73,6 +73,7 @@ interface ResolverResult {
   found: boolean;
   ms: number;
   correct: boolean;
+  earlyAborted: boolean;
 }
 
 const EMPTY_RESOLVER_RESULT: ResolverResult = {
@@ -81,6 +82,7 @@ const EMPTY_RESOLVER_RESULT: ResolverResult = {
   found: false,
   ms: 0,
   correct: false,
+  earlyAborted: false,
 };
 
 interface EntryResult {
@@ -216,6 +218,7 @@ const runCliPhase = async (
         componentName: result.componentName,
         found: Boolean(result.filePath),
         ms: result.ms,
+        earlyAborted: result.earlyAborted,
       };
     }
   }
@@ -237,6 +240,7 @@ const buildResults = (
       const resolverResult = browserResults[resolverName];
       resolvers[resolverName] = {
         ...resolverResult,
+        earlyAborted: resolverResult.earlyAborted ?? false,
         correct: isCorrectFile(resolverResult.filePath, entry.filePath),
       };
     }
@@ -289,18 +293,27 @@ const printResults = (
     const correctEntries = results.filter(
       (entryResult) => entryResult.resolvers[resolverName]?.correct,
     );
-    const averageTiming =
+    const earlyAbortedCount = results.filter(
+      (entryResult) => entryResult.resolvers[resolverName]?.earlyAborted,
+    ).length;
+    const geometricMeanTiming =
       correctEntries.length > 0
         ? formatTime(
-            correctEntries.reduce(
-              (sum, entryResult) =>
-                sum + entryResult.resolvers[resolverName].ms,
-              0,
-            ) / correctEntries.length,
+            Math.exp(
+              correctEntries.reduce(
+                (logSum, entryResult) =>
+                  logSum + Math.log(entryResult.resolvers[resolverName].ms),
+                0,
+              ) / correctEntries.length,
+            ),
           )
         : "\u2014";
+    const autoStopInfo =
+      earlyAbortedCount > 0
+        ? ` \u2014 auto-stop: ${earlyAbortedCount}/${results.length}`
+        : "";
     console.log(
-      `  ${resolverName.padEnd(22)} ${correctEntries.length}/${results.length} correct (${((correctEntries.length / results.length) * 100).toFixed(0)}%) \u2014 avg ${averageTiming}`,
+      `  ${resolverName.padEnd(22)} ${correctEntries.length}/${results.length} correct (${((correctEntries.length / results.length) * 100).toFixed(0)}%) \u2014 geomean ${geometricMeanTiming}${autoStopInfo}`,
     );
   }
   console.log();
@@ -343,21 +356,22 @@ const writeOutputFiles = (
             const correctResults = allResults.filter(
               (resolverResult) => resolverResult.correct,
             );
-            const averageMs = correctResults.length
-              ? correctResults.reduce(
-                  (sum, resolverResult) => sum + resolverResult.ms,
-                  0,
-                ) / correctResults.length
-              : allResults.length
-                ? allResults.reduce(
-                    (sum, resolverResult) => sum + resolverResult.ms,
+            const timingResults = correctResults.length
+              ? correctResults
+              : allResults;
+            const geometricMeanMs = timingResults.length
+              ? Math.exp(
+                  timingResults.reduce(
+                    (logSum, resolverResult) =>
+                      logSum + Math.log(resolverResult.ms),
                     0,
-                  ) / allResults.length
-                : 0;
+                  ) / timingResults.length,
+                )
+              : 0;
             return [
               resolverName,
               {
-                speed: Math.round(averageMs / 100) / 10,
+                speed: Math.round(geometricMeanMs / 100) / 10,
                 accuracy: results.length
                   ? Math.round(
                       (correctResults.length / results.length) * 100,

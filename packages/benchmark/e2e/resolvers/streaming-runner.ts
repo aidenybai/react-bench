@@ -7,8 +7,52 @@ const MAX_RETRIES = 1;
 interface StreamingResult {
   stdout: string;
   ms: number;
+  bootMs: number;
   earlyAborted: boolean;
 }
+
+const FILE_READ_COMMANDS = ["cat ", "head ", "tail ", "nl ", "sed "];
+
+const containsFileAccess = (
+  stdout: string,
+  expectedFilePath: string,
+): boolean => {
+  const lines = stdout.split("\n").filter(Boolean);
+  for (const line of lines) {
+    try {
+      const parsed = JSON.parse(line);
+
+      if (parsed.type === "assistant" && parsed.message?.content) {
+        for (const block of parsed.message.content) {
+          if (block.type !== "tool_use") continue;
+
+          if (block.name === "Read" || block.name === "Grep") {
+            const inputPath =
+              block.input?.file_path ?? block.input?.path ?? "";
+            if (inputPath.includes(expectedFilePath)) return true;
+          }
+        }
+      }
+
+      if (parsed.type === "item.started" || parsed.type === "item.completed") {
+        const item = parsed.item;
+        if (
+          item?.type === "command_execution" &&
+          typeof item.command === "string" &&
+          item.command.includes(expectedFilePath) &&
+          FILE_READ_COMMANDS.some((readCommand) =>
+            item.command.includes(readCommand),
+          )
+        ) {
+          return true;
+        }
+      }
+    } catch {
+      continue;
+    }
+  }
+  return false;
+};
 
 const runStreamingCommand = (
   command: string,
@@ -25,6 +69,7 @@ const runStreamingCommand = (
 
     let stdout = "";
     let didResolve = false;
+    let firstChunkAt = 0;
 
     const resolveOnce = (result: StreamingResult): void => {
       if (didResolve) return;
@@ -33,34 +78,41 @@ const runStreamingCommand = (
     };
 
     child.stdout.on("data", (chunk: Buffer) => {
+      if (!firstChunkAt) firstChunkAt = performance.now();
       stdout += chunk.toString();
 
       if (
         expectedFilePath &&
         !didResolve &&
-        stdout.includes(expectedFilePath)
+        containsFileAccess(stdout, expectedFilePath)
       ) {
         child.kill();
+        const now = performance.now();
         resolveOnce({
           stdout,
-          ms: performance.now() - start,
+          ms: now - start,
+          bootMs: firstChunkAt - start,
           earlyAborted: true,
         });
       }
     });
 
     child.on("close", () => {
+      const now = performance.now();
       resolveOnce({
         stdout,
-        ms: performance.now() - start,
+        ms: now - start,
+        bootMs: firstChunkAt ? firstChunkAt - start : now - start,
         earlyAborted: false,
       });
     });
 
     child.on("error", () => {
+      const now = performance.now();
       resolveOnce({
         stdout,
-        ms: performance.now() - start,
+        ms: now - start,
+        bootMs: firstChunkAt ? firstChunkAt - start : now - start,
         earlyAborted: false,
       });
     });
@@ -79,7 +131,7 @@ const runWithRetries = async (
   if (result.filePath) return result;
 
   for (let retry = 0; retry < MAX_RETRIES; retry++) {
-    const retryPrompt = `${prompt}\n\nIMPORTANT: You didn't find the file yet. Keep searching — read more files, try different directory patterns. The file definitely exists in this codebase.`;
+    const retryPrompt = `${prompt}\n\nIMPORTANT: You must find and READ the actual source file. The component definitely exists in this codebase. Try searching with different patterns, then READ the file you find.`;
     const retryResult = await runOnce(retryPrompt, expectedFilePath);
     if (retryResult.filePath) {
       return { ...retryResult, ms: result.ms + retryResult.ms };

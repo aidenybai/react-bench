@@ -1,10 +1,12 @@
 "use client";
 
+import { useMemo } from "react";
 import { useQueryState, parseAsStringLiteral } from "nuqs";
 import {
   Bar,
   BarChart,
   CartesianGrid,
+  Cell,
   XAxis,
   YAxis,
   LabelList,
@@ -13,51 +15,34 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-  type ChartConfig,
 } from "@/components/ui/chart";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { AccuracyTable } from "@/components/accuracy-table";
 import { SpeedTable } from "@/components/speed-table";
 import {
   benchData,
-  resolverKeys,
+  CODING_MODELS,
   getResolverColor,
+  getResolversForModel,
+  getControlKeyForModel,
+  getTreatmentLabel,
 } from "@/lib/bench-data";
 
-const chartConfig: ChartConfig = Object.fromEntries(
-  benchData.resolvers.map((resolver) => [
-    resolver.key,
-    {
-      label: resolver.label,
-      color: getResolverColor(resolver.key),
-    },
-  ]),
-);
-
-const speedChartData = benchData.scenarios.map((scenario) => ({
-  label: scenario.label,
-  ...Object.fromEntries(
-    resolverKeys.map((resolverKey) => [
-      resolverKey,
-      scenario.results[resolverKey as keyof typeof scenario.results].speed,
-    ]),
-  ),
-}));
-
-const accuracyChartData = benchData.scenarios.map((scenario) => ({
-  label: scenario.label,
-  ...Object.fromEntries(
-    resolverKeys.map((resolverKey) => [
-      resolverKey,
-      scenario.results[resolverKey as keyof typeof scenario.results].accuracy,
-    ]),
-  ),
-}));
+interface ChartDataEntry {
+  label: string;
+  value: number;
+  fill: string;
+}
 
 interface ResultsBarChartProps {
-  data: Array<Record<string, unknown>>;
+  data: ChartDataEntry[];
   domain: [number, number];
   ticks: number[];
   formatValue: (value: number) => string;
@@ -69,24 +54,17 @@ const ResultsBarChart = ({
   ticks,
   formatValue,
 }: ResultsBarChartProps) => (
-  <ChartContainer config={chartConfig} className="aspect-2/1 w-full">
-    <BarChart
-      data={data}
-      layout="vertical"
-      margin={{ top: 0, right: 40, bottom: 24, left: 0 }}
-      barCategoryGap="18%"
-      barGap={1}
-    >
-      <CartesianGrid horizontal={false} strokeDasharray="3 3" />
-      <YAxis
+  <ChartContainer config={{}} className="aspect-2/1 w-full">
+    <BarChart data={data} margin={{ top: 24, right: 0, bottom: 0, left: 0 }}>
+      <CartesianGrid vertical={false} strokeDasharray="3 3" />
+      <XAxis
         dataKey="label"
         type="category"
         tickLine={false}
         axisLine={false}
-        width={160}
         tick={{ fontSize: 11 }}
       />
-      <XAxis
+      <YAxis
         type="number"
         domain={domain}
         ticks={ticks}
@@ -95,23 +73,21 @@ const ResultsBarChart = ({
         axisLine={false}
         tick={{ fontSize: 10 }}
       />
-      <ChartLegend verticalAlign="top" content={<ChartLegendContent />} />
-      <ChartTooltip content={<ChartTooltipContent />} />
-      {resolverKeys.map((resolverKey) => (
-        <Bar
-          key={resolverKey}
-          dataKey={resolverKey}
-          fill={getResolverColor(resolverKey)}
-          radius={[0, 3, 3, 0]}
-        >
-          <LabelList
-            dataKey={resolverKey}
-            position="right"
-            formatter={formatValue}
-            style={{ fontSize: 10 }}
-          />
-        </Bar>
-      ))}
+      <ChartTooltip
+        cursor={false}
+        content={<ChartTooltipContent hideLabel nameKey="label" />}
+      />
+      <Bar dataKey="value" radius={[3, 3, 0, 0]}>
+        <LabelList
+          dataKey="value"
+          position="top"
+          formatter={formatValue}
+          style={{ fontSize: 10 }}
+        />
+        {data.map((entry) => (
+          <Cell key={entry.label} fill={entry.fill} />
+        ))}
+      </Bar>
     </BarChart>
   </ChartContainer>
 );
@@ -122,10 +98,58 @@ const formatAccuracy = (value: number) => `${value}%`;
 const SPEED_TICKS = [0, 5, 10, 15, 20, 25, 30];
 const ACCURACY_TICKS = [0, 25, 50, 75, 100];
 
+const buildChartData = (
+  filteredResolverKeys: string[],
+  metricKey: "speed" | "accuracy",
+  sortDescending: boolean,
+): ChartDataEntry[] => {
+  const overallScenario = benchData.scenarios.find(
+    (scenario) => scenario.label === "overall",
+  );
+  if (!overallScenario) return [];
+
+  return filteredResolverKeys
+    .map((resolverKey) => ({
+      label: getTreatmentLabel(resolverKey),
+      value:
+        overallScenario.results[
+          resolverKey as keyof typeof overallScenario.results
+        ]?.[metricKey] ?? 0,
+      fill: getResolverColor(resolverKey),
+    }))
+    .filter((entry) => entry.value > 0)
+    .sort((entryA, entryB) =>
+      sortDescending
+        ? entryB.value - entryA.value
+        : entryA.value - entryB.value,
+    );
+};
+
 const ResultsSection = () => {
   const [tab, setTab] = useQueryState(
     "metric",
     parseAsStringLiteral(["speed", "accuracy"] as const).withDefault("speed"),
+  );
+  const [model, setModel] = useQueryState(
+    "model",
+    parseAsStringLiteral(["claude", "codex"] as const).withDefault("claude"),
+  );
+
+  const filteredResolverKeys = useMemo(
+    () => getResolversForModel(model),
+    [model],
+  );
+
+  const controlKey = useMemo(() => getControlKeyForModel(model), [model]);
+
+  const speedChartData = useMemo(
+    () => buildChartData(filteredResolverKeys, "speed", false),
+    [filteredResolverKeys],
+  );
+
+  const accuracyChartData = useMemo(
+    () => buildChartData(filteredResolverKeys, "accuracy", true),
+    [filteredResolverKeys],
   );
 
   return (
@@ -133,14 +157,31 @@ const ResultsSection = () => {
       value={tab}
       onValueChange={(value) => setTab(value as "speed" | "accuracy")}
     >
-      <TabsList variant="line">
-        <TabsTrigger value="speed">Speed</TabsTrigger>
-        <TabsTrigger value="accuracy">Accuracy</TabsTrigger>
-      </TabsList>
+      <div className="flex items-center justify-between">
+        <TabsList variant="line">
+          <TabsTrigger value="speed">Speed</TabsTrigger>
+          <TabsTrigger value="accuracy">Accuracy</TabsTrigger>
+        </TabsList>
+        <Select
+          value={model}
+          onValueChange={(value) => setModel(value as "claude" | "codex")}
+        >
+          <SelectTrigger size="sm">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {CODING_MODELS.map((codingModel) => (
+              <SelectItem key={codingModel.key} value={codingModel.key}>
+                {codingModel.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
 
       <TabsContent value="speed" className="space-y-6">
         <p className="text-sm text-muted-foreground italic">
-          Resolution time in seconds (lower is better)
+          Geometric mean resolution time in seconds (lower is better)
         </p>
         <ResultsBarChart
           data={speedChartData}
@@ -149,7 +190,10 @@ const ResultsSection = () => {
           formatValue={formatSpeed}
         />
         <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
-          <SpeedTable />
+          <SpeedTable
+            resolverKeys={filteredResolverKeys}
+            controlKey={controlKey}
+          />
         </div>
       </TabsContent>
 
@@ -164,7 +208,7 @@ const ResultsSection = () => {
           formatValue={formatAccuracy}
         />
         <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
-          <AccuracyTable />
+          <AccuracyTable resolverKeys={filteredResolverKeys} />
         </div>
       </TabsContent>
     </Tabs>

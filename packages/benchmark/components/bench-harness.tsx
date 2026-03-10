@@ -57,6 +57,28 @@ const agentationResolver: Resolver = {
   identify: (el) => identifyElement(el),
 };
 
+const cursorBrowserResolver: Resolver = {
+  name: "cursor-browser",
+  resolve: (el) => {
+    const inspector = (window as any).__CURSOR_BROWSER_INSPECTOR__;
+    if (!inspector) return { filePath: null, componentName: null, found: false };
+    const metadata = inspector.inspectElement(el);
+    return {
+      filePath: null,
+      componentName: metadata.reactComponent?.name ?? null,
+      found: Boolean(metadata.reactComponent),
+    };
+  },
+  identify: (el) => {
+    const inspector = (window as any).__CURSOR_BROWSER_INSPECTOR__;
+    if (!inspector) return null;
+    const metadata = inspector.inspectElement(el);
+    return metadata.reactComponent
+      ? { name: metadata.reactComponent.name, path: metadata.domPath }
+      : null;
+  },
+};
+
 interface BenchAPI {
   resolvers: Map<string, Resolver>;
   register: (r: Resolver) => void;
@@ -166,6 +188,7 @@ function createBenchAPI(): BenchAPI {
 
   api.register(reactGrabResolver);
   api.register(agentationResolver);
+  api.register(cursorBrowserResolver);
 
   return api;
 }

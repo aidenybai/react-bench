@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { benchData, resolverKeys, controlKey, getResolverColor } from "@/lib/bench-data";
+import { benchData, getResolverColor } from "@/lib/bench-data";
 
 const CHANGE_THRESHOLD_PERCENT = 0.5;
 
@@ -24,7 +24,12 @@ const getRelativeBackgroundColor = (
   return `rgba(240, 120, 120, ${opacity})`;
 };
 
-const SpeedTable = () => (
+interface SpeedTableProps {
+  resolverKeys: string[];
+  controlKey?: string;
+}
+
+const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
   <Table>
     <TableHeader>
       <TableRow>

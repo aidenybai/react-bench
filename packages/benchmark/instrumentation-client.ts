@@ -1,5 +1,6 @@
 import "react-grab";
 import "agentation";
+import "./lib/cursor-browser-inspector";
 import { generateSnippet } from "react-grab";
 
 declare global {

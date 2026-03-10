@@ -25,6 +25,14 @@ const PROMPT_STRATEGIES: PromptStrategy[] = [
       return `${basePrompt}\n\n${context.reactGrabClipboard}`;
     },
   },
+  {
+    name: "cursor-browser",
+    buildPrompt: (entry, context) => {
+      const basePrompt = buildUserPrompt(entry);
+      if (!context.cursorBrowserClipboard) return basePrompt;
+      return `${basePrompt}\n\n${context.cursorBrowserClipboard}`;
+    },
+  },
 ];
 
 export { PROMPT_STRATEGIES };

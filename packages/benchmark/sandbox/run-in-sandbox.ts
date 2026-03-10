@@ -25,52 +25,57 @@ const logStep = (step: number, message: string): void => {
   );
 };
 
-const runCommand = async (
+const runDetached = async (
   sandbox: Sandbox,
   label: string,
   command: string,
   cwd?: string,
 ): Promise<void> => {
   console.log(`  $ ${command}`);
-  const result = await sandbox.runCommand({
+  const handle = await sandbox.runCommand({
     cmd: "sh",
     args: ["-c", command],
     ...(cwd ? { cwd } : {}),
+    detached: true,
   });
-  const stdout = await result.stdout();
-  const stderr = await result.stderr();
-  if (stdout) console.log(stdout);
-  if (stderr && result.exitCode !== 0) console.error(stderr);
-  await assertCommandSuccess(result, label);
+
+  for await (const log of handle.logs()) {
+    process.stdout.write(log.data);
+  }
+
+  const finished = await handle.wait();
+  await assertCommandSuccess(finished, label);
 };
 
 const commitAndPushInSandbox = async (sandbox: Sandbox): Promise<void> => {
-  await runCommand(
+  await runDetached(
     sandbox,
     "git config",
     `git config user.name "react-bench[bot]" && git config user.email "react-bench[bot]@users.noreply.github.com"`,
     WORKING_DIRECTORY,
   );
 
-  await runCommand(
+  await runDetached(
     sandbox,
     "git add",
     `git add ${WEBSITE_DATA_PATH}`,
     WORKING_DIRECTORY,
   );
 
-  const diffResult = await sandbox.runCommand({
+  const diffHandle = await sandbox.runCommand({
     cmd: "git",
     args: ["diff", "--cached", "--quiet"],
     cwd: WORKING_DIRECTORY,
+    detached: true,
   });
+  const diffFinished = await diffHandle.wait();
 
-  if (diffResult.exitCode === 0) {
+  if (diffFinished.exitCode === 0) {
     console.log("  No changes to commit.");
     return;
   }
 
-  await runCommand(
+  await runDetached(
     sandbox,
     "git commit",
     `git commit -m "Update benchmark data [skip ci]"`,
@@ -78,26 +83,39 @@ const commitAndPushInSandbox = async (sandbox: Sandbox): Promise<void> => {
   );
 
   for (let attempt = 1; attempt <= MAX_PUSH_ATTEMPTS; attempt++) {
-    const pushResult = await sandbox.runCommand({
+    const pushHandle = await sandbox.runCommand({
       cmd: "sh",
-      args: ["-c", "git fetch --unshallow origin main 2>/dev/null; git fetch origin main && git rebase origin/main && git push"],
+      args: [
+        "-c",
+        "git fetch --unshallow origin main 2>/dev/null; git fetch origin main && git rebase origin/main && git push",
+      ],
       cwd: WORKING_DIRECTORY,
+      detached: true,
     });
 
-    if (pushResult.exitCode === 0) {
+    let pushStderr = "";
+    for await (const log of pushHandle.logs()) {
+      if (log.stream === "stderr") pushStderr += log.data;
+      process.stdout.write(log.data);
+    }
+
+    const pushFinished = await pushHandle.wait();
+    if (pushFinished.exitCode === 0) {
       console.log("  Pushed successfully.");
       return;
     }
 
-    const stderr = await pushResult.stderr();
-    console.log(`  Push attempt ${attempt}/${MAX_PUSH_ATTEMPTS} failed: ${stderr}`);
+    console.log(
+      `  Push attempt ${attempt}/${MAX_PUSH_ATTEMPTS} failed: ${pushStderr}`,
+    );
 
     if (attempt < MAX_PUSH_ATTEMPTS) {
-      await sandbox.runCommand({
-        cmd: "sh",
-        args: ["-c", "sleep 5 && git rebase --abort 2>/dev/null; true"],
-        cwd: WORKING_DIRECTORY,
-      });
+      await runDetached(
+        sandbox,
+        "rebase abort",
+        "sleep 5 && git rebase --abort 2>/dev/null; true",
+        WORKING_DIRECTORY,
+      );
     }
   }
 
@@ -143,26 +161,31 @@ const runBenchmark = async () => {
   try {
     logStep(2, "Cloning repo...");
     const cloneUrl = githubToken ? buildAuthUrl(REPO, githubToken) : REPO;
-    const cloneResult = await sandbox.runCommand("git", [
-      "clone",
-      "--depth",
-      String(GIT_CLONE_DEPTH),
-      cloneUrl,
-      WORKING_DIRECTORY,
-    ]);
-    await assertCommandSuccess(cloneResult, "git clone");
+    const cloneHandle = await sandbox.runCommand({
+      cmd: "git",
+      args: [
+        "clone",
+        "--depth",
+        String(GIT_CLONE_DEPTH),
+        cloneUrl,
+        WORKING_DIRECTORY,
+      ],
+      detached: true,
+    });
+    const cloneFinished = await cloneHandle.wait();
+    await assertCommandSuccess(cloneFinished, "git clone");
 
     logStep(3, "Installing dependencies...");
-    await runCommand(sandbox, "pnpm install", "pnpm install", WORKING_DIRECTORY);
+    await runDetached(sandbox, "pnpm install", "pnpm install", WORKING_DIRECTORY);
 
     logStep(4, "Installing Playwright browsers...");
-    await runCommand(
+    await runDetached(
       sandbox,
       "playwright system deps",
       "sudo dnf install -y alsa-lib atk at-spi2-atk cups-libs libdrm libXcomposite libXdamage libXrandr mesa-libgbm pango nss nspr libxkbcommon 2>/dev/null || sudo yum install -y alsa-lib atk at-spi2-atk cups-libs libdrm libXcomposite libXdamage libXrandr mesa-libgbm pango nss nspr libxkbcommon 2>/dev/null || true",
       WORKING_DIRECTORY,
     );
-    await runCommand(
+    await runDetached(
       sandbox,
       "playwright install",
       "pnpm --filter @react-bench/benchmark exec playwright install chromium",
@@ -171,7 +194,7 @@ const runBenchmark = async () => {
 
     logStep(5, "Running benchmark...");
     console.log("  This may take a while...\n");
-    await runCommand(
+    await runDetached(
       sandbox,
       "benchmark test",
       "pnpm --filter @react-bench/benchmark test",

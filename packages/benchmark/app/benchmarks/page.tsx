@@ -76,10 +76,13 @@ const BenchmarksPage = () => {
       (resolverResult) => resolverResult.correct,
     );
     const avgMs = correctResults.length
-      ? correctResults.reduce(
-          (sum, resolverResult) => sum + resolverResult.ms,
-          0,
-        ) / correctResults.length
+      ? Math.exp(
+          correctResults.reduce(
+            (logSum, resolverResult) =>
+              logSum + Math.log(resolverResult.ms),
+            0,
+          ) / correctResults.length,
+        )
       : null;
     return {
       correct: correctResults.length,

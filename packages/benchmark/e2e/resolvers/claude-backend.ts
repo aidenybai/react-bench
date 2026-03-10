@@ -61,12 +61,19 @@ const runOnce = async (
     TIMEOUT_MS,
   );
 
+  const reasoningMs = result.ms - result.bootMs;
+
   if (result.earlyAborted) {
-    return { filePath: expectedFilePath!, componentName: null, ms: result.ms };
+    return {
+      filePath: expectedFilePath!,
+      componentName: null,
+      ms: reasoningMs,
+      earlyAborted: true,
+    };
   }
 
   const { filePath, componentName } = parseOutput(result.stdout);
-  return { filePath, componentName, ms: result.ms };
+  return { filePath, componentName, ms: reasoningMs, earlyAborted: false };
 };
 
 const claudeBackend: CliBackend = {

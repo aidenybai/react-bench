@@ -1,10 +1,10 @@
 import claudeBackend from "./claude-backend";
-import codexBackend from "./codex-backend";
+// import codexBackend from "./codex-backend";
 import { PROMPT_STRATEGIES } from "./prompt-strategies";
 import { runWithRetries } from "./streaming-runner";
 import type { CliBackend, CliResolver } from "./types";
 
-const BACKENDS: CliBackend[] = [claudeBackend, codexBackend];
+const BACKENDS: CliBackend[] = [claudeBackend];
 
 const resolverName = (strategy: string, backend: string): string => {
   if (strategy === "code") return backend === "claude" ? "claude-code" : backend;

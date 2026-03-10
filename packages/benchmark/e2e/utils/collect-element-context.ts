@@ -15,6 +15,7 @@ const collectElementContext = async (
       reactGrab: null,
       reactGrabClipboard: null,
       agentationClipboard: null,
+      cursorBrowserClipboard: null,
     };
 
     const element = document.querySelector(
@@ -70,6 +71,13 @@ const collectElementContext = async (
     if (selectedText)
       agentationLines.push(`**Selected text:** "${selectedText}"`);
 
+    let cursorBrowserClipboard: string | null = null;
+    const cursorInspector = (window as any).__CURSOR_BROWSER_INSPECTOR__;
+    if (cursorInspector) {
+      const metadata = cursorInspector.inspectElement(element);
+      cursorBrowserClipboard = cursorInspector.formatClipboardText(metadata);
+    }
+
     return {
       componentName,
       elementPath,
@@ -85,6 +93,7 @@ const collectElementContext = async (
       reactGrab,
       reactGrabClipboard,
       agentationClipboard: agentationLines.join("\n"),
+      cursorBrowserClipboard,
     };
   }, testId);
 

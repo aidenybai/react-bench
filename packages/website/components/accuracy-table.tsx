@@ -6,9 +6,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { benchData, resolverKeys, getResolverColor } from "@/lib/bench-data";
+import { benchData, getResolverColor } from "@/lib/bench-data";
 
-const AccuracyTable = () => (
+interface AccuracyTableProps {
+  resolverKeys: string[];
+}
+
+const AccuracyTable = ({ resolverKeys }: AccuracyTableProps) => (
   <Table>
     <TableHeader>
       <TableRow>

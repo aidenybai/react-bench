@@ -18,12 +18,14 @@ interface ElementContext {
   } | null;
   reactGrabClipboard: string | null;
   agentationClipboard: string | null;
+  cursorBrowserClipboard: string | null;
 }
 
 interface CliResult {
   filePath: string | null;
   componentName: string | null;
   ms: number;
+  earlyAborted: boolean;
 }
 
 interface PromptStrategy {
@@ -53,6 +55,7 @@ const EMPTY_ELEMENT_CONTEXT: ElementContext = {
   reactGrab: null,
   reactGrabClipboard: null,
   agentationClipboard: null,
+  cursorBrowserClipboard: null,
 };
 
 export { EMPTY_ELEMENT_CONTEXT };

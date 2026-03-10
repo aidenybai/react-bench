@@ -36,13 +36,15 @@ const TestCaseCell = ({
         </a>
         {category && (
           <Tooltip>
-            <TooltipTrigger asChild>
-              <Badge
-                variant="outline"
-                className="text-[9px] px-1.5 py-0 h-4 cursor-default"
-              >
-                {category.label}
-              </Badge>
+            <TooltipTrigger
+              render={
+                <Badge
+                  variant="outline"
+                  className="text-[9px] px-1.5 py-0 h-4 cursor-default"
+                />
+              }
+            >
+              {category.label}
             </TooltipTrigger>
             <TooltipContent className="max-w-[240px]">
               {category.rationale}

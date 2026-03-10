@@ -11,3 +11,7 @@ export { default as CommonDataTable } from "./data-table";
 export { ListItem, ListItemSkeleton } from "./list-item";
 export { default as CommonModal } from "./modal";
 export { default as NavItem } from "./nav-item";
+
+export { BaseButton as ReExportedButton } from "../primitives";
+export { BaseInput as ReExportedInput } from "../primitives";
+export { BaseBadge as ReExportedBadge } from "../primitives";

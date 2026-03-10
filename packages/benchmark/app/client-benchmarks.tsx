@@ -77,6 +77,88 @@ import { StatusIndicator } from "@/lib/render-utils";
 import { FormattedCurrency } from "@/lib/data-formatters";
 import { IntegrationCard } from "@/components/generated/integration-registry";
 
+import { SubmitButton } from "@/components/actions/submit-action";
+import { MetricCard } from "@/components/data-display/metric-overview";
+import { ValidatedInput } from "@/components/forms/validated-input";
+import { RouteLink } from "@/components/navigation/route-handler";
+import { SessionAvatar } from "@/components/auth/session-indicator";
+import { ProcessTag } from "@/components/feedback/process-monitor";
+import { FeatureToggle } from "@/components/settings/feature-flag";
+import { KpiCell } from "@/components/dashboard/kpi-tracker";
+import { InterruptDialog } from "@/components/overlays/interrupt-handler";
+import { SegmentButton } from "@/components/ui/segmented-control";
+import { HoverTip } from "@/components/primitives/hover-context";
+import { ContentDivider } from "@/components/layout/content-separator";
+import { RemovableToken } from "@/components/atoms/removable-token";
+import { PathSegment } from "@/components/navigation/path-trail";
+import { AsyncSpinner } from "@/components/feedback/async-boundary";
+
+import { createAction } from "@/lib/create-action";
+import { createDisplay } from "@/lib/create-display";
+import { createField } from "@/lib/create-field";
+
+import { WizardStep } from "@/hooks/use-wizard";
+import { ProgressRing } from "@/lib/progress-helpers";
+import { ColorSwatch } from "@/lib/color-swatch";
+import { DiffLine } from "@/lib/diff-renderer";
+import { TimelineDot } from "@/lib/timeline-utils";
+import { ThemePreview } from "@/components/providers/theme-swatch";
+import { AuthBadge } from "@/components/providers/auth-status";
+import { PaginationNav } from "@/hooks/use-page-nav";
+import { ToastMessage } from "@/hooks/use-toast-queue";
+import { EmptyState } from "@/lib/placeholder-utils";
+
+import { BaseButton } from "@/components/primitives/base-button";
+import { BaseInput } from "@/components/primitives/base-input";
+import { BaseBadge } from "@/components/primitives/base-badge";
+import { ReceiptLineItem } from "@/components/features/payments/receipt/line-item";
+import { ThreadBubble } from "@/components/features/messaging/threads/thread-bubble";
+
+import {
+  RevenueStatCard,
+  OrderStatCard,
+  ChurnStatCard,
+  RetentionStatCard,
+  MrrStatCard,
+} from "@/components/data-display/stat-cards";
+
+import { OverlayBanner } from "@/components/portals/overlay-stack";
+import { NotificationToast } from "@/components/portals/notification-portal";
+
+import { DynamicWidget } from "@/components/generated/widget-registry";
+
+import { ShippingLabel } from "@/components/features/orders/shipping/labels/shipping-label";
+import { InvoiceRow } from "@/components/features/billing/invoices/rows/invoice-row";
+import { PermissionChip } from "@/components/features/admin/roles/permissions/permission-chip";
+import { LogEntry } from "@/components/features/monitoring/logs/entries/log-entry";
+import { PipelineStage } from "@/components/features/ci/pipelines/stages/pipeline-stage";
+
+import { IconLabel } from "@/components/common/icon-label";
+import { StatusDot } from "@/components/common/status-dot";
+import { KeyValue } from "@/components/common/key-value";
+
+import { PrimitiveCard } from "@/lib/ui-primitives";
+import { ActionSheetButton } from "@/hooks/use-action-sheet";
+import { ConfigList } from "@/lib/layout-config";
+
+const SaveAction = createAction({ label: "Save", icon: "💾", testId: "factory-save-action" });
+const DeleteAction = createAction({ label: "Delete", icon: "🗑", testId: "factory-delete-action" });
+const ShareAction = createAction({ label: "Share", icon: "📤", testId: "factory-share-action" });
+const ExportAction = createAction({ label: "Export", icon: "📊", testId: "factory-export-action" });
+const ArchiveAction = createAction({ label: "Archive", icon: "📦", testId: "factory-archive-action" });
+
+const ConversionDisplay = createDisplay({ title: "Conversion Rate", format: "percent", testId: "factory-conversion-rate" });
+const BounceDisplay = createDisplay({ title: "Bounce Rate", format: "percent", testId: "factory-bounce-rate" });
+const SalesDisplay = createDisplay({ title: "Total Sales", format: "currency", testId: "factory-total-sales" });
+const SessionDisplay = createDisplay({ title: "Avg Session", format: "number", testId: "factory-avg-session" });
+const ErrorDisplay = createDisplay({ title: "Error Count", format: "number", testId: "factory-error-count" });
+
+const SearchField = createField({ label: "Search", placeholder: "Search...", testId: "factory-search-field" });
+const EmailField = createField({ label: "Email", placeholder: "you@example.com", testId: "factory-email-field" });
+const PhoneField = createField({ label: "Phone", placeholder: "+1 (555) 000-0000", testId: "factory-phone-field" });
+const UrlField = createField({ label: "URL", placeholder: "https://...", testId: "factory-url-field" });
+const NotesField = createField({ label: "Notes", placeholder: "Add notes...", testId: "factory-notes-field" });
+
 const RevenueWidget = createWidget({
   title: "Revenue",
   icon: "$",
@@ -615,6 +697,102 @@ export function ClientBenchmarks() {
           <FormattedCurrency amount={1234.56} currency="USD" />
 
           <IntegrationCard slug="slack" connected={true} />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Search-Resistant: Generic Names">
+        <StyledGrid columns={3}>
+          <SubmitButton data-testid="generic-submit-button">Submit</SubmitButton>
+          <MetricCard data-testid="generic-data-card">1,234</MetricCard>
+          <ValidatedInput data-testid="generic-text-input" />
+          <RouteLink data-testid="generic-nav-link">Dashboard</RouteLink>
+          <SessionAvatar data-testid="generic-user-avatar" />
+          <ProcessTag data-testid="generic-status-tag">Running</ProcessTag>
+          <FeatureToggle data-testid="generic-toggle-switch" />
+          <KpiCell data-testid="generic-grid-cell">98.5%</KpiCell>
+          <InterruptDialog data-testid="generic-modal-dialog">Confirm?</InterruptDialog>
+          <SegmentButton data-testid="generic-tab-button">Tab 1</SegmentButton>
+          <HoverTip data-testid="generic-hover-tip">Hover info</HoverTip>
+          <ContentDivider data-testid="generic-separator" />
+          <RemovableToken data-testid="generic-token-chip">Tag</RemovableToken>
+          <PathSegment data-testid="generic-path-crumb">Home</PathSegment>
+          <AsyncSpinner data-testid="generic-loading-ring" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Search-Resistant: Factory Components">
+        <StyledGrid columns={3}>
+          <SaveAction />
+          <DeleteAction />
+          <ShareAction />
+          <ExportAction />
+          <ArchiveAction />
+          <ConversionDisplay value={3.2} />
+          <BounceDisplay value={42.1} />
+          <SalesDisplay value={98765} />
+          <SessionDisplay value={4.5} />
+          <ErrorDisplay value={12} />
+          <SearchField />
+          <EmailField />
+          <PhoneField />
+          <UrlField />
+          <NotesField />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Search-Resistant: Wrong Location">
+        <StyledGrid columns={3}>
+          <WizardStep label="Step 1" active={true} data-testid="hook-wizard-step" />
+          <ProgressRing percent={72} data-testid="util-progress-ring" />
+          <ColorSwatch color="#6366f1" data-testid="util-color-swatch" />
+          <DiffLine line="const x = 1;" type="added" data-testid="util-diff-line" />
+          <TimelineDot label="Deployed" active data-testid="util-timeline-dot" />
+          <ThemePreview data-testid="provider-theme-preview" />
+          <AuthBadge data-testid="provider-auth-badge" />
+          <PaginationNav current={2} total={10} data-testid="hook-pagination-nav" />
+          <ToastMessage message="Saved!" data-testid="hook-toast-message" />
+          <EmptyState message="No items yet" data-testid="util-empty-state" />
+          <PrimitiveCard data-testid="misleading-card-in-utils" />
+          <ActionSheetButton data-testid="misleading-button-in-hooks" />
+          <ConfigList data-testid="misleading-list-in-config" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Search-Resistant: Barrel Re-exports & Deep Paths">
+        <StyledGrid columns={3}>
+          <BaseButton data-testid="barrel-base-button">Click</BaseButton>
+          <BaseInput label="Name" data-testid="barrel-base-input" />
+          <BaseBadge data-testid="barrel-base-badge">New</BaseBadge>
+          <ReceiptLineItem label="Item 1" amount={29.99} data-testid="deep-receipt-line-item" />
+          <ThreadBubble text="Hey there!" sender="Alice" data-testid="deep-thread-bubble" />
+          <ShippingLabel data-testid="deep-shipping-label" />
+          <InvoiceRow data-testid="deep-invoice-row" />
+          <PermissionChip data-testid="deep-permission-chip" />
+          <LogEntry data-testid="deep-log-entry" />
+          <PipelineStage data-testid="deep-pipeline-stage" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Search-Resistant: Ambiguous Siblings & Portals">
+        <StyledGrid columns={3}>
+          <RevenueStatCard data-testid="sibling-revenue-stat" />
+          <OrderStatCard data-testid="sibling-order-stat" />
+          <ChurnStatCard data-testid="sibling-churn-stat" />
+          <RetentionStatCard data-testid="sibling-retention-stat" />
+          <MrrStatCard data-testid="sibling-mrr-stat" />
+          <OverlayBanner message="System update" data-testid="portal-overlay-banner" />
+          <NotificationToast text="Changes saved" data-testid="portal-notification-toast" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Search-Resistant: Dynamic & Cross-Module">
+        <StyledGrid columns={3}>
+          <DynamicWidget size="small" data-testid="dynamic-small-widget" />
+          <DynamicWidget size="medium" data-testid="dynamic-medium-widget" />
+          <DynamicWidget size="large" data-testid="dynamic-large-widget" />
+          <IconLabel icon="📧" text="Email" data-testid="common-icon-label" />
+          <StatusDot status="online" data-testid="common-status-dot" />
+          <KeyValue label="Version" value="2.1.0" data-testid="common-key-value" />
         </StyledGrid>
       </StyledSection>
     </div>

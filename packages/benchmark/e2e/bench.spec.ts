@@ -11,26 +11,28 @@ import {
   saveCheckpoint,
   loadCheckpoint,
   type BrowserCollected,
+  type CliCompleted,
 } from "./checkpoint";
 import {
   CLI_RESOLVERS,
+  BACKENDS,
   EMPTY_ELEMENT_CONTEXT,
-  runCli,
   pool,
   CLI_CONCURRENCY,
-  CLI_MODEL,
 } from "./resolvers";
 
-const BENCH_INIT_TIMEOUT_MS = 15_000;
-const REACT_GRAB_INIT_TIMEOUT_MS = 15_000;
+const HARNESS_INIT_TIMEOUT_MS = 15_000;
 const INIT_SETTLE_MS = 1000;
 const SKELETON_RELOAD_TIMEOUT_MS = 10_000;
 const BENCH_RESUME = Boolean(process.env.BENCH_RESUME);
 
 const RESOLVER_LABELS: Record<string, string> = {
-  "claude-code": "Control (Claude Code)",
-  "react-grab+claude": "React Grab + Claude Code",
+  "claude-code": "Claude Code",
   "agentation+claude": "Agentation + Claude Code",
+  "react-grab+claude": "React Grab + Claude Code",
+  codex: "Codex",
+  "agentation+codex": "Agentation + Codex",
+  "react-grab+codex": "React Grab + Codex",
 };
 
 const BENCH_INTERACTIONS: Record<string, (page: Page) => Promise<void>> = {
@@ -57,7 +59,7 @@ const test = base.extend<{ page: Page }>({
           bench.list().length >= 2
         );
       },
-      { timeout: BENCH_INIT_TIMEOUT_MS },
+      { timeout: HARNESS_INIT_TIMEOUT_MS },
     );
     // HACK: wait for all browser resolvers to finish registering after API is ready
     await page.waitForTimeout(INIT_SETTLE_MS);
@@ -73,6 +75,14 @@ interface ResolverResult {
   correct: boolean;
 }
 
+const EMPTY_RESOLVER_RESULT: ResolverResult = {
+  filePath: null,
+  componentName: null,
+  found: false,
+  ms: 0,
+  correct: false,
+};
+
 interface EntryResult {
   id: number;
   testId: string;
@@ -85,10 +95,7 @@ const collectBrowserPhase = async (
   page: Page,
 ): Promise<{
   collected: BrowserCollected[];
-  cliCompleted: Record<
-    string,
-    { filePath: string | null; componentName: string | null; ms: number }
-  >;
+  cliCompleted: Record<string, CliCompleted>;
 }> => {
   const checkpoint = BENCH_RESUME ? loadCheckpoint() : null;
   const cliCompleted = checkpoint?.cliCompleted ?? {};
@@ -146,14 +153,11 @@ const collectBrowserPhase = async (
 
 const runCliPhase = async (
   collected: BrowserCollected[],
-  cliCompleted: Record<
-    string,
-    { filePath: string | null; componentName: string | null; ms: number }
-  >,
+  cliCompleted: Record<string, CliCompleted>,
 ): Promise<void> => {
   interface CliTask {
     entryIndex: number;
-    resolverName: string;
+    resolver: (typeof CLI_RESOLVERS)[number];
     prompt: string;
     expectedFilePath: string;
   }
@@ -171,7 +175,7 @@ const runCliPhase = async (
       if (cliCompleted[taskKey]) continue;
       cliTasks.push({
         entryIndex: collectedIndex,
-        resolverName: cliResolver.name,
+        resolver: cliResolver,
         prompt: cliResolver.buildPrompt(entry, elementContext),
         expectedFilePath: entry.filePath,
       });
@@ -188,8 +192,8 @@ const runCliPhase = async (
   await pool(
     cliTasks.map(
       (task) => () =>
-        runCli(task.prompt, task.expectedFilePath).then((result) => {
-          const taskKey = `${collected[task.entryIndex].entry.id}:${task.resolverName}`;
+        task.resolver.run(task.prompt, task.expectedFilePath).then((result) => {
+          const taskKey = `${collected[task.entryIndex].entry.id}:${task.resolver.name}`;
           cliCompleted[taskKey] = result;
           saveCheckpoint({ browserCollected: collected, cliCompleted });
           return result;
@@ -225,29 +229,12 @@ const buildResults = (
     const resolvers: Record<string, ResolverResult> = {};
 
     for (const resolverName of allResolverNames) {
-      if (error) {
-        resolvers[resolverName] = {
-          filePath: null,
-          componentName: null,
-          found: false,
-          ms: 0,
-          correct: false,
-        };
+      if (error || !browserResults[resolverName]) {
+        resolvers[resolverName] = EMPTY_RESOLVER_RESULT;
         continue;
       }
 
       const resolverResult = browserResults[resolverName];
-      if (!resolverResult) {
-        resolvers[resolverName] = {
-          filePath: null,
-          componentName: null,
-          found: false,
-          ms: 0,
-          correct: false,
-        };
-        continue;
-      }
-
       resolvers[resolverName] = {
         ...resolverResult,
         correct: isCorrectFile(resolverResult.filePath, entry.filePath),
@@ -274,11 +261,10 @@ const printResults = (
       const resolver = entryResult.resolvers[resolverName];
       if (!resolver?.found) return `${resolverName}: \u2014`;
 
-      const symbol = resolver.correct
-        ? "\u2713"
-        : resolver.found
-          ? "~"
-          : "\u2717";
+      let symbol = "\u2717";
+      if (resolver.correct) symbol = "\u2713";
+      else if (resolver.found) symbol = "~";
+
       return `${resolverName}: ${symbol} ${formatTime(resolver.ms)}`;
     });
 
@@ -326,7 +312,7 @@ const writeOutputFiles = (
 ): void => {
   const chartResolverNames = allResolverNames.filter(
     (resolverName) =>
-      !["react-grab", "agentation", "baseline"].includes(resolverName),
+      !["react-grab", "agentation"].includes(resolverName),
   );
   const resolverNames =
     chartResolverNames.length > 0 ? chartResolverNames : allResolverNames;
@@ -423,7 +409,7 @@ test.describe("Benchmark", () => {
   test("compare all resolvers across full manifest", async ({ page }) => {
     await page.waitForFunction(
       () => (window as any).__REACT_GRAB__?.getSource,
-      { timeout: REACT_GRAB_INIT_TIMEOUT_MS },
+      { timeout: HARNESS_INIT_TIMEOUT_MS },
     );
 
     const browserResolverNames: string[] = await page.evaluate(() =>
@@ -432,8 +418,11 @@ test.describe("Benchmark", () => {
     const cliResolverNames = CLI_RESOLVERS.map((resolver) => resolver.name);
     const allResolverNames = [...browserResolverNames, ...cliResolverNames];
 
+    const backendInfo = BACKENDS.map(
+      (backend) => `${backend.name}: ${backend.model}`,
+    ).join(", ");
     console.log(
-      `\n  Resolvers: ${allResolverNames.join(", ")}${CLI_MODEL ? ` (model: ${CLI_MODEL})` : ""}`,
+      `\n  Resolvers: ${allResolverNames.join(", ")} (${backendInfo})`,
     );
     console.log(`  Entries:   ${TEST_MANIFEST.length}\n`);
 

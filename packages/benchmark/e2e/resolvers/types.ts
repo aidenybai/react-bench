@@ -20,9 +20,28 @@ interface ElementContext {
   agentationClipboard: string | null;
 }
 
-interface CliResolver {
+interface CliResult {
+  filePath: string | null;
+  componentName: string | null;
+  ms: number;
+}
+
+interface PromptStrategy {
   name: string;
   buildPrompt: (entry: TestEntry, context: ElementContext) => string;
+}
+
+interface CliBackend {
+  name: string;
+  model: string;
+  runOnce: (prompt: string, expectedFilePath?: string) => Promise<CliResult>;
+}
+
+interface CliResolver {
+  name: string;
+  backend: string;
+  buildPrompt: (entry: TestEntry, context: ElementContext) => string;
+  run: (prompt: string, expectedFilePath?: string) => Promise<CliResult>;
 }
 
 const EMPTY_ELEMENT_CONTEXT: ElementContext = {
@@ -37,4 +56,10 @@ const EMPTY_ELEMENT_CONTEXT: ElementContext = {
 };
 
 export { EMPTY_ELEMENT_CONTEXT };
-export type { ElementContext, CliResolver };
+export type {
+  ElementContext,
+  CliResult,
+  PromptStrategy,
+  CliBackend,
+  CliResolver,
+};

@@ -148,8 +148,10 @@ const ResultsSection = () => {
           ticks={SPEED_TICKS}
           formatValue={formatSpeed}
         />
-        <div className="overflow-x-auto">
-          <SpeedTable />
+        <div className="-mx-4 overflow-x-auto sm:-mx-8">
+          <div className="min-w-max px-4 sm:px-8">
+            <SpeedTable />
+          </div>
         </div>
       </TabsContent>
 
@@ -163,8 +165,10 @@ const ResultsSection = () => {
           ticks={ACCURACY_TICKS}
           formatValue={formatAccuracy}
         />
-        <div className="overflow-x-auto">
-          <AccuracyTable />
+        <div className="-mx-4 overflow-x-auto sm:-mx-8">
+          <div className="min-w-max px-4 sm:px-8">
+            <AccuracyTable />
+          </div>
         </div>
       </TabsContent>
     </Tabs>

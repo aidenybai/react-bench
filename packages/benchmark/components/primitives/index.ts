@@ -8,3 +8,7 @@ export { Select } from "./select";
 export { Tooltip } from "./tooltip";
 export { Label } from "./label";
 export { Textarea } from "./textarea";
+
+export { BaseButton } from "./base-button";
+export { BaseInput } from "./base-input";
+export { BaseBadge } from "./base-badge";

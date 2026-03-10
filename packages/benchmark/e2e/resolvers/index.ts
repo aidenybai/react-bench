@@ -1,18 +1,29 @@
-import baseline from "./baseline";
-import claudeCode from "./claude-code";
-import agentationClaude from "./agentation-claude";
-import reactGrabClaude from "./react-grab-claude";
-import type { CliResolver } from "./types";
+import claudeBackend from "./claude-backend";
+import codexBackend from "./codex-backend";
+import { PROMPT_STRATEGIES } from "./prompt-strategies";
+import { runWithRetries } from "./streaming-runner";
+import type { CliBackend, CliResolver } from "./types";
 
-const CLI_RESOLVERS: CliResolver[] = [
-  baseline,
-  claudeCode,
-  agentationClaude,
-  reactGrabClaude,
-];
+const BACKENDS: CliBackend[] = [claudeBackend, codexBackend];
 
-export { CLI_RESOLVERS };
-export { runCli, pool, CLI_CONCURRENCY, CLI_MODEL } from "./cli-runner";
+const resolverName = (strategy: string, backend: string): string => {
+  if (strategy === "code") return backend === "claude" ? "claude-code" : backend;
+  return `${strategy}+${backend}`;
+};
+
+const CLI_RESOLVERS: CliResolver[] = BACKENDS.flatMap((backend) =>
+  PROMPT_STRATEGIES.map((strategy) => ({
+    name: resolverName(strategy.name, backend.name),
+    backend: backend.name,
+    buildPrompt: strategy.buildPrompt,
+    run: (prompt: string, expectedFilePath?: string) =>
+      runWithRetries(backend.runOnce, prompt, expectedFilePath),
+  })),
+);
+
+const CLI_CONCURRENCY = parseInt(process.env.BENCH_CONCURRENCY ?? "10", 10);
+
+export { CLI_RESOLVERS, BACKENDS, CLI_CONCURRENCY };
+export { pool } from "./streaming-runner";
 export { EMPTY_ELEMENT_CONTEXT } from "./types";
-export type { CliResolver, ElementContext } from "./types";
-export type { CliResult } from "./cli-runner";
+export type { CliResolver, ElementContext, CliResult } from "./types";

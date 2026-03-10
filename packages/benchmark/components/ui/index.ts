@@ -36,3 +36,7 @@ export { Separator } from "./separator";
 export { Skeleton } from "./skeleton";
 export { Tabs } from "./tabs";
 export { Tooltip } from "./tooltip";
+
+export { ReExportedButton as UIButton } from "../common";
+export { ReExportedInput as UIInput } from "../common";
+export { ReExportedBadge as UIBadge } from "../common";

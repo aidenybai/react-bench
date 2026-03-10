@@ -141,6 +141,107 @@ import { PrimitiveCard } from "@/lib/ui-primitives";
 import { ActionSheetButton } from "@/hooks/use-action-sheet";
 import { ConfigList } from "@/lib/layout-config";
 
+import { createAlert } from "@/lib/create-alert";
+import { createBadge } from "@/lib/create-badge";
+import { createCard } from "@/lib/create-card";
+import { createTab } from "@/lib/create-tab";
+
+import { DragHandle } from "@/hooks/use-drag-drop";
+import { ResizeGrip } from "@/hooks/use-resizable";
+import { ShortcutHint } from "@/hooks/use-keyboard-shortcuts";
+import { UndoToast } from "@/hooks/use-undo-stack";
+import { ClipboardFeedback } from "@/hooks/use-clipboard-copy";
+import { MarkdownPreview } from "@/lib/markdown-utils";
+import { JsonTree } from "@/lib/json-inspector";
+import { ByteDisplay } from "@/lib/byte-formatters";
+import { DurationLabel } from "@/lib/duration-utils";
+import { TruncatedText } from "@/lib/text-helpers";
+import { CodeBlock } from "@/lib/syntax-utils";
+import { RelativeTime } from "@/lib/date-helpers";
+import { AvatarStack } from "@/lib/avatar-utils";
+import { LocaleLabel } from "@/components/providers/locale-display";
+import { FeatureFlagBadge } from "@/components/providers/feature-flag-display";
+import { ConnectivityDot } from "@/components/providers/connectivity-display";
+import { SkeletonBlock } from "@/lib/skeleton-config";
+import { ErrorFallback } from "@/lib/error-config";
+import { EmptyIllustration } from "@/lib/empty-state-config";
+import { HotkeyLabel } from "@/lib/hotkey-registry";
+import { PermissionGate } from "@/lib/permission-utils";
+import { ScrollIndicator } from "@/lib/scroll-indicator";
+import { CopyButton } from "@/lib/clipboard-helpers";
+import { ExternalLink } from "@/lib/link-utils";
+import { CountBadge } from "@/lib/counter-utils";
+
+import { ProgressTracker } from "@/components/feedback/progress-tracker";
+import { NotificationBox } from "@/components/feedback/notification-box";
+import { ActionMenu } from "@/components/overlays/action-menu";
+import { InfoPanel } from "@/components/overlays/info-panel";
+import { ContentEditor } from "@/components/forms/content-editor";
+import { AgreementCheck } from "@/components/forms/agreement-check";
+import { PlanSelector } from "@/components/forms/plan-selector";
+import { RangePicker } from "@/components/forms/range-picker";
+import { CalendarEntry } from "@/components/data-display/calendar-entry";
+import { MetricBar } from "@/components/data-display/metric-bar";
+import { RecordRow } from "@/components/data-display/record-row";
+import { ItemTile } from "@/components/data-display/item-tile";
+import { ToolTrigger } from "@/components/actions/tool-trigger";
+import { RedirectAction } from "@/components/actions/redirect-action";
+import { CommandItem } from "@/components/navigation/command-item";
+import { DrawerEntry } from "@/components/navigation/drawer-entry";
+import { PageFooter } from "@/components/layout/page-footer";
+import { TitleStrip } from "@/components/layout/title-strip";
+import { PanelActions } from "@/components/layout/panel-actions";
+import { SourcePreview } from "@/components/data-display/source-preview";
+import { DocumentIcon } from "@/components/data-display/document-icon";
+import { MilestoneDot } from "@/components/feedback/milestone-dot";
+import { SnackMessage } from "@/components/feedback/snack-message";
+import { DecisionPrompt } from "@/components/overlays/decision-prompt";
+import { SlidePanel } from "@/components/overlays/slide-panel";
+import { LabelGroup } from "@/components/data-display/label-group";
+import { BinaryToggle } from "@/components/forms/binary-toggle";
+import { OptionPicker } from "@/components/forms/option-picker";
+import { DropTarget } from "@/components/forms/drop-target";
+import { QueryInput } from "@/components/navigation/query-input";
+
+import { CpuTile, RamTile, DiskTile, NetworkTile, GpuTile } from "@/components/data-display/metric-tiles";
+import { CreateButton, ReadButton, UpdateButton, DeleteButton } from "@/components/actions/crud-buttons";
+import { OnlineIndicator, OfflineIndicator, BusyIndicator, AwayIndicator, DndIndicator } from "@/components/feedback/status-indicators";
+import { HomeIcon, SettingsIcon, ProfileIcon, HelpIcon, LogoutIcon, SearchIcon } from "@/components/navigation/nav-icons";
+
+import { DynamicIcon } from "@/components/generated/icon-registry";
+import { DynamicLayout } from "@/components/generated/layout-registry";
+
+import { RefundButton } from "@/components/features/billing/refunds/actions/refund-button";
+import { SubscriptionBadge } from "@/components/features/billing/subscriptions/status/subscription-badge";
+import { CouponInput } from "@/components/features/billing/coupons/forms/coupon-input";
+import { TaxLine } from "@/components/features/billing/taxes/display/tax-line";
+import { RoleSelector } from "@/components/features/admin/users/roles/role-selector";
+import { AuditRow } from "@/components/features/admin/audit/entries/audit-row";
+import { WebhookCard } from "@/components/features/integrations/webhooks/cards/webhook-card";
+import { ApiKeyRow } from "@/components/features/integrations/api-keys/display/api-key-row";
+import { TemplatePreview } from "@/components/features/messaging/templates/preview/template-preview";
+import { ChannelBadge } from "@/components/features/messaging/channels/badges/channel-badge";
+import { FilterChip } from "@/components/features/search/filters/chips/filter-chip";
+import { SortButton } from "@/components/features/search/sorting/controls/sort-button";
+import { StepIndicator } from "@/components/features/onboarding/wizard/steps/step-indicator";
+import { ChecklistItem } from "@/components/features/onboarding/checklist/items/checklist-item";
+import { CronDisplay } from "@/components/features/scheduling/cron/display/cron-display";
+import { CalendarCell } from "@/components/features/scheduling/calendar/cells/calendar-cell";
+import { DiffHeader } from "@/components/features/versioning/diffs/headers/diff-header";
+import { CommitMessage } from "@/components/features/versioning/commits/display/commit-message";
+import { TagInput } from "@/components/features/content/tags/inputs/tag-input";
+import { MediaThumb } from "@/components/features/content/media/thumbnails/media-thumb";
+import { EnvVarRow } from "@/components/features/deployments/config/env-vars/env-var-row";
+import { BuildStatus } from "@/components/features/deployments/builds/status/build-status";
+import { MetricSparkline } from "@/components/features/analytics/metrics/sparklines/metric-sparkline";
+import { FunnelStep } from "@/components/features/analytics/funnels/steps/funnel-step";
+import { SegmentPill } from "@/components/features/analytics/segments/pills/segment-pill";
+import { CommentBubble } from "@/components/features/collaboration/comments/bubbles/comment-bubble";
+import { ReactionChip } from "@/components/features/collaboration/reactions/chips/reaction-chip";
+import { MentionTag } from "@/components/features/collaboration/mentions/tags/mention-tag";
+import { ApprovalButton } from "@/components/features/workflows/approvals/actions/approval-button";
+import { ConditionRow } from "@/components/features/workflows/conditions/rows/condition-row";
+
 const SaveAction = createAction({ label: "Save", icon: "💾", testId: "factory-save-action" });
 const DeleteAction = createAction({ label: "Delete", icon: "🗑", testId: "factory-delete-action" });
 const ShareAction = createAction({ label: "Share", icon: "📤", testId: "factory-share-action" });
@@ -169,6 +270,30 @@ const UsersWidget = createWidget({
   icon: "U",
   testId: "factory-users-widget",
 });
+
+const InfoAlert = createAlert({ severity: "info", testId: "factory-info-alert" });
+const WarningAlert = createAlert({ severity: "warning", testId: "factory-warning-alert" });
+const ErrorAlert = createAlert({ severity: "error", testId: "factory-error-alert" });
+const SuccessAlert = createAlert({ severity: "success", testId: "factory-success-alert" });
+
+const StatusBadge = createBadge({ variant: "status", testId: "factory-status-badge" });
+const PriorityBadge = createBadge({ variant: "priority", testId: "factory-priority-badge" });
+const RoleBadge = createBadge({ variant: "role", testId: "factory-role-badge" });
+const VersionBadge = createBadge({ variant: "version", testId: "factory-version-badge" });
+const EnvBadge = createBadge({ variant: "environment", testId: "factory-env-badge" });
+
+const UptimeCard = createCard({ title: "Uptime", icon: "⬆", testId: "factory-uptime-card" });
+const LatencyCard = createCard({ title: "Latency", icon: "⏱", testId: "factory-latency-card" });
+const ThroughputCard = createCard({ title: "Throughput", icon: "📈", testId: "factory-throughput-card" });
+const MemoryCard = createCard({ title: "Memory", icon: "💾", testId: "factory-memory-card" });
+const CpuCard = createCard({ title: "CPU", icon: "🔥", testId: "factory-cpu-card" });
+const DiskCard = createCard({ title: "Disk", icon: "💿", testId: "factory-disk-card" });
+
+const OverviewTab = createTab({ label: "Overview", testId: "factory-overview-tab" });
+const DetailsTab = createTab({ label: "Details", testId: "factory-details-tab" });
+const HistoryTab = createTab({ label: "History", testId: "factory-history-tab" });
+const SettingsTab = createTab({ label: "Settings", testId: "factory-settings-tab" });
+const LogsTab = createTab({ label: "Logs", testId: "factory-logs-tab" });
 
 const TrackedCard = withTracking(StyledCard, "tracked-card");
 const MemoForwardRefButton = withTooltip(
@@ -793,6 +918,171 @@ export function ClientBenchmarks() {
           <IconLabel icon="📧" text="Email" data-testid="common-icon-label" />
           <StatusDot status="online" data-testid="common-status-dot" />
           <KeyValue label="Version" value="2.1.0" data-testid="common-key-value" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Hard: More Factories">
+        <StyledGrid columns={3}>
+          <InfoAlert message="Information" />
+          <WarningAlert message="Warning" />
+          <ErrorAlert message="Error occurred" />
+          <SuccessAlert message="Success!" />
+          <StatusBadge label="Active" />
+          <PriorityBadge label="High" />
+          <RoleBadge label="Admin" />
+          <VersionBadge label="v2.1" />
+          <EnvBadge label="Production" />
+          <UptimeCard value="99.9%" />
+          <LatencyCard value="42ms" />
+          <ThroughputCard value="1.2k/s" />
+          <MemoryCard value="2.1GB" />
+          <CpuCard value="34%" />
+          <DiskCard value="67%" />
+          <OverviewTab active />
+          <DetailsTab />
+          <HistoryTab />
+          <SettingsTab />
+          <LogsTab />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Hard: Deep Feature Paths">
+        <StyledGrid columns={3}>
+          <RefundButton data-testid="deep-refund-button" />
+          <SubscriptionBadge data-testid="deep-subscription-badge" />
+          <CouponInput data-testid="deep-coupon-input" />
+          <TaxLine data-testid="deep-tax-line" />
+          <RoleSelector data-testid="deep-role-selector" />
+          <AuditRow data-testid="deep-audit-row" />
+          <WebhookCard data-testid="deep-webhook-card" />
+          <ApiKeyRow data-testid="deep-api-key-row" />
+          <TemplatePreview data-testid="deep-template-preview" />
+          <ChannelBadge data-testid="deep-channel-badge" />
+          <FilterChip data-testid="deep-filter-chip" />
+          <SortButton data-testid="deep-sort-button" />
+          <StepIndicator data-testid="deep-step-indicator" />
+          <ChecklistItem data-testid="deep-checklist-item" />
+          <CronDisplay data-testid="deep-cron-display" />
+          <CalendarCell data-testid="deep-calendar-cell" />
+          <DiffHeader data-testid="deep-diff-header" />
+          <CommitMessage data-testid="deep-commit-message" />
+          <TagInput data-testid="deep-tag-input" />
+          <MediaThumb data-testid="deep-media-thumb" />
+          <EnvVarRow data-testid="deep-env-var-row" />
+          <BuildStatus data-testid="deep-build-status" />
+          <MetricSparkline data-testid="deep-metric-sparkline" />
+          <FunnelStep data-testid="deep-funnel-step" />
+          <SegmentPill data-testid="deep-segment-pill" />
+          <CommentBubble data-testid="deep-comment-bubble" />
+          <ReactionChip data-testid="deep-reaction-chip" />
+          <MentionTag data-testid="deep-mention-tag" />
+          <ApprovalButton data-testid="deep-approval-button" />
+          <ConditionRow data-testid="deep-condition-row" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Hard: Wrong Location (Hooks/Utils/Providers)">
+        <StyledGrid columns={3}>
+          <DragHandle data-testid="hook-drag-handle" />
+          <ResizeGrip data-testid="hook-resize-grip" />
+          <ShortcutHint data-testid="hook-shortcut-hint" />
+          <UndoToast data-testid="hook-undo-toast" />
+          <ClipboardFeedback data-testid="hook-clipboard-feedback" />
+          <MarkdownPreview data-testid="util-markdown-preview" />
+          <JsonTree data-testid="util-json-tree" />
+          <ByteDisplay data-testid="util-byte-display" />
+          <DurationLabel data-testid="util-duration-label" />
+          <TruncatedText data-testid="util-truncated-text" />
+          <CodeBlock data-testid="util-code-block" />
+          <RelativeTime data-testid="util-relative-time" />
+          <AvatarStack data-testid="util-avatar-stack" />
+          <LocaleLabel data-testid="provider-locale-label" />
+          <FeatureFlagBadge data-testid="provider-feature-badge" />
+          <ConnectivityDot data-testid="provider-connectivity-dot" />
+          <SkeletonBlock data-testid="config-skeleton-block" />
+          <ErrorFallback data-testid="config-error-fallback" />
+          <EmptyIllustration data-testid="config-empty-illustration" />
+          <HotkeyLabel data-testid="util-hotkey-label" />
+          <PermissionGate data-testid="util-permission-gate" />
+          <ScrollIndicator data-testid="util-scroll-indicator" />
+          <CopyButton data-testid="util-copy-button" />
+          <ExternalLink data-testid="util-external-link" />
+          <CountBadge data-testid="util-count-badge" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Hard: Generic Names in Misleading Dirs">
+        <StyledGrid columns={3}>
+          <ProgressTracker data-testid="generic-progress-bar" />
+          <NotificationBox data-testid="generic-alert-box" />
+          <ActionMenu data-testid="generic-dropdown-menu" />
+          <InfoPanel data-testid="generic-popover-panel" />
+          <ContentEditor data-testid="generic-text-area" />
+          <AgreementCheck data-testid="generic-checkbox" />
+          <PlanSelector data-testid="generic-radio-option" />
+          <RangePicker data-testid="generic-slider-range" />
+          <CalendarEntry data-testid="generic-date-cell" />
+          <MetricBar data-testid="generic-chart-bar" />
+          <RecordRow data-testid="generic-table-row" />
+          <ItemTile data-testid="generic-list-tile" />
+          <ToolTrigger data-testid="generic-icon-button" />
+          <RedirectAction data-testid="generic-link-button" />
+          <CommandItem data-testid="generic-menu-item" />
+          <DrawerEntry data-testid="generic-sidebar-link" />
+          <PageFooter data-testid="generic-footer-text" />
+          <TitleStrip data-testid="generic-header-bar" />
+          <PanelActions data-testid="generic-card-footer" />
+          <SourcePreview data-testid="generic-code-snippet" />
+          <DocumentIcon data-testid="generic-file-icon" />
+          <MilestoneDot data-testid="generic-step-circle" />
+          <SnackMessage data-testid="generic-toast-bar" />
+          <DecisionPrompt data-testid="generic-confirm-modal" />
+          <SlidePanel data-testid="generic-drawer-sheet" />
+          <LabelGroup data-testid="generic-tag-list" />
+          <BinaryToggle data-testid="generic-switch-track" />
+          <OptionPicker data-testid="generic-select-box" />
+          <DropTarget data-testid="generic-upload-zone" />
+          <QueryInput data-testid="generic-search-bar" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Hard: Ambiguous Siblings">
+        <StyledGrid columns={3}>
+          <CpuTile data-testid="sibling-cpu-tile" />
+          <RamTile data-testid="sibling-ram-tile" />
+          <DiskTile data-testid="sibling-disk-tile" />
+          <NetworkTile data-testid="sibling-network-tile" />
+          <GpuTile data-testid="sibling-gpu-tile" />
+          <CreateButton data-testid="sibling-create-btn" />
+          <ReadButton data-testid="sibling-read-btn" />
+          <UpdateButton data-testid="sibling-update-btn" />
+          <DeleteButton data-testid="sibling-delete-btn" />
+          <OnlineIndicator data-testid="sibling-online-indicator" />
+          <OfflineIndicator data-testid="sibling-offline-indicator" />
+          <BusyIndicator data-testid="sibling-busy-indicator" />
+          <AwayIndicator data-testid="sibling-away-indicator" />
+          <DndIndicator data-testid="sibling-dnd-indicator" />
+          <HomeIcon data-testid="sibling-home-icon" />
+          <SettingsIcon data-testid="sibling-settings-icon" />
+          <ProfileIcon data-testid="sibling-profile-icon" />
+          <HelpIcon data-testid="sibling-help-icon" />
+          <LogoutIcon data-testid="sibling-logout-icon" />
+          <SearchIcon data-testid="sibling-search-icon" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Hard: Dynamic Registries">
+        <StyledGrid columns={3}>
+          <DynamicIcon shape="circle" data-testid="dynamic-circle-icon" />
+          <DynamicIcon shape="square" data-testid="dynamic-square-icon" />
+          <DynamicIcon shape="triangle" data-testid="dynamic-triangle-icon" />
+          <DynamicIcon shape="star" data-testid="dynamic-star-icon" />
+          <DynamicIcon shape="diamond" data-testid="dynamic-diamond-icon" />
+          <DynamicLayout variant="single" data-testid="dynamic-single-layout" />
+          <DynamicLayout variant="two" data-testid="dynamic-two-layout" />
+          <DynamicLayout variant="three" data-testid="dynamic-three-layout" />
+          <DynamicLayout variant="sidebar" data-testid="dynamic-sidebar-layout" />
+          <DynamicLayout variant="stacked" data-testid="dynamic-stacked-layout" />
         </StyledGrid>
       </StyledSection>
     </div>

@@ -5,24 +5,17 @@ import { assertCommandSuccess } from "./assert-command-success";
 import {
   SANDBOX_TIMEOUT_MS,
   GIT_CLONE_DEPTH,
+  MAX_PUSH_ATTEMPTS,
   WORKING_DIRECTORY,
+  REPO_URL,
   BENCH_RESULTS_PATH,
   WEBSITE_DATA_PATH,
+  PLAYWRIGHT_SYSTEM_DEPS_COMMAND,
 } from "./constants";
-
-const REPO = "https://github.com/aidenybai/react-bench";
-const TOTAL_STEPS = 9;
-const MAX_PUSH_ATTEMPTS = 3;
 
 const buildAuthUrl = (repo: string, token: string): string => {
   const url = repo.startsWith("https://") ? repo : `https://github.com/${repo}`;
   return url.replace("https://", `https://${token}@`);
-};
-
-const logStep = (step: number, message: string): void => {
-  console.log(
-    `\n[${"=".repeat(step)}${"·".repeat(TOTAL_STEPS - step)}] Step ${step}/${TOTAL_STEPS}: ${message}`,
-  );
 };
 
 const runDetached = async (
@@ -45,8 +38,7 @@ const runDetached = async (
     }
   } catch {
     // HACK: Bun's fetch has a BrotliDecompressionError bug with long-running
-    // streamed responses. If log streaming breaks, we fall back to waiting
-    // for the command to finish without live output.
+    // streamed responses. Falls back to waiting without live output.
     console.log(`  (log stream interrupted, waiting for ${label} to finish...)`);
   }
 
@@ -54,20 +46,38 @@ const runDetached = async (
   await assertCommandSuccess(finished, label);
 };
 
-const commitAndPushInSandbox = async (sandbox: Sandbox): Promise<void> => {
+const cloneRepo = async (
+  sandbox: Sandbox,
+  githubToken?: string,
+): Promise<void> => {
+  const cloneUrl = githubToken ? buildAuthUrl(REPO_URL, githubToken) : REPO_URL;
+  const handle = await sandbox.runCommand({
+    cmd: "git",
+    args: ["clone", "--depth", String(GIT_CLONE_DEPTH), cloneUrl, WORKING_DIRECTORY],
+    detached: true,
+  });
+  const finished = await handle.wait();
+  await assertCommandSuccess(finished, "git clone");
+};
+
+const installPlaywright = async (sandbox: Sandbox): Promise<void> => {
+  await runDetached(sandbox, "playwright system deps", PLAYWRIGHT_SYSTEM_DEPS_COMMAND, WORKING_DIRECTORY);
+  await runDetached(
+    sandbox,
+    "playwright install",
+    "pnpm --filter @react-bench/benchmark exec playwright install chromium",
+    WORKING_DIRECTORY,
+  );
+};
+
+const commitAndPush = async (sandbox: Sandbox): Promise<void> => {
   await runDetached(
     sandbox,
     "git config",
     `git config user.name "react-bench[bot]" && git config user.email "react-bench[bot]@users.noreply.github.com"`,
     WORKING_DIRECTORY,
   );
-
-  await runDetached(
-    sandbox,
-    "git add",
-    `git add ${WEBSITE_DATA_PATH}`,
-    WORKING_DIRECTORY,
-  );
+  await runDetached(sandbox, "git add", `git add ${WEBSITE_DATA_PATH}`, WORKING_DIRECTORY);
 
   const diffHandle = await sandbox.runCommand({
     cmd: "git",
@@ -112,140 +122,97 @@ const commitAndPushInSandbox = async (sandbox: Sandbox): Promise<void> => {
       return;
     }
 
-    console.log(
-      `  Push attempt ${attempt}/${MAX_PUSH_ATTEMPTS} failed: ${pushStderr}`,
-    );
+    console.log(`  Push attempt ${attempt}/${MAX_PUSH_ATTEMPTS} failed: ${pushStderr}`);
 
     if (attempt < MAX_PUSH_ATTEMPTS) {
-      await runDetached(
-        sandbox,
-        "rebase abort",
-        "sleep 5 && git rebase --abort 2>/dev/null; true",
-        WORKING_DIRECTORY,
-      );
+      await runDetached(sandbox, "rebase abort", "sleep 5 && git rebase --abort 2>/dev/null; true", WORKING_DIRECTORY);
     }
   }
 
   throw new Error(`Failed to push after ${MAX_PUSH_ATTEMPTS} attempts`);
 };
 
-const runBenchmark = async () => {
-  const snapshotId = process.env.SANDBOX_SNAPSHOT_ID;
-  if (!snapshotId) {
-    throw new Error(
-      "SANDBOX_SNAPSHOT_ID is required. Run `bun sandbox/create-snapshot.ts` first, or pull env from cloud-agent.",
-    );
+const readResultsFromSandbox = async (
+  sandbox: Sandbox,
+): Promise<{ benchResults: Buffer | null; websiteData: Buffer | null }> => ({
+  benchResults: await sandbox.readFileToBuffer({
+    path: join(WORKING_DIRECTORY, BENCH_RESULTS_PATH),
+  }),
+  websiteData: await sandbox.readFileToBuffer({
+    path: join(WORKING_DIRECTORY, WEBSITE_DATA_PATH),
+  }),
+});
+
+const writeResultsLocally = (benchResults: Buffer | null, websiteData: Buffer | null): void => {
+  const localBenchResults = join(__dirname, "..", "e2e", "bench-results.json");
+  const localWebsiteData = join(__dirname, "..", "..", "website", "app", "data.json");
+
+  if (benchResults) {
+    writeFileSync(localBenchResults, benchResults);
+    console.log(`  ${localBenchResults}`);
   }
-
-  const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
-  if (!anthropicApiKey) {
-    throw new Error(
-      "ANTHROPIC_API_KEY is required. Pull env from cloud-agent with `vercel env pull .env.local`.",
-    );
+  if (websiteData) {
+    writeFileSync(localWebsiteData, websiteData);
+    console.log(`  ${localWebsiteData}`);
   }
+};
 
-  const githubToken = process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN;
+const requireEnv = (name: string, hint: string): string => {
+  const value = process.env[name];
+  if (!value) throw new Error(`${name} is required. ${hint}`);
+  return value;
+};
 
-  const sandboxEnv: Record<string, string> = {
+const buildSandboxEnv = (anthropicApiKey: string): Record<string, string> => {
+  const env: Record<string, string> = {
     ANTHROPIC_API_KEY: anthropicApiKey,
     FORCE_COLOR: "0",
   };
+  const optionalKeys = ["BENCH_MODEL", "BENCH_CONCURRENCY", "OPENAI_API_KEY"];
+  for (const key of optionalKeys) {
+    if (process.env[key]) env[key] = process.env[key]!;
+  }
+  return env;
+};
 
-  if (process.env.BENCH_MODEL) sandboxEnv.BENCH_MODEL = process.env.BENCH_MODEL;
-  if (process.env.BENCH_CONCURRENCY)
-    sandboxEnv.BENCH_CONCURRENCY = process.env.BENCH_CONCURRENCY;
-  if (process.env.OPENAI_API_KEY)
-    sandboxEnv.OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const runBenchmark = async (): Promise<void> => {
+  const snapshotId = requireEnv("SANDBOX_SNAPSHOT_ID", "Run `bun sandbox/create-snapshot.ts` or pull env from cloud-agent.");
+  const anthropicApiKey = requireEnv("ANTHROPIC_API_KEY", "Pull env with `vercel env pull .env.local`.");
+  const githubToken = process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN;
 
-  logStep(1, "Creating sandbox from snapshot...");
+  console.log("\n[1/7] Creating sandbox from snapshot...");
   const sandbox = await Sandbox.create({
     source: { type: "snapshot", snapshotId },
     timeout: SANDBOX_TIMEOUT_MS,
-    env: sandboxEnv,
+    env: buildSandboxEnv(anthropicApiKey),
   });
   console.log(`  Sandbox ID: ${sandbox.sandboxId}`);
 
   try {
-    logStep(2, "Cloning repo...");
-    const cloneUrl = githubToken ? buildAuthUrl(REPO, githubToken) : REPO;
-    const cloneHandle = await sandbox.runCommand({
-      cmd: "git",
-      args: [
-        "clone",
-        "--depth",
-        String(GIT_CLONE_DEPTH),
-        cloneUrl,
-        WORKING_DIRECTORY,
-      ],
-      detached: true,
-    });
-    const cloneFinished = await cloneHandle.wait();
-    await assertCommandSuccess(cloneFinished, "git clone");
+    console.log("\n[2/7] Cloning repo...");
+    await cloneRepo(sandbox, githubToken);
 
-    logStep(3, "Installing dependencies...");
+    console.log("\n[3/7] Installing dependencies...");
     await runDetached(sandbox, "pnpm install", "pnpm install", WORKING_DIRECTORY);
 
-    logStep(4, "Installing Playwright browsers...");
-    await runDetached(
-      sandbox,
-      "playwright system deps",
-      "sudo dnf install -y alsa-lib atk at-spi2-atk cups-libs libdrm libXcomposite libXdamage libXrandr mesa-libgbm pango nss nspr libxkbcommon 2>/dev/null || sudo yum install -y alsa-lib atk at-spi2-atk cups-libs libdrm libXcomposite libXdamage libXrandr mesa-libgbm pango nss nspr libxkbcommon 2>/dev/null || true",
-      WORKING_DIRECTORY,
-    );
-    await runDetached(
-      sandbox,
-      "playwright install",
-      "pnpm --filter @react-bench/benchmark exec playwright install chromium",
-      WORKING_DIRECTORY,
-    );
+    console.log("\n[4/7] Installing Playwright...");
+    await installPlaywright(sandbox);
 
-    logStep(5, "Running benchmark...");
-    console.log("  This may take a while...\n");
-    await runDetached(
-      sandbox,
-      "benchmark test",
-      "pnpm --filter @react-bench/benchmark test",
-      WORKING_DIRECTORY,
-    );
+    console.log("\n[5/7] Running benchmark...");
+    await runDetached(sandbox, "benchmark test", "pnpm --filter @react-bench/benchmark test", WORKING_DIRECTORY);
 
-    logStep(6, "Reading results from sandbox...");
-    const benchResultsBuffer = await sandbox.readFileToBuffer({
-      path: join(WORKING_DIRECTORY, BENCH_RESULTS_PATH),
-    });
-    const websiteDataBuffer = await sandbox.readFileToBuffer({
-      path: join(WORKING_DIRECTORY, WEBSITE_DATA_PATH),
-    });
+    console.log("\n[6/7] Reading and writing results...");
+    const { benchResults, websiteData } = await readResultsFromSandbox(sandbox);
+    writeResultsLocally(benchResults, websiteData);
 
-    logStep(7, "Writing results locally...");
-    const localBenchResults = join(__dirname, "..", "e2e", "bench-results.json");
-    const localWebsiteData = join(
-      __dirname,
-      "..",
-      "..",
-      "website",
-      "app",
-      "data.json",
-    );
-
-    if (benchResultsBuffer) {
-      writeFileSync(localBenchResults, benchResultsBuffer);
-      console.log(`  ${localBenchResults}`);
-    }
-    if (websiteDataBuffer) {
-      writeFileSync(localWebsiteData, websiteDataBuffer);
-      console.log(`  ${localWebsiteData}`);
-    }
-
-    logStep(8, "Committing and pushing results from sandbox...");
     if (githubToken) {
-      await commitAndPushInSandbox(sandbox);
+      console.log("\n[7/7] Pushing results...");
+      await commitAndPush(sandbox);
     } else {
-      console.log("  No GH_TOKEN set, skipping push.");
+      console.log("\n[7/7] No GH_TOKEN set, skipping push.");
     }
 
-    logStep(9, "Stopping sandbox...");
     await sandbox.stop();
-
     console.log("\nBenchmark complete!");
   } catch (error) {
     console.error("\nBenchmark failed, stopping sandbox...");

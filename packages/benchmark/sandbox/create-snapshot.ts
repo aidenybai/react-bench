@@ -1,16 +1,19 @@
 import { Sandbox } from "@vercel/sandbox";
+import { SNAPSHOT_TIMEOUT_MS, PLAYWRIGHT_SYSTEM_DEPS_COMMAND } from "./constants";
 
 const INSTALL_COMMANDS = [
   "npm i -g @anthropic-ai/claude-code @openai/codex pnpm",
-  "sudo dnf install -y alsa-lib atk at-spi2-atk cups-libs libdrm libXcomposite libXdamage libXrandr mesa-libgbm pango nss nspr libxkbcommon 2>/dev/null || sudo yum install -y alsa-lib atk at-spi2-atk cups-libs libdrm libXcomposite libXdamage libXrandr mesa-libgbm pango nss nspr libxkbcommon 2>/dev/null || true",
+  PLAYWRIGHT_SYSTEM_DEPS_COMMAND,
   "npx playwright install chromium",
 ];
 
-const createSnapshot = async () => {
+const VERIFY_COMMAND = "claude --version && pnpm --version && npx playwright --version";
+
+const createSnapshot = async (): Promise<void> => {
   console.log("Creating sandbox...");
   const sandbox = await Sandbox.create({
     runtime: "node24",
-    timeout: 600_000,
+    timeout: SNAPSHOT_TIMEOUT_MS,
   });
   console.log(`Sandbox created: ${sandbox.sandboxId}`);
 
@@ -30,19 +33,13 @@ const createSnapshot = async () => {
   }
 
   console.log("Verifying installations...");
-  const verify = await sandbox.runCommand("sh", [
-    "-c",
-    "claude --version && pnpm --version && npx playwright --version",
-  ]);
-  const verifyOutput = await verify.stdout();
-  console.log(verifyOutput);
+  const verify = await sandbox.runCommand("sh", ["-c", VERIFY_COMMAND]);
+  console.log(await verify.stdout());
 
   console.log("Creating snapshot (this stops the sandbox)...");
   const snapshot = await sandbox.snapshot({ expiration: 0 });
-  console.log(`\nSnapshot created successfully!`);
-  console.log(`Snapshot ID: ${snapshot.snapshotId}`);
-  console.log(`\nSet this in your environment:`);
-  console.log(`  SANDBOX_SNAPSHOT_ID=${snapshot.snapshotId}`);
+  console.log(`\nSnapshot created: ${snapshot.snapshotId}`);
+  console.log(`\nSet in your environment:\n  SANDBOX_SNAPSHOT_ID=${snapshot.snapshotId}`);
 };
 
 createSnapshot().catch((error) => {

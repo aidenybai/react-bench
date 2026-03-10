@@ -84,8 +84,7 @@
         }
       },
       "description": "Motion list item inside AnimatePresence",
-      "componentName": "AnimatedList",
-      "rationale": "Tests animated components using Framer Motion AnimatePresence patterns."
+      "componentName": "AnimatedList"
     },
     {
       "id": 2,
@@ -114,8 +113,7 @@
         }
       },
       "description": "Animation Maze: AnimatePresence -> motion -> styled -> Radix Accordion -> forceMount -> motion -> styled -> content",
-      "componentName": "AnimationMaze",
-      "rationale": "Tests complex animation chains mixing Framer Motion, Radix, and styled-components."
+      "componentName": "AnimationMaze"
     },
     {
       "id": 3,
@@ -144,8 +142,7 @@
         }
       },
       "description": "A base badge component re-exported through 3 barrel files with different names at each level (BaseBadge → CommonBadge → UIBadge)",
-      "componentName": "BaseBadge",
-      "rationale": "Tests barrel re-export chains used in design system packages and component libraries."
+      "componentName": "BaseBadge"
     },
     {
       "id": 4,
@@ -174,8 +171,7 @@
         }
       },
       "description": "A base button component re-exported through 3 barrel index.ts files (primitives → common → ui) with name changes at each level",
-      "componentName": "BaseButton",
-      "rationale": "Tests barrel re-export chains used in design system packages and component libraries."
+      "componentName": "BaseButton"
     },
     {
       "id": 5,
@@ -204,8 +200,7 @@
         }
       },
       "description": "A base input component re-exported through 3 barrel index.ts files with name aliases at each re-export level",
-      "componentName": "BaseInput",
-      "rationale": "Tests barrel re-export chains used in design system packages and component libraries."
+      "componentName": "BaseInput"
     },
     {
       "id": 6,
@@ -234,8 +229,7 @@
         }
       },
       "description": "Primary action button re-exported through 3 barrel index.ts files",
-      "componentName": "PrimaryAction",
-      "rationale": "Tests barrel re-export chains used in design system packages and component libraries."
+      "componentName": "PrimaryAction"
     },
     {
       "id": 7,
@@ -264,8 +258,7 @@
         }
       },
       "description": "Styled-button inside Radix Dialog inside motion card",
-      "componentName": "StyledButton",
-      "rationale": "Tests deeply nested interactive elements inside compound component patterns."
+      "componentName": "StyledButton"
     },
     {
       "id": 8,
@@ -294,8 +287,7 @@
         }
       },
       "description": "Client component button rendered inside a server component wrapper (server → client boundary crossing)",
-      "componentName": "ClientIsland",
-      "rationale": "Tests client component islands inside server components — a Next.js App Router pattern."
+      "componentName": "ClientIsland"
     },
     {
       "id": 9,
@@ -324,8 +316,7 @@
         }
       },
       "description": "An icon+label inline component used across multiple parent components in different modules",
-      "componentName": "IconLabel",
-      "rationale": "Tests shared components reused across multiple parent contexts and modules."
+      "componentName": "IconLabel"
     },
     {
       "id": 10,
@@ -354,8 +345,7 @@
         }
       },
       "description": "A key-value pair display component used in multiple different parent containers",
-      "componentName": "KeyValue",
-      "rationale": "Tests shared components reused across multiple parent contexts and modules."
+      "componentName": "KeyValue"
     },
     {
       "id": 11,
@@ -384,8 +374,7 @@
         }
       },
       "description": "A tiny colored status dot component shared across many parent components",
-      "componentName": "StatusDot",
-      "rationale": "Tests shared components reused across multiple parent contexts and modules."
+      "componentName": "StatusDot"
     },
     {
       "id": 12,
@@ -414,8 +403,7 @@
         }
       },
       "description": "An empty state SVG illustration component defined inside lib/empty-state-config.tsx alongside empty state configuration",
-      "componentName": "EmptyIllustration",
-      "rationale": "Tests configuration-driven components with conditional rendering based on state."
+      "componentName": "EmptyIllustration"
     },
     {
       "id": 13,
@@ -444,8 +432,7 @@
         }
       },
       "description": "An error fallback UI component defined inside lib/error-config.tsx alongside error boundary configuration",
-      "componentName": "ErrorFallback",
-      "rationale": "Tests configuration-driven components with conditional rendering based on state."
+      "componentName": "ErrorFallback"
     },
     {
       "id": 14,
@@ -474,8 +461,7 @@
         }
       },
       "description": "A skeleton loading block component defined inside lib/skeleton-config.tsx alongside skeleton configuration constants",
-      "componentName": "SkeletonBlock",
-      "rationale": "Tests configuration-driven components with conditional rendering based on state."
+      "componentName": "SkeletonBlock"
     },
     {
       "id": 15,
@@ -504,8 +490,7 @@
         }
       },
       "description": "ApiKeyRow component deeply nested at 6 directory levels",
-      "componentName": "ApiKeyRow",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "ApiKeyRow"
     },
     {
       "id": 16,
@@ -534,8 +519,7 @@
         }
       },
       "description": "ApprovalButton component deeply nested at 6 directory levels",
-      "componentName": "ApprovalButton",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "ApprovalButton"
     },
     {
       "id": 17,
@@ -564,8 +548,7 @@
         }
       },
       "description": "BuildStatus component deeply nested at 6 directory levels",
-      "componentName": "BuildStatus",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "BuildStatus"
     },
     {
       "id": 18,
@@ -594,8 +577,7 @@
         }
       },
       "description": "CalendarCell component deeply nested at 6 directory levels",
-      "componentName": "CalendarCell",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "CalendarCell"
     },
     {
       "id": 19,
@@ -624,8 +606,7 @@
         }
       },
       "description": "ChannelBadge component deeply nested at 6 directory levels",
-      "componentName": "ChannelBadge",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "ChannelBadge"
     },
     {
       "id": 20,
@@ -654,8 +635,7 @@
         }
       },
       "description": "ChecklistItem component deeply nested at 6 directory levels",
-      "componentName": "ChecklistItem",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "ChecklistItem"
     },
     {
       "id": 21,
@@ -684,8 +664,7 @@
         }
       },
       "description": "CommentBubble component deeply nested at 6 directory levels",
-      "componentName": "CommentBubble",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "CommentBubble"
     },
     {
       "id": 22,
@@ -714,8 +693,7 @@
         }
       },
       "description": "CommitMessage component deeply nested at 6 directory levels",
-      "componentName": "CommitMessage",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "CommitMessage"
     },
     {
       "id": 23,
@@ -744,8 +722,7 @@
         }
       },
       "description": "ConditionRow component deeply nested at 6 directory levels",
-      "componentName": "ConditionRow",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "ConditionRow"
     },
     {
       "id": 24,
@@ -774,8 +751,7 @@
         }
       },
       "description": "CouponInput component deeply nested at 6 directory levels",
-      "componentName": "CouponInput",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "CouponInput"
     },
     {
       "id": 25,
@@ -804,8 +780,7 @@
         }
       },
       "description": "CronDisplay component deeply nested at 6 directory levels",
-      "componentName": "CronDisplay",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "CronDisplay"
     },
     {
       "id": 26,
@@ -834,8 +809,7 @@
         }
       },
       "description": "DiffHeader component deeply nested at 6 directory levels",
-      "componentName": "DiffHeader",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "DiffHeader"
     },
     {
       "id": 27,
@@ -864,8 +838,7 @@
         }
       },
       "description": "FilterChip component deeply nested at 6 directory levels",
-      "componentName": "FilterChip",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "FilterChip"
     },
     {
       "id": 28,
@@ -894,8 +867,7 @@
         }
       },
       "description": "FunnelStep component deeply nested at 6 directory levels",
-      "componentName": "FunnelStep",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "FunnelStep"
     },
     {
       "id": 29,
@@ -924,8 +896,7 @@
         }
       },
       "description": "An invoice row component deeply nested in features/billing/invoices/rows/",
-      "componentName": "InvoiceRow",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "InvoiceRow"
     },
     {
       "id": 30,
@@ -954,8 +925,7 @@
         }
       },
       "description": "A log entry row component deeply nested in features/monitoring/logs/entries/",
-      "componentName": "LogEntry",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "LogEntry"
     },
     {
       "id": 31,
@@ -984,8 +954,7 @@
         }
       },
       "description": "MediaThumb component deeply nested at 6 directory levels",
-      "componentName": "MediaThumb",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "MediaThumb"
     },
     {
       "id": 32,
@@ -1014,8 +983,7 @@
         }
       },
       "description": "MentionTag component deeply nested at 6 directory levels",
-      "componentName": "MentionTag",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "MentionTag"
     },
     {
       "id": 33,
@@ -1044,8 +1012,7 @@
         }
       },
       "description": "SVG bar chart component in features/analytics/charts/",
-      "componentName": "MetricChart",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "MetricChart"
     },
     {
       "id": 34,
@@ -1074,8 +1041,7 @@
         }
       },
       "description": "MetricSparkline component deeply nested at 6 directory levels",
-      "componentName": "MetricSparkline",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "MetricSparkline"
     },
     {
       "id": 35,
@@ -1104,8 +1070,7 @@
         }
       },
       "description": "A permission chip component 5 directories deep in features/admin/roles/permissions/",
-      "componentName": "PermissionChip",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "PermissionChip"
     },
     {
       "id": 36,
@@ -1134,8 +1099,7 @@
         }
       },
       "description": "A pipeline stage indicator component in features/ci/pipelines/stages/",
-      "componentName": "PipelineStage",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "PipelineStage"
     },
     {
       "id": 37,
@@ -1164,8 +1128,7 @@
         }
       },
       "description": "ReactionChip component deeply nested at 6 directory levels",
-      "componentName": "ReactionChip",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "ReactionChip"
     },
     {
       "id": 38,
@@ -1194,8 +1157,7 @@
         }
       },
       "description": "RoleSelector component deeply nested at 6 directory levels",
-      "componentName": "RoleSelector",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "RoleSelector"
     },
     {
       "id": 39,
@@ -1224,8 +1186,7 @@
         }
       },
       "description": "SegmentPill component deeply nested at 6 directory levels",
-      "componentName": "SegmentPill",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "SegmentPill"
     },
     {
       "id": 40,
@@ -1254,8 +1215,7 @@
         }
       },
       "description": "A shipping label component 5 directories deep in features/orders/shipping/labels/",
-      "componentName": "ShippingLabel",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "ShippingLabel"
     },
     {
       "id": 41,
@@ -1284,8 +1244,7 @@
         }
       },
       "description": "SortButton component deeply nested at 6 directory levels",
-      "componentName": "SortButton",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "SortButton"
     },
     {
       "id": 42,
@@ -1314,8 +1273,7 @@
         }
       },
       "description": "SubscriptionBadge component deeply nested at 6 directory levels",
-      "componentName": "SubscriptionBadge",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "SubscriptionBadge"
     },
     {
       "id": 43,
@@ -1344,8 +1302,7 @@
         }
       },
       "description": "TagInput component deeply nested at 6 directory levels",
-      "componentName": "TagInput",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "TagInput"
     },
     {
       "id": 44,
@@ -1374,8 +1331,7 @@
         }
       },
       "description": "TaxLine component deeply nested at 6 directory levels",
-      "componentName": "TaxLine",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "TaxLine"
     },
     {
       "id": 45,
@@ -1404,8 +1360,7 @@
         }
       },
       "description": "A message thread bubble component deeply nested in features/messaging/threads/ directory",
-      "componentName": "ThreadBubble",
-      "rationale": "Tests deeply nested component trees common in complex dashboards and admin panels."
+      "componentName": "ThreadBubble"
     },
     {
       "id": 46,
@@ -1434,8 +1389,7 @@
         }
       },
       "description": "A circle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
-      "componentName": "DynamicIcon",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicIcon"
     },
     {
       "id": 47,
@@ -1464,8 +1418,7 @@
         }
       },
       "description": "A diamond icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
-      "componentName": "DynamicIcon",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicIcon"
     },
     {
       "id": 48,
@@ -1494,8 +1447,7 @@
         }
       },
       "description": "A large widget dynamically resolved from a registry object by size key at runtime",
-      "componentName": "DynamicWidget",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicWidget"
     },
     {
       "id": 49,
@@ -1524,8 +1476,7 @@
         }
       },
       "description": "A medium widget selected at runtime from a component registry — the registry maps string keys to React components",
-      "componentName": "DynamicWidget",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicWidget"
     },
     {
       "id": 50,
@@ -1554,8 +1505,7 @@
         }
       },
       "description": "Dynamic renderer with computed component selection via styled-components",
-      "componentName": "DynamicRenderer",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicRenderer"
     },
     {
       "id": 51,
@@ -1584,8 +1534,7 @@
         }
       },
       "description": "A sidebar layout dynamically resolved from a layout registry — one of 5 possible layout variants",
-      "componentName": "DynamicLayout",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicLayout"
     },
     {
       "id": 52,
@@ -1614,8 +1563,7 @@
         }
       },
       "description": "A single layout dynamically resolved from a layout registry — one of 5 possible layout variants",
-      "componentName": "DynamicLayout",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicLayout"
     },
     {
       "id": 53,
@@ -1644,8 +1592,7 @@
         }
       },
       "description": "A small widget selected at runtime from a registry map in widget-registry.tsx — one of 3 possible sizes",
-      "componentName": "DynamicWidget",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicWidget"
     },
     {
       "id": 54,
@@ -1674,8 +1621,7 @@
         }
       },
       "description": "A square icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
-      "componentName": "DynamicIcon",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicIcon"
     },
     {
       "id": 55,
@@ -1704,8 +1650,7 @@
         }
       },
       "description": "A stacked layout dynamically resolved from a layout registry — one of 5 possible layout variants",
-      "componentName": "DynamicLayout",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicLayout"
     },
     {
       "id": 56,
@@ -1734,8 +1679,7 @@
         }
       },
       "description": "A star icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
-      "componentName": "DynamicIcon",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicIcon"
     },
     {
       "id": 57,
@@ -1764,8 +1708,7 @@
         }
       },
       "description": "A three layout dynamically resolved from a layout registry — one of 5 possible layout variants",
-      "componentName": "DynamicLayout",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicLayout"
     },
     {
       "id": 58,
@@ -1794,8 +1737,7 @@
         }
       },
       "description": "A triangle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
-      "componentName": "DynamicIcon",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicIcon"
     },
     {
       "id": 59,
@@ -1824,8 +1766,7 @@
         }
       },
       "description": "A two layout dynamically resolved from a layout registry — one of 5 possible layout variants",
-      "componentName": "DynamicLayout",
-      "rationale": "Tests dynamically rendered components with conditional layouts and runtime polymorphism."
+      "componentName": "DynamicLayout"
     },
     {
       "id": 60,
@@ -1854,8 +1795,7 @@
         }
       },
       "description": "Factory-generated average session duration display created by createDisplay() in a lib file",
-      "componentName": "Display",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Display"
     },
     {
       "id": 61,
@@ -1884,8 +1824,7 @@
         }
       },
       "description": "Factory-generated conversion rate display created by createDisplay() in a lib file",
-      "componentName": "Display",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Display"
     },
     {
       "id": 62,
@@ -1914,8 +1853,7 @@
         }
       },
       "description": "Factory-generated CPU metric card created by createCard() in a lib file",
-      "componentName": "Card",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Card"
     },
     {
       "id": 63,
@@ -1944,8 +1882,7 @@
         }
       },
       "description": "Factory-generated delete action button created by createAction() in a lib file",
-      "componentName": "Action",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Action"
     },
     {
       "id": 64,
@@ -1974,8 +1911,7 @@
         }
       },
       "description": "Factory-generated Details tab button created by createTab() in a lib file",
-      "componentName": "Tab",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Tab"
     },
     {
       "id": 65,
@@ -2004,8 +1940,7 @@
         }
       },
       "description": "Factory-generated Disk metric card created by createCard() in a lib file",
-      "componentName": "Card",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Card"
     },
     {
       "id": 66,
@@ -2034,8 +1969,7 @@
         }
       },
       "description": "Factory-generated error count display created by createDisplay() in a lib file",
-      "componentName": "Display",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Display"
     },
     {
       "id": 67,
@@ -2064,8 +1998,7 @@
         }
       },
       "description": "Factory-generated History tab button created by createTab() in a lib file",
-      "componentName": "Tab",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Tab"
     },
     {
       "id": 68,
@@ -2094,8 +2027,7 @@
         }
       },
       "description": "Factory-generated info alert component created by createAlert() in a lib file",
-      "componentName": "Alert",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Alert"
     },
     {
       "id": 69,
@@ -2124,8 +2056,7 @@
         }
       },
       "description": "Factory-generated Latency metric card created by createCard() in a lib file",
-      "componentName": "Card",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Card"
     },
     {
       "id": 70,
@@ -2154,8 +2085,7 @@
         }
       },
       "description": "Factory-generated Logs tab button created by createTab() in a lib file",
-      "componentName": "Tab",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Tab"
     },
     {
       "id": 71,
@@ -2184,8 +2114,7 @@
         }
       },
       "description": "Factory-generated Memory metric card created by createCard() in a lib file",
-      "componentName": "Card",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Card"
     },
     {
       "id": 72,
@@ -2214,8 +2143,7 @@
         }
       },
       "description": "Factory-generated notes textarea field created by createField() in a lib file",
-      "componentName": "Field",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Field"
     },
     {
       "id": 73,
@@ -2244,8 +2172,7 @@
         }
       },
       "description": "Factory-generated Overview tab button created by createTab() in a lib file",
-      "componentName": "Tab",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Tab"
     },
     {
       "id": 74,
@@ -2274,8 +2201,7 @@
         }
       },
       "description": "Factory-generated priority badge component created by createBadge() in a lib file",
-      "componentName": "Badge",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Badge"
     },
     {
       "id": 75,
@@ -2304,8 +2230,7 @@
         }
       },
       "description": "Factory-generated revenue metric widget created by createWidget() in a lib file",
-      "componentName": "Widget",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Widget"
     },
     {
       "id": 76,
@@ -2334,8 +2259,7 @@
         }
       },
       "description": "Factory-generated role badge component created by createBadge() in a lib file",
-      "componentName": "Badge",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Badge"
     },
     {
       "id": 77,
@@ -2364,8 +2288,7 @@
         }
       },
       "description": "Factory-generated search input field created by createField() in a lib file",
-      "componentName": "Field",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Field"
     },
     {
       "id": 78,
@@ -2394,8 +2317,7 @@
         }
       },
       "description": "Factory-generated Settings tab button created by createTab() in a lib file",
-      "componentName": "Tab",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Tab"
     },
     {
       "id": 79,
@@ -2424,8 +2346,7 @@
         }
       },
       "description": "Factory-generated status badge component created by createBadge() in a lib file",
-      "componentName": "Badge",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Badge"
     },
     {
       "id": 80,
@@ -2454,8 +2375,7 @@
         }
       },
       "description": "Factory-generated success alert component created by createAlert() in a lib file",
-      "componentName": "Alert",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Alert"
     },
     {
       "id": 81,
@@ -2484,8 +2404,7 @@
         }
       },
       "description": "Factory-generated Throughput metric card created by createCard() in a lib file",
-      "componentName": "Card",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Card"
     },
     {
       "id": 82,
@@ -2514,8 +2433,7 @@
         }
       },
       "description": "Factory-generated total sales display created by createDisplay() in a lib file",
-      "componentName": "Display",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Display"
     },
     {
       "id": 83,
@@ -2544,8 +2462,7 @@
         }
       },
       "description": "Factory-generated Uptime metric card created by createCard() in a lib file",
-      "componentName": "Card",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Card"
     },
     {
       "id": 84,
@@ -2574,8 +2491,7 @@
         }
       },
       "description": "Factory-generated URL input field created by createField() in a lib file",
-      "componentName": "Field",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Field"
     },
     {
       "id": 85,
@@ -2604,8 +2520,7 @@
         }
       },
       "description": "Factory-generated active users widget created by createWidget() in a lib file",
-      "componentName": "Widget",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Widget"
     },
     {
       "id": 86,
@@ -2634,8 +2549,7 @@
         }
       },
       "description": "Factory-generated version badge component created by createBadge() in a lib file",
-      "componentName": "Badge",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Badge"
     },
     {
       "id": 87,
@@ -2664,8 +2578,7 @@
         }
       },
       "description": "Factory-generated warning alert component created by createAlert() in a lib file",
-      "componentName": "Alert",
-      "rationale": "Tests factory-generated components common in data-heavy dashboards with repeated metrics."
+      "componentName": "Alert"
     },
     {
       "id": 88,
@@ -2694,8 +2607,7 @@
         }
       },
       "description": "Innermost cell in fractal subdividing grid",
-      "componentName": "FractalLayout",
-      "rationale": "Tests fractal/self-similar recursive component patterns."
+      "componentName": "FractalLayout"
     },
     {
       "id": 89,
@@ -2724,8 +2636,7 @@
         }
       },
       "description": "Integration card from auto-generated registry file with component lookup by slug",
-      "componentName": "IntegrationCard",
-      "rationale": "Tests machine-generated integration components from code generators."
+      "componentName": "IntegrationCard"
     },
     {
       "id": 90,
@@ -2754,8 +2665,7 @@
         }
       },
       "description": "A alert notification component in components/feedback/notification-box.tsx — file name and directory don't match what you'd search for",
-      "componentName": "NotificationBox",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "NotificationBox"
     },
     {
       "id": 91,
@@ -2784,8 +2694,7 @@
         }
       },
       "description": "A card footer component in components/layout/panel-actions.tsx — file name and directory don't match what you'd search for",
-      "componentName": "PanelActions",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "PanelActions"
     },
     {
       "id": 92,
@@ -2814,8 +2723,7 @@
         }
       },
       "description": "A chart bar component in components/data-display/metric-bar.tsx — file name and directory don't match what you'd search for",
-      "componentName": "MetricBar",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "MetricBar"
     },
     {
       "id": 93,
@@ -2844,8 +2752,7 @@
         }
       },
       "description": "A checkbox component in components/forms/agreement-check.tsx — file name and directory don't match what you'd search for",
-      "componentName": "AgreementCheck",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "AgreementCheck"
     },
     {
       "id": 94,
@@ -2874,8 +2781,7 @@
         }
       },
       "description": "A code snippet component in components/data-display/source-preview.tsx — file name and directory don't match what you'd search for",
-      "componentName": "SourcePreview",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "SourcePreview"
     },
     {
       "id": 95,
@@ -2904,8 +2810,7 @@
         }
       },
       "description": "A card displaying a single metric value with label",
-      "componentName": "MetricCard",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "MetricCard"
     },
     {
       "id": 96,
@@ -2934,8 +2839,7 @@
         }
       },
       "description": "A date cell component in components/data-display/calendar-entry.tsx — file name and directory don't match what you'd search for",
-      "componentName": "CalendarEntry",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "CalendarEntry"
     },
     {
       "id": 97,
@@ -2964,8 +2868,7 @@
         }
       },
       "description": "A drawer sheet component in components/overlays/slide-panel.tsx — file name and directory don't match what you'd search for",
-      "componentName": "SlidePanel",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "SlidePanel"
     },
     {
       "id": 98,
@@ -2994,8 +2897,7 @@
         }
       },
       "description": "A dropdown menu component in components/overlays/action-menu.tsx — file name and directory don't match what you'd search for",
-      "componentName": "ActionMenu",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "ActionMenu"
     },
     {
       "id": 99,
@@ -3024,8 +2926,7 @@
         }
       },
       "description": "A file icon component in components/data-display/document-icon.tsx — file name and directory don't match what you'd search for",
-      "componentName": "DocumentIcon",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "DocumentIcon"
     },
     {
       "id": 100,
@@ -3054,8 +2955,7 @@
         }
       },
       "description": "A footer text component in components/layout/page-footer.tsx — file name and directory don't match what you'd search for",
-      "componentName": "PageFooter",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "PageFooter"
     },
     {
       "id": 101,
@@ -3084,8 +2984,7 @@
         }
       },
       "description": "A grid cell displaying a KPI value with trend indicator",
-      "componentName": "KpiCell",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "KpiCell"
     },
     {
       "id": 102,
@@ -3114,8 +3013,7 @@
         }
       },
       "description": "A tooltip that appears on hover with contextual information",
-      "componentName": "HoverTip",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "HoverTip"
     },
     {
       "id": 103,
@@ -3144,8 +3042,7 @@
         }
       },
       "description": "A icon button component in components/actions/tool-trigger.tsx — file name and directory don't match what you'd search for",
-      "componentName": "ToolTrigger",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "ToolTrigger"
     },
     {
       "id": 104,
@@ -3174,8 +3071,7 @@
         }
       },
       "description": "A link button component in components/actions/redirect-action.tsx — file name and directory don't match what you'd search for",
-      "componentName": "RedirectAction",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "RedirectAction"
     },
     {
       "id": 105,
@@ -3204,8 +3100,7 @@
         }
       },
       "description": "A list tile component in components/data-display/item-tile.tsx — file name and directory don't match what you'd search for",
-      "componentName": "ItemTile",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "ItemTile"
     },
     {
       "id": 106,
@@ -3234,8 +3129,7 @@
         }
       },
       "description": "A spinning loading indicator for async operations",
-      "componentName": "AsyncSpinner",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "AsyncSpinner"
     },
     {
       "id": 107,
@@ -3264,8 +3158,7 @@
         }
       },
       "description": "A menu item component in components/navigation/command-item.tsx — file name and directory don't match what you'd search for",
-      "componentName": "CommandItem",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "CommandItem"
     },
     {
       "id": 108,
@@ -3294,8 +3187,7 @@
         }
       },
       "description": "A modal dialog for handling user interrupts and confirmations",
-      "componentName": "InterruptDialog",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "InterruptDialog"
     },
     {
       "id": 109,
@@ -3324,8 +3216,7 @@
         }
       },
       "description": "A navigation link that handles route transitions",
-      "componentName": "RouteLink",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "RouteLink"
     },
     {
       "id": 110,
@@ -3354,8 +3245,7 @@
         }
       },
       "description": "A single breadcrumb segment in a navigation trail",
-      "componentName": "PathSegment",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "PathSegment"
     },
     {
       "id": 111,
@@ -3384,8 +3274,7 @@
         }
       },
       "description": "A popover panel component in components/overlays/info-panel.tsx — file name and directory don't match what you'd search for",
-      "componentName": "InfoPanel",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "InfoPanel"
     },
     {
       "id": 112,
@@ -3414,8 +3303,7 @@
         }
       },
       "description": "A progress bar component in components/feedback/progress-tracker.tsx — file name and directory don't match what you'd search for",
-      "componentName": "ProgressTracker",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "ProgressTracker"
     },
     {
       "id": 113,
@@ -3444,8 +3332,7 @@
         }
       },
       "description": "A radio option component in components/forms/plan-selector.tsx — file name and directory don't match what you'd search for",
-      "componentName": "PlanSelector",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "PlanSelector"
     },
     {
       "id": 114,
@@ -3474,8 +3361,7 @@
         }
       },
       "description": "A search bar component in components/navigation/query-input.tsx — file name and directory don't match what you'd search for",
-      "componentName": "QueryInput",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "QueryInput"
     },
     {
       "id": 115,
@@ -3504,8 +3390,7 @@
         }
       },
       "description": "A select dropdown component in components/forms/option-picker.tsx — file name and directory don't match what you'd search for",
-      "componentName": "OptionPicker",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "OptionPicker"
     },
     {
       "id": 116,
@@ -3534,8 +3419,7 @@
         }
       },
       "description": "A horizontal divider separating content sections",
-      "componentName": "ContentDivider",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "ContentDivider"
     },
     {
       "id": 117,
@@ -3564,8 +3448,7 @@
         }
       },
       "description": "A sidebar link component in components/navigation/drawer-entry.tsx — file name and directory don't match what you'd search for",
-      "componentName": "DrawerEntry",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "DrawerEntry"
     },
     {
       "id": 118,
@@ -3594,8 +3477,7 @@
         }
       },
       "description": "A slider component in components/forms/range-picker.tsx — file name and directory don't match what you'd search for",
-      "componentName": "RangePicker",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "RangePicker"
     },
     {
       "id": 119,
@@ -3624,8 +3506,7 @@
         }
       },
       "description": "A colored tag showing process status (running/stopped/error)",
-      "componentName": "ProcessTag",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "ProcessTag"
     },
     {
       "id": 120,
@@ -3654,8 +3535,7 @@
         }
       },
       "description": "A step circle component in components/feedback/milestone-dot.tsx — file name and directory don't match what you'd search for",
-      "componentName": "MilestoneDot",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "MilestoneDot"
     },
     {
       "id": 121,
@@ -3684,8 +3564,7 @@
         }
       },
       "description": "A submit button component that triggers form submission",
-      "componentName": "SubmitButton",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "SubmitButton"
     },
     {
       "id": 122,
@@ -3714,8 +3593,7 @@
         }
       },
       "description": "A switch component in components/forms/binary-toggle.tsx — file name and directory don't match what you'd search for",
-      "componentName": "BinaryToggle",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "BinaryToggle"
     },
     {
       "id": 123,
@@ -3744,8 +3622,7 @@
         }
       },
       "description": "A button inside a segmented control / tab bar",
-      "componentName": "SegmentButton",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "SegmentButton"
     },
     {
       "id": 124,
@@ -3774,8 +3651,7 @@
         }
       },
       "description": "A table row component in components/data-display/record-row.tsx — file name and directory don't match what you'd search for",
-      "componentName": "RecordRow",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "RecordRow"
     },
     {
       "id": 125,
@@ -3804,8 +3680,7 @@
         }
       },
       "description": "A tag list component in components/data-display/label-group.tsx — file name and directory don't match what you'd search for",
-      "componentName": "LabelGroup",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "LabelGroup"
     },
     {
       "id": 126,
@@ -3834,8 +3709,7 @@
         }
       },
       "description": "A text area component in components/forms/content-editor.tsx — file name and directory don't match what you'd search for",
-      "componentName": "ContentEditor",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "ContentEditor"
     },
     {
       "id": 127,
@@ -3864,8 +3738,7 @@
         }
       },
       "description": "A text input with built-in validation and error display",
-      "componentName": "ValidatedInput",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "ValidatedInput"
     },
     {
       "id": 128,
@@ -3894,8 +3767,7 @@
         }
       },
       "description": "A toast bar component in components/feedback/snack-message.tsx — file name and directory don't match what you'd search for",
-      "componentName": "SnackMessage",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "SnackMessage"
     },
     {
       "id": 129,
@@ -3924,8 +3796,7 @@
         }
       },
       "description": "A toggle switch for enabling/disabling a feature flag",
-      "componentName": "FeatureToggle",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "FeatureToggle"
     },
     {
       "id": 130,
@@ -3954,8 +3825,7 @@
         }
       },
       "description": "A chip/token component with a remove button",
-      "componentName": "RemovableToken",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "RemovableToken"
     },
     {
       "id": 131,
@@ -3984,8 +3854,7 @@
         }
       },
       "description": "A upload zone component in components/forms/drop-target.tsx — file name and directory don't match what you'd search for",
-      "componentName": "DropTarget",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "DropTarget"
     },
     {
       "id": 132,
@@ -4014,8 +3883,7 @@
         }
       },
       "description": "An avatar component showing the current user session",
-      "componentName": "SessionAvatar",
-      "rationale": "Tests generic/reusable UI primitives found in every component library."
+      "componentName": "SessionAvatar"
     },
     {
       "id": 133,
@@ -4044,8 +3912,7 @@
         }
       },
       "description": "HOC-wrapped motion card inside styled layout wrappers",
-      "componentName": "AnimatedCard",
-      "rationale": "Tests higher-order component wrappers that add behavior without changing identity."
+      "componentName": "AnimatedCard"
     },
     {
       "id": 134,
@@ -4074,8 +3941,7 @@
         }
       },
       "description": "A 'Copied!' feedback component defined inside hooks/use-clipboard-copy.tsx alongside a clipboard hook",
-      "componentName": "ClipboardFeedback",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "ClipboardFeedback"
     },
     {
       "id": 135,
@@ -4104,8 +3970,7 @@
         }
       },
       "description": "Confirmation dialog component defined inside a React hook file",
-      "componentName": "ConfirmDialogContent",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "ConfirmDialogContent"
     },
     {
       "id": 136,
@@ -4134,8 +3999,7 @@
         }
       },
       "description": "A drag handle grip component defined inside hooks/use-drag-drop.tsx alongside a drag-and-drop hook",
-      "componentName": "DragHandle",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "DragHandle"
     },
     {
       "id": 137,
@@ -4164,8 +4028,7 @@
         }
       },
       "description": "A pagination navigation component defined inside a React hook file (use-pagination.tsx)",
-      "componentName": "PaginationNav",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "PaginationNav"
     },
     {
       "id": 138,
@@ -4194,8 +4057,7 @@
         }
       },
       "description": "A resize grip corner component defined inside hooks/use-resizable.tsx alongside a resizable panel hook",
-      "componentName": "ResizeGrip",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "ResizeGrip"
     },
     {
       "id": 139,
@@ -4224,8 +4086,7 @@
         }
       },
       "description": "A keyboard shortcut hint badge defined inside hooks/use-keyboard-shortcuts.tsx alongside a keyboard shortcut hook",
-      "componentName": "ShortcutHint",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "ShortcutHint"
     },
     {
       "id": 140,
@@ -4254,8 +4115,7 @@
         }
       },
       "description": "A toast notification message component defined inside a React hook file (use-toast-queue.tsx)",
-      "componentName": "ToastMessage",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "ToastMessage"
     },
     {
       "id": 141,
@@ -4284,8 +4144,7 @@
         }
       },
       "description": "An undo action toast component defined inside hooks/use-undo-stack.tsx alongside an undo stack hook",
-      "componentName": "UndoToast",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "UndoToast"
     },
     {
       "id": 142,
@@ -4314,8 +4173,7 @@
         }
       },
       "description": "A wizard step indicator component defined inside a React hook file (use-wizard.tsx)",
-      "componentName": "WizardStep",
-      "rationale": "Tests components whose behavior is driven by custom hooks, common in interactive UIs."
+      "componentName": "WizardStep"
     },
     {
       "id": 143,
@@ -4344,8 +4202,7 @@
         }
       },
       "description": "Identity Crisis depth-1: same DOM output as depth-11 but at shallowest depth",
-      "componentName": "IdentityCrisis",
-      "rationale": "Tests deeply wrapped identity/pass-through components that obscure the source."
+      "componentName": "IdentityCrisis"
     },
     {
       "id": 144,
@@ -4374,8 +4231,7 @@
         }
       },
       "description": "Identity Crisis depth-11: same button component buried under HOCs + fragments + memo",
-      "componentName": "IdentityCrisis",
-      "rationale": "Tests deeply wrapped identity/pass-through components that obscure the source."
+      "componentName": "IdentityCrisis"
     },
     {
       "id": 145,
@@ -4404,8 +4260,7 @@
         }
       },
       "description": "First item in pure inline-styled list",
-      "componentName": "InlineList",
-      "rationale": "Tests inline-defined components that lack standalone file boundaries."
+      "componentName": "InlineList"
     },
     {
       "id": 146,
@@ -4434,8 +4289,7 @@
         }
       },
       "description": "motion.button with whileHover/whileTap and pure inline styles",
-      "componentName": "InlineMotionHybrid",
-      "rationale": "Tests inline-defined components that lack standalone file boundaries."
+      "componentName": "InlineMotionHybrid"
     },
     {
       "id": 147,
@@ -4464,8 +4318,7 @@
         }
       },
       "description": "Styled-components button inside memo + forwardRef (withTooltip HOC)",
-      "componentName": "StyledButton",
-      "rationale": "Tests memo + forwardRef wrapped components, common in performance-optimized libraries."
+      "componentName": "StyledButton"
     },
     {
       "id": 148,
@@ -4494,8 +4347,7 @@
         }
       },
       "description": "A button component defined inside hooks/use-action-sheet.tsx alongside a custom hook",
-      "componentName": "ActionSheetButton",
-      "rationale": "Tests components with names that mismatch their file location — a common refactoring artifact."
+      "componentName": "ActionSheetButton"
     },
     {
       "id": 149,
@@ -4524,8 +4376,7 @@
         }
       },
       "description": "A card component defined in lib/ui-primitives.tsx — a utility file, not the components directory",
-      "componentName": "PrimitiveCard",
-      "rationale": "Tests components with names that mismatch their file location — a common refactoring artifact."
+      "componentName": "PrimitiveCard"
     },
     {
       "id": 150,
@@ -4554,8 +4405,7 @@
         }
       },
       "description": "A list component defined inside lib/layout-config.tsx — a configuration file that also exports React components",
-      "componentName": "ConfigList",
-      "rationale": "Tests components with names that mismatch their file location — a common refactoring artifact."
+      "componentName": "ConfigList"
     },
     {
       "id": 151,
@@ -4584,8 +4434,7 @@
         }
       },
       "description": "CSS Module status badge inside table row",
-      "componentName": "ModuleTable",
-      "rationale": "Tests module-scoped components with CSS Modules or co-located styles."
+      "componentName": "ModuleTable"
     },
     {
       "id": 152,
@@ -4614,8 +4463,7 @@
         }
       },
       "description": "List item with CSS Module transition class AND Tailwind layout classes",
-      "componentName": "ModuleTwHybrid",
-      "rationale": "Tests module-scoped components with CSS Modules or co-located styles."
+      "componentName": "ModuleTwHybrid"
     },
     {
       "id": 153,
@@ -4644,8 +4492,7 @@
         }
       },
       "description": "Top-level motion animated-card",
-      "componentName": "AnimatedCard",
-      "rationale": "Tests straightforward components with standard styling — the baseline for resolution."
+      "componentName": "AnimatedCard"
     },
     {
       "id": 154,
@@ -4674,8 +4521,7 @@
         }
       },
       "description": "Card using only inline React styles (zero class names)",
-      "componentName": "InlineCard",
-      "rationale": "Tests straightforward components with standard styling — the baseline for resolution."
+      "componentName": "InlineCard"
     },
     {
       "id": 155,
@@ -4704,8 +4550,7 @@
         }
       },
       "description": "Plain styled-components badge with no nesting",
-      "componentName": "StyledBadge",
-      "rationale": "Tests straightforward components with standard styling — the baseline for resolution."
+      "componentName": "StyledBadge"
     },
     {
       "id": 156,
@@ -4734,8 +4579,7 @@
         }
       },
       "description": "Plain styled-components button at top level",
-      "componentName": "StyledButton",
-      "rationale": "Tests straightforward components with standard styling — the baseline for resolution."
+      "componentName": "StyledButton"
     },
     {
       "id": 157,
@@ -4764,8 +4608,7 @@
         }
       },
       "description": "Plain styled-components card with no wrapping complexity",
-      "componentName": "StyledCard",
-      "rationale": "Tests straightforward components with standard styling — the baseline for resolution."
+      "componentName": "StyledCard"
     },
     {
       "id": 158,
@@ -4794,8 +4637,7 @@
         }
       },
       "description": "Plain Tailwind badge component",
-      "componentName": "TwBadge",
-      "rationale": "Tests straightforward components with standard styling — the baseline for resolution."
+      "componentName": "TwBadge"
     },
     {
       "id": 159,
@@ -4824,8 +4666,7 @@
         }
       },
       "description": "Plain Tailwind button with variant classes",
-      "componentName": "TwButton",
-      "rationale": "Tests straightforward components with standard styling — the baseline for resolution."
+      "componentName": "TwButton"
     },
     {
       "id": 160,
@@ -4854,8 +4695,7 @@
         }
       },
       "description": "Plain Tailwind utility-class card",
-      "componentName": "TwCard",
-      "rationale": "Tests straightforward components with standard styling — the baseline for resolution."
+      "componentName": "TwCard"
     },
     {
       "id": 161,
@@ -4884,8 +4724,7 @@
         }
       },
       "description": "Portal modal with motion enter/exit animation",
-      "componentName": "AnimatedModal",
-      "rationale": "Tests portal-rendered components mounted outside the DOM hierarchy."
+      "componentName": "AnimatedModal"
     },
     {
       "id": 162,
@@ -4914,8 +4753,7 @@
         }
       },
       "description": "A banner rendered via createPortal to document.body, exported under a different name than its internal definition",
-      "componentName": "InternalOverlayBanner",
-      "rationale": "Tests portal-rendered components mounted outside the DOM hierarchy."
+      "componentName": "InternalOverlayBanner"
     },
     {
       "id": 163,
@@ -4944,8 +4782,7 @@
         }
       },
       "description": "An auth status badge component exported from a context provider file alongside the AuthProvider",
-      "componentName": "AuthBadge",
-      "rationale": "Tests components rendered inside nested context providers, common in themed/auth-gated apps."
+      "componentName": "AuthBadge"
     },
     {
       "id": 164,
@@ -4974,8 +4811,7 @@
         }
       },
       "description": "A network connectivity status dot component exported from a connectivity context provider file",
-      "componentName": "ConnectivityDot",
-      "rationale": "Tests components rendered inside nested context providers, common in themed/auth-gated apps."
+      "componentName": "ConnectivityDot"
     },
     {
       "id": 165,
@@ -5004,8 +4840,7 @@
         }
       },
       "description": "A feature flag status badge exported from a feature flag context provider file",
-      "componentName": "FeatureFlagBadge",
-      "rationale": "Tests components rendered inside nested context providers, common in themed/auth-gated apps."
+      "componentName": "FeatureFlagBadge"
     },
     {
       "id": 166,
@@ -5034,8 +4869,7 @@
         }
       },
       "description": "A locale display label component exported from a locale context provider file",
-      "componentName": "LocaleLabel",
-      "rationale": "Tests components rendered inside nested context providers, common in themed/auth-gated apps."
+      "componentName": "LocaleLabel"
     },
     {
       "id": 167,
@@ -5064,8 +4898,7 @@
         }
       },
       "description": "Status badge component exported from a context provider file alongside the provider itself",
-      "componentName": "NotificationStatusBadge",
-      "rationale": "Tests components rendered inside nested context providers, common in themed/auth-gated apps."
+      "componentName": "NotificationStatusBadge"
     },
     {
       "id": 168,
@@ -5094,8 +4927,7 @@
         }
       },
       "description": "Radix Accordion content panel",
-      "componentName": "RadixAccordion",
-      "rationale": "Tests Radix UI primitives used in modern React apps with headless UI patterns."
+      "componentName": "RadixAccordion"
     },
     {
       "id": 169,
@@ -5124,8 +4956,7 @@
         }
       },
       "description": "Radix Dropdown menu item (portal + compound component)",
-      "componentName": "RadixDropdown",
-      "rationale": "Tests Radix UI primitives used in modern React apps with headless UI patterns."
+      "componentName": "RadixDropdown"
     },
     {
       "id": 170,
@@ -5154,8 +4985,7 @@
         }
       },
       "description": "Radix Tabs panel content inside tab container",
-      "componentName": "RadixTabs",
-      "rationale": "Tests Radix UI primitives used in modern React apps with headless UI patterns."
+      "componentName": "RadixTabs"
     },
     {
       "id": 171,
@@ -5184,8 +5014,7 @@
         }
       },
       "description": "Radix Tabs trigger button (no deep nesting)",
-      "componentName": "RadixTabs",
-      "rationale": "Tests Radix UI primitives used in modern React apps with headless UI patterns."
+      "componentName": "RadixTabs"
     },
     {
       "id": 172,
@@ -5214,8 +5043,7 @@
         }
       },
       "description": "Deepest item in 10-level recursive menu",
-      "componentName": "RecursiveMenu",
-      "rationale": "Tests recursive component trees like file explorers and nested menus."
+      "componentName": "RecursiveMenu"
     },
     {
       "id": 173,
@@ -5244,8 +5072,7 @@
         }
       },
       "description": "Recursive tree leaf at depth=8 (one of 256 identical leaves)",
-      "componentName": "RecursiveTree",
-      "rationale": "Tests recursive component trees like file explorers and nested menus."
+      "componentName": "RecursiveTree"
     },
     {
       "id": 174,
@@ -5274,8 +5101,7 @@
         }
       },
       "description": "Russian Doll: 15+ HOC layers wrapping a single styled motion button",
-      "componentName": "RussianDoll",
-      "rationale": "Tests deeply nested wrapper components — a common pattern in composed UIs."
+      "componentName": "RussianDoll"
     },
     {
       "id": 175,
@@ -5304,8 +5130,7 @@
         }
       },
       "description": "Server component list rendered inside ServerHero, iterating over data with nested ServerFeatureItem children",
-      "componentName": "ServerFeatureList",
-      "rationale": "Tests React Server Components and client/server boundary crossing in Next.js apps."
+      "componentName": "ServerFeatureList"
     },
     {
       "id": 176,
@@ -5334,8 +5159,7 @@
         }
       },
       "description": "Top-level server component section with nested server children, no 'use client' directive",
-      "componentName": "ServerHero",
-      "rationale": "Tests React Server Components and client/server boundary crossing in Next.js apps."
+      "componentName": "ServerHero"
     },
     {
       "id": 177,
@@ -5364,8 +5188,7 @@
         }
       },
       "description": "Server stat card at 3 levels deep in server component tree (ServerHero → ServerStats → ServerStatCard)",
-      "componentName": "ServerStatCard",
-      "rationale": "Tests React Server Components and client/server boundary crossing in Next.js apps."
+      "componentName": "ServerStatCard"
     },
     {
       "id": 178,
@@ -5394,8 +5217,7 @@
         }
       },
       "description": "Server component that wraps a client island component across the server/client boundary",
-      "componentName": "ServerWithClientIsland",
-      "rationale": "Tests React Server Components and client/server boundary crossing in Next.js apps."
+      "componentName": "ServerWithClientIsland"
     },
     {
       "id": 179,
@@ -5424,8 +5246,7 @@
         }
       },
       "description": "shadcn/ui Card + Avatar + Badge + Button composite",
-      "componentName": "ShadcnProfileCard",
-      "rationale": "Tests shadcn/ui components, the most popular React component library pattern."
+      "componentName": "ShadcnProfileCard"
     },
     {
       "id": 180,
@@ -5454,8 +5275,7 @@
         }
       },
       "description": "shadcn/ui Skeleton inside Card that conditionally renders based on loading state",
-      "componentName": "ShadcnDataDisplay",
-      "rationale": "Tests shadcn/ui components, the most popular React component library pattern."
+      "componentName": "ShadcnDataDisplay"
     },
     {
       "id": 181,
@@ -5484,8 +5304,7 @@
         }
       },
       "description": "shadcn/ui Tooltip trigger button inside Card with Skeleton loading state and Radix portal",
-      "componentName": "ShadcnDataDisplay",
-      "rationale": "Tests shadcn/ui components, the most popular React component library pattern."
+      "componentName": "ShadcnDataDisplay"
     },
     {
       "id": 182,
@@ -5514,8 +5333,7 @@
         }
       },
       "description": "Shapeshifter: component that changes its entire tree shape on a timer",
-      "componentName": "Shapeshifter",
-      "rationale": "Tests polymorphic components that render different elements based on props."
+      "componentName": "Shapeshifter"
     },
     {
       "id": 183,
@@ -5544,8 +5362,7 @@
         }
       },
       "description": "AwayIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
-      "componentName": "AwayIndicator",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "AwayIndicator"
     },
     {
       "id": 184,
@@ -5574,8 +5391,7 @@
         }
       },
       "description": "BusyIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
-      "componentName": "BusyIndicator",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "BusyIndicator"
     },
     {
       "id": 185,
@@ -5604,8 +5420,7 @@
         }
       },
       "description": "A churn rate stat card — one of 5 similar stat card components in the same file",
-      "componentName": "ChurnStatCard",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "ChurnStatCard"
     },
     {
       "id": 186,
@@ -5634,8 +5449,7 @@
         }
       },
       "description": "CpuTile — one of 5 similar components in the same file (metric-tiles.tsx)",
-      "componentName": "CpuTile",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "CpuTile"
     },
     {
       "id": 187,
@@ -5664,8 +5478,7 @@
         }
       },
       "description": "CreateButton — one of 4 similar components in the same file (crud-buttons.tsx)",
-      "componentName": "CreateButton",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "CreateButton"
     },
     {
       "id": 188,
@@ -5694,8 +5507,7 @@
         }
       },
       "description": "DeleteButton — one of 4 similar components in the same file (crud-buttons.tsx)",
-      "componentName": "DeleteButton",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "DeleteButton"
     },
     {
       "id": 189,
@@ -5724,8 +5536,7 @@
         }
       },
       "description": "DiskTile — one of 5 similar components in the same file (metric-tiles.tsx)",
-      "componentName": "DiskTile",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "DiskTile"
     },
     {
       "id": 190,
@@ -5754,8 +5565,7 @@
         }
       },
       "description": "DndIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
-      "componentName": "DndIndicator",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "DndIndicator"
     },
     {
       "id": 191,
@@ -5784,8 +5594,7 @@
         }
       },
       "description": "GpuTile — one of 5 similar components in the same file (metric-tiles.tsx)",
-      "componentName": "GpuTile",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "GpuTile"
     },
     {
       "id": 192,
@@ -5814,8 +5623,7 @@
         }
       },
       "description": "HelpIcon — one of 6 similar components in the same file (nav-icons.tsx)",
-      "componentName": "HelpIcon",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "HelpIcon"
     },
     {
       "id": 193,
@@ -5844,8 +5652,7 @@
         }
       },
       "description": "HomeIcon — one of 6 similar components in the same file (nav-icons.tsx)",
-      "componentName": "HomeIcon",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "HomeIcon"
     },
     {
       "id": 194,
@@ -5874,8 +5681,7 @@
         }
       },
       "description": "LogoutIcon — one of 6 similar components in the same file (nav-icons.tsx)",
-      "componentName": "LogoutIcon",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "LogoutIcon"
     },
     {
       "id": 195,
@@ -5904,8 +5710,7 @@
         }
       },
       "description": "An MRR stat card — one of 5 similar stat card components in a shared file",
-      "componentName": "MrrStatCard",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "MrrStatCard"
     },
     {
       "id": 196,
@@ -5934,8 +5739,7 @@
         }
       },
       "description": "OfflineIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
-      "componentName": "OfflineIndicator",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "OfflineIndicator"
     },
     {
       "id": 197,
@@ -5964,8 +5768,7 @@
         }
       },
       "description": "OnlineIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
-      "componentName": "OnlineIndicator",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "OnlineIndicator"
     },
     {
       "id": 198,
@@ -5994,8 +5797,7 @@
         }
       },
       "description": "An orders stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)",
-      "componentName": "OrderStatCard",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "OrderStatCard"
     },
     {
       "id": 199,
@@ -6024,8 +5826,7 @@
         }
       },
       "description": "ProfileIcon — one of 6 similar components in the same file (nav-icons.tsx)",
-      "componentName": "ProfileIcon",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "ProfileIcon"
     },
     {
       "id": 200,
@@ -6054,8 +5855,7 @@
         }
       },
       "description": "RamTile — one of 5 similar components in the same file (metric-tiles.tsx)",
-      "componentName": "RamTile",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "RamTile"
     },
     {
       "id": 201,
@@ -6084,8 +5884,7 @@
         }
       },
       "description": "A retention stat card — one of 5 similar stat card components defined in the same file",
-      "componentName": "RetentionStatCard",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "RetentionStatCard"
     },
     {
       "id": 202,
@@ -6114,8 +5913,7 @@
         }
       },
       "description": "A revenue stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)",
-      "componentName": "RevenueStatCard",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "RevenueStatCard"
     },
     {
       "id": 203,
@@ -6144,8 +5942,7 @@
         }
       },
       "description": "SearchIcon — one of 6 similar components in the same file (nav-icons.tsx)",
-      "componentName": "SearchIcon",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "SearchIcon"
     },
     {
       "id": 204,
@@ -6174,8 +5971,7 @@
         }
       },
       "description": "SettingsIcon — one of 6 similar components in the same file (nav-icons.tsx)",
-      "componentName": "SettingsIcon",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "SettingsIcon"
     },
     {
       "id": 205,
@@ -6204,8 +6000,7 @@
         }
       },
       "description": "UpdateButton — one of 4 similar components in the same file (crud-buttons.tsx)",
-      "componentName": "UpdateButton",
-      "rationale": "Tests distinguishing between near-identical sibling components rendered from shared templates."
+      "componentName": "UpdateButton"
     },
     {
       "id": 206,
@@ -6234,8 +6029,7 @@
         }
       },
       "description": "Motion stagger-grid child with delay animation",
-      "componentName": "StaggerGrid",
-      "rationale": "Tests staggered animation grid children common in gallery and card layouts."
+      "componentName": "StaggerGrid"
     },
     {
       "id": 207,
@@ -6264,8 +6058,7 @@
         }
       },
       "description": "Style Clash badge: styled-components span with Tailwind + inline styles + CSS Module parent - 4 styling systems on one element",
-      "componentName": "StyleClash",
-      "rationale": "Tests components where multiple styling systems collide, common during migrations."
+      "componentName": "StyleClash"
     },
     {
       "id": 208,
@@ -6294,8 +6087,7 @@
         }
       },
       "description": "Button with styled-components + Tailwind + CSS Modules + inline styles on same elements",
-      "componentName": "StyleClash",
-      "rationale": "Tests components where multiple styling systems collide, common during migrations."
+      "componentName": "StyleClash"
     },
     {
       "id": 209,
@@ -6324,8 +6116,7 @@
         }
       },
       "description": "Styled-components data-cell inside compound table structure",
-      "componentName": "StyledDataCell",
-      "rationale": "Tests styled-components with runtime CSS-in-JS, common in legacy React apps."
+      "componentName": "StyledDataCell"
     },
     {
       "id": 210,
@@ -6354,8 +6145,7 @@
         }
       },
       "description": "Suspense-wrapped lazy-loaded component",
-      "componentName": "SuspenseLazyLoader",
-      "rationale": "Tests React.lazy + Suspense code-split components."
+      "componentName": "SuspenseLazyLoader"
     },
     {
       "id": 211,
@@ -6384,8 +6174,7 @@
         }
       },
       "description": "Radix Tooltip on styled button inside withTooltip HOC",
-      "componentName": "StyledButton",
-      "rationale": "Tests HOC-wrapped components where the wrapper obscures the underlying component."
+      "componentName": "StyledButton"
     },
     {
       "id": 212,
@@ -6414,8 +6203,7 @@
         }
       },
       "description": "Styled-components card wrapped in withTracking HOC",
-      "componentName": "StyledCard",
-      "rationale": "Tests instrumented/tracked components wrapped with analytics or logging HOCs."
+      "componentName": "StyledCard"
     },
     {
       "id": 213,
@@ -6444,8 +6232,7 @@
         }
       },
       "description": "Tailwind MiniTable nested inside TwDashboard - inner component has no direct export, only accessible via parent",
-      "componentName": "TwDashboard",
-      "rationale": "Tests Tailwind CSS utility class components with minimal markup."
+      "componentName": "TwDashboard"
     },
     {
       "id": 214,
@@ -6474,8 +6261,7 @@
         }
       },
       "description": "Tailwind stat card nested inside dashboard grid",
-      "componentName": "TwDashboard",
-      "rationale": "Tests Tailwind CSS utility class components with minimal markup."
+      "componentName": "TwDashboard"
     },
     {
       "id": 215,
@@ -6504,8 +6290,7 @@
         }
       },
       "description": "Button with Tailwind classes AND styled-components hover/active behavior",
-      "componentName": "TwStyledHybrid",
-      "rationale": "Tests Tailwind CSS utility class components with minimal markup."
+      "componentName": "TwStyledHybrid"
     },
     {
       "id": 216,
@@ -6534,8 +6319,7 @@
         }
       },
       "description": "An overlapping avatar stack component defined inside lib/avatar-utils.tsx among avatar generation utilities",
-      "componentName": "AvatarStack",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "AvatarStack"
     },
     {
       "id": 217,
@@ -6564,8 +6348,7 @@
         }
       },
       "description": "A color swatch component defined inside lib/color-swatch.tsx among color conversion utilities",
-      "componentName": "ColorSwatch",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "ColorSwatch"
     },
     {
       "id": 218,
@@ -6594,8 +6377,7 @@
         }
       },
       "description": "A copy-to-clipboard button component defined inside lib/clipboard-helpers.tsx among clipboard utilities",
-      "componentName": "CopyButton",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "CopyButton"
     },
     {
       "id": 219,
@@ -6624,8 +6406,7 @@
         }
       },
       "description": "A notification count badge component defined inside lib/counter-utils.tsx among counting utilities",
-      "componentName": "CountBadge",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "CountBadge"
     },
     {
       "id": 220,
@@ -6654,8 +6435,7 @@
         }
       },
       "description": "A diff line component defined inside lib/diff-renderer.tsx among diff computation utilities",
-      "componentName": "DiffLine",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "DiffLine"
     },
     {
       "id": 221,
@@ -6684,8 +6464,7 @@
         }
       },
       "description": "A human-readable duration label defined inside lib/duration-utils.tsx among time duration utilities",
-      "componentName": "DurationLabel",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "DurationLabel"
     },
     {
       "id": 222,
@@ -6714,8 +6493,7 @@
         }
       },
       "description": "An empty state placeholder component defined inside lib/placeholder-utils.tsx among placeholder generation utilities",
-      "componentName": "EmptyState",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "EmptyState"
     },
     {
       "id": 223,
@@ -6744,8 +6522,7 @@
         }
       },
       "description": "An external link component with icon defined inside lib/link-utils.tsx among URL utilities",
-      "componentName": "ExternalLink",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "ExternalLink"
     },
     {
       "id": 224,
@@ -6774,8 +6551,7 @@
         }
       },
       "description": "Formatted currency component defined inside lib/data-formatters.tsx among formatting utilities",
-      "componentName": "FormattedCurrency",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "FormattedCurrency"
     },
     {
       "id": 225,
@@ -6804,8 +6580,7 @@
         }
       },
       "description": "A keyboard hotkey label component defined inside lib/hotkey-registry.tsx among hotkey registration utilities",
-      "componentName": "HotkeyLabel",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "HotkeyLabel"
     },
     {
       "id": 226,
@@ -6834,8 +6609,7 @@
         }
       },
       "description": "A markdown preview component defined inside lib/markdown-utils.tsx among markdown parsing utilities",
-      "componentName": "MarkdownPreview",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "MarkdownPreview"
     },
     {
       "id": 227,
@@ -6864,8 +6638,7 @@
         }
       },
       "description": "A conditional permission gate component defined inside lib/permission-utils.tsx among authorization utilities",
-      "componentName": "PermissionGate",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "PermissionGate"
     },
     {
       "id": 228,
@@ -6894,8 +6667,7 @@
         }
       },
       "description": "A circular progress ring SVG component defined inside lib/progress-helpers.tsx among utility functions",
-      "componentName": "ProgressRing",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "ProgressRing"
     },
     {
       "id": 229,
@@ -6924,8 +6696,7 @@
         }
       },
       "description": "A relative time display (e.g. '2 hours ago') component defined inside lib/date-helpers.tsx among date formatting utilities",
-      "componentName": "RelativeTime",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "RelativeTime"
     },
     {
       "id": 230,
@@ -6954,8 +6725,7 @@
         }
       },
       "description": "A scroll progress indicator component defined inside lib/scroll-indicator.tsx among scroll position utilities",
-      "componentName": "ScrollIndicator",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "ScrollIndicator"
     },
     {
       "id": 231,
@@ -6984,8 +6754,7 @@
         }
       },
       "description": "Status indicator component defined inside lib/render-utils.tsx among utility functions",
-      "componentName": "StatusIndicator",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "StatusIndicator"
     },
     {
       "id": 232,
@@ -7014,8 +6783,7 @@
         }
       },
       "description": "A timeline dot marker component defined inside lib/timeline-utils.tsx among time formatting utilities",
-      "componentName": "TimelineDot",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "TimelineDot"
     },
     {
       "id": 233,
@@ -7044,8 +6812,7 @@
         }
       },
       "description": "A text truncation component defined inside lib/text-helpers.tsx among text manipulation utilities",
-      "componentName": "TruncatedText",
-      "rationale": "Tests small utility display components used across many parent contexts."
+      "componentName": "TruncatedText"
     }
   ]
 }

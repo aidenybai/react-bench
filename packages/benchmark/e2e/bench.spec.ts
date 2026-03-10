@@ -2,7 +2,6 @@ import { test as base, expect, type Page } from "@playwright/test";
 import { writeFileSync } from "fs";
 import { join } from "path";
 import { TEST_MANIFEST } from "./test-cases";
-import { getRationale } from "./test-cases/rationale";
 import { NEEDS_INTERACTION } from "./interactions";
 import { collectElementContext } from "./utils/collect-element-context";
 import { isCorrectFile } from "./utils/is-correct-file";
@@ -393,7 +392,6 @@ const writeOutputFiles = (
       id: entryResult.id,
       testId: entryResult.testId,
       description: entryResult.description,
-      rationale: getRationale(entryResult.testId),
       componentName: entryResult.componentName,
       filePath: entryResult.expected,
       results: Object.fromEntries(

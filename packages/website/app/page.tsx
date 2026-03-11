@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ThemeToggle } from "@/components/theme-provider";
 import { GitHubIcon } from "@/components/icons/github-icon";
 import { ReactBenchLogo } from "@/components/icons/react-bench-logo";
@@ -30,45 +29,34 @@ const Page = () => (
         </div>
       </div>
       <p className="text-sm text-muted-foreground mb-6">
-        Evaluating coding agents on React.js tasks.
+        Benchmarking how well coding agents can locate React component source
+        files in complex, real-world codebases.
       </p>
 
-      <Tabs defaultValue="retrieval">
-        <TabsList variant="line">
-          <TabsTrigger value="retrieval">Retrieval</TabsTrigger>
-          <TabsTrigger value="perf" disabled>
-            Performance
-          </TabsTrigger>
-          <TabsTrigger value="a11y" disabled>
-            Accessibility
-          </TabsTrigger>
-          <TabsTrigger value="refactor" disabled>
-            Refactoring
-          </TabsTrigger>
-        </TabsList>
+      <div className="space-y-6">
+        <p className="text-sm text-muted-foreground">
+          {benchData.testCases.length} test cases spanning 14 pattern categories
+          (HOC stacking, compound components, barrel re-exports, dynamic imports,
+          render props, name collisions, and more), each inspired by patterns in
+          open-source projects like Cal.com, Excalidraw, LobeChat, and Plane.
+          Given a natural-language description of a UI element, each resolver
+          must identify the correct source file. Last benchmarked:{" "}
+          <em>{benchData.lastBenchmarked}</em>.{" "}
+          <a
+            href="https://github.com/aidenybai/react-bench"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={LINK_CLASS}
+          >
+            Source &amp; methodology
+          </a>
+          .
+        </p>
 
-        <TabsContent value="retrieval" className="mt-6 space-y-6">
-          <p className="text-sm text-muted-foreground">
-            {benchData.testCases.length} test cases across 14 pattern categories
-            inspired by real-world React/Next.js projects. Each resolver must
-            identify the correct source file from a natural-language description.
-            Last benchmarked: <em>{benchData.lastBenchmarked}</em>.{" "}
-            <a
-              href="https://github.com/aidenybai/react-bench"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={LINK_CLASS}
-            >
-              Source &amp; methodology
-            </a>
-            .
-          </p>
-
-          <Suspense>
-            <ResultsSection />
-          </Suspense>
-        </TabsContent>
-      </Tabs>
+        <Suspense>
+          <ResultsSection />
+        </Suspense>
+      </div>
 
       <div className="pb-12" />
     </div>

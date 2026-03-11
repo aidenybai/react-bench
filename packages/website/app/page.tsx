@@ -29,21 +29,52 @@ const Page = () => (
         </div>
       </div>
       <p className="text-sm text-muted-foreground mb-6">
-        Evaluating coding agents on React retrieval tasks in complex,
-        real-world codebases.
+        Evaluating coding agents on React retrieval tasks in complex, real-world
+        codebases.
       </p>
 
       <div className="space-y-6">
         <p className="text-sm text-muted-foreground">
           {benchData.testCases.length} test cases spanning 14 pattern categories
-          (HOC stacking, compound components, barrel re-exports, dynamic imports,
-          render props, name collisions, and more), each inspired by patterns in
-          open-source projects like{" "}
-          <a href="https://github.com/calcom/cal.com" target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>Cal.com</a>,{" "}
-          <a href="https://github.com/excalidraw/excalidraw" target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>Excalidraw</a>,{" "}
-          <a href="https://github.com/lobehub/lobe-chat" target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>LobeChat</a>, and{" "}
-          <a href="https://github.com/makeplane/plane" target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>Plane</a>.
-          Given a natural-language description of a UI element, each resolver
+          (HOC stacking, compound components, barrel re-exports, dynamic
+          imports, render props, name collisions, and more), each inspired by
+          patterns in open-source projects like{" "}
+          <a
+            href="https://github.com/calcom/cal.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={LINK_CLASS}
+          >
+            Cal.com
+          </a>
+          ,{" "}
+          <a
+            href="https://github.com/excalidraw/excalidraw"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={LINK_CLASS}
+          >
+            Excalidraw
+          </a>
+          ,{" "}
+          <a
+            href="https://github.com/lobehub/lobe-chat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={LINK_CLASS}
+          >
+            LobeChat
+          </a>
+          , and{" "}
+          <a
+            href="https://github.com/makeplane/plane"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={LINK_CLASS}
+          >
+            Plane
+          </a>
+          . Given a natural-language description of a UI element, each resolver
           must identify the correct source file. Last benchmarked:{" "}
           <em>{benchData.lastBenchmarked}</em>.{" "}
           <a

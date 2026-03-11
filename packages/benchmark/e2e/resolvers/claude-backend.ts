@@ -62,7 +62,7 @@ const runOnce = async (prompt: string): Promise<AgentResult> => {
       }
     }
   } catch {
-    // HACK: SDK subprocess can die on network errors — return partial result
+    // HACK: SDK subprocess can die on network errors - return partial result
   }
 
   return {

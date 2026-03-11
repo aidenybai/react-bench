@@ -26,9 +26,7 @@ export const RenderPropForm = ({
           {fieldName}
         </label>
         {renderField(fieldName, {
-          "data-testid": testId
-            ? `${testId}-field-${fieldIndex}`
-            : undefined,
+          "data-testid": testId ? `${testId}-field-${fieldIndex}` : undefined,
         })}
       </div>
     ))}

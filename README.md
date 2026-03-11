@@ -24,26 +24,26 @@ packages/
 
 Every test case is inspired by real patterns found in production codebases. Each test case definition includes a reference link to the original project.
 
-| Category | Cases | Inspired By |
-|---|---|---|
-| Deep Nesting | 35 | Cal.com platform types, Twenty record-table |
-| Factory Components | 30 | Data dashboards with repeated metric patterns |
-| Generic Names | 30 | Component libraries with common names (Button, Card) |
-| Sibling Components | 20 | Shared templates with near-identical siblings |
-| Compound (Object.assign) | 4 | [Excalidraw Sidebar](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/components/Sidebar/Sidebar.tsx), [Cal.com Table](https://github.com/calcom/cal.com/blob/main/packages/ui/components/table/Table.tsx) |
-| Alias Re-exports | 5 | [Excalidraw Footer/FooterCenter](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/index.tsx), [Novu Inbox chain](https://github.com/novuhq/novu/blob/main/packages/react/src/components/Inbox.tsx) |
-| displayName Resolution | 4 | [Excalidraw DropdownMenu](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/components/dropdownMenu/dropdownMenuUtils.ts) |
-| HOC Stacking (3-4 layers) | 5 | [Cal.com withLicenseRequired](https://github.com/calcom/cal.com/blob/main/apps/web/modules/ee/common/components/LicenseRequired.tsx) |
-| Switch/Type Dispatchers | 5 | [Formbricks ElementConditional](https://github.com/formbricks/formbricks/blob/main/packages/surveys/src/components/general/element-conditional.tsx) |
-| Polymorphic forwardRef | 4 | [Cal.com Form](https://github.com/calcom/cal.com/blob/main/packages/ui/components/form/inputs/Form.tsx), [Twenty SuggestionMenu](https://github.com/twentyhq/twenty/blob/main/packages/twenty-front/src/modules/ui/suggestion/components/SuggestionMenu.tsx) |
-| Tunnel/Context Rendering | 4 | [Excalidraw DefaultSidebar tunnels](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/components/DefaultSidebar.tsx) |
-| Lazy .then() Named Exports | 4 | [LobeChat dynamic imports](https://github.com/lobehub/lobe-chat/blob/main/src/features/Conversation/ChatItem/components/MessageContent/index.tsx), [Twenty lazy router](https://github.com/twentyhq/twenty/blob/main/packages/twenty-front/src/modules/app/hooks/useCreateAppRouter.tsx) |
-| Dynamic Import Maps | 5 | [LobeChat componentMap](https://github.com/lobehub/lobe-chat/blob/main/src/routes/(main)/settings/features/componentMap.ts), [Cal.com EventTypeWebWrapper](https://github.com/calcom/cal.com/blob/main/apps/web/modules/event-types/components/EventTypeWebWrapper.tsx) |
-| JSX in Data/Config | 5 | [Documenso ROLE_ICONS](https://github.com/documenso/documenso/blob/main/packages/ui/primitives/recipient-role-icons.tsx), [Dub pricing features](https://github.com/dubinc/dub/blob/main/packages/utils/src/constants/pricing/pricing-plan-compare-features.tsx) |
-| Render Props | 4 | [Cal.com FormAction](https://github.com/calcom/cal.com/blob/main/apps/web/components/apps/routing-forms/FormActions.tsx) |
-| Same-Name Collisions | 6 | [Plane @plane/ui vs @plane/propel](https://github.com/makeplane/plane/blob/main/packages/ui/src/button/button.tsx), [Novu Button](https://github.com/novuhq/novu/blob/main/packages/js/src/ui/components/primitives/Button.tsx) |
-| Unexpected File Locations | 5 | [Dub variables.tsx](https://github.com/dubinc/dub/blob/main/packages/ui/src/rich-text-area/variables.tsx), [Inbox-zero scripts](https://github.com/elie222/inbox-zero/blob/main/apps/web/utils/scripts/lemon.tsx) |
-| Plus: Barrel exports, hooks, providers, portals, RSC, animation, recursive, and more | | |
+| Category                                                                             | Cases | Inspired By                                                                                                                                                                                                                                                                              |
+| ------------------------------------------------------------------------------------ | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Deep Nesting                                                                         | 35    | Cal.com platform types, Twenty record-table                                                                                                                                                                                                                                              |
+| Factory Components                                                                   | 30    | Data dashboards with repeated metric patterns                                                                                                                                                                                                                                            |
+| Generic Names                                                                        | 30    | Component libraries with common names (Button, Card)                                                                                                                                                                                                                                     |
+| Sibling Components                                                                   | 20    | Shared templates with near-identical siblings                                                                                                                                                                                                                                            |
+| Compound (Object.assign)                                                             | 4     | [Excalidraw Sidebar](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/components/Sidebar/Sidebar.tsx), [Cal.com Table](https://github.com/calcom/cal.com/blob/main/packages/ui/components/table/Table.tsx)                                                       |
+| Alias Re-exports                                                                     | 5     | [Excalidraw Footer/FooterCenter](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/index.tsx), [Novu Inbox chain](https://github.com/novuhq/novu/blob/main/packages/react/src/components/Inbox.tsx)                                                               |
+| displayName Resolution                                                               | 4     | [Excalidraw DropdownMenu](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/components/dropdownMenu/dropdownMenuUtils.ts)                                                                                                                                         |
+| HOC Stacking (3-4 layers)                                                            | 5     | [Cal.com withLicenseRequired](https://github.com/calcom/cal.com/blob/main/apps/web/modules/ee/common/components/LicenseRequired.tsx)                                                                                                                                                     |
+| Switch/Type Dispatchers                                                              | 5     | [Formbricks ElementConditional](https://github.com/formbricks/formbricks/blob/main/packages/surveys/src/components/general/element-conditional.tsx)                                                                                                                                      |
+| Polymorphic forwardRef                                                               | 4     | [Cal.com Form](https://github.com/calcom/cal.com/blob/main/packages/ui/components/form/inputs/Form.tsx), [Twenty SuggestionMenu](https://github.com/twentyhq/twenty/blob/main/packages/twenty-front/src/modules/ui/suggestion/components/SuggestionMenu.tsx)                             |
+| Tunnel/Context Rendering                                                             | 4     | [Excalidraw DefaultSidebar tunnels](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/components/DefaultSidebar.tsx)                                                                                                                                              |
+| Lazy .then() Named Exports                                                           | 4     | [LobeChat dynamic imports](https://github.com/lobehub/lobe-chat/blob/main/src/features/Conversation/ChatItem/components/MessageContent/index.tsx), [Twenty lazy router](https://github.com/twentyhq/twenty/blob/main/packages/twenty-front/src/modules/app/hooks/useCreateAppRouter.tsx) |
+| Dynamic Import Maps                                                                  | 5     | [LobeChat componentMap](<https://github.com/lobehub/lobe-chat/blob/main/src/routes/(main)/settings/features/componentMap.ts>), [Cal.com EventTypeWebWrapper](https://github.com/calcom/cal.com/blob/main/apps/web/modules/event-types/components/EventTypeWebWrapper.tsx)                |
+| JSX in Data/Config                                                                   | 5     | [Documenso ROLE_ICONS](https://github.com/documenso/documenso/blob/main/packages/ui/primitives/recipient-role-icons.tsx), [Dub pricing features](https://github.com/dubinc/dub/blob/main/packages/utils/src/constants/pricing/pricing-plan-compare-features.tsx)                         |
+| Render Props                                                                         | 4     | [Cal.com FormAction](https://github.com/calcom/cal.com/blob/main/apps/web/components/apps/routing-forms/FormActions.tsx)                                                                                                                                                                 |
+| Same-Name Collisions                                                                 | 6     | [Plane @plane/ui vs @plane/propel](https://github.com/makeplane/plane/blob/main/packages/ui/src/button/button.tsx), [Novu Button](https://github.com/novuhq/novu/blob/main/packages/js/src/ui/components/primitives/Button.tsx)                                                          |
+| Unexpected File Locations                                                            | 5     | [Dub variables.tsx](https://github.com/dubinc/dub/blob/main/packages/ui/src/rich-text-area/variables.tsx), [Inbox-zero scripts](https://github.com/elie222/inbox-zero/blob/main/apps/web/utils/scripts/lemon.tsx)                                                                        |
+| Plus: Barrel exports, hooks, providers, portals, RSC, animation, recursive, and more |       |                                                                                                                                                                                                                                                                                          |
 
 ## Methodology
 
@@ -74,12 +74,12 @@ Each test case targets a specific pattern that makes source-file resolution diff
 
 The harness tests four prompt strategies per backend:
 
-| Strategy | What it sends |
-|---|---|
-| **code** | Natural-language description only ("I need to find the source file for a React component...") |
-| **agentation** | Description + Agentation clipboard payload |
-| **react-grab** | Description + React Grab source hint |
-| **cursor-browser** | Description + Cursor Browser clipboard payload |
+| Strategy           | What it sends                                                                                 |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| **code**           | Natural-language description only ("I need to find the source file for a React component...") |
+| **agentation**     | Description + Agentation clipboard payload                                                    |
+| **react-grab**     | Description + React Grab source hint                                                          |
+| **cursor-browser** | Description + Cursor Browser clipboard payload                                                |
 
 Each strategy is combined with each backend to produce resolver names like `claude-code`, `react-grab+claude`, etc.
 

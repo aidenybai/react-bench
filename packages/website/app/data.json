@@ -2351,7 +2351,7 @@
     {
       "id": 80,
       "testId": "dynamic-circle-icon",
-      "description": "A circle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "description": "A circle icon dynamically resolved from an icon registry map - one of 5 possible shapes selected at runtime",
       "componentName": "DynamicIcon",
       "filePath": "components/generated/icon-registry.tsx",
       "results": {
@@ -2380,7 +2380,7 @@
     {
       "id": 81,
       "testId": "dynamic-diamond-icon",
-      "description": "A diamond icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "description": "A diamond icon dynamically resolved from an icon registry map - one of 5 possible shapes selected at runtime",
       "componentName": "DynamicIcon",
       "filePath": "components/generated/icon-registry.tsx",
       "results": {
@@ -2583,7 +2583,7 @@
     {
       "id": 88,
       "testId": "dynamic-medium-widget",
-      "description": "A medium widget selected at runtime from a component registry — the registry maps string keys to React components",
+      "description": "A medium widget selected at runtime from a component registry - the registry maps string keys to React components",
       "componentName": "DynamicWidget",
       "filePath": "components/generated/widget-registry.tsx",
       "results": {
@@ -2641,7 +2641,7 @@
     {
       "id": 90,
       "testId": "dynamic-sidebar-layout",
-      "description": "A sidebar layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "description": "A sidebar layout dynamically resolved from a layout registry - one of 5 possible layout variants",
       "componentName": "DynamicLayout",
       "filePath": "components/generated/layout-registry.tsx",
       "results": {
@@ -2670,7 +2670,7 @@
     {
       "id": 91,
       "testId": "dynamic-single-layout",
-      "description": "A single layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "description": "A single layout dynamically resolved from a layout registry - one of 5 possible layout variants",
       "componentName": "DynamicLayout",
       "filePath": "components/generated/layout-registry.tsx",
       "results": {
@@ -2699,7 +2699,7 @@
     {
       "id": 92,
       "testId": "dynamic-small-widget",
-      "description": "A small widget selected at runtime from a registry map in widget-registry.tsx — one of 3 possible sizes",
+      "description": "A small widget selected at runtime from a registry map in widget-registry.tsx - one of 3 possible sizes",
       "componentName": "DynamicWidget",
       "filePath": "components/generated/widget-registry.tsx",
       "results": {
@@ -2728,7 +2728,7 @@
     {
       "id": 93,
       "testId": "dynamic-square-icon",
-      "description": "A square icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "description": "A square icon dynamically resolved from an icon registry map - one of 5 possible shapes selected at runtime",
       "componentName": "DynamicIcon",
       "filePath": "components/generated/icon-registry.tsx",
       "results": {
@@ -2757,7 +2757,7 @@
     {
       "id": 94,
       "testId": "dynamic-stacked-layout",
-      "description": "A stacked layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "description": "A stacked layout dynamically resolved from a layout registry - one of 5 possible layout variants",
       "componentName": "DynamicLayout",
       "filePath": "components/generated/layout-registry.tsx",
       "results": {
@@ -2786,7 +2786,7 @@
     {
       "id": 95,
       "testId": "dynamic-star-icon",
-      "description": "A star icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "description": "A star icon dynamically resolved from an icon registry map - one of 5 possible shapes selected at runtime",
       "componentName": "DynamicIcon",
       "filePath": "components/generated/icon-registry.tsx",
       "results": {
@@ -2815,7 +2815,7 @@
     {
       "id": 96,
       "testId": "dynamic-three-layout",
-      "description": "A three layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "description": "A three layout dynamically resolved from a layout registry - one of 5 possible layout variants",
       "componentName": "DynamicLayout",
       "filePath": "components/generated/layout-registry.tsx",
       "results": {
@@ -2844,7 +2844,7 @@
     {
       "id": 97,
       "testId": "dynamic-triangle-icon",
-      "description": "A triangle icon dynamically resolved from an icon registry map — one of 5 possible shapes selected at runtime",
+      "description": "A triangle icon dynamically resolved from an icon registry map - one of 5 possible shapes selected at runtime",
       "componentName": "DynamicIcon",
       "filePath": "components/generated/icon-registry.tsx",
       "results": {
@@ -2873,7 +2873,7 @@
     {
       "id": 98,
       "testId": "dynamic-two-layout",
-      "description": "A two layout dynamically resolved from a layout registry — one of 5 possible layout variants",
+      "description": "A two layout dynamically resolved from a layout registry - one of 5 possible layout variants",
       "componentName": "DynamicLayout",
       "filePath": "components/generated/layout-registry.tsx",
       "results": {
@@ -3772,7 +3772,7 @@
     {
       "id": 129,
       "testId": "generic-alert-box",
-      "description": "A alert notification component in components/feedback/notification-box.tsx — file name and directory don't match what you'd search for",
+      "description": "A alert notification component in components/feedback/notification-box.tsx - file name and directory don't match what you'd search for",
       "componentName": "NotificationBox",
       "filePath": "components/feedback/notification-box.tsx",
       "results": {
@@ -3801,7 +3801,7 @@
     {
       "id": 130,
       "testId": "generic-card-footer",
-      "description": "A card footer component in components/layout/panel-actions.tsx — file name and directory don't match what you'd search for",
+      "description": "A card footer component in components/layout/panel-actions.tsx - file name and directory don't match what you'd search for",
       "componentName": "PanelActions",
       "filePath": "components/layout/panel-actions.tsx",
       "results": {
@@ -3830,7 +3830,7 @@
     {
       "id": 131,
       "testId": "generic-chart-bar",
-      "description": "A chart bar component in components/data-display/metric-bar.tsx — file name and directory don't match what you'd search for",
+      "description": "A chart bar component in components/data-display/metric-bar.tsx - file name and directory don't match what you'd search for",
       "componentName": "MetricBar",
       "filePath": "components/data-display/metric-bar.tsx",
       "results": {
@@ -3859,7 +3859,7 @@
     {
       "id": 132,
       "testId": "generic-checkbox",
-      "description": "A checkbox component in components/forms/agreement-check.tsx — file name and directory don't match what you'd search for",
+      "description": "A checkbox component in components/forms/agreement-check.tsx - file name and directory don't match what you'd search for",
       "componentName": "AgreementCheck",
       "filePath": "components/forms/agreement-check.tsx",
       "results": {
@@ -3888,7 +3888,7 @@
     {
       "id": 133,
       "testId": "generic-code-snippet",
-      "description": "A code snippet component in components/data-display/source-preview.tsx — file name and directory don't match what you'd search for",
+      "description": "A code snippet component in components/data-display/source-preview.tsx - file name and directory don't match what you'd search for",
       "componentName": "SourcePreview",
       "filePath": "components/data-display/source-preview.tsx",
       "results": {
@@ -3946,7 +3946,7 @@
     {
       "id": 135,
       "testId": "generic-date-cell",
-      "description": "A date cell component in components/data-display/calendar-entry.tsx — file name and directory don't match what you'd search for",
+      "description": "A date cell component in components/data-display/calendar-entry.tsx - file name and directory don't match what you'd search for",
       "componentName": "CalendarEntry",
       "filePath": "components/data-display/calendar-entry.tsx",
       "results": {
@@ -3975,7 +3975,7 @@
     {
       "id": 136,
       "testId": "generic-drawer-sheet",
-      "description": "A drawer sheet component in components/overlays/slide-panel.tsx — file name and directory don't match what you'd search for",
+      "description": "A drawer sheet component in components/overlays/slide-panel.tsx - file name and directory don't match what you'd search for",
       "componentName": "SlidePanel",
       "filePath": "components/overlays/slide-panel.tsx",
       "results": {
@@ -4004,7 +4004,7 @@
     {
       "id": 137,
       "testId": "generic-dropdown-menu",
-      "description": "A dropdown menu component in components/overlays/action-menu.tsx — file name and directory don't match what you'd search for",
+      "description": "A dropdown menu component in components/overlays/action-menu.tsx - file name and directory don't match what you'd search for",
       "componentName": "ActionMenu",
       "filePath": "components/overlays/action-menu.tsx",
       "results": {
@@ -4033,7 +4033,7 @@
     {
       "id": 138,
       "testId": "generic-file-icon",
-      "description": "A file icon component in components/data-display/document-icon.tsx — file name and directory don't match what you'd search for",
+      "description": "A file icon component in components/data-display/document-icon.tsx - file name and directory don't match what you'd search for",
       "componentName": "DocumentIcon",
       "filePath": "components/data-display/document-icon.tsx",
       "results": {
@@ -4062,7 +4062,7 @@
     {
       "id": 139,
       "testId": "generic-footer-text",
-      "description": "A footer text component in components/layout/page-footer.tsx — file name and directory don't match what you'd search for",
+      "description": "A footer text component in components/layout/page-footer.tsx - file name and directory don't match what you'd search for",
       "componentName": "PageFooter",
       "filePath": "components/layout/page-footer.tsx",
       "results": {
@@ -4149,7 +4149,7 @@
     {
       "id": 142,
       "testId": "generic-icon-button",
-      "description": "A icon button component in components/actions/tool-trigger.tsx — file name and directory don't match what you'd search for",
+      "description": "A icon button component in components/actions/tool-trigger.tsx - file name and directory don't match what you'd search for",
       "componentName": "ToolTrigger",
       "filePath": "components/actions/tool-trigger.tsx",
       "results": {
@@ -4178,7 +4178,7 @@
     {
       "id": 143,
       "testId": "generic-link-button",
-      "description": "A link button component in components/actions/redirect-action.tsx — file name and directory don't match what you'd search for",
+      "description": "A link button component in components/actions/redirect-action.tsx - file name and directory don't match what you'd search for",
       "componentName": "RedirectAction",
       "filePath": "components/actions/redirect-action.tsx",
       "results": {
@@ -4207,7 +4207,7 @@
     {
       "id": 144,
       "testId": "generic-list-tile",
-      "description": "A list tile component in components/data-display/item-tile.tsx — file name and directory don't match what you'd search for",
+      "description": "A list tile component in components/data-display/item-tile.tsx - file name and directory don't match what you'd search for",
       "componentName": "ItemTile",
       "filePath": "components/data-display/item-tile.tsx",
       "results": {
@@ -4265,7 +4265,7 @@
     {
       "id": 146,
       "testId": "generic-menu-item",
-      "description": "A menu item component in components/navigation/command-item.tsx — file name and directory don't match what you'd search for",
+      "description": "A menu item component in components/navigation/command-item.tsx - file name and directory don't match what you'd search for",
       "componentName": "CommandItem",
       "filePath": "components/navigation/command-item.tsx",
       "results": {
@@ -4381,7 +4381,7 @@
     {
       "id": 150,
       "testId": "generic-popover-panel",
-      "description": "A popover panel component in components/overlays/info-panel.tsx — file name and directory don't match what you'd search for",
+      "description": "A popover panel component in components/overlays/info-panel.tsx - file name and directory don't match what you'd search for",
       "componentName": "InfoPanel",
       "filePath": "components/overlays/info-panel.tsx",
       "results": {
@@ -4410,7 +4410,7 @@
     {
       "id": 151,
       "testId": "generic-progress-bar",
-      "description": "A progress bar component in components/feedback/progress-tracker.tsx — file name and directory don't match what you'd search for",
+      "description": "A progress bar component in components/feedback/progress-tracker.tsx - file name and directory don't match what you'd search for",
       "componentName": "ProgressTracker",
       "filePath": "components/feedback/progress-tracker.tsx",
       "results": {
@@ -4439,7 +4439,7 @@
     {
       "id": 152,
       "testId": "generic-radio-option",
-      "description": "A radio option component in components/forms/plan-selector.tsx — file name and directory don't match what you'd search for",
+      "description": "A radio option component in components/forms/plan-selector.tsx - file name and directory don't match what you'd search for",
       "componentName": "PlanSelector",
       "filePath": "components/forms/plan-selector.tsx",
       "results": {
@@ -4468,7 +4468,7 @@
     {
       "id": 153,
       "testId": "generic-search-bar",
-      "description": "A search bar component in components/navigation/query-input.tsx — file name and directory don't match what you'd search for",
+      "description": "A search bar component in components/navigation/query-input.tsx - file name and directory don't match what you'd search for",
       "componentName": "QueryInput",
       "filePath": "components/navigation/query-input.tsx",
       "results": {
@@ -4497,7 +4497,7 @@
     {
       "id": 154,
       "testId": "generic-select-box",
-      "description": "A select dropdown component in components/forms/option-picker.tsx — file name and directory don't match what you'd search for",
+      "description": "A select dropdown component in components/forms/option-picker.tsx - file name and directory don't match what you'd search for",
       "componentName": "OptionPicker",
       "filePath": "components/forms/option-picker.tsx",
       "results": {
@@ -4555,7 +4555,7 @@
     {
       "id": 156,
       "testId": "generic-sidebar-link",
-      "description": "A sidebar link component in components/navigation/drawer-entry.tsx — file name and directory don't match what you'd search for",
+      "description": "A sidebar link component in components/navigation/drawer-entry.tsx - file name and directory don't match what you'd search for",
       "componentName": "DrawerEntry",
       "filePath": "components/navigation/drawer-entry.tsx",
       "results": {
@@ -4584,7 +4584,7 @@
     {
       "id": 157,
       "testId": "generic-slider-range",
-      "description": "A slider component in components/forms/range-picker.tsx — file name and directory don't match what you'd search for",
+      "description": "A slider component in components/forms/range-picker.tsx - file name and directory don't match what you'd search for",
       "componentName": "RangePicker",
       "filePath": "components/forms/range-picker.tsx",
       "results": {
@@ -4642,7 +4642,7 @@
     {
       "id": 159,
       "testId": "generic-step-circle",
-      "description": "A step circle component in components/feedback/milestone-dot.tsx — file name and directory don't match what you'd search for",
+      "description": "A step circle component in components/feedback/milestone-dot.tsx - file name and directory don't match what you'd search for",
       "componentName": "MilestoneDot",
       "filePath": "components/feedback/milestone-dot.tsx",
       "results": {
@@ -4700,7 +4700,7 @@
     {
       "id": 161,
       "testId": "generic-switch-track",
-      "description": "A switch component in components/forms/binary-toggle.tsx — file name and directory don't match what you'd search for",
+      "description": "A switch component in components/forms/binary-toggle.tsx - file name and directory don't match what you'd search for",
       "componentName": "BinaryToggle",
       "filePath": "components/forms/binary-toggle.tsx",
       "results": {
@@ -4758,7 +4758,7 @@
     {
       "id": 163,
       "testId": "generic-table-row",
-      "description": "A table row component in components/data-display/record-row.tsx — file name and directory don't match what you'd search for",
+      "description": "A table row component in components/data-display/record-row.tsx - file name and directory don't match what you'd search for",
       "componentName": "RecordRow",
       "filePath": "components/data-display/record-row.tsx",
       "results": {
@@ -4787,7 +4787,7 @@
     {
       "id": 164,
       "testId": "generic-tag-list",
-      "description": "A tag list component in components/data-display/label-group.tsx — file name and directory don't match what you'd search for",
+      "description": "A tag list component in components/data-display/label-group.tsx - file name and directory don't match what you'd search for",
       "componentName": "LabelGroup",
       "filePath": "components/data-display/label-group.tsx",
       "results": {
@@ -4816,7 +4816,7 @@
     {
       "id": 165,
       "testId": "generic-text-area",
-      "description": "A text area component in components/forms/content-editor.tsx — file name and directory don't match what you'd search for",
+      "description": "A text area component in components/forms/content-editor.tsx - file name and directory don't match what you'd search for",
       "componentName": "ContentEditor",
       "filePath": "components/forms/content-editor.tsx",
       "results": {
@@ -4874,7 +4874,7 @@
     {
       "id": 167,
       "testId": "generic-toast-bar",
-      "description": "A toast bar component in components/feedback/snack-message.tsx — file name and directory don't match what you'd search for",
+      "description": "A toast bar component in components/feedback/snack-message.tsx - file name and directory don't match what you'd search for",
       "componentName": "SnackMessage",
       "filePath": "components/feedback/snack-message.tsx",
       "results": {
@@ -4961,7 +4961,7 @@
     {
       "id": 170,
       "testId": "generic-upload-zone",
-      "description": "A upload zone component in components/forms/drop-target.tsx — file name and directory don't match what you'd search for",
+      "description": "A upload zone component in components/forms/drop-target.tsx - file name and directory don't match what you'd search for",
       "componentName": "DropTarget",
       "filePath": "components/forms/drop-target.tsx",
       "results": {
@@ -5744,7 +5744,7 @@
     {
       "id": 197,
       "testId": "misleading-card-in-utils",
-      "description": "A card component defined in lib/ui-primitives.tsx — a utility file, not the components directory",
+      "description": "A card component defined in lib/ui-primitives.tsx - a utility file, not the components directory",
       "componentName": "PrimitiveCard",
       "filePath": "lib/ui-primitives.tsx",
       "results": {
@@ -5773,7 +5773,7 @@
     {
       "id": 198,
       "testId": "misleading-list-in-config",
-      "description": "A list component defined inside lib/layout-config.tsx — a configuration file that also exports React components",
+      "description": "A list component defined inside lib/layout-config.tsx - a configuration file that also exports React components",
       "componentName": "ConfigList",
       "filePath": "lib/layout-config.tsx",
       "results": {
@@ -6962,7 +6962,7 @@
     {
       "id": 239,
       "testId": "sibling-away-indicator",
-      "description": "AwayIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "description": "AwayIndicator - one of 5 similar components in the same file (status-indicators.tsx)",
       "componentName": "AwayIndicator",
       "filePath": "components/feedback/status-indicators.tsx",
       "results": {
@@ -6991,7 +6991,7 @@
     {
       "id": 240,
       "testId": "sibling-busy-indicator",
-      "description": "BusyIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "description": "BusyIndicator - one of 5 similar components in the same file (status-indicators.tsx)",
       "componentName": "BusyIndicator",
       "filePath": "components/feedback/status-indicators.tsx",
       "results": {
@@ -7020,7 +7020,7 @@
     {
       "id": 241,
       "testId": "sibling-churn-stat",
-      "description": "A churn rate stat card — one of 5 similar stat card components in the same file",
+      "description": "A churn rate stat card - one of 5 similar stat card components in the same file",
       "componentName": "ChurnStatCard",
       "filePath": "components/data-display/stat-cards.tsx",
       "results": {
@@ -7049,7 +7049,7 @@
     {
       "id": 242,
       "testId": "sibling-cpu-tile",
-      "description": "CpuTile — one of 5 similar components in the same file (metric-tiles.tsx)",
+      "description": "CpuTile - one of 5 similar components in the same file (metric-tiles.tsx)",
       "componentName": "CpuTile",
       "filePath": "components/data-display/metric-tiles.tsx",
       "results": {
@@ -7078,7 +7078,7 @@
     {
       "id": 243,
       "testId": "sibling-create-btn",
-      "description": "CreateButton — one of 4 similar components in the same file (crud-buttons.tsx)",
+      "description": "CreateButton - one of 4 similar components in the same file (crud-buttons.tsx)",
       "componentName": "CreateButton",
       "filePath": "components/actions/crud-buttons.tsx",
       "results": {
@@ -7107,7 +7107,7 @@
     {
       "id": 244,
       "testId": "sibling-delete-btn",
-      "description": "DeleteButton — one of 4 similar components in the same file (crud-buttons.tsx)",
+      "description": "DeleteButton - one of 4 similar components in the same file (crud-buttons.tsx)",
       "componentName": "DeleteButton",
       "filePath": "components/actions/crud-buttons.tsx",
       "results": {
@@ -7136,7 +7136,7 @@
     {
       "id": 245,
       "testId": "sibling-disk-tile",
-      "description": "DiskTile — one of 5 similar components in the same file (metric-tiles.tsx)",
+      "description": "DiskTile - one of 5 similar components in the same file (metric-tiles.tsx)",
       "componentName": "DiskTile",
       "filePath": "components/data-display/metric-tiles.tsx",
       "results": {
@@ -7165,7 +7165,7 @@
     {
       "id": 246,
       "testId": "sibling-dnd-indicator",
-      "description": "DndIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "description": "DndIndicator - one of 5 similar components in the same file (status-indicators.tsx)",
       "componentName": "DndIndicator",
       "filePath": "components/feedback/status-indicators.tsx",
       "results": {
@@ -7194,7 +7194,7 @@
     {
       "id": 247,
       "testId": "sibling-gpu-tile",
-      "description": "GpuTile — one of 5 similar components in the same file (metric-tiles.tsx)",
+      "description": "GpuTile - one of 5 similar components in the same file (metric-tiles.tsx)",
       "componentName": "GpuTile",
       "filePath": "components/data-display/metric-tiles.tsx",
       "results": {
@@ -7223,7 +7223,7 @@
     {
       "id": 248,
       "testId": "sibling-help-icon",
-      "description": "HelpIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "description": "HelpIcon - one of 6 similar components in the same file (nav-icons.tsx)",
       "componentName": "HelpIcon",
       "filePath": "components/navigation/nav-icons.tsx",
       "results": {
@@ -7252,7 +7252,7 @@
     {
       "id": 249,
       "testId": "sibling-home-icon",
-      "description": "HomeIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "description": "HomeIcon - one of 6 similar components in the same file (nav-icons.tsx)",
       "componentName": "HomeIcon",
       "filePath": "components/navigation/nav-icons.tsx",
       "results": {
@@ -7281,7 +7281,7 @@
     {
       "id": 250,
       "testId": "sibling-logout-icon",
-      "description": "LogoutIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "description": "LogoutIcon - one of 6 similar components in the same file (nav-icons.tsx)",
       "componentName": "LogoutIcon",
       "filePath": "components/navigation/nav-icons.tsx",
       "results": {
@@ -7310,7 +7310,7 @@
     {
       "id": 251,
       "testId": "sibling-mrr-stat",
-      "description": "An MRR stat card — one of 5 similar stat card components in a shared file",
+      "description": "An MRR stat card - one of 5 similar stat card components in a shared file",
       "componentName": "MrrStatCard",
       "filePath": "components/data-display/stat-cards.tsx",
       "results": {
@@ -7339,7 +7339,7 @@
     {
       "id": 252,
       "testId": "sibling-offline-indicator",
-      "description": "OfflineIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "description": "OfflineIndicator - one of 5 similar components in the same file (status-indicators.tsx)",
       "componentName": "OfflineIndicator",
       "filePath": "components/feedback/status-indicators.tsx",
       "results": {
@@ -7368,7 +7368,7 @@
     {
       "id": 253,
       "testId": "sibling-online-indicator",
-      "description": "OnlineIndicator — one of 5 similar components in the same file (status-indicators.tsx)",
+      "description": "OnlineIndicator - one of 5 similar components in the same file (status-indicators.tsx)",
       "componentName": "OnlineIndicator",
       "filePath": "components/feedback/status-indicators.tsx",
       "results": {
@@ -7397,7 +7397,7 @@
     {
       "id": 254,
       "testId": "sibling-order-stat",
-      "description": "An orders stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)",
+      "description": "An orders stat card - one of 5 similar stat card components in the same file (stat-cards.tsx)",
       "componentName": "OrderStatCard",
       "filePath": "components/data-display/stat-cards.tsx",
       "results": {
@@ -7426,7 +7426,7 @@
     {
       "id": 255,
       "testId": "sibling-profile-icon",
-      "description": "ProfileIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "description": "ProfileIcon - one of 6 similar components in the same file (nav-icons.tsx)",
       "componentName": "ProfileIcon",
       "filePath": "components/navigation/nav-icons.tsx",
       "results": {
@@ -7455,7 +7455,7 @@
     {
       "id": 256,
       "testId": "sibling-ram-tile",
-      "description": "RamTile — one of 5 similar components in the same file (metric-tiles.tsx)",
+      "description": "RamTile - one of 5 similar components in the same file (metric-tiles.tsx)",
       "componentName": "RamTile",
       "filePath": "components/data-display/metric-tiles.tsx",
       "results": {
@@ -7484,7 +7484,7 @@
     {
       "id": 257,
       "testId": "sibling-retention-stat",
-      "description": "A retention stat card — one of 5 similar stat card components defined in the same file",
+      "description": "A retention stat card - one of 5 similar stat card components defined in the same file",
       "componentName": "RetentionStatCard",
       "filePath": "components/data-display/stat-cards.tsx",
       "results": {
@@ -7513,7 +7513,7 @@
     {
       "id": 258,
       "testId": "sibling-revenue-stat",
-      "description": "A revenue stat card — one of 5 similar stat card components in the same file (stat-cards.tsx)",
+      "description": "A revenue stat card - one of 5 similar stat card components in the same file (stat-cards.tsx)",
       "componentName": "RevenueStatCard",
       "filePath": "components/data-display/stat-cards.tsx",
       "results": {
@@ -7542,7 +7542,7 @@
     {
       "id": 259,
       "testId": "sibling-search-icon",
-      "description": "SearchIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "description": "SearchIcon - one of 6 similar components in the same file (nav-icons.tsx)",
       "componentName": "SearchIcon",
       "filePath": "components/navigation/nav-icons.tsx",
       "results": {
@@ -7571,7 +7571,7 @@
     {
       "id": 260,
       "testId": "sibling-settings-icon",
-      "description": "SettingsIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+      "description": "SettingsIcon - one of 6 similar components in the same file (nav-icons.tsx)",
       "componentName": "SettingsIcon",
       "filePath": "components/navigation/nav-icons.tsx",
       "results": {
@@ -7600,7 +7600,7 @@
     {
       "id": 261,
       "testId": "sibling-update-btn",
-      "description": "UpdateButton — one of 4 similar components in the same file (crud-buttons.tsx)",
+      "description": "UpdateButton - one of 4 similar components in the same file (crud-buttons.tsx)",
       "componentName": "UpdateButton",
       "filePath": "components/actions/crud-buttons.tsx",
       "results": {

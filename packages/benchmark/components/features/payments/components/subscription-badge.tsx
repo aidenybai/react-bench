@@ -34,7 +34,7 @@ export const SubscriptionBadge = memo(function SubscriptionBadge({
         fontWeight: 500,
       }}
     >
-      {plan} — {config.label}
+      {plan} - {config.label}
     </span>
   );
 });

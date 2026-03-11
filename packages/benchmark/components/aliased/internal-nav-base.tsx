@@ -7,10 +7,7 @@ interface NavBaseProps {
   "data-testid"?: string;
 }
 
-export const NavBase = ({
-  children,
-  "data-testid": testId,
-}: NavBaseProps) => (
+export const NavBase = ({ children, "data-testid": testId }: NavBaseProps) => (
   <nav
     data-testid={testId}
     style={{

@@ -40,7 +40,7 @@ export function OrgRoleSelect({
       >
         {ROLES.map((role) => (
           <option key={role.value} value={role.value}>
-            {role.label} — {role.description}
+            {role.label} - {role.description}
           </option>
         ))}
       </select>

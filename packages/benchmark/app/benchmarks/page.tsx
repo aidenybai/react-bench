@@ -186,7 +186,7 @@ const BenchmarksPage = () => {
                     }}
                   >
                     <span style={styles.heatPct}>
-                      {count ? `${(pct * 100).toFixed(0)}%` : "—"}
+                      {count ? `${(pct * 100).toFixed(0)}%` : "-"}
                     </span>
                     <span style={styles.heatCount}>
                       {count ? `${correct}/${count}` : ""}

@@ -34,5 +34,5 @@ export function addDays(date: Date, days: number): Date {
 export function formatTimeRange(start: Date, end: Date): string {
   const fmt = (d: Date) =>
     d.toLocaleTimeString("default", { hour: "2-digit", minute: "2-digit" });
-  return `${fmt(start)} — ${fmt(end)}`;
+  return `${fmt(start)} - ${fmt(end)}`;
 }

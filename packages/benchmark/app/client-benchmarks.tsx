@@ -1503,10 +1503,7 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Nightmare: JSX in Data/Config">
         <StyledGrid columns={3}>
-          <RoleIconDisplay
-            role="admin"
-            data-testid="config-role-icon-admin"
-          />
+          <RoleIconDisplay role="admin" data-testid="config-role-icon-admin" />
           <RoleIconDisplay
             role="viewer"
             data-testid="config-role-icon-viewer"

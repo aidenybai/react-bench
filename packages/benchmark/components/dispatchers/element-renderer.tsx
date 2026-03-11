@@ -65,7 +65,11 @@ const RatingElement = ({ "data-testid": testId }: InternalElementProps) => (
     {[1, 2, 3, 4, 5].map((star) => (
       <span
         key={star}
-        style={{ fontSize: 18, color: "var(--muted, #d1d5db)", cursor: "default" }}
+        style={{
+          fontSize: 18,
+          color: "var(--muted, #d1d5db)",
+          cursor: "default",
+        }}
       >
         ★
       </span>

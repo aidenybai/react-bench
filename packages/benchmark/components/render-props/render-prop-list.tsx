@@ -15,10 +15,7 @@ export const RenderPropList = ({
   renderItem,
   "data-testid": testId,
 }: RenderPropListProps) => (
-  <ul
-    data-testid={testId}
-    style={{ listStyle: "none", padding: 0, margin: 0 }}
-  >
+  <ul data-testid={testId} style={{ listStyle: "none", padding: 0, margin: 0 }}>
     {items.map((item, itemIndex) => (
       <li key={itemIndex}>
         {renderItem(item, {

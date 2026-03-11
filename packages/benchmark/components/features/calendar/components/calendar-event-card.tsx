@@ -30,7 +30,7 @@ export const CalendarEventCard = forwardRef<
     >
       <h3 className="calendar-event-card__title">{title}</h3>
       <p className="calendar-event-card__time">
-        {startTime} — {endTime}
+        {startTime} - {endTime}
       </p>
       {location && <p className="calendar-event-card__location">{location}</p>}
       {attendees && attendees.length > 0 && (

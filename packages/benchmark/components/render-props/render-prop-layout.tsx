@@ -35,9 +35,7 @@ export const RenderPropLayout = ({
           "data-testid": testId ? `${testId}-sidebar` : undefined,
         })}
       </aside>
-      <main style={{ flex: 1, padding: 12 }}>
-        {children ?? "Main content"}
-      </main>
+      <main style={{ flex: 1, padding: 12 }}>{children ?? "Main content"}</main>
     </div>
   </div>
 );

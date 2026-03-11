@@ -62,7 +62,7 @@ const PREFIX_CATEGORIES: Record<string, TestCategory> = {
   "plain-": {
     label: "Plain",
     rationale:
-      "Straightforward components with standard styling — the baseline for resolution.",
+      "Straightforward components with standard styling - the baseline for resolution.",
   },
   "server-": {
     label: "RSC",
@@ -96,7 +96,7 @@ const PREFIX_CATEGORIES: Record<string, TestCategory> = {
   "misleading-": {
     label: "Misleading",
     rationale:
-      "Components with names that mismatch their file location — a refactoring artifact.",
+      "Components with names that mismatch their file location - a refactoring artifact.",
   },
   "module-": {
     label: "Module",
@@ -146,7 +146,7 @@ const PREFIX_CATEGORIES: Record<string, TestCategory> = {
   "client-island": {
     label: "RSC",
     rationale:
-      "Client component islands inside server components — a Next.js App Router pattern.",
+      "Client component islands inside server components - a Next.js App Router pattern.",
   },
   "memo-": {
     label: "Memo",
@@ -173,7 +173,7 @@ const PREFIX_CATEGORIES: Record<string, TestCategory> = {
   "russian-doll": {
     label: "Deep Nesting",
     rationale:
-      "Deeply nested wrapper components — a common pattern in composed UIs.",
+      "Deeply nested wrapper components - a common pattern in composed UIs.",
   },
   shapeshifter: {
     label: "Polymorphic",

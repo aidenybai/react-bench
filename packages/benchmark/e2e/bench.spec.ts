@@ -7,7 +7,11 @@ import { collectElementContext } from "./utils/collect-element-context";
 import { isCorrectFile } from "./utils/is-correct-file";
 import { normalizeFilePath } from "./utils/normalize-file-path";
 import { formatTime } from "./utils/format-time";
-import { saveCheckpoint, loadCheckpoint, type BrowserCollected } from "./checkpoint";
+import {
+  saveCheckpoint,
+  loadCheckpoint,
+  type BrowserCollected,
+} from "./checkpoint";
 import {
   AGENT_RESOLVERS,
   BACKENDS,

@@ -27,7 +27,7 @@ export function AvailabilityTimeRange({
         onChange={(e) => onStartChange?.(e.target.value)}
         className="availability-time-range__input"
       />
-      <span className="availability-time-range__separator">—</span>
+      <span className="availability-time-range__separator">-</span>
       <input
         type="time"
         value={end}

@@ -41,7 +41,12 @@ export const TunnelSidebarActions = ({
   <TunnelProvider>
     <TunnelIn>
       <div
-        style={{ display: "flex", gap: 8, padding: "8px 16px", borderTop: "1px solid var(--border)" }}
+        style={{
+          display: "flex",
+          gap: 8,
+          padding: "8px 16px",
+          borderTop: "1px solid var(--border)",
+        }}
       >
         <button style={{ padding: "4px 12px" }}>Save</button>
         <button style={{ padding: "4px 12px" }}>Cancel</button>

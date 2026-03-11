@@ -4,7 +4,7 @@ const testCase: TestCaseDefinition = {
   filePath: "components/navigation/nav-icons.tsx",
   componentName: "SearchIcon",
   description:
-    "SearchIcon — one of 6 similar components in the same file (nav-icons.tsx)",
+    "SearchIcon - one of 6 similar components in the same file (nav-icons.tsx)",
   lazyDescription: "the search icon",
 };
 

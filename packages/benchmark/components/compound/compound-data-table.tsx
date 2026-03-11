@@ -31,22 +31,14 @@ const TableHead = ({ children, "data-testid": testId }: SubComponentProps) => (
 TableHead.displayName = "DataTable.Head";
 
 const TableRow = ({ children, "data-testid": testId }: SubComponentProps) => (
-  <tr
-    data-testid={testId}
-    style={{ borderBottom: "1px solid var(--border)" }}
-  >
-    {children || (
-      <td style={{ padding: "8px 12px" }}>Row Data</td>
-    )}
+  <tr data-testid={testId} style={{ borderBottom: "1px solid var(--border)" }}>
+    {children || <td style={{ padding: "8px 12px" }}>Row Data</td>}
   </tr>
 );
 TableRow.displayName = "DataTable.Row";
 
 const TableCell = ({ children, "data-testid": testId }: SubComponentProps) => (
-  <td
-    data-testid={testId}
-    style={{ padding: "8px 12px", fontSize: 14 }}
-  >
+  <td data-testid={testId} style={{ padding: "8px 12px", fontSize: 14 }}>
     {children || "Cell Value"}
   </td>
 );

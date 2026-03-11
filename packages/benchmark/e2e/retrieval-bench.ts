@@ -38,7 +38,7 @@ const buildPrompt = (entry: TestEntry): string =>
     `Find the source file for this React component in the Next.js app.`,
     `Description: ${entry.description}`,
     `DOM data-testid="${entry.testId}"`,
-    `Return the relative file path (e.g. "components/foo/bar.tsx") and the component name. Read-only — do not edit.`,
+    `Return the relative file path (e.g. "components/foo/bar.tsx") and the component name. Read-only - do not edit.`,
   ].join("\n");
 
 const runClaude = (
@@ -151,7 +151,7 @@ for (const entry of entries) {
 
     const symbol = isCorrect ? "✓" : filePath ? "✗" : "⊘";
     console.log(
-      `${symbol} ${(elapsedMs / 1000).toFixed(1).padStart(5)}s  ${(filePath ?? "—").padEnd(45)} expected: ${entry.filePath}`,
+      `${symbol} ${(elapsedMs / 1000).toFixed(1).padStart(5)}s  ${(filePath ?? "-").padEnd(45)} expected: ${entry.filePath}`,
     );
   } catch (error: any) {
     results.push({
@@ -178,7 +178,7 @@ const averageSeconds = (
 
 console.log(`\n  ${"━".repeat(80)}`);
 console.log(
-  `  ${correctCount}/${totalCount} correct (${((correctCount / totalCount) * 100).toFixed(0)}%) — avg ${averageSeconds}s/query\n`,
+  `  ${correctCount}/${totalCount} correct (${((correctCount / totalCount) * 100).toFixed(0)}%) - avg ${averageSeconds}s/query\n`,
 );
 
 const jsonPath = `${CWD}/e2e/retrieval-results.json`;

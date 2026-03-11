@@ -20,6 +20,7 @@ const withClipboard = (
 const PROMPT_STRATEGIES: PromptStrategy[] = [
   { name: "code", buildPrompt: buildUserPrompt },
   withClipboard("agentation", "agentationClipboard"),
+  withClipboard("agentation-improved", "agentationImprovedClipboard"),
   withClipboard("react-grab", "reactGrabClipboard"),
   withClipboard("cursor-browser", "cursorBrowserClipboard"),
 ];

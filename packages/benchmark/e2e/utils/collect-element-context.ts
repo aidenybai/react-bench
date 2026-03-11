@@ -15,6 +15,7 @@ const collectElementContext = async (
       reactGrab: null,
       reactGrabClipboard: null,
       agentationClipboard: null,
+      agentationImprovedClipboard: null,
       cursorBrowserClipboard: null,
     };
 
@@ -24,15 +25,22 @@ const collectElementContext = async (
     if (!element) return emptyContext;
 
     const benchApi = (window as any).__BENCH__;
-    if (!benchApi?.utils) return emptyContext;
+    const buildAnnotation = (window as any).__BENCH_BUILD_ANNOTATION__;
+    if (!benchApi?.prod || !buildAnnotation) return emptyContext;
 
-    const componentIdentity = benchApi.utils.identifyElement(element);
-    const sourceLocation = benchApi.utils.getSourceLocation(element);
-    const elementPath = benchApi.utils.getElementPath(element) ?? null;
-    const classes = benchApi.utils.getElementClasses(element) ?? null;
-    const nearbyText = benchApi.utils.getNearbyText(element) ?? null;
-    const componentName = componentIdentity?.name ?? null;
-    const sourceFileName = sourceLocation?.source?.fileName ?? null;
+    const { prod, improved } = benchApi;
+    const pathname = window.location.pathname;
+    const selectedText = element.innerText?.trim().slice(0, 100) ?? "";
+
+    const prodAnnotation = buildAnnotation(prod, element, selectedText);
+    prodAnnotation.sourceFile = prod.detectSourceFile(element);
+    const agentationClipboard = prod.generateOutput(
+      [prodAnnotation],
+      pathname,
+      "forensic",
+    );
+
+    const prodSourceLoc = prod.getSourceLocation(element);
 
     let reactGrab: ElementContext["reactGrab"] = null;
     let reactGrabClipboard: string | null = null;
@@ -58,18 +66,21 @@ const collectElementContext = async (
       }
     }
 
-    const rect = element.getBoundingClientRect();
-    const agentationLines: string[] = [`### 1. ${element.localName}`];
-    if (elementPath) agentationLines.push(`**Location:** ${elementPath}`);
-    if (sourceFileName) agentationLines.push(`**Source:** ${sourceFileName}`);
-    if (componentName) agentationLines.push(`**React:** ${componentName}`);
-    if (classes) agentationLines.push(`**Classes:** ${classes}`);
-    agentationLines.push(
-      `**Position:** ${Math.round(rect.x)}px, ${Math.round(rect.y)}px (${Math.round(rect.width)}×${Math.round(rect.height)}px)`,
-    );
-    const selectedText = element.innerText?.trim().slice(0, 100) ?? "";
-    if (selectedText)
-      agentationLines.push(`**Selected text:** "${selectedText}"`);
+    let agentationImprovedClipboard: string | null = null;
+    if (improved) {
+      const improvedAnnotation = buildAnnotation(
+        improved,
+        element,
+        selectedText,
+      );
+      improvedAnnotation.sourceFile =
+        await improved.detectSourceFile(element);
+      agentationImprovedClipboard = improved.generateOutput(
+        [improvedAnnotation],
+        pathname,
+        "forensic",
+      );
+    }
 
     let cursorBrowserClipboard: string | null = null;
     const cursorInspector = (window as any).__CURSOR_BROWSER_INSPECTOR__;
@@ -78,21 +89,23 @@ const collectElementContext = async (
       cursorBrowserClipboard = cursorInspector.formatClipboardText(metadata);
     }
 
+    const prodIdentity = prod.identifyElementWithReact(element);
     return {
-      componentName,
-      elementPath,
-      classes,
-      nearbyText,
-      sourceLoc: sourceLocation
+      componentName: prodIdentity.elementName,
+      elementPath: prodAnnotation.elementPath,
+      classes: prodAnnotation.cssClasses ?? null,
+      nearbyText: prodAnnotation.nearbyText ?? null,
+      sourceLoc: prodSourceLoc
         ? {
-            fileName: sourceLocation.source?.fileName ?? null,
-            componentName: sourceLocation.source?.componentName ?? null,
-            found: sourceLocation.found,
+            fileName: prodSourceLoc.source?.fileName ?? null,
+            componentName: prodSourceLoc.source?.componentName ?? null,
+            found: prodSourceLoc.found,
           }
         : null,
       reactGrab,
       reactGrabClipboard,
-      agentationClipboard: agentationLines.join("\n"),
+      agentationClipboard,
+      agentationImprovedClipboard,
       cursorBrowserClipboard,
     };
   }, testId);

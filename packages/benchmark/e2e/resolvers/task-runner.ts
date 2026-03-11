@@ -1,17 +1,30 @@
 import type { AgentResult } from "./types";
 
 const MAX_RETRIES = 1;
+const TASK_TIMEOUT_MS = 120_000;
+
+const withTimeout = <T>(
+  promise: Promise<T>,
+  fallback: T,
+): Promise<T> =>
+  Promise.race([
+    promise,
+    new Promise<T>((resolve) =>
+      setTimeout(() => resolve(fallback), TASK_TIMEOUT_MS),
+    ),
+  ]);
 
 const runWithRetries = async (
   runOnce: (prompt: string) => Promise<AgentResult>,
   prompt: string,
 ): Promise<AgentResult> => {
-  const result = await runOnce(prompt);
+  const timedOut: AgentResult = { filePath: null, componentName: null, ms: TASK_TIMEOUT_MS };
+  const result = await withTimeout(runOnce(prompt), timedOut);
   if (result.filePath) return result;
 
   for (let retry = 0; retry < MAX_RETRIES; retry++) {
     const retryPrompt = `${prompt}\n\nIMPORTANT: You must find and READ the actual source file. The component definitely exists in this codebase. Try searching with different patterns, then READ the file you find.`;
-    const retryResult = await runOnce(retryPrompt);
+    const retryResult = await withTimeout(runOnce(retryPrompt), timedOut);
     if (retryResult.filePath) {
       return { ...retryResult, ms: result.ms + retryResult.ms };
     }

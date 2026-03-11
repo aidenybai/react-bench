@@ -18,6 +18,7 @@ interface ElementContext {
   } | null;
   reactGrabClipboard: string | null;
   agentationClipboard: string | null;
+  agentationImprovedClipboard: string | null;
   cursorBrowserClipboard: string | null;
 }
 
@@ -54,6 +55,7 @@ const EMPTY_ELEMENT_CONTEXT: ElementContext = {
   reactGrab: null,
   reactGrabClipboard: null,
   agentationClipboard: null,
+  agentationImprovedClipboard: null,
   cursorBrowserClipboard: null,
 };
 

@@ -51,8 +51,9 @@ const Page = () => (
           <div className="space-y-3 text-sm text-muted-foreground">
             <p>
               Given a natural-language description of a UI element, each
-              resolver must identify the correct React source file across 68
-              test cases spanning 4 complexity tiers:
+              resolver must identify the correct React source file across{" "}
+              {benchData.testCases.length} test cases spanning 14 pattern
+              categories:
             </p>
             <ul className="list-disc pl-5 space-y-1">
               <li>

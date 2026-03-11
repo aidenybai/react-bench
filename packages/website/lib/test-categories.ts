@@ -189,6 +189,61 @@ const PREFIX_CATEGORIES: Record<string, TestCategory> = {
     rationale:
       "styled-components with runtime CSS-in-JS, common in legacy React apps.",
   },
+  "compound-": {
+    label: "Compound",
+    rationale:
+      "Object.assign compound components where sub-components are attached as static properties (inspired by Excalidraw Sidebar, Cal.com Table).",
+  },
+  "alias-": {
+    label: "Alias",
+    rationale:
+      "Components re-exported under different names than their definition (inspired by Excalidraw Footer/FooterCenter, Novu Inbox chain).",
+  },
+  "display-name-": {
+    label: "displayName",
+    rationale:
+      "Components resolved by displayName matching rather than imports (inspired by Excalidraw DropdownMenu).",
+  },
+  "dispatch-": {
+    label: "Dispatcher",
+    rationale:
+      "Switch/map-based dispatchers that render different internal components based on a type prop (inspired by Formbricks ElementConditional).",
+  },
+  "polymorphic-": {
+    label: "Polymorphic",
+    rationale:
+      "Polymorphic forwardRef components with memo wrapping and inner/outer name mismatch (inspired by Cal.com Form, Twenty SuggestionMenu).",
+  },
+  "tunnel-": {
+    label: "Tunnel",
+    rationale:
+      "Components rendered through React context tunnels where content is injected far from its render site (inspired by Excalidraw DefaultSidebar tunnels).",
+  },
+  "lazy-named-": {
+    label: "Lazy Named",
+    rationale:
+      "Lazy-loaded components using .then() to extract named exports instead of defaults (inspired by LobeChat, Twenty).",
+  },
+  "dynamic-import-": {
+    label: "Dynamic Import",
+    rationale:
+      "Components loaded from a dynamic import map keyed by runtime values (inspired by LobeChat componentMap, Cal.com EventTypeWebWrapper).",
+  },
+  "render-prop-": {
+    label: "Render Prop",
+    rationale:
+      "Components that receive their rendered content through callback props (inspired by Cal.com FormAction, Excalidraw App).",
+  },
+  "collision-": {
+    label: "Collision",
+    rationale:
+      "Same-named components in different directories that require path-based disambiguation (inspired by Plane @plane/ui vs @plane/propel, Novu).",
+  },
+  "unexpected-": {
+    label: "Unexpected",
+    rationale:
+      "Components in non-component directories like middleware/, scripts/, schemas/, constants/, types/ (inspired by Dub, Inbox-zero, Midday).",
+  },
 };
 
 const getTestCategory = (testId: string): TestCategory | null => {

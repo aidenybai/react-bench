@@ -266,6 +266,84 @@ import { MentionTag } from "@/components/features/collaboration/mentions/tags/me
 import { ApprovalButton } from "@/components/features/workflows/approvals/actions/approval-button";
 import { ConditionRow } from "@/components/features/workflows/conditions/rows/condition-row";
 
+import { CompoundSidebar } from "@/components/compound/compound-sidebar";
+import { CompoundDataTable } from "@/components/compound/compound-data-table";
+import { CompoundCommand } from "@/components/compound/compound-command";
+
+import {
+  AliasedFooter,
+  AliasedSearchBar,
+  AliasedMainNav,
+  AliasedAlertBanner,
+  AliasedConfirmModal,
+} from "@/components/aliased";
+
+import {
+  DisplayNameMenu,
+  DisplayNameTrigger,
+  DisplayNameContent,
+  DisplayNameItem,
+  DisplayNameSeparator,
+} from "@/components/display-name/display-name-menu";
+
+import { TripleWrappedButton } from "@/components/stacked/triple-wrapped-button";
+import { QuadWrappedCard } from "@/components/stacked/quad-wrapped-card";
+import { FeatureGatedPanel } from "@/components/stacked/feature-gated-panel";
+import { AnalyticsTrackedForm } from "@/components/stacked/analytics-tracked-form";
+import { LicensedPremiumBadge } from "@/components/stacked/licensed-premium-badge";
+
+import { ElementRenderer } from "@/components/dispatchers/element-renderer";
+
+import { PolymorphicButton } from "@/components/polymorphic/polymorphic-button";
+import { PolymorphicInput } from "@/components/polymorphic/polymorphic-input";
+import { PolymorphicCard } from "@/components/polymorphic/polymorphic-card";
+import { PolymorphicList } from "@/components/polymorphic/polymorphic-list";
+
+import { TunnelProvider } from "@/components/tunnel/tunnel-provider";
+import {
+  TunnelSidebarHeader,
+  TunnelSidebarBody,
+  TunnelSidebarActions,
+  TunnelSidebarStatus,
+} from "@/components/tunnel/tunnel-sidebar";
+
+import {
+  LazyNamedEditor,
+  LazyNamedChart,
+  LazyNamedCalendar,
+  LazyNamedTable,
+} from "@/components/lazy-named";
+
+import { SettingsPanelRouter } from "@/components/dynamic-import/settings-panel-map";
+
+import { RoleIconDisplay } from "@/lib/role-icon-config";
+import { PricingFeatureDisplay } from "@/lib/pricing-feature-config";
+import { WizardStepFromConfig } from "@/lib/step-wizard-config";
+
+import { RenderPropList } from "@/components/render-props/render-prop-list";
+import { RenderPropForm } from "@/components/render-props/render-prop-form";
+import { RenderPropLayout } from "@/components/render-props/render-prop-layout";
+import { RenderPropTable } from "@/components/render-props/render-prop-table";
+
+import { CollisionButton as CollisionButtonA } from "@/components/collision-a/collision-button";
+import { CollisionCard as CollisionCardA } from "@/components/collision-a/collision-card";
+import { CollisionButton as CollisionButtonB } from "@/components/collision-b/collision-button";
+import { CollisionCard as CollisionCardB } from "@/components/collision-b/collision-card";
+import { CollisionButton as CollisionButtonC } from "@/components/collision-c/collision-button";
+import { CollisionCard as CollisionCardC } from "@/components/collision-c/collision-card";
+
+import { AuthBannerWidget } from "@/middleware/auth-banner";
+import { AnalyticsEmbedWidget } from "@/scripts/analytics-embed";
+import { ValidationFeedbackDisplay } from "@/schemas/validation-feedback-display";
+import { StatusIconDisplay } from "@/constants/status-icon-map";
+import { TypePreviewCard } from "@/types/type-preview-card";
+
+import { ApprovalStepIndicator } from "@/components/features/workflows/approvals/reviews/actions/indicators/approval-step-indicator";
+import { WebhookRetryStatus } from "@/components/features/integrations/webhooks/retries/status/displays/webhook-retry-status";
+import { InvoiceLineDiscount } from "@/components/features/billing/invoices/lines/discounts/amounts/invoice-line-discount";
+import { CalendarRecurringBadge } from "@/components/features/scheduling/calendar/events/recurring/badges/calendar-recurring-badge";
+import { DeploymentEnvSecret } from "@/components/features/deployments/config/environments/secrets/entries/deployment-env-secret";
+
 const SaveAction = createAction({
   label: "Save",
   icon: "💾",
@@ -1274,6 +1352,270 @@ export function ClientBenchmarks() {
             variant="stacked"
             data-testid="dynamic-stacked-layout"
           />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Compound Components (Object.assign)">
+        <StyledGrid columns={2}>
+          <CompoundSidebar>
+            <CompoundSidebar.Header data-testid="compound-sidebar-header">
+              Navigation
+            </CompoundSidebar.Header>
+            <CompoundSidebar.Content>Menu items</CompoundSidebar.Content>
+            <CompoundSidebar.Footer data-testid="compound-sidebar-footer">
+              v2.1.0
+            </CompoundSidebar.Footer>
+          </CompoundSidebar>
+          <CompoundDataTable>
+            <CompoundDataTable.Head>Name</CompoundDataTable.Head>
+            <CompoundDataTable.Row>
+              <CompoundDataTable.Cell data-testid="compound-table-cell">
+                Alice
+              </CompoundDataTable.Cell>
+            </CompoundDataTable.Row>
+          </CompoundDataTable>
+          <CompoundCommand>
+            <CompoundCommand.Input data-testid="compound-command-input" />
+            <CompoundCommand.Group>
+              <CompoundCommand.Item data-testid="compound-command-item">
+                Search files...
+              </CompoundCommand.Item>
+            </CompoundCommand.Group>
+          </CompoundCommand>
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Alias Re-exports">
+        <StyledGrid columns={3}>
+          <AliasedFooter data-testid="alias-footer" />
+          <AliasedSearchBar data-testid="alias-search-bar" />
+          <AliasedMainNav data-testid="alias-main-nav" />
+          <AliasedAlertBanner data-testid="alias-alert-banner" />
+          <AliasedConfirmModal data-testid="alias-confirm-modal" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: displayName-based Resolution">
+        <DisplayNameMenu>
+          <DisplayNameTrigger data-testid="display-name-trigger">
+            Open Menu
+          </DisplayNameTrigger>
+          <DisplayNameContent data-testid="display-name-content">
+            <DisplayNameItem data-testid="display-name-item">
+              Action 1
+            </DisplayNameItem>
+            <DisplayNameSeparator data-testid="display-name-separator" />
+            <DisplayNameItem>Action 2</DisplayNameItem>
+          </DisplayNameContent>
+        </DisplayNameMenu>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: HOC Stacking (3-4 layers)">
+        <StyledGrid columns={3}>
+          <TripleWrappedButton data-testid="hoc-triple-wrapped-button" />
+          <QuadWrappedCard data-testid="hoc-quad-wrapped-card" />
+          <FeatureGatedPanel data-testid="hoc-feature-gated-panel" />
+          <AnalyticsTrackedForm data-testid="hoc-analytics-tracked-form" />
+          <LicensedPremiumBadge data-testid="hoc-licensed-premium-badge" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Switch/Type Dispatchers">
+        <StyledGrid columns={3}>
+          <ElementRenderer
+            elementType="text"
+            data-testid="dispatch-text-element"
+          />
+          <ElementRenderer
+            elementType="number"
+            data-testid="dispatch-number-element"
+          />
+          <ElementRenderer
+            elementType="date"
+            data-testid="dispatch-date-element"
+          />
+          <ElementRenderer
+            elementType="select"
+            data-testid="dispatch-select-element"
+          />
+          <ElementRenderer
+            elementType="rating"
+            data-testid="dispatch-rating-element"
+          />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Polymorphic forwardRef">
+        <StyledGrid columns={2}>
+          <PolymorphicButton data-testid="polymorphic-button">
+            Polymorphic Btn
+          </PolymorphicButton>
+          <PolymorphicInput data-testid="polymorphic-input" />
+          <PolymorphicCard data-testid="polymorphic-card">
+            Polymorphic content
+          </PolymorphicCard>
+          <PolymorphicList data-testid="polymorphic-list" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Tunnel/Context Rendering">
+        <TunnelProvider>
+          <TunnelSidebarHeader data-testid="tunnel-sidebar-header" />
+          <TunnelSidebarBody data-testid="tunnel-sidebar-body" />
+          <TunnelSidebarActions data-testid="tunnel-sidebar-actions" />
+          <TunnelSidebarStatus data-testid="tunnel-sidebar-status" />
+        </TunnelProvider>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Lazy .then() Named Exports">
+        <StyledGrid columns={2}>
+          <LazyNamedEditor data-testid="lazy-named-editor" />
+          <LazyNamedChart data-testid="lazy-named-chart" />
+          <LazyNamedCalendar data-testid="lazy-named-calendar" />
+          <LazyNamedTable data-testid="lazy-named-table" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Dynamic Import Maps">
+        <StyledGrid columns={3}>
+          <SettingsPanelRouter
+            panel="general"
+            data-testid="dynamic-import-general-settings"
+          />
+          <SettingsPanelRouter
+            panel="security"
+            data-testid="dynamic-import-security-settings"
+          />
+          <SettingsPanelRouter
+            panel="billing"
+            data-testid="dynamic-import-billing-settings"
+          />
+          <SettingsPanelRouter
+            panel="notifications"
+            data-testid="dynamic-import-notifications-settings"
+          />
+          <SettingsPanelRouter
+            panel="integrations"
+            data-testid="dynamic-import-integrations-settings"
+          />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: JSX in Data/Config">
+        <StyledGrid columns={3}>
+          <RoleIconDisplay
+            role="admin"
+            data-testid="config-role-icon-admin"
+          />
+          <RoleIconDisplay
+            role="viewer"
+            data-testid="config-role-icon-viewer"
+          />
+          <PricingFeatureDisplay
+            index={0}
+            data-testid="config-pricing-feature"
+          />
+          <WizardStepFromConfig
+            stepIndex={0}
+            part="indicator"
+            data-testid="config-step-indicator"
+          />
+          <WizardStepFromConfig
+            stepIndex={0}
+            part="content"
+            data-testid="config-step-content"
+          />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Render Props">
+        <StyledGrid columns={2}>
+          <RenderPropList
+            data-testid="render-prop-list-item"
+            renderItem={(item, props) => (
+              <div {...props} style={{ padding: 4 }}>
+                {item}
+              </div>
+            )}
+          />
+          <RenderPropForm
+            data-testid="render-prop-form-field"
+            renderField={(field, props) => (
+              <input
+                {...props}
+                placeholder={field}
+                readOnly
+                style={{ padding: 4, border: "1px solid var(--border)" }}
+              />
+            )}
+          />
+          <RenderPropLayout
+            data-testid="render-prop-layout-header"
+            renderHeader={(props) => (
+              <div {...props} style={{ fontWeight: 600 }}>
+                Header Content
+              </div>
+            )}
+            renderSidebar={(props) => (
+              <div {...props} style={{ fontSize: 12 }}>
+                Sidebar
+              </div>
+            )}
+          />
+          <RenderPropTable
+            data-testid="render-prop-table-cell"
+            renderCell={(value, props) => (
+              <span {...props} style={{ fontFamily: "monospace" }}>
+                {value}
+              </span>
+            )}
+          />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Same-Name Collisions">
+        <StyledGrid columns={3}>
+          <CollisionButtonA data-testid="collision-a-button">
+            Red Button
+          </CollisionButtonA>
+          <CollisionButtonB data-testid="collision-b-button">
+            Blue Button
+          </CollisionButtonB>
+          <CollisionButtonC data-testid="collision-c-button">
+            Green Button
+          </CollisionButtonC>
+          <CollisionCardA data-testid="collision-a-card">
+            Red Card
+          </CollisionCardA>
+          <CollisionCardB data-testid="collision-b-card">
+            Blue Card
+          </CollisionCardB>
+          <CollisionCardC data-testid="collision-c-card">
+            Green Card
+          </CollisionCardC>
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Components in Unexpected Files">
+        <StyledGrid columns={3}>
+          <AuthBannerWidget data-testid="unexpected-middleware-banner" />
+          <AnalyticsEmbedWidget data-testid="unexpected-script-widget" />
+          <ValidationFeedbackDisplay data-testid="unexpected-schema-feedback" />
+          <StatusIconDisplay
+            status="active"
+            data-testid="unexpected-constant-status"
+          />
+          <TypePreviewCard data-testid="unexpected-type-preview" />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Ultra-Deep Paths (8+ levels)">
+        <StyledGrid columns={3}>
+          <ApprovalStepIndicator data-testid="deep-nested-approval-step" />
+          <WebhookRetryStatus data-testid="deep-nested-webhook-retry" />
+          <InvoiceLineDiscount data-testid="deep-nested-invoice-discount" />
+          <CalendarRecurringBadge data-testid="deep-nested-calendar-recurring" />
+          <DeploymentEnvSecret data-testid="deep-nested-deployment-secret" />
         </StyledGrid>
       </StyledSection>
     </div>

@@ -10,6 +10,7 @@ const TARGET_FILE_PREAMBLE =
 interface StreamingResult {
   stdout: string;
   ms: number;
+  bootMs: number;
   targetFile: string | null;
 }
 
@@ -19,15 +20,6 @@ const extractTargetFile = (stdout: string): string | null => {
   const match = stdout.match(TARGET_FILE_REGEX);
   return match?.[1]?.trim() ?? null;
 };
-
-const buildResult = (
-  stdout: string,
-  startTime: number,
-): StreamingResult => ({
-  stdout,
-  ms: performance.now() - startTime,
-  targetFile: extractTargetFile(stdout),
-});
 
 const runStreamingCommand = (
   command: string,
@@ -43,6 +35,7 @@ const runStreamingCommand = (
 
     let stdout = "";
     let didResolve = false;
+    let firstChunkAt = 0;
 
     const resolveOnce = (result: StreamingResult): void => {
       if (didResolve) return;
@@ -50,22 +43,42 @@ const runStreamingCommand = (
       resolve(result);
     };
 
+    const elapsed = (): number => performance.now() - start;
+    const bootMs = (): number =>
+      firstChunkAt ? firstChunkAt - start : elapsed();
+
     child.stdout.on("data", (chunk: Buffer) => {
+      if (!firstChunkAt) firstChunkAt = performance.now();
       stdout += chunk.toString();
 
       const targetFile = extractTargetFile(stdout);
       if (!didResolve && targetFile) {
         child.kill();
-        resolveOnce({ stdout, ms: performance.now() - start, targetFile });
+        resolveOnce({
+          stdout,
+          ms: elapsed(),
+          bootMs: bootMs(),
+          targetFile,
+        });
       }
     });
 
     child.on("close", () => {
-      resolveOnce(buildResult(stdout, start));
+      resolveOnce({
+        stdout,
+        ms: elapsed(),
+        bootMs: bootMs(),
+        targetFile: extractTargetFile(stdout),
+      });
     });
 
     child.on("error", () => {
-      resolveOnce(buildResult(stdout, start));
+      resolveOnce({
+        stdout,
+        ms: elapsed(),
+        bootMs: bootMs(),
+        targetFile: extractTargetFile(stdout),
+      });
     });
 
     setTimeout(() => {

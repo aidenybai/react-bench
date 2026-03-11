@@ -53,16 +53,18 @@ const runOnce = async (prompt: string): Promise<CliResult> => {
   const command = `codex exec ${FLAGS} ${JSON.stringify(promptWithPreamble)}`;
   const result = await runStreamingCommand(command, CWD, TIMEOUT_MS);
 
+  const reasoningMs = result.ms - result.bootMs;
+
   if (result.targetFile) {
     return {
       filePath: result.targetFile,
       componentName: null,
-      ms: result.ms,
+      ms: reasoningMs,
     };
   }
 
   const { filePath, componentName } = parseOutput(result.stdout);
-  return { filePath, componentName, ms: result.ms };
+  return { filePath, componentName, ms: reasoningMs };
 };
 
 const codexBackend: CliBackend = {

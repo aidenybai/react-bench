@@ -25,7 +25,7 @@
   "packageManager": "pnpm@10.31.0",
   "pnpm": {
     "patchedDependencies": {
-      "agentation@2.3.0": "patches/agentation@2.3.0.patch"
+      "agentation@2.3.2": "patches/agentation@2.3.2.patch"
     }
   }
 }

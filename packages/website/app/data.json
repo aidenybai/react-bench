@@ -34,24 +34,24 @@
           "correct": 0
         },
         "claude-code": {
-          "speed": 21.9,
-          "accuracy": 84,
-          "correct": 251
+          "speed": 21.8,
+          "accuracy": 87,
+          "correct": 260
         },
         "agentation+claude": {
           "speed": 22.3,
-          "accuracy": 93,
-          "correct": 277
+          "accuracy": 94,
+          "correct": 281
         },
         "react-grab+claude": {
-          "speed": 12.8,
+          "speed": 12.7,
           "accuracy": 98,
           "correct": 291
         },
         "cursor-browser+claude": {
-          "speed": 18.8,
-          "accuracy": 95,
-          "correct": 284
+          "speed": 19.5,
+          "accuracy": 96,
+          "correct": 287
         }
       }
     }
@@ -69,19 +69,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.7,
+          "speed": 21.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 30.8,
+          "speed": 16.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 19.8,
+          "speed": 17.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26.3,
+          "speed": 28.6,
           "correct": true
         }
       }
@@ -98,16 +98,16 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25,
+          "speed": 20.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 28.3,
+          "speed": 27,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 17.3,
-          "correct": false
+          "speed": 16.7,
+          "correct": true
         },
         "cursor-browser+claude": {
           "speed": 31.9,
@@ -127,19 +127,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.6,
+          "speed": 28.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 32.6,
+          "speed": 24.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 20.9,
+          "speed": 12.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.6,
+          "speed": 35,
           "correct": true
         }
       }
@@ -156,19 +156,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 28.8,
+          "speed": 29.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.4,
+          "speed": 36.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 22.1,
+          "speed": 28.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 28.1,
+          "speed": 29.4,
           "correct": true
         }
       }
@@ -185,19 +185,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25.7,
-          "correct": true
+          "speed": 28.9,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 33.6,
+          "speed": 26.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 21.5,
-          "correct": true
+          "speed": 16.4,
+          "correct": false
         },
         "cursor-browser+claude": {
-          "speed": 22.5,
+          "speed": 21.2,
           "correct": true
         }
       }
@@ -214,19 +214,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29,
+          "speed": 32.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.9,
+          "speed": 29.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.6,
+          "speed": 13.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.2,
+          "speed": 18.6,
           "correct": true
         }
       }
@@ -243,19 +243,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 51.4,
+          "speed": 27.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 17.3,
+          "speed": 17.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 12.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.9,
+          "speed": 20.9,
           "correct": true
         }
       }
@@ -272,19 +272,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 28.8,
+          "speed": 27.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 29.2,
-          "correct": false
+          "speed": 29.6,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 17.2,
+          "speed": 10.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24,
+          "speed": 34.9,
           "correct": true
         }
       }
@@ -301,11 +301,11 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.1,
+          "speed": 27.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 31.5,
+          "speed": 29.5,
           "correct": true
         },
         "react-grab+claude": {
@@ -313,7 +313,7 @@
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 32.5,
+          "speed": 30.4,
           "correct": true
         }
       }
@@ -330,19 +330,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 37.2,
+          "speed": 47.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 77.4,
+          "speed": 206.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.8,
+          "speed": 10.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 37.1,
+          "speed": 33.9,
           "correct": true
         }
       }
@@ -359,19 +359,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 63.1,
+          "speed": 83.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 62.1,
-          "correct": true
+          "speed": 44.8,
+          "correct": false
         },
         "react-grab+claude": {
-          "speed": 14.7,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 35.7,
+          "speed": 29.2,
           "correct": true
         }
       }
@@ -388,15 +388,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 55.5,
+          "speed": 49.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27,
+          "speed": 22.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.2,
+          "speed": 9,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -417,19 +417,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 77.9,
-          "correct": true
+          "speed": 112.1,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 17,
+          "speed": 13.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.8,
+          "speed": 8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.3,
+          "speed": 20.5,
           "correct": true
         }
       }
@@ -446,19 +446,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.8,
+          "speed": 23.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.9,
+          "speed": 26.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 17.9,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.7,
+          "speed": 18.2,
           "correct": true
         }
       }
@@ -475,19 +475,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 18.5,
+          "speed": 19.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 28.8,
+          "speed": 32.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.1,
+          "speed": 8.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19,
+          "speed": 17.7,
           "correct": true
         }
       }
@@ -504,19 +504,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19,
+          "speed": 25.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 15.3,
+          "speed": 19.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.7,
+          "speed": 13.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.2,
+          "speed": 17.2,
           "correct": true
         }
       }
@@ -533,19 +533,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 20.5,
+          "speed": 19.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 21.4,
+          "speed": 30.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.6,
+          "speed": 12.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.6,
+          "speed": 18.6,
           "correct": true
         }
       }
@@ -562,19 +562,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.6,
+          "speed": 20.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 21.1,
+          "speed": 22.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.4,
+          "speed": 13.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14,
+          "speed": 16.7,
           "correct": true
         }
       }
@@ -591,19 +591,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 18.3,
+          "speed": 21.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19.6,
+          "speed": 18.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 11.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.9,
+          "speed": 20.5,
           "correct": true
         }
       }
@@ -620,19 +620,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 56.2,
+          "speed": 79.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 48.1,
+          "speed": 43.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.3,
+          "speed": 12.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15,
+          "speed": 22.3,
           "correct": true
         }
       }
@@ -649,19 +649,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 62.6,
+          "speed": 74,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 62.9,
+          "speed": 21.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.9,
+          "speed": 9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.4,
+          "speed": 16.3,
           "correct": true
         }
       }
@@ -678,19 +678,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 26.1,
+          "speed": 25.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 40,
+          "speed": 48.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11,
+          "speed": 9.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.5,
+          "speed": 22.9,
           "correct": true
         }
       }
@@ -707,19 +707,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.6,
+          "speed": 19.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27,
+          "speed": 19.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 13.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 25.3,
+          "speed": 39.9,
           "correct": true
         }
       }
@@ -740,15 +740,15 @@
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.1,
+          "speed": 22.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.7,
+          "speed": 16.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 28.9,
+          "speed": 22.8,
           "correct": true
         }
       }
@@ -765,11 +765,11 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 20.5,
+          "speed": 22.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 32.8,
+          "speed": 51.1,
           "correct": true
         },
         "react-grab+claude": {
@@ -777,7 +777,7 @@
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 28.5,
+          "speed": 25.7,
           "correct": true
         }
       }
@@ -794,19 +794,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.2,
+          "speed": 20.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.7,
+          "speed": 21.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 13.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.4,
+          "speed": 16.3,
           "correct": true
         }
       }
@@ -823,19 +823,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.9,
+          "speed": 19.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.8,
+          "speed": 13.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.1,
+          "speed": 9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.8,
+          "speed": 12,
           "correct": true
         }
       }
@@ -852,19 +852,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14,
+          "speed": 10.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 13,
+          "speed": 12.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.6,
+          "speed": 9.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.4,
+          "speed": 16.2,
           "correct": true
         }
       }
@@ -881,19 +881,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 41.2,
+          "speed": 27.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27.7,
+          "speed": 26.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 18.6,
+          "speed": 13.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26,
+          "speed": 25.9,
           "correct": true
         }
       }
@@ -910,19 +910,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 32.6,
+          "speed": 23.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 30.1,
+          "speed": 25,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.9,
+          "speed": 14.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 33.2,
+          "speed": 24.3,
           "correct": true
         }
       }
@@ -939,19 +939,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 44.7,
+          "speed": 24.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.4,
+          "speed": 22.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 17.5,
+          "speed": 14.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 33.7,
+          "speed": 18.2,
           "correct": true
         }
       }
@@ -968,19 +968,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.8,
+          "speed": 12.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.9,
+          "speed": 12.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 14.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.6,
+          "speed": 15.5,
           "correct": true
         }
       }
@@ -997,19 +997,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 45.7,
+          "speed": 28.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 35.1,
+          "speed": 29.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.1,
+          "speed": 8.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.6,
+          "speed": 27.5,
           "correct": true
         }
       }
@@ -1026,19 +1026,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29,
+          "speed": 24.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 54.2,
+          "speed": 32.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.9,
+          "speed": 11.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24.2,
+          "speed": 25.2,
           "correct": true
         }
       }
@@ -1055,19 +1055,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 8.5,
+          "speed": 10.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 9.1,
+          "speed": 9.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.1,
+          "speed": 13,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.9,
+          "speed": 16.2,
           "correct": true
         }
       }
@@ -1084,19 +1084,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 17.4,
+          "speed": 18.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19.3,
+          "speed": 25,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.5,
+          "speed": 10.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.9,
+          "speed": 21.7,
           "correct": true
         }
       }
@@ -1113,19 +1113,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.7,
+          "speed": 18.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 20.3,
+          "speed": 10.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.6,
+          "speed": 8.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 25.8,
+          "speed": 26.4,
           "correct": true
         }
       }
@@ -1142,19 +1142,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 44.2,
+          "speed": 22.1,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 22.3,
+          "speed": 24.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.2,
+          "speed": 12.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 28.6,
+          "speed": 22.5,
           "correct": true
         }
       }
@@ -1171,19 +1171,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.2,
+          "speed": 16.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 79.6,
+          "speed": 26.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.1,
+          "speed": 14.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.1,
+          "speed": 21.9,
           "correct": true
         }
       }
@@ -1200,19 +1200,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.3,
+          "speed": 23.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25,
+          "speed": 17.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.3,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.5,
+          "speed": 18.3,
           "correct": true
         }
       }
@@ -1229,19 +1229,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.4,
+          "speed": 15.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 16.7,
+          "speed": 10.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.8,
+          "speed": 10.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.3,
+          "speed": 11.5,
           "correct": true
         }
       }
@@ -1258,19 +1258,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.3,
+          "speed": 13,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 9.9,
+          "speed": 25.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.6,
+          "speed": 15.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18,
+          "speed": 26.1,
           "correct": true
         }
       }
@@ -1287,19 +1287,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 16.6,
+          "speed": 15.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 9.9,
+          "speed": 12.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.3,
+          "speed": 12.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.3,
+          "speed": 27.2,
           "correct": true
         }
       }
@@ -1316,19 +1316,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19.6,
+          "speed": 10.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.5,
+          "speed": 18.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.9,
+          "speed": 11.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.5,
+          "speed": 16.8,
           "correct": true
         }
       }
@@ -1345,19 +1345,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 9.6,
+          "speed": 16.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.3,
+          "speed": 19.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 16.4,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.4,
+          "speed": 20,
           "correct": true
         }
       }
@@ -1374,19 +1374,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 16,
+          "speed": 15.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 17.8,
+          "speed": 17.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 10.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.6,
+          "speed": 10,
           "correct": true
         }
       }
@@ -1403,19 +1403,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 17.2,
+          "speed": 10.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 20.5,
+          "speed": 24.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.6,
+          "speed": 8.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.8,
+          "speed": 15.1,
           "correct": true
         }
       }
@@ -1436,15 +1436,15 @@
           "correct": true
         },
         "agentation+claude": {
-          "speed": 22.4,
+          "speed": 20,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.7,
+          "speed": 12.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11,
+          "speed": 19,
           "correct": true
         }
       }
@@ -1461,19 +1461,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.4,
+          "speed": 11.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.8,
+          "speed": 15.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10,
+          "speed": 9.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.7,
+          "speed": 16.3,
           "correct": true
         }
       }
@@ -1490,19 +1490,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 10.8,
+          "speed": 15.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.8,
+          "speed": 19.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.4,
+          "speed": 10.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.5,
+          "speed": 16.2,
           "correct": true
         }
       }
@@ -1519,19 +1519,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 9.5,
+          "speed": 17.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 16.3,
+          "speed": 19.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.8,
+          "speed": 7.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.3,
+          "speed": 13.7,
           "correct": true
         }
       }
@@ -1548,19 +1548,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.7,
+          "speed": 23.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 29.2,
+          "speed": 26.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21,
+          "speed": 21.1,
           "correct": true
         }
       }
@@ -1577,19 +1577,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 15.8,
+          "speed": 15.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19.7,
+          "speed": 37.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.2,
+          "speed": 14.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.1,
+          "speed": 19.3,
           "correct": true
         }
       }
@@ -1606,19 +1606,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 8.6,
+          "speed": 8.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14.5,
+          "speed": 22.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.6,
+          "speed": 8.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.7,
+          "speed": 28.5,
           "correct": true
         }
       }
@@ -1635,19 +1635,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 17,
+          "speed": 20,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 20.9,
+          "speed": 27.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 10.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26.3,
+          "speed": 38.6,
           "correct": true
         }
       }
@@ -1664,19 +1664,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.1,
+          "speed": 22.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.2,
+          "speed": 21.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.5,
+          "speed": 11.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.3,
+          "speed": 23.2,
           "correct": true
         }
       }
@@ -1693,19 +1693,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.5,
+          "speed": 24.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19,
+          "speed": 22.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.5,
+          "speed": 11.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19,
+          "speed": 18.9,
           "correct": true
         }
       }
@@ -1722,19 +1722,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29,
+          "speed": 22.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19.7,
+          "speed": 17.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.1,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.7,
+          "speed": 17.7,
           "correct": true
         }
       }
@@ -1751,19 +1751,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19.6,
+          "speed": 21.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 23.2,
+          "speed": 18.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.3,
+          "speed": 11.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.1,
+          "speed": 18.7,
           "correct": true
         }
       }
@@ -1780,19 +1780,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.2,
+          "speed": 15.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 8.9,
+          "speed": 12.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11,
+          "speed": 11.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.4,
+          "speed": 13.8,
           "correct": true
         }
       }
@@ -1809,19 +1809,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.4,
+          "speed": 12,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14.9,
+          "speed": 26.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.7,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.9,
+          "speed": 17.1,
           "correct": true
         }
       }
@@ -1838,19 +1838,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.7,
+          "speed": 14.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.9,
+          "speed": 193.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 13.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 44,
+          "speed": 15.2,
           "correct": true
         }
       }
@@ -1867,19 +1867,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19.8,
+          "speed": 14.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.8,
+          "speed": 24.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.8,
+          "speed": 9.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.4,
+          "speed": 44.8,
           "correct": true
         }
       }
@@ -1896,19 +1896,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.9,
+          "speed": 18.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 9,
+          "speed": 17.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.4,
+          "speed": 12.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.7,
+          "speed": 26.3,
           "correct": true
         }
       }
@@ -1925,19 +1925,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.9,
+          "speed": 19.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 9.3,
+          "speed": 24.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.2,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.2,
+          "speed": 14.9,
           "correct": true
         }
       }
@@ -1954,19 +1954,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.3,
+          "speed": 16,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 23.5,
+          "speed": 25.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.8,
+          "speed": 9.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.6,
+          "speed": 19.1,
           "correct": true
         }
       }
@@ -1983,19 +1983,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25.9,
+          "speed": 27.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 28.6,
+          "speed": 24.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.5,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27,
+          "speed": 18.8,
           "correct": true
         }
       }
@@ -2012,19 +2012,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 17.7,
+          "speed": 19.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14.2,
+          "speed": 21.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 11.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24.8,
+          "speed": 19.6,
           "correct": true
         }
       }
@@ -2041,19 +2041,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19,
+          "speed": 19.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 21.5,
+          "speed": 18.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.4,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.5,
+          "speed": 19.4,
           "correct": true
         }
       }
@@ -2070,19 +2070,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 15.3,
+          "speed": 15.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 22.2,
+          "speed": 17.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.2,
+          "speed": 13.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.9,
+          "speed": 21,
           "correct": true
         }
       }
@@ -2099,19 +2099,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 26.9,
+          "speed": 21.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.3,
+          "speed": 26.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 19.9,
+          "speed": 15.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 30.7,
+          "speed": 15.4,
           "correct": true
         }
       }
@@ -2128,19 +2128,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31.2,
+          "speed": 31.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.2,
+          "speed": 36.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 21.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.9,
+          "speed": 27.6,
           "correct": true
         }
       }
@@ -2157,19 +2157,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29.8,
+          "speed": 37.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 37.6,
+          "speed": 27.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 18.6,
+          "speed": 15,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24.9,
+          "speed": 17.5,
           "correct": true
         }
       }
@@ -2186,19 +2186,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29,
+          "speed": 24.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 38.3,
+          "speed": 37.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 17.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26.3,
+          "speed": 28.9,
           "correct": true
         }
       }
@@ -2215,19 +2215,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27.7,
+          "speed": 22.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 31.3,
+          "speed": 34,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.9,
+          "speed": 21.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24.7,
+          "speed": 31.2,
           "correct": true
         }
       }
@@ -2244,19 +2244,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.1,
+          "speed": 55.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.4,
+          "speed": 25.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.2,
+          "speed": 16.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26.1,
+          "speed": 34.5,
           "correct": true
         }
       }
@@ -2273,19 +2273,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 54,
+          "speed": 39.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 43.9,
+          "speed": 27.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.5,
+          "speed": 14.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20,
+          "speed": 23.7,
           "correct": true
         }
       }
@@ -2302,19 +2302,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 20.7,
+          "speed": 24.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.4,
+          "speed": 26.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.7,
+          "speed": 13.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.4,
+          "speed": 15.9,
           "correct": true
         }
       }
@@ -2331,19 +2331,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 30.1,
+          "speed": 49,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 54.9,
+          "speed": 28.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.5,
+          "speed": 12.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 25.9,
+          "speed": 26.1,
           "correct": true
         }
       }
@@ -2360,19 +2360,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29.3,
+          "speed": 27.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 29.3,
+          "speed": 44,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.7,
+          "speed": 12.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.8,
+          "speed": 24.2,
           "correct": true
         }
       }
@@ -2389,19 +2389,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.2,
+          "speed": 23.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 22.1,
+          "speed": 41.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.1,
+          "speed": 15.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16,
+          "speed": 14.7,
           "correct": true
         }
       }
@@ -2418,19 +2418,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.7,
+          "speed": 34.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 42.5,
+          "speed": 36,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.5,
+          "speed": 12.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.8,
+          "speed": 26.5,
           "correct": true
         }
       }
@@ -2447,19 +2447,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 48.8,
+          "speed": 30.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 38.7,
+          "speed": 30.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.7,
+          "speed": 10,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.7,
+          "speed": 17.2,
           "correct": true
         }
       }
@@ -2476,19 +2476,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 26,
+          "speed": 33.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.8,
+          "speed": 38.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 20.4,
+          "speed": 9.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 38.7,
+          "speed": 24.6,
           "correct": true
         }
       }
@@ -2505,19 +2505,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31.7,
+          "speed": 25.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 30.7,
+          "speed": 31.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12,
+          "speed": 13.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24,
+          "speed": 31.4,
           "correct": true
         }
       }
@@ -2534,19 +2534,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29.6,
-          "correct": false
+          "speed": 26.1,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 36.7,
+          "speed": 34.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.6,
+          "speed": 13.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.9,
+          "speed": 22.4,
           "correct": true
         }
       }
@@ -2563,19 +2563,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 28.8,
+          "speed": 26.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 30.1,
+          "speed": 23.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 12.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.7,
+          "speed": 18.4,
           "correct": true
         }
       }
@@ -2592,19 +2592,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23,
+          "speed": 32.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.7,
+          "speed": 21.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.3,
+          "speed": 10.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 33.5,
+          "speed": 25.4,
           "correct": true
         }
       }
@@ -2621,19 +2621,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 53.8,
+          "speed": 52.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.4,
+          "speed": 24.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 20.8,
+          "speed": 13,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.9,
+          "speed": 22.5,
           "correct": true
         }
       }
@@ -2650,19 +2650,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 73.2,
+          "speed": 32.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 38.8,
+          "speed": 49.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.4,
+          "speed": 12.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 28.4,
+          "speed": 36,
           "correct": true
         }
       }
@@ -2679,19 +2679,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27.9,
+          "speed": 23.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 33,
+          "speed": 21.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.4,
+          "speed": 14.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 30.1,
+          "speed": 24.4,
           "correct": true
         }
       }
@@ -2708,19 +2708,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 26.5,
+          "speed": 13.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 22.3,
+          "speed": 12.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 22.3,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.5,
+          "speed": 13.3,
           "correct": true
         }
       }
@@ -2737,19 +2737,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.2,
+          "speed": 26.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 28.8,
+          "speed": 29.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.5,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.4,
+          "speed": 24.6,
           "correct": true
         }
       }
@@ -2766,19 +2766,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 32.6,
+          "speed": 31.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.9,
+          "speed": 41.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.3,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 32,
+          "speed": 28,
           "correct": true
         }
       }
@@ -2795,19 +2795,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25.9,
+          "speed": 25,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 30.3,
+          "speed": 29.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.6,
+          "speed": 12.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 29,
+          "speed": 29.1,
           "correct": true
         }
       }
@@ -2824,19 +2824,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 22.5,
+          "speed": 27.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 17.7,
+          "speed": 24.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 33.7,
+          "speed": 38,
           "correct": true
         }
       }
@@ -2853,19 +2853,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.6,
+          "speed": 23.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27.3,
+          "speed": 24.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 13.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.3,
+          "speed": 23.4,
           "correct": true
         }
       }
@@ -2882,19 +2882,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 26.1,
+          "speed": 22.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 35.2,
+          "speed": 31.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.3,
+          "speed": 13.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 35.1,
+          "speed": 30.1,
           "correct": true
         }
       }
@@ -2911,20 +2911,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 47.2,
+          "speed": 27.9,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 29.7,
+          "speed": 24.6,
           "correct": false
         },
         "react-grab+claude": {
-          "speed": 12.5,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23,
-          "correct": false
+          "speed": 31.8,
+          "correct": true
         }
       }
     },
@@ -2940,19 +2940,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 28.5,
+          "speed": 30.4,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 29.6,
-          "correct": false
+          "speed": 36.3,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.8,
+          "speed": 12.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26.9,
+          "speed": 20.7,
           "correct": false
         }
       }
@@ -2969,19 +2969,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 28.6,
+          "speed": 26.4,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 28.4,
+          "speed": 35.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.6,
+          "speed": 14.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.6,
+          "speed": 25.9,
           "correct": true
         }
       }
@@ -2998,20 +2998,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 32.7,
-          "correct": false
-        },
-        "agentation+claude": {
-          "speed": 31.7,
+          "speed": 21.6,
           "correct": true
         },
+        "agentation+claude": {
+          "speed": 35.9,
+          "correct": false
+        },
         "react-grab+claude": {
-          "speed": 26.8,
+          "speed": 19.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.4,
-          "correct": false
+          "speed": 24.6,
+          "correct": true
         }
       }
     },
@@ -3027,19 +3027,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 41.1,
+          "speed": 25.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 30.3,
+          "speed": 24.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.6,
+          "speed": 18.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.6,
+          "speed": 26.9,
           "correct": true
         }
       }
@@ -3056,19 +3056,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 22.8,
+          "speed": 32.2,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 37.5,
-          "correct": true
+          "speed": 40.8,
+          "correct": false
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 14.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22,
+          "speed": 21.9,
           "correct": false
         }
       }
@@ -3085,20 +3085,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 28.9,
-          "correct": true
+          "speed": 21.9,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 33.9,
+          "speed": 27.3,
           "correct": false
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 13.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26.4,
-          "correct": false
+          "speed": 20.3,
+          "correct": true
         }
       }
     },
@@ -3114,20 +3114,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 34.1,
-          "correct": true
-        },
-        "agentation+claude": {
-          "speed": 23.4,
+          "speed": 37.1,
           "correct": false
         },
+        "agentation+claude": {
+          "speed": 29.9,
+          "correct": true
+        },
         "react-grab+claude": {
-          "speed": 14.1,
+          "speed": 10.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 29.7,
-          "correct": false
+          "speed": 20,
+          "correct": true
         }
       }
     },
@@ -3143,19 +3143,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.8,
-          "correct": false
+          "speed": 28.2,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 42.2,
+          "speed": 18.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.9,
+          "speed": 11.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.5,
+          "speed": 28.9,
           "correct": true
         }
       }
@@ -3172,20 +3172,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.1,
+          "speed": 35.7,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 28.9,
+          "speed": 29.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 8.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24.3,
-          "correct": false
+          "speed": 26.4,
+          "correct": true
         }
       }
     },
@@ -3201,20 +3201,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29.4,
-          "correct": false
+          "speed": 30.4,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 30.1,
+          "speed": 23.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 17.2,
+          "speed": 12,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.8,
-          "correct": true
+          "speed": 25.1,
+          "correct": false
         }
       }
     },
@@ -3230,19 +3230,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27.8,
+          "speed": 35.5,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 24.4,
+          "speed": 27.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.2,
-          "correct": true
+          "speed": 13,
+          "correct": false
         },
         "cursor-browser+claude": {
-          "speed": 24.5,
+          "speed": 26.6,
           "correct": true
         }
       }
@@ -3259,11 +3259,11 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31.7,
-          "correct": false
+          "speed": 29,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 32.9,
+          "speed": 36.4,
           "correct": false
         },
         "react-grab+claude": {
@@ -3271,7 +3271,7 @@
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.7,
+          "speed": 23.7,
           "correct": false
         }
       }
@@ -3288,19 +3288,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 36.4,
-          "correct": true
-        },
-        "agentation+claude": {
-          "speed": 42.3,
+          "speed": 28.1,
           "correct": false
         },
+        "agentation+claude": {
+          "speed": 23.8,
+          "correct": true
+        },
         "react-grab+claude": {
-          "speed": 10.7,
+          "speed": 12.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 34.5,
+          "speed": 35.7,
           "correct": true
         }
       }
@@ -3317,19 +3317,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.7,
+          "speed": 16.8,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 25,
+          "speed": 22.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 11,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24.7,
+          "speed": 29.9,
           "correct": true
         }
       }
@@ -3346,19 +3346,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29.2,
+          "speed": 45.3,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 33.5,
+          "speed": 34.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 17.4,
+          "speed": 14.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 25.5,
+          "speed": 21.8,
           "correct": false
         }
       }
@@ -3375,19 +3375,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29.1,
-          "correct": false
+          "speed": 18.6,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 27,
+          "speed": 34.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.2,
+          "speed": 19.7,
           "correct": true
         }
       }
@@ -3404,19 +3404,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 36.2,
+          "speed": 27.5,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 31.2,
-          "correct": false
+          "speed": 42.5,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 16.2,
+          "speed": 25.4,
           "correct": false
         },
         "cursor-browser+claude": {
-          "speed": 21.7,
+          "speed": 29.3,
           "correct": true
         }
       }
@@ -3433,20 +3433,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25.5,
+          "speed": 28.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26,
-          "correct": false
+          "speed": 31.8,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.8,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 33.5,
-          "correct": false
+          "speed": 25.4,
+          "correct": true
         }
       }
     },
@@ -3462,19 +3462,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 22.4,
-          "correct": true
+          "speed": 19.5,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 24.8,
+          "speed": 25.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.6,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 33.3,
+          "speed": 33,
           "correct": true
         }
       }
@@ -3491,20 +3491,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.6,
+          "speed": 32.2,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 40.8,
+          "speed": 28,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.6,
+          "speed": 15.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 39.5,
-          "correct": false
+          "speed": 17.6,
+          "correct": true
         }
       }
     },
@@ -3520,20 +3520,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 22.9,
+          "speed": 23.1,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 38.2,
+          "speed": 30.2,
           "correct": false
         },
         "react-grab+claude": {
-          "speed": 9.4,
+          "speed": 13.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22,
-          "correct": false
+          "speed": 23.2,
+          "correct": true
         }
       }
     },
@@ -3549,19 +3549,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.9,
+          "speed": 28,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 19.5,
+          "speed": 27.9,
           "correct": false
         },
         "react-grab+claude": {
-          "speed": 8.7,
+          "speed": 9.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 25.3,
+          "speed": 19.4,
           "correct": true
         }
       }
@@ -3578,19 +3578,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.2,
+          "speed": 30,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 28.9,
+          "speed": 22.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15,
+          "speed": 16.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 35.5,
+          "speed": 27.1,
           "correct": true
         }
       }
@@ -3607,20 +3607,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27,
+          "speed": 34.3,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 47.4,
+          "speed": 22.9,
           "correct": false
         },
         "react-grab+claude": {
-          "speed": 20.4,
+          "speed": 18.5,
           "correct": false
         },
         "cursor-browser+claude": {
-          "speed": 32.7,
-          "correct": true
+          "speed": 20.9,
+          "correct": false
         }
       }
     },
@@ -3636,20 +3636,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.5,
-          "correct": false
+          "speed": 28.4,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 46.4,
-          "correct": false
+          "speed": 27,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 21.4,
+          "speed": 20.1,
           "correct": false
         },
         "cursor-browser+claude": {
-          "speed": 25.2,
-          "correct": true
+          "speed": 23.2,
+          "correct": false
         }
       }
     },
@@ -3665,19 +3665,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 30.9,
-          "correct": false
+          "speed": 24.1,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 24,
+          "speed": 23.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.3,
+          "speed": 12.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 32.9,
+          "speed": 30,
           "correct": true
         }
       }
@@ -3694,19 +3694,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 28.6,
-          "correct": false
-        },
-        "agentation+claude": {
-          "speed": 34.7,
+          "speed": 26,
           "correct": true
         },
+        "agentation+claude": {
+          "speed": 15.7,
+          "correct": false
+        },
         "react-grab+claude": {
-          "speed": 14.4,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 30.3,
+          "speed": 40.4,
           "correct": true
         }
       }
@@ -3723,19 +3723,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19.2,
+          "speed": 26.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 36.6,
+          "speed": 25.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 13,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.6,
+          "speed": 13.8,
           "correct": true
         }
       }
@@ -3752,19 +3752,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 28.8,
-          "correct": true
+          "speed": 30.3,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 37.4,
+          "speed": 30.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.8,
+          "speed": 10.5,
           "correct": false
         },
         "cursor-browser+claude": {
-          "speed": 31.3,
+          "speed": 45.2,
           "correct": true
         }
       }
@@ -3781,19 +3781,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19.7,
+          "speed": 24.1,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 29.3,
+          "speed": 26.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13,
+          "speed": 17.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.9,
+          "speed": 23.3,
           "correct": true
         }
       }
@@ -3810,19 +3810,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.1,
+          "speed": 15.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 31.4,
+          "speed": 15.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 20.8,
+          "speed": 28.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.6,
+          "speed": 25.9,
           "correct": true
         }
       }
@@ -3839,19 +3839,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.2,
+          "speed": 12.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 13.9,
+          "speed": 13.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14,
+          "speed": 14.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.9,
+          "speed": 38.6,
           "correct": true
         }
       }
@@ -3868,19 +3868,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 17.8,
+          "speed": 15.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.3,
+          "speed": 26.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 23.5,
+          "speed": 15.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 28.8,
+          "speed": 17.7,
           "correct": true
         }
       }
@@ -3897,19 +3897,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.8,
+          "speed": 39.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 35.6,
+          "speed": 16.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.2,
+          "speed": 19.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.6,
+          "speed": 25.4,
           "correct": true
         }
       }
@@ -3926,19 +3926,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 39.7,
+          "speed": 29.5,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 38.5,
+          "speed": 38.1,
           "correct": false
         },
         "react-grab+claude": {
-          "speed": 10,
+          "speed": 12.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24.5,
+          "speed": 24,
           "correct": true
         }
       }
@@ -3955,19 +3955,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31.8,
-          "correct": false
+          "speed": 28.2,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 24.8,
+          "speed": 36.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.4,
+          "speed": 14.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 28.6,
+          "speed": 19.7,
           "correct": true
         }
       }
@@ -3984,19 +3984,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 81.5,
-          "correct": false
+          "speed": 23.8,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 17.3,
+          "speed": 28.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 21.7,
+          "speed": 21.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.4,
+          "speed": 27.8,
           "correct": true
         }
       }
@@ -4013,20 +4013,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.1,
+          "speed": 13.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 16,
+          "speed": 20.9,
           "correct": false
         },
         "react-grab+claude": {
-          "speed": 24.5,
+          "speed": 16,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.2,
-          "correct": true
+          "speed": 39.4,
+          "correct": false
         }
       }
     },
@@ -4042,19 +4042,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.6,
+          "speed": 13.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.2,
+          "speed": 19.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12,
+          "speed": 11.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.5,
+          "speed": 24.1,
           "correct": true
         }
       }
@@ -4071,19 +4071,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 33.6,
+          "speed": 31.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.5,
+          "speed": 12.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 16.7,
-          "correct": false
+          "speed": 48.3,
+          "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.7,
+          "speed": 22,
           "correct": true
         }
       }
@@ -4100,19 +4100,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 39.2,
-          "correct": false
+          "speed": 66.2,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 66.6,
+          "speed": 39.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.9,
+          "speed": 13.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.9,
+          "speed": 27.9,
           "correct": true
         }
       }
@@ -4129,19 +4129,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29.2,
+          "speed": 32.1,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 43.3,
+          "speed": 28.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 11.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.4,
+          "speed": 12.9,
           "correct": true
         }
       }
@@ -4158,19 +4158,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25.9,
+          "speed": 27.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 23.5,
+          "speed": 24.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 24.8,
+          "speed": 37.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.3,
+          "speed": 21.5,
           "correct": true
         }
       }
@@ -4187,19 +4187,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 26.2,
-          "correct": false
+          "speed": 37.2,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 48.8,
+          "speed": 33.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 32.4,
+          "speed": 20.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27,
+          "speed": 34,
           "correct": true
         }
       }
@@ -4216,19 +4216,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.2,
+          "speed": 28.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 28.9,
+          "speed": 19,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.2,
+          "speed": 20.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.4,
+          "speed": 23.1,
           "correct": true
         }
       }
@@ -4245,19 +4245,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 34,
+          "speed": 23.9,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 13.3,
+          "speed": 11,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.9,
+          "speed": 12.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.4,
+          "speed": 15.8,
           "correct": true
         }
       }
@@ -4274,19 +4274,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 37.9,
+          "speed": 15.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19.7,
-          "correct": true
+          "speed": 28,
+          "correct": false
         },
         "react-grab+claude": {
-          "speed": 24.4,
+          "speed": 21.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 45.4,
+          "speed": 22.8,
           "correct": true
         }
       }
@@ -4303,19 +4303,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 30.4,
+          "speed": 27.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 57.8,
+          "speed": 53.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.1,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.4,
+          "speed": 12,
           "correct": true
         }
       }
@@ -4332,19 +4332,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.7,
+          "speed": 20.2,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 136,
-          "correct": false
+          "speed": 81.8,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 15.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.4,
+          "speed": 17.5,
           "correct": true
         }
       }
@@ -4361,15 +4361,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 22.1,
-          "correct": false
+          "speed": 22.6,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 20.5,
-          "correct": false
+          "speed": 32.2,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 12,
+          "speed": 12.4,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -4390,19 +4390,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.3,
+          "speed": 11.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19.1,
+          "speed": 14.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 21,
+          "speed": 26.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.9,
+          "speed": 26.2,
           "correct": true
         }
       }
@@ -4419,19 +4419,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 15.3,
+          "speed": 19.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.2,
+          "speed": 20.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 27.8,
+          "speed": 15.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.3,
+          "speed": 26.6,
           "correct": true
         }
       }
@@ -4448,19 +4448,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.9,
+          "speed": 24,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 52.1,
+          "speed": 33.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 22.8,
+          "speed": 38.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.5,
+          "speed": 18.9,
           "correct": true
         }
       }
@@ -4477,19 +4477,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.5,
+          "speed": 10.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.8,
+          "speed": 17,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.2,
+          "speed": 12.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.2,
+          "speed": 23.5,
           "correct": true
         }
       }
@@ -4506,19 +4506,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 32.8,
-          "correct": true
+          "speed": 56,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 15,
+          "speed": 33.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 17,
+          "speed": 15.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.1,
+          "speed": 14.7,
           "correct": true
         }
       }
@@ -4535,11 +4535,11 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.9,
+          "speed": 26.8,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 13.5,
+          "speed": 12.7,
           "correct": true
         },
         "react-grab+claude": {
@@ -4547,7 +4547,7 @@
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.7,
+          "speed": 28.4,
           "correct": true
         }
       }
@@ -4564,19 +4564,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.8,
+          "speed": 16.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14,
+          "speed": 26.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.7,
+          "speed": 14,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.2,
+          "speed": 23,
           "correct": true
         }
       }
@@ -4593,19 +4593,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 30.6,
+          "speed": 27.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 36.2,
+          "speed": 23.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 30,
+          "speed": 24.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.5,
+          "speed": 19.8,
           "correct": true
         }
       }
@@ -4622,19 +4622,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 96.7,
-          "correct": false
+          "speed": 50.3,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 58.2,
+          "speed": 40.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 17.8,
+          "speed": 12.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26.5,
+          "speed": 16.6,
           "correct": true
         }
       }
@@ -4651,19 +4651,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 30.2,
+          "speed": 16.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 21,
+          "speed": 27,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.2,
+          "speed": 16.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.3,
+          "speed": 22.5,
           "correct": true
         }
       }
@@ -4680,19 +4680,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 32.3,
-          "correct": false
+          "speed": 20.5,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 20.8,
-          "correct": false
+          "speed": 17.6,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.7,
+          "speed": 9.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.4,
+          "speed": 17,
           "correct": true
         }
       }
@@ -4709,19 +4709,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.3,
-          "correct": false
+          "speed": 16.9,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 15.6,
+          "speed": 15.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 23.5,
+          "speed": 20.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.8,
+          "speed": 20.8,
           "correct": true
         }
       }
@@ -4738,19 +4738,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 40,
+          "speed": 32,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 28,
+          "speed": 71,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.5,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.9,
+          "speed": 10.7,
           "correct": true
         }
       }
@@ -4767,19 +4767,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 15,
+          "speed": 15.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 21.8,
+          "speed": 13,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 12,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.5,
+          "speed": 22.2,
           "correct": true
         }
       }
@@ -4796,19 +4796,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.1,
+          "speed": 10.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 30.4,
+          "speed": 15.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.4,
+          "speed": 12,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.1,
+          "speed": 20.2,
           "correct": true
         }
       }
@@ -4825,19 +4825,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 62.9,
+          "speed": 24,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 65.5,
-          "correct": false
+          "speed": 36,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 37.9,
+          "speed": 47.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.4,
+          "speed": 19.1,
           "correct": true
         }
       }
@@ -4854,19 +4854,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25.6,
+          "speed": 35,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 10.9,
+          "speed": 11.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.4,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.9,
+          "speed": 12.8,
           "correct": true
         }
       }
@@ -4883,19 +4883,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 30.2,
+          "speed": 14.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 16.4,
+          "speed": 14.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.3,
+          "speed": 17.9,
           "correct": true
         }
       }
@@ -4912,19 +4912,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 62.4,
+          "speed": 20.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 17,
+          "speed": 17.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.7,
+          "speed": 20.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.4,
+          "speed": 14.4,
           "correct": true
         }
       }
@@ -4941,19 +4941,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 63.3,
-          "correct": true
+          "speed": 61.2,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 59.9,
-          "correct": true
+          "speed": 110.2,
+          "correct": false
         },
         "react-grab+claude": {
-          "speed": 11.2,
+          "speed": 12.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 9.6,
+          "speed": 16.9,
           "correct": true
         }
       }
@@ -4970,19 +4970,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.3,
+          "speed": 12.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 22.3,
+          "speed": 20.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 24.2,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.7,
+          "speed": 25,
           "correct": true
         }
       }
@@ -4999,15 +4999,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 50.9,
-          "correct": false
+          "speed": 57.8,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 11.2,
+          "speed": 10.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 11.6,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -5028,19 +5028,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.7,
+          "speed": 23.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 20.6,
+          "speed": 22.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.8,
+          "speed": 11,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 26.2,
+          "speed": 24.6,
           "correct": true
         }
       }
@@ -5057,19 +5057,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27.5,
+          "speed": 31.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 29.4,
+          "speed": 18.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.6,
+          "speed": 13.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.5,
+          "speed": 24.4,
           "correct": true
         }
       }
@@ -5086,19 +5086,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27.3,
+          "speed": 21.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 47.7,
+          "speed": 39.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 29.1,
+          "speed": 15.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.9,
+          "speed": 21,
           "correct": true
         }
       }
@@ -5115,19 +5115,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 51,
-          "correct": true
+          "speed": 98.2,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 103.2,
+          "speed": 45.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 13.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.9,
+          "speed": 23.4,
           "correct": true
         }
       }
@@ -5144,19 +5144,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 51.8,
+          "speed": 27.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.5,
+          "speed": 26,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.7,
+          "speed": 12.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 32.7,
+          "speed": 40.7,
           "correct": true
         }
       }
@@ -5173,19 +5173,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.4,
+          "speed": 25.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25,
+          "speed": 43.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 19.2,
+          "speed": 14.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.7,
+          "speed": 27.4,
           "correct": true
         }
       }
@@ -5202,19 +5202,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 16.7,
+          "speed": 14.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 15,
+          "speed": 11.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 6.9,
+          "speed": 7.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.6,
+          "speed": 13.1,
           "correct": true
         }
       }
@@ -5231,19 +5231,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 16.7,
+          "speed": 37.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27,
+          "speed": 28.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8,
+          "speed": 8.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.7,
+          "speed": 13.1,
           "correct": true
         }
       }
@@ -5260,19 +5260,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.4,
+          "speed": 16.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12,
+          "speed": 11.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.8,
+          "speed": 9.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.8,
+          "speed": 12.6,
           "correct": true
         }
       }
@@ -5289,19 +5289,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 32.1,
-          "correct": true
+          "speed": 36.9,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 38.2,
+          "speed": 41.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.4,
+          "speed": 9.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.6,
+          "speed": 13.9,
           "correct": true
         }
       }
@@ -5318,19 +5318,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.7,
+          "speed": 12.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.1,
+          "speed": 12.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.9,
+          "speed": 8.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.7,
+          "speed": 11.1,
           "correct": true
         }
       }
@@ -5347,19 +5347,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 9.3,
+          "speed": 11.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14,
+          "speed": 12.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.4,
+          "speed": 10.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.9,
+          "speed": 12.2,
           "correct": true
         }
       }
@@ -5376,19 +5376,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.7,
+          "speed": 11.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 15.3,
+          "speed": 14.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.2,
+          "speed": 15,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.7,
+          "speed": 11.2,
           "correct": true
         }
       }
@@ -5405,19 +5405,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.4,
+          "speed": 10.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 15.1,
+          "speed": 12.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.6,
+          "speed": 8.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.2,
+          "speed": 11,
           "correct": true
         }
       }
@@ -5434,19 +5434,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.3,
+          "speed": 13.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 16.3,
+          "speed": 20,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.2,
+          "speed": 10.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.3,
+          "speed": 11.3,
           "correct": true
         }
       }
@@ -5463,19 +5463,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 40.6,
+          "speed": 32.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 23,
+          "speed": 27.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.7,
+          "speed": 15,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.9,
+          "speed": 17.5,
           "correct": true
         }
       }
@@ -5492,19 +5492,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 72.1,
-          "correct": false
+          "speed": 81.1,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 22.7,
+          "speed": 26,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.3,
+          "speed": 16.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 25.9,
+          "speed": 20,
           "correct": true
         }
       }
@@ -5521,19 +5521,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 39,
+          "speed": 48.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 23.1,
+          "speed": 21.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.4,
+          "speed": 11.1,
           "correct": true
         }
       }
@@ -5550,19 +5550,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31.5,
+          "speed": 18.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 21.1,
+          "speed": 17.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.3,
+          "speed": 12.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.6,
+          "speed": 17,
           "correct": true
         }
       }
@@ -5579,19 +5579,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.7,
+          "speed": 34.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 41.8,
+          "speed": 22,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 16.5,
+          "speed": 14.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 29.2,
+          "speed": 35.9,
           "correct": true
         }
       }
@@ -5608,19 +5608,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.7,
+          "speed": 29.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.7,
+          "speed": 27.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 11.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 28.1,
+          "speed": 28.3,
           "correct": true
         }
       }
@@ -5637,19 +5637,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27,
+          "speed": 23.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.6,
+          "speed": 24.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.6,
+          "speed": 13.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 29.8,
+          "speed": 32.6,
           "correct": true
         }
       }
@@ -5666,19 +5666,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 30.4,
+          "speed": 33.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.3,
+          "speed": 30.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.7,
+          "speed": 11.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 31.4,
+          "speed": 33.7,
           "correct": true
         }
       }
@@ -5695,19 +5695,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 55.9,
-          "correct": false
+          "speed": 48.8,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 76.3,
+          "speed": 30.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 14.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.8,
+          "speed": 23.1,
           "correct": true
         }
       }
@@ -5724,19 +5724,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.8,
+          "speed": 13.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.4,
+          "speed": 10.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.4,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.3,
+          "speed": 10.4,
           "correct": true
         }
       }
@@ -5753,19 +5753,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.7,
+          "speed": 12.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 13.1,
+          "speed": 18.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.2,
+          "speed": 11.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13,
+          "speed": 12.3,
           "correct": true
         }
       }
@@ -5782,19 +5782,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.6,
+          "speed": 11,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.1,
+          "speed": 23.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10,
+          "speed": 12.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.8,
+          "speed": 12.6,
           "correct": true
         }
       }
@@ -5815,15 +5815,15 @@
           "correct": true
         },
         "agentation+claude": {
-          "speed": 17.6,
+          "speed": 26.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 19.2,
+          "speed": 13.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.9,
+          "speed": 16.2,
           "correct": true
         }
       }
@@ -5840,19 +5840,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 30.2,
+          "speed": 61.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 29.2,
+          "speed": 30.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.7,
+          "speed": 11.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.9,
+          "speed": 22,
           "correct": true
         }
       }
@@ -5869,19 +5869,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 17.6,
+          "speed": 13.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25,
+          "speed": 16,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.3,
+          "speed": 11.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15,
+          "speed": 19.1,
           "correct": true
         }
       }
@@ -5898,19 +5898,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 33.6,
+          "speed": 29.5,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 25.3,
+          "speed": 20.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 16,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.6,
+          "speed": 20.1,
           "correct": true
         }
       }
@@ -5927,19 +5927,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.5,
+          "speed": 33.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 15.2,
+          "speed": 22.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.6,
+          "speed": 11.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.6,
+          "speed": 12.7,
           "correct": true
         }
       }
@@ -5956,15 +5956,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.5,
+          "speed": 23.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 17.2,
+          "speed": 20.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.3,
+          "speed": 13.1,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -5985,19 +5985,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19,
+          "speed": 21.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.1,
+          "speed": 15,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.7,
+          "speed": 9.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.2,
+          "speed": 11.6,
           "correct": true
         }
       }
@@ -6014,19 +6014,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25.2,
+          "speed": 17.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 21.9,
+          "speed": 14.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.1,
+          "speed": 9.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.8,
+          "speed": 13.7,
           "correct": true
         }
       }
@@ -6043,19 +6043,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.6,
+          "speed": 36.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 36.8,
+          "speed": 34,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 18.2,
+          "speed": 13.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.3,
+          "speed": 14.5,
           "correct": true
         }
       }
@@ -6072,19 +6072,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27.4,
+          "speed": 35.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.6,
+          "speed": 19.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.4,
+          "speed": 14.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.2,
+          "speed": 12.2,
           "correct": true
         }
       }
@@ -6101,19 +6101,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 60.8,
+          "speed": 40.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.7,
+          "speed": 78,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 15,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.2,
+          "speed": 16.9,
           "correct": true
         }
       }
@@ -6130,19 +6130,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 75.3,
+          "speed": 56.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 79.1,
+          "speed": 45,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14,
+          "speed": 14.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.7,
+          "speed": 15.4,
           "correct": true
         }
       }
@@ -6159,19 +6159,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 67.1,
+          "speed": 71.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 45.3,
+          "speed": 54.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 13.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.9,
+          "speed": 18,
           "correct": true
         }
       }
@@ -6188,19 +6188,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 20.9,
+          "speed": 26,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.3,
+          "speed": 46.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.6,
+          "speed": 15,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.2,
+          "speed": 23.9,
           "correct": true
         }
       }
@@ -6217,19 +6217,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.1,
+          "speed": 36.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 33.7,
+          "speed": 20.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.5,
+          "speed": 14.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.7,
+          "speed": 25.8,
           "correct": true
         }
       }
@@ -6246,19 +6246,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.7,
+          "speed": 21.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27.9,
+          "speed": 36.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 20.8,
+          "speed": 28.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.2,
+          "speed": 18.9,
           "correct": true
         }
       }
@@ -6275,19 +6275,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.6,
+          "speed": 42.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19.8,
+          "speed": 24.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.4,
+          "speed": 8.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 39.8,
+          "speed": 36,
           "correct": true
         }
       }
@@ -6304,19 +6304,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25,
+          "speed": 20.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.2,
+          "speed": 12.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.9,
+          "speed": 11.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.2,
+          "speed": 17.7,
           "correct": true
         }
       }
@@ -6333,19 +6333,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.3,
+          "speed": 23.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.9,
+          "speed": 11.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.8,
+          "speed": 11.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.8,
+          "speed": 31.1,
           "correct": true
         }
       }
@@ -6362,19 +6362,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 16.9,
+          "speed": 17.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 17.9,
+          "speed": 15.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.8,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.4,
+          "speed": 12,
           "correct": true
         }
       }
@@ -6391,19 +6391,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19.8,
+          "speed": 39.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 25.4,
+          "speed": 26,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.2,
+          "speed": 7.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.3,
+          "speed": 12.7,
           "correct": true
         }
       }
@@ -6420,20 +6420,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 20.2,
+          "speed": 20.3,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 24,
-          "correct": true
+          "speed": 48.7,
+          "correct": false
         },
         "react-grab+claude": {
-          "speed": 12.1,
+          "speed": 11.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 29.4,
-          "correct": true
+          "speed": 16.5,
+          "correct": false
         }
       }
     },
@@ -6449,19 +6449,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 17.8,
+          "speed": 33.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 59.8,
+          "speed": 38.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 15.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 24.1,
+          "speed": 22,
           "correct": true
         }
       }
@@ -6478,19 +6478,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.2,
+          "speed": 23.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 22.1,
+          "speed": 17.8,
           "correct": false
         },
         "react-grab+claude": {
-          "speed": 13.9,
+          "speed": 12.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 29.4,
+          "speed": 23.9,
           "correct": false
         }
       }
@@ -6507,19 +6507,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 37.8,
+          "speed": 25.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 19.4,
+          "speed": 31,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.4,
+          "speed": 12.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 29.1,
+          "speed": 23.8,
           "correct": true
         }
       }
@@ -6536,15 +6536,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.9,
+          "speed": 27.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 23.4,
+          "speed": 34.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 16.3,
+          "speed": 14.4,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -6565,19 +6565,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31.5,
+          "speed": 31.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 31.2,
+          "speed": 22.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.6,
+          "speed": 13.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.7,
+          "speed": 23.7,
           "correct": true
         }
       }
@@ -6594,19 +6594,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27.3,
+          "speed": 27,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.4,
+          "speed": 13.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.6,
+          "speed": 16.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.5,
+          "speed": 13.8,
           "correct": true
         }
       }
@@ -6623,19 +6623,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 24.8,
+          "speed": 25.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 32.6,
+          "speed": 21.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.4,
+          "speed": 16.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20,
+          "speed": 17,
           "correct": true
         }
       }
@@ -6652,19 +6652,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.5,
+          "speed": 20.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27.9,
+          "speed": 29.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12,
+          "speed": 12.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.2,
+          "speed": 16.2,
           "correct": true
         }
       }
@@ -6681,19 +6681,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 25.2,
+          "speed": 25.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 30.6,
+          "speed": 33.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11,
+          "speed": 12.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.4,
+          "speed": 11.4,
           "correct": true
         }
       }
@@ -6710,19 +6710,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 49.9,
+          "speed": 33.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.5,
+          "speed": 18.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.9,
+          "speed": 13.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.4,
+          "speed": 14.1,
           "correct": true
         }
       }
@@ -6739,19 +6739,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 22.2,
+          "speed": 25,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 16.5,
+          "speed": 23,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13,
+          "speed": 11.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.2,
+          "speed": 22.8,
           "correct": true
         }
       }
@@ -6768,19 +6768,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27.8,
+          "speed": 64.7,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 19.5,
+          "speed": 16.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.5,
+          "speed": 10.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 43.5,
+          "speed": 13.3,
           "correct": true
         }
       }
@@ -6797,19 +6797,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 18.8,
+          "speed": 17.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 21.9,
+          "speed": 26.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.6,
+          "speed": 16.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 23.8,
+          "speed": 58.2,
           "correct": true
         }
       }
@@ -6826,19 +6826,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 36.6,
+          "speed": 56.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 15.6,
+          "speed": 15.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.8,
+          "speed": 7.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.7,
+          "speed": 46.8,
           "correct": true
         }
       }
@@ -6855,19 +6855,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31.5,
+          "speed": 54.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 31.5,
+          "speed": 21.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.2,
+          "speed": 15.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.1,
+          "speed": 46.6,
           "correct": true
         }
       }
@@ -6884,19 +6884,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 40.8,
+          "speed": 54.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 22.9,
+          "speed": 22.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 21.7,
+          "speed": 23.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 43.8,
+          "speed": 38.9,
           "correct": true
         }
       }
@@ -6913,19 +6913,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 41.2,
-          "correct": true
+          "speed": 40.3,
+          "correct": false
         },
         "agentation+claude": {
-          "speed": 57.4,
+          "speed": 49.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 18.3,
+          "speed": 34.7,
           "correct": false
         },
         "cursor-browser+claude": {
-          "speed": 39.3,
+          "speed": 32.7,
           "correct": true
         }
       }
@@ -6942,19 +6942,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 21.2,
+          "speed": 37.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.2,
+          "speed": 12,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14,
+          "speed": 14.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.8,
+          "speed": 26.6,
           "correct": true
         }
       }
@@ -6971,19 +6971,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 9.2,
+          "speed": 24.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.8,
+          "speed": 22.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9,
+          "speed": 20.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.8,
+          "speed": 17.2,
           "correct": true
         }
       }
@@ -7000,19 +7000,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 9.9,
+          "speed": 19,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 13,
+          "speed": 14.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.6,
+          "speed": 7.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.5,
+          "speed": 12.8,
           "correct": true
         }
       }
@@ -7029,19 +7029,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 23.8,
+          "speed": 28.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.8,
+          "speed": 28.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.9,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.8,
+          "speed": 13.4,
           "correct": true
         }
       }
@@ -7058,19 +7058,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 10.8,
+          "speed": 10.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.9,
+          "speed": 9.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.5,
+          "speed": 7.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.4,
+          "speed": 11.3,
           "correct": true
         }
       }
@@ -7087,19 +7087,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.3,
-          "correct": true
-        },
-        "agentation+claude": {
           "speed": 10.1,
           "correct": true
         },
+        "agentation+claude": {
+          "speed": 9.7,
+          "correct": true
+        },
         "react-grab+claude": {
-          "speed": 9.8,
+          "speed": 9.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.4,
+          "speed": 13,
           "correct": true
         }
       }
@@ -7116,19 +7116,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 10.2,
+          "speed": 9.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.4,
+          "speed": 10.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.5,
+          "speed": 11,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.3,
+          "speed": 10.6,
           "correct": true
         }
       }
@@ -7145,19 +7145,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.6,
+          "speed": 10,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 9.8,
+          "speed": 11,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.1,
+          "speed": 8.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.4,
+          "speed": 10.8,
           "correct": true
         }
       }
@@ -7174,19 +7174,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 9,
+          "speed": 14,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 17.7,
+          "speed": 9.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.5,
+          "speed": 11.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.2,
+          "speed": 15.2,
           "correct": true
         }
       }
@@ -7203,19 +7203,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.4,
+          "speed": 12.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.6,
+          "speed": 11.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 7,
+          "speed": 7.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.5,
+          "speed": 14.9,
           "correct": true
         }
       }
@@ -7232,19 +7232,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.3,
+          "speed": 9.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11,
+          "speed": 11.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.1,
+          "speed": 12.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.8,
+          "speed": 12.3,
           "correct": true
         }
       }
@@ -7261,19 +7261,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.7,
-          "correct": true
-        },
-        "agentation+claude": {
           "speed": 11.4,
           "correct": true
         },
+        "agentation+claude": {
+          "speed": 10,
+          "correct": true
+        },
         "react-grab+claude": {
-          "speed": 6.7,
+          "speed": 11.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14,
+          "speed": 11.7,
           "correct": true
         }
       }
@@ -7290,19 +7290,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 9.9,
+          "speed": 10.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.9,
+          "speed": 14.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.6,
+          "speed": 12.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.4,
+          "speed": 10,
           "correct": true
         }
       }
@@ -7319,19 +7319,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 18.7,
+          "speed": 15.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.9,
+          "speed": 23.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.1,
+          "speed": 12.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.5,
+          "speed": 20.4,
           "correct": true
         }
       }
@@ -7348,15 +7348,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.4,
+          "speed": 10.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 9.7,
+          "speed": 13,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 7.8,
+          "speed": 11.6,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -7377,19 +7377,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 7.6,
+          "speed": 10.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.2,
+          "speed": 9.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.7,
+          "speed": 7.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.7,
+          "speed": 12.9,
           "correct": true
         }
       }
@@ -7406,19 +7406,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 10.8,
+          "speed": 12,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 18.8,
+          "speed": 12.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.4,
+          "speed": 12.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.4,
+          "speed": 10.7,
           "correct": true
         }
       }
@@ -7435,19 +7435,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.2,
+          "speed": 8.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10,
+          "speed": 12.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.6,
+          "speed": 9.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.4,
+          "speed": 11.5,
           "correct": true
         }
       }
@@ -7464,19 +7464,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 10.8,
+          "speed": 10.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.8,
+          "speed": 10.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.2,
+          "speed": 10.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.1,
+          "speed": 10.6,
           "correct": true
         }
       }
@@ -7493,19 +7493,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 18.2,
+          "speed": 19.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14,
+          "speed": 22.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 7.9,
+          "speed": 8.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 17.6,
+          "speed": 13.2,
           "correct": true
         }
       }
@@ -7522,19 +7522,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.6,
+          "speed": 11.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 13.8,
+          "speed": 12.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.2,
+          "speed": 12.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.7,
+          "speed": 12.7,
           "correct": true
         }
       }
@@ -7551,19 +7551,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 10.7,
+          "speed": 9.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 9.6,
+          "speed": 11.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.6,
+          "speed": 9.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 9.9,
+          "speed": 12.5,
           "correct": true
         }
       }
@@ -7580,19 +7580,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 10,
+          "speed": 7.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.5,
+          "speed": 12.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 6.8,
+          "speed": 7.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.5,
+          "speed": 13.2,
           "correct": true
         }
       }
@@ -7609,19 +7609,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 7.1,
+          "speed": 8.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.5,
+          "speed": 11.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 6.3,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.8,
+          "speed": 11.6,
           "correct": true
         }
       }
@@ -7638,15 +7638,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 15.1,
+          "speed": 32.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 22.5,
+          "speed": 26.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 14.1,
+          "speed": 11.2,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -7667,19 +7667,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29.7,
+          "speed": 25.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 23.7,
+          "speed": 20.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.6,
+          "speed": 14.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.9,
+          "speed": 17,
           "correct": true
         }
       }
@@ -7696,19 +7696,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 39,
+          "speed": 53.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.9,
+          "speed": 23.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 19.8,
+          "speed": 17,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 27.7,
+          "speed": 22.5,
           "correct": true
         }
       }
@@ -7725,19 +7725,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 55.5,
+          "speed": 45.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 28.1,
+          "speed": 15.2,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.1,
+          "speed": 11.5,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.3,
+          "speed": 14.1,
           "correct": true
         }
       }
@@ -7754,19 +7754,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 60,
+          "speed": 51.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 41.5,
+          "speed": 40.3,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.4,
+          "speed": 13.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.9,
+          "speed": 36.9,
           "correct": true
         }
       }
@@ -7783,19 +7783,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 27,
+          "speed": 49,
           "correct": false
         },
         "agentation+claude": {
-          "speed": 34.7,
-          "correct": true
+          "speed": 37.6,
+          "correct": false
         },
         "react-grab+claude": {
-          "speed": 12,
+          "speed": 12.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.6,
+          "speed": 25.7,
           "correct": true
         }
       }
@@ -7812,19 +7812,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 67,
+          "speed": 23.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 32.7,
+          "speed": 21.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 15.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.4,
+          "speed": 26.5,
           "correct": true
         }
       }
@@ -7841,15 +7841,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31.5,
+          "speed": 49.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 36.2,
+          "speed": 34.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 22.6,
+          "speed": 33.6,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -7870,20 +7870,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 35.7,
+          "speed": 29.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 36.1,
+          "speed": 38.7,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 40.4,
+          "speed": 32.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.8,
-          "correct": false
+          "speed": 26.9,
+          "correct": true
         }
       }
     },
@@ -7899,20 +7899,20 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 42.2,
+          "speed": 26.5,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 33,
+          "speed": 33.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 29.8,
+          "speed": 18,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 29,
-          "correct": true
+          "speed": 26.6,
+          "correct": false
         }
       }
     },
@@ -7928,19 +7928,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 22,
+          "speed": 36.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27.3,
+          "speed": 46,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 22.5,
+          "speed": 26.3,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 22.3,
+          "speed": 18.3,
           "correct": true
         }
       }
@@ -7957,19 +7957,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 128,
+          "speed": 20.8,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 26.2,
+          "speed": 17.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12.6,
+          "speed": 10.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.9,
+          "speed": 29.5,
           "correct": true
         }
       }
@@ -7986,19 +7986,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 47,
-          "correct": false
+          "speed": 37.9,
+          "correct": true
         },
         "agentation+claude": {
-          "speed": 26.4,
-          "correct": false
+          "speed": 89.2,
+          "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.5,
+          "speed": 11.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 16.9,
+          "speed": 18.8,
           "correct": true
         }
       }
@@ -8015,19 +8015,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 31,
+          "speed": 27.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.8,
+          "speed": 27.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.9,
+          "speed": 15.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.4,
+          "speed": 26,
           "correct": true
         }
       }
@@ -8044,19 +8044,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 20.7,
+          "speed": 20.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 24.2,
+          "speed": 22.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 10.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 15.8,
+          "speed": 14.1,
           "correct": true
         }
       }
@@ -8073,19 +8073,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19.3,
+          "speed": 22.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 47.3,
+          "speed": 28.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.2,
+          "speed": 9.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 20.7,
+          "speed": 15.4,
           "correct": true
         }
       }
@@ -8102,19 +8102,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 19.7,
+          "speed": 17.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 27,
+          "speed": 22.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.5,
+          "speed": 12.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 18.1,
+          "speed": 26.2,
           "correct": true
         }
       }
@@ -8131,19 +8131,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 29,
+          "speed": 18,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14.7,
+          "speed": 17.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.3,
+          "speed": 6.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 19.3,
+          "speed": 21.8,
           "correct": true
         }
       }
@@ -8160,11 +8160,11 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 9.9,
+          "speed": 11,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 20.1,
+          "speed": 15.1,
           "correct": true
         },
         "react-grab+claude": {
@@ -8172,7 +8172,7 @@
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.7,
+          "speed": 12.8,
           "correct": true
         }
       }
@@ -8189,19 +8189,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12,
+          "speed": 11,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.4,
+          "speed": 13.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.9,
+          "speed": 10.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.8,
+          "speed": 9,
           "correct": true
         }
       }
@@ -8218,19 +8218,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.4,
+          "speed": 10,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.2,
+          "speed": 12.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13.3,
+          "speed": 7.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.5,
+          "speed": 11.9,
           "correct": true
         }
       }
@@ -8247,19 +8247,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.7,
+          "speed": 13.9,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11,
+          "speed": 11.5,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8,
+          "speed": 12.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.5,
+          "speed": 12.6,
           "correct": true
         }
       }
@@ -8276,19 +8276,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.4,
+          "speed": 11,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.5,
+          "speed": 12.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.8,
+          "speed": 11.4,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.8,
+          "speed": 12.6,
           "correct": true
         }
       }
@@ -8305,15 +8305,15 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 12.6,
+          "speed": 13.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 15.5,
+          "speed": 15.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.3,
+          "speed": 11.6,
           "correct": true
         },
         "cursor-browser+claude": {
@@ -8334,19 +8334,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.4,
+          "speed": 10.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.1,
+          "speed": 13.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 12,
+          "speed": 10.9,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.6,
+          "speed": 9.4,
           "correct": true
         }
       }
@@ -8363,19 +8363,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.6,
+          "speed": 25.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 15.2,
+          "speed": 11.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.3,
+          "speed": 11.7,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 10.5,
+          "speed": 11.8,
           "correct": true
         }
       }
@@ -8392,19 +8392,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 15.8,
+          "speed": 17.3,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14.8,
+          "speed": 15,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.6,
+          "speed": 12.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.2,
+          "speed": 14.4,
           "correct": true
         }
       }
@@ -8421,19 +8421,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 15.6,
+          "speed": 16.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.4,
+          "speed": 10.9,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 13,
+          "speed": 14,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 14.4,
+          "speed": 14.5,
           "correct": true
         }
       }
@@ -8450,19 +8450,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.7,
+          "speed": 16.2,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.6,
+          "speed": 10.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10,
+          "speed": 11,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.3,
+          "speed": 12.3,
           "correct": true
         }
       }
@@ -8479,19 +8479,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 14.5,
+          "speed": 16.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 12.6,
+          "speed": 16.8,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.4,
+          "speed": 10,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 11.5,
+          "speed": 13.5,
           "correct": true
         }
       }
@@ -8508,7 +8508,7 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11,
+          "speed": 13.4,
           "correct": true
         },
         "agentation+claude": {
@@ -8516,11 +8516,11 @@
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 9.8,
+          "speed": 8.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13.5,
+          "speed": 13.4,
           "correct": true
         }
       }
@@ -8537,19 +8537,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 13.5,
+          "speed": 18.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.7,
+          "speed": 15.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.4,
+          "speed": 12.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.1,
+          "speed": 15.7,
           "correct": true
         }
       }
@@ -8566,19 +8566,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 15,
+          "speed": 13.4,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 13.5,
+          "speed": 13.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.9,
+          "speed": 11.2,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21.6,
+          "speed": 14.2,
           "correct": true
         }
       }
@@ -8595,19 +8595,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 10,
+          "speed": 15,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 13.1,
+          "speed": 14.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 10.5,
+          "speed": 11.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 12.6,
+          "speed": 14.3,
           "correct": true
         }
       }
@@ -8624,19 +8624,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 16.8,
+          "speed": 10.1,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 14.1,
+          "speed": 12.4,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 15.7,
+          "speed": 14.6,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 21,
+          "speed": 14.9,
           "correct": true
         }
       }
@@ -8653,19 +8653,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.6,
+          "speed": 13.6,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 11.5,
+          "speed": 16.1,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 8.1,
+          "speed": 8.8,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 9.2,
+          "speed": 12.1,
           "correct": true
         }
       }
@@ -8682,19 +8682,19 @@
           "correct": false
         },
         "claude-code": {
-          "speed": 11.4,
+          "speed": 12.7,
           "correct": true
         },
         "agentation+claude": {
-          "speed": 10.2,
+          "speed": 13.6,
           "correct": true
         },
         "react-grab+claude": {
-          "speed": 11.4,
+          "speed": 12.1,
           "correct": true
         },
         "cursor-browser+claude": {
-          "speed": 13,
+          "speed": 12.4,
           "correct": true
         }
       }

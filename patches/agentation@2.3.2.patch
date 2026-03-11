@@ -70,7 +70,7 @@ diff --git a/dist/index.mjs b/dist/index.mjs
 index 123cbee79ccfe949a213bcd2d6ed7fec61202bdf..3196bf3dfa8421e3a69abee096ebec2391e9ce4b 100644
 --- a/dist/index.mjs
 +++ b/dist/index.mjs
-@@ -6058,6 +6058,9 @@ export {
+@@ -6048,6 +6048,9 @@ export {
    identifyElement,
    isInShadowDOM,
    loadAnnotations,

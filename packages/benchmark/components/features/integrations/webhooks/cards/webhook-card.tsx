@@ -5,8 +5,19 @@ interface WebhookCardProps {
   "data-testid"?: string;
 }
 
-export const WebhookCard = ({ children, "data-testid": testId }: WebhookCardProps) => (
-  <div data-testid={testId} style={{ padding: 8, fontSize: 12, border: "1px solid var(--border)", borderRadius: 6 }}>
+export const WebhookCard = ({
+  children,
+  "data-testid": testId,
+}: WebhookCardProps) => (
+  <div
+    data-testid={testId}
+    style={{
+      padding: 8,
+      fontSize: 12,
+      border: "1px solid var(--border)",
+      borderRadius: 6,
+    }}
+  >
     {children ?? "WebhookCard"}
   </div>
 );

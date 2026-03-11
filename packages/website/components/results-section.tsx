@@ -95,7 +95,9 @@ const buildSpeedScale = (
   data: ChartDataEntry[],
 ): { domain: [number, number]; ticks: number[] } => {
   const maxValue = Math.max(...data.map((entry) => entry.value), 0);
-  const ceiling = Math.ceil((maxValue + SPEED_PADDING_S) / SPEED_TICK_INTERVAL_S) * SPEED_TICK_INTERVAL_S;
+  const ceiling =
+    Math.ceil((maxValue + SPEED_PADDING_S) / SPEED_TICK_INTERVAL_S) *
+    SPEED_TICK_INTERVAL_S;
   const ticks = Array.from(
     { length: ceiling / SPEED_TICK_INTERVAL_S + 1 },
     (_, index) => index * SPEED_TICK_INTERVAL_S,
@@ -143,10 +145,7 @@ const ResultsSection = () => {
     [],
   );
 
-  const controlKey = useMemo(
-    () => getControlKeyForModel(DEFAULT_MODEL),
-    [],
-  );
+  const controlKey = useMemo(() => getControlKeyForModel(DEFAULT_MODEL), []);
 
   const speedChartData = useMemo(
     () => buildChartData(filteredResolverKeys, "speed", false),

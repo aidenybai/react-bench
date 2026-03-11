@@ -56,7 +56,9 @@ const runDetached = async (
   } catch {
     // HACK: Bun's fetch has a BrotliDecompressionError bug with long-running
     // streamed responses. Falls back to waiting without live output.
-    console.log(`  (log stream interrupted, waiting for ${label} to finish...)`);
+    console.log(
+      `  (log stream interrupted, waiting for ${label} to finish...)`,
+    );
   }
 
   const finished = await waitWithRetry(handle);
@@ -70,7 +72,13 @@ const cloneRepo = async (
   const cloneUrl = githubToken ? buildAuthUrl(REPO_URL, githubToken) : REPO_URL;
   const handle = await sandbox.runCommand({
     cmd: "git",
-    args: ["clone", "--depth", String(GIT_CLONE_DEPTH), cloneUrl, WORKING_DIRECTORY],
+    args: [
+      "clone",
+      "--depth",
+      String(GIT_CLONE_DEPTH),
+      cloneUrl,
+      WORKING_DIRECTORY,
+    ],
     detached: true,
   });
   const finished = await handle.wait();
@@ -78,7 +86,12 @@ const cloneRepo = async (
 };
 
 const installPlaywright = async (sandbox: Sandbox): Promise<void> => {
-  await runDetached(sandbox, "playwright system deps", PLAYWRIGHT_SYSTEM_DEPS_COMMAND, WORKING_DIRECTORY);
+  await runDetached(
+    sandbox,
+    "playwright system deps",
+    PLAYWRIGHT_SYSTEM_DEPS_COMMAND,
+    WORKING_DIRECTORY,
+  );
   await runDetached(
     sandbox,
     "playwright install",
@@ -94,7 +107,12 @@ const commitAndPush = async (sandbox: Sandbox): Promise<void> => {
     `git config user.name "react-bench[bot]" && git config user.email "react-bench[bot]@users.noreply.github.com"`,
     WORKING_DIRECTORY,
   );
-  await runDetached(sandbox, "git add", `git add ${WEBSITE_DATA_PATH}`, WORKING_DIRECTORY);
+  await runDetached(
+    sandbox,
+    "git add",
+    `git add ${WEBSITE_DATA_PATH}`,
+    WORKING_DIRECTORY,
+  );
 
   const diffHandle = await sandbox.runCommand({
     cmd: "git",
@@ -139,10 +157,17 @@ const commitAndPush = async (sandbox: Sandbox): Promise<void> => {
       return;
     }
 
-    console.log(`  Push attempt ${attempt}/${MAX_PUSH_ATTEMPTS} failed: ${pushStderr}`);
+    console.log(
+      `  Push attempt ${attempt}/${MAX_PUSH_ATTEMPTS} failed: ${pushStderr}`,
+    );
 
     if (attempt < MAX_PUSH_ATTEMPTS) {
-      await runDetached(sandbox, "rebase abort", "sleep 5 && git rebase --abort 2>/dev/null; true", WORKING_DIRECTORY);
+      await runDetached(
+        sandbox,
+        "rebase abort",
+        "sleep 5 && git rebase --abort 2>/dev/null; true",
+        WORKING_DIRECTORY,
+      );
     }
   }
 
@@ -160,9 +185,19 @@ const readResultsFromSandbox = async (
   }),
 });
 
-const writeResultsLocally = (benchResults: Buffer | null, websiteData: Buffer | null): void => {
+const writeResultsLocally = (
+  benchResults: Buffer | null,
+  websiteData: Buffer | null,
+): void => {
   const localBenchResults = join(__dirname, "..", "e2e", "bench-results.json");
-  const localWebsiteData = join(__dirname, "..", "..", "website", "app", "data.json");
+  const localWebsiteData = join(
+    __dirname,
+    "..",
+    "..",
+    "website",
+    "app",
+    "data.json",
+  );
 
   if (benchResults) {
     writeFileSync(localBenchResults, benchResults);
@@ -185,7 +220,7 @@ const buildSandboxEnv = (anthropicApiKey: string): Record<string, string> => {
     ANTHROPIC_API_KEY: anthropicApiKey,
     FORCE_COLOR: "0",
   };
-  const optionalKeys = ["BENCH_MODEL", "BENCH_CONCURRENCY", "OPENAI_API_KEY"];
+  const optionalKeys = ["BENCH_MODEL", "BENCH_CONCURRENCY"];
   for (const key of optionalKeys) {
     if (process.env[key]) env[key] = process.env[key]!;
   }
@@ -193,8 +228,14 @@ const buildSandboxEnv = (anthropicApiKey: string): Record<string, string> => {
 };
 
 const runBenchmark = async (): Promise<void> => {
-  const snapshotId = requireEnv("SANDBOX_SNAPSHOT_ID", "Run `bun sandbox/create-snapshot.ts` or pull env from cloud-agent.");
-  const anthropicApiKey = requireEnv("ANTHROPIC_API_KEY", "Pull env with `vercel env pull .env.local`.");
+  const snapshotId = requireEnv(
+    "SANDBOX_SNAPSHOT_ID",
+    "Run `bun sandbox/create-snapshot.ts` or pull env from cloud-agent.",
+  );
+  const anthropicApiKey = requireEnv(
+    "ANTHROPIC_API_KEY",
+    "Pull env with `vercel env pull .env.local`.",
+  );
   const githubToken = process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN;
 
   console.log("\n[1/7] Creating sandbox from snapshot...");
@@ -211,7 +252,12 @@ const runBenchmark = async (): Promise<void> => {
     await cloneRepo(sandbox, githubToken);
 
     console.log("\n[3/7] Installing dependencies...");
-    await runDetached(sandbox, "pnpm install", "pnpm install", WORKING_DIRECTORY);
+    await runDetached(
+      sandbox,
+      "pnpm install",
+      "pnpm install",
+      WORKING_DIRECTORY,
+    );
 
     console.log("\n[4/7] Installing Playwright...");
     await installPlaywright(sandbox);
@@ -219,10 +265,17 @@ const runBenchmark = async (): Promise<void> => {
     console.log("\n[5/7] Running benchmark...");
     let benchmarkFailed = false;
     try {
-      await runDetached(sandbox, "benchmark test", "pnpm --filter @react-bench/benchmark test", WORKING_DIRECTORY);
+      await runDetached(
+        sandbox,
+        "benchmark test",
+        "pnpm --filter @react-bench/benchmark test",
+        WORKING_DIRECTORY,
+      );
     } catch (benchError) {
       benchmarkFailed = true;
-      console.error("\n  Benchmark test failed, attempting to read partial results...");
+      console.error(
+        "\n  Benchmark test failed, attempting to read partial results...",
+      );
       console.error(`  ${benchError}`);
     }
 
@@ -234,12 +287,16 @@ const runBenchmark = async (): Promise<void> => {
       console.log("\n[7/7] Pushing results...");
       await commitAndPush(sandbox);
     } else {
-      console.log(`\n[7/7] Skipping push${benchmarkFailed ? " (benchmark failed)" : " (no GH_TOKEN)"}.`);
+      console.log(
+        `\n[7/7] Skipping push${benchmarkFailed ? " (benchmark failed)" : " (no GH_TOKEN)"}.`,
+      );
     }
 
     await sandbox.stop();
     if (benchmarkFailed) {
-      console.log("\nBenchmark finished with errors (partial results saved locally).");
+      console.log(
+        "\nBenchmark finished with errors (partial results saved locally).",
+      );
     } else {
       console.log("\nBenchmark complete!");
     }

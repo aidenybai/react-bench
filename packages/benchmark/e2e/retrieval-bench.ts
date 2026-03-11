@@ -59,11 +59,12 @@ const runClaude = (
   const output = execSync(
     `echo "" | claude ${flags} -- ${JSON.stringify(text)}`,
     {
-    cwd: CWD,
-    encoding: "utf-8",
-    timeout: CLI_TIMEOUT_MS,
-    env: { ...process.env, FORCE_COLOR: "0", CLAUDECODE: "" },
-  });
+      cwd: CWD,
+      encoding: "utf-8",
+      timeout: CLI_TIMEOUT_MS,
+      env: { ...process.env, FORCE_COLOR: "0", CLAUDECODE: "" },
+    },
+  );
   return { output, elapsedMs: performance.now() - start };
 };
 

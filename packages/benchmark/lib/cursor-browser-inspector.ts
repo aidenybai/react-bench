@@ -282,8 +282,7 @@ const inspectElement = (
   element: HTMLElement,
   uniqueId?: string,
 ): CursorElementMetadata => {
-  const resolvedUniqueId =
-    uniqueId ?? `cursor-el-${++elementCounter}`;
+  const resolvedUniqueId = uniqueId ?? `cursor-el-${++elementCounter}`;
 
   let rect: CursorElementRect = ZERO_RECT;
   let preciseRect: CursorElementRect = ZERO_RECT;
@@ -314,14 +313,11 @@ const inspectElement = (
     textContent:
       element.textContent?.trim().slice(0, MAX_TEXT_CONTENT_LENGTH) ?? "",
     id: element.id ?? "",
-    className:
-      typeof element.className === "string" ? element.className : "",
+    className: typeof element.className === "string" ? element.className : "",
     attributes: Array.from(element.attributes)
       .filter(
         (attr) =>
-          attr.name !== "class" &&
-          attr.name !== "id" &&
-          attr.name !== "style",
+          attr.name !== "class" && attr.name !== "id" && attr.name !== "style",
       )
       .map((attr) => ({ name: attr.name, value: attr.value })),
     styles: getKeyStyles(element),

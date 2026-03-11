@@ -5,8 +5,19 @@ interface RedirectActionProps {
   "data-testid"?: string;
 }
 
-export const RedirectAction = ({ children, "data-testid": testId }: RedirectActionProps) => (
-  <div data-testid={testId} style={{ padding: 8, fontSize: 12, border: "1px solid var(--border)", borderRadius: 6 }}>
+export const RedirectAction = ({
+  children,
+  "data-testid": testId,
+}: RedirectActionProps) => (
+  <div
+    data-testid={testId}
+    style={{
+      padding: 8,
+      fontSize: 12,
+      border: "1px solid var(--border)",
+      borderRadius: 6,
+    }}
+  >
     {children ?? "RedirectAction"}
   </div>
 );

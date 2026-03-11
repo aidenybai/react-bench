@@ -5,7 +5,10 @@ interface RemovableTokenProps {
   "data-testid"?: string;
 }
 
-export const RemovableToken = ({ children, "data-testid": testId }: RemovableTokenProps) => (
+export const RemovableToken = ({
+  children,
+  "data-testid": testId,
+}: RemovableTokenProps) => (
   <div data-testid={testId} style={{ padding: "8px" }}>
     {children ?? "RemovableToken"}
   </div>

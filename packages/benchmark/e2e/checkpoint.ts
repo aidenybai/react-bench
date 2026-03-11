@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import type { TestEntry } from "./test-cases/types";
-import type { ElementContext } from "./resolvers/types";
+import type { AgentResult, ElementContext } from "./resolvers/types";
 
 const CHECKPOINT_PATH = join(__dirname, "..", "e2e", "bench-checkpoint.json");
 
@@ -20,15 +20,9 @@ interface BrowserCollected {
   error?: string;
 }
 
-interface CliCompleted {
-  filePath: string | null;
-  componentName: string | null;
-  ms: number;
-}
-
 interface Checkpoint {
   browserCollected: BrowserCollected[];
-  cliCompleted: Record<string, CliCompleted>;
+  agentCompleted: Record<string, AgentResult>;
 }
 
 const saveCheckpoint = (checkpoint: Checkpoint): void => {
@@ -45,4 +39,4 @@ const loadCheckpoint = (): Checkpoint | null => {
 };
 
 export { saveCheckpoint, loadCheckpoint };
-export type { BrowserCollected, CliCompleted, Checkpoint };
+export type { BrowserCollected, Checkpoint };

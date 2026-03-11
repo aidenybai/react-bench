@@ -5,7 +5,10 @@ interface SessionAvatarProps {
   "data-testid"?: string;
 }
 
-export const SessionAvatar = ({ children, "data-testid": testId }: SessionAvatarProps) => (
+export const SessionAvatar = ({
+  children,
+  "data-testid": testId,
+}: SessionAvatarProps) => (
   <div data-testid={testId} style={{ padding: "8px" }}>
     {children ?? "SessionAvatar"}
   </div>

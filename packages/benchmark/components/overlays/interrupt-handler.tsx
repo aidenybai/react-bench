@@ -5,7 +5,10 @@ interface InterruptDialogProps {
   "data-testid"?: string;
 }
 
-export const InterruptDialog = ({ children, "data-testid": testId }: InterruptDialogProps) => (
+export const InterruptDialog = ({
+  children,
+  "data-testid": testId,
+}: InterruptDialogProps) => (
   <div data-testid={testId} style={{ padding: "8px" }}>
     {children ?? "InterruptDialog"}
   </div>

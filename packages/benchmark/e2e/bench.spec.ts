@@ -7,18 +7,14 @@ import { collectElementContext } from "./utils/collect-element-context";
 import { isCorrectFile } from "./utils/is-correct-file";
 import { normalizeFilePath } from "./utils/normalize-file-path";
 import { formatTime } from "./utils/format-time";
+import { saveCheckpoint, loadCheckpoint, type BrowserCollected } from "./checkpoint";
 import {
-  saveCheckpoint,
-  loadCheckpoint,
-  type BrowserCollected,
-  type CliCompleted,
-} from "./checkpoint";
-import {
-  CLI_RESOLVERS,
+  AGENT_RESOLVERS,
   BACKENDS,
   EMPTY_ELEMENT_CONTEXT,
   pool,
-  CLI_CONCURRENCY,
+  AGENT_CONCURRENCY,
+  type AgentResult,
 } from "./resolvers";
 
 const HARNESS_INIT_TIMEOUT_MS = 15_000;
@@ -30,19 +26,15 @@ const RESOLVER_LABELS: Record<string, string> = {
   "claude-code": "Claude Code",
   "agentation+claude": "Agentation + Claude Code",
   "react-grab+claude": "React Grab + Claude Code",
-  // codex: "Codex",
-  // "agentation+codex": "Agentation + Codex",
-  // "react-grab+codex": "React Grab + Codex",
 };
 
 const BENCH_INTERACTIONS: Record<string, (page: Page) => Promise<void>> = {
   ...NEEDS_INTERACTION,
   "shadcn-skeleton": async (page) => {
     await page.reload({ waitUntil: "domcontentloaded" });
-    await page.waitForFunction(
-      () => (window as any).__BENCH__?.resolveAll,
-      { timeout: SKELETON_RELOAD_TIMEOUT_MS },
-    );
+    await page.waitForFunction(() => (window as any).__BENCH__?.resolveAll, {
+      timeout: SKELETON_RELOAD_TIMEOUT_MS,
+    });
   },
 };
 
@@ -97,16 +89,16 @@ const collectBrowserPhase = async (
   page: Page,
 ): Promise<{
   collected: BrowserCollected[];
-  cliCompleted: Record<string, CliCompleted>;
+  agentCompleted: Record<string, AgentResult>;
 }> => {
   const checkpoint = BENCH_RESUME ? loadCheckpoint() : null;
-  const cliCompleted = checkpoint?.cliCompleted ?? {};
+  const agentCompleted = checkpoint?.agentCompleted ?? {};
 
   if (checkpoint?.browserCollected?.length === TEST_MANIFEST.length) {
     console.log(
       `  Resumed browser phase from checkpoint (${checkpoint.browserCollected.length} entries)`,
     );
-    return { collected: checkpoint.browserCollected, cliCompleted };
+    return { collected: checkpoint.browserCollected, agentCompleted };
   }
 
   const collected: BrowserCollected[] = [];
@@ -148,22 +140,22 @@ const collectBrowserPhase = async (
     }
   }
 
-  saveCheckpoint({ browserCollected: collected, cliCompleted });
+  saveCheckpoint({ browserCollected: collected, agentCompleted });
   console.log(`  Browser phase done (${collected.length} entries collected)`);
-  return { collected, cliCompleted };
+  return { collected, agentCompleted };
 };
 
-const runCliPhase = async (
+const runAgentPhase = async (
   collected: BrowserCollected[],
-  cliCompleted: Record<string, CliCompleted>,
+  agentCompleted: Record<string, AgentResult>,
 ): Promise<void> => {
-  interface CliTask {
+  interface AgentTask {
     entryIndex: number;
-    resolver: (typeof CLI_RESOLVERS)[number];
+    resolver: (typeof AGENT_RESOLVERS)[number];
     prompt: string;
   }
 
-  const cliTasks: CliTask[] = [];
+  const agentTasks: AgentTask[] = [];
   for (
     let collectedIndex = 0;
     collectedIndex < collected.length;
@@ -171,38 +163,38 @@ const runCliPhase = async (
   ) {
     const { entry, elementContext, error } = collected[collectedIndex];
     if (error) continue;
-    for (const cliResolver of CLI_RESOLVERS) {
-      const taskKey = `${entry.id}:${cliResolver.name}`;
-      if (cliCompleted[taskKey]) continue;
-      cliTasks.push({
+    for (const agentResolver of AGENT_RESOLVERS) {
+      const taskKey = `${entry.id}:${agentResolver.name}`;
+      if (agentCompleted[taskKey]) continue;
+      agentTasks.push({
         entryIndex: collectedIndex,
-        resolver: cliResolver,
-        prompt: cliResolver.buildPrompt(entry, elementContext),
+        resolver: agentResolver,
+        prompt: agentResolver.buildPrompt(entry, elementContext),
       });
     }
   }
 
-  const resumedCount = Object.keys(cliCompleted).length;
+  const resumedCount = Object.keys(agentCompleted).length;
   if (resumedCount > 0)
-    console.log(`  Resumed ${resumedCount} CLI tasks from checkpoint`);
+    console.log(`  Resumed ${resumedCount} agent tasks from checkpoint`);
   console.log(
-    `  Running ${cliTasks.length} CLI tasks (concurrency: ${CLI_CONCURRENCY})...\n`,
+    `  Running ${agentTasks.length} agent tasks (concurrency: ${AGENT_CONCURRENCY})...\n`,
   );
 
   await pool(
-    cliTasks.map(
+    agentTasks.map(
       (task) => () =>
         task.resolver.run(task.prompt).then((result) => {
           const taskKey = `${collected[task.entryIndex].entry.id}:${task.resolver.name}`;
-          cliCompleted[taskKey] = result;
-          saveCheckpoint({ browserCollected: collected, cliCompleted });
+          agentCompleted[taskKey] = result;
+          saveCheckpoint({ browserCollected: collected, agentCompleted });
           return result;
         }),
     ),
-    CLI_CONCURRENCY,
+    AGENT_CONCURRENCY,
   );
 
-  for (const [taskKey, result] of Object.entries(cliCompleted)) {
+  for (const [taskKey, result] of Object.entries(agentCompleted)) {
     const [idString, resolverName] = taskKey.split(":");
     const collectedIndex = collected.findIndex(
       (item) => item.entry.id === parseInt(idString, 10),
@@ -315,8 +307,7 @@ const writeOutputFiles = (
   allResolverNames: string[],
 ): void => {
   const chartResolverNames = allResolverNames.filter(
-    (resolverName) =>
-      !["react-grab", "agentation"].includes(resolverName),
+    (resolverName) => !["react-grab", "agentation"].includes(resolverName),
   );
   const resolverNames =
     chartResolverNames.length > 0 ? chartResolverNames : allResolverNames;
@@ -364,9 +355,7 @@ const writeOutputFiles = (
               {
                 speed: Math.round(geometricMeanMs / 100) / 10,
                 accuracy: results.length
-                  ? Math.round(
-                      (correctResults.length / results.length) * 100,
-                    )
+                  ? Math.round((correctResults.length / results.length) * 100)
                   : 0,
                 correct: correctResults.length,
               },
@@ -422,8 +411,8 @@ test.describe("Benchmark", () => {
     const browserResolverNames: string[] = await page.evaluate(() =>
       (window as any).__BENCH__.list(),
     );
-    const cliResolverNames = CLI_RESOLVERS.map((resolver) => resolver.name);
-    const allResolverNames = [...browserResolverNames, ...cliResolverNames];
+    const agentResolverNames = AGENT_RESOLVERS.map((resolver) => resolver.name);
+    const allResolverNames = [...browserResolverNames, ...agentResolverNames];
 
     const backendInfo = BACKENDS.map(
       (backend) => `${backend.name}: ${backend.model}`,
@@ -433,8 +422,8 @@ test.describe("Benchmark", () => {
     );
     console.log(`  Entries:   ${TEST_MANIFEST.length}\n`);
 
-    const { collected, cliCompleted } = await collectBrowserPhase(page);
-    await runCliPhase(collected, cliCompleted);
+    const { collected, agentCompleted } = await collectBrowserPhase(page);
+    await runAgentPhase(collected, agentCompleted);
 
     const results = buildResults(collected, allResolverNames);
     printResults(results, allResolverNames);

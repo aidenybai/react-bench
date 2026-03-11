@@ -5,7 +5,10 @@ interface SegmentButtonProps {
   "data-testid"?: string;
 }
 
-export const SegmentButton = ({ children, "data-testid": testId }: SegmentButtonProps) => (
+export const SegmentButton = ({
+  children,
+  "data-testid": testId,
+}: SegmentButtonProps) => (
   <div data-testid={testId} style={{ padding: "8px" }}>
     {children ?? "SegmentButton"}
   </div>

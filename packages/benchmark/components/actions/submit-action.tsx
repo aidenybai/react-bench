@@ -5,7 +5,10 @@ interface SubmitButtonProps {
   "data-testid"?: string;
 }
 
-export const SubmitButton = ({ children, "data-testid": testId }: SubmitButtonProps) => (
+export const SubmitButton = ({
+  children,
+  "data-testid": testId,
+}: SubmitButtonProps) => (
   <div data-testid={testId} style={{ padding: "8px" }}>
     {children ?? "SubmitButton"}
   </div>

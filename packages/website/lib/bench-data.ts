@@ -25,10 +25,7 @@ interface CodingModel {
   label: string;
 }
 
-const CODING_MODELS: CodingModel[] = [
-  { key: "claude", label: "Claude Code" },
-  // { key: "codex", label: "Codex" },
-];
+const CODING_MODELS: CodingModel[] = [{ key: "claude", label: "Claude Code" }];
 
 const MODEL_RESOLVER_MAP: Record<string, Record<string, string>> = {
   claude: {
@@ -37,12 +34,6 @@ const MODEL_RESOLVER_MAP: Record<string, Record<string, string>> = {
     "react-grab": "react-grab+claude",
     "cursor-browser": "cursor-browser+claude",
   },
-  // codex: {
-  //   standalone: "codex",
-  //   agentation: "agentation+codex",
-  //   "react-grab": "react-grab+codex",
-  //   "cursor-browser": "cursor-browser+codex",
-  // },
 };
 
 const RESOLVER_TO_TREATMENT: Record<string, string> = Object.fromEntries(

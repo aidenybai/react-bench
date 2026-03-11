@@ -5,7 +5,10 @@ interface RouteLinkProps {
   "data-testid"?: string;
 }
 
-export const RouteLink = ({ children, "data-testid": testId }: RouteLinkProps) => (
+export const RouteLink = ({
+  children,
+  "data-testid": testId,
+}: RouteLinkProps) => (
   <div data-testid={testId} style={{ padding: "8px" }}>
     {children ?? "RouteLink"}
   </div>

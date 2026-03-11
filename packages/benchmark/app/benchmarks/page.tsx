@@ -78,8 +78,7 @@ const BenchmarksPage = () => {
     const avgMs = correctResults.length
       ? Math.exp(
           correctResults.reduce(
-            (logSum, resolverResult) =>
-              logSum + Math.log(resolverResult.ms),
+            (logSum, resolverResult) => logSum + Math.log(resolverResult.ms),
             0,
           ) / correctResults.length,
         )

@@ -6,7 +6,10 @@ const MENU_EXPAND_MS = 200;
 const MENU_FINAL_SETTLE_MS = 300;
 const MAX_MENU_EXPAND_ROUNDS = 10;
 
-const clickTriggerByTestId = async (page: Page, testId: string): Promise<void> => {
+const clickTriggerByTestId = async (
+  page: Page,
+  testId: string,
+): Promise<void> => {
   await page.evaluate((tid) => {
     const trigger = document.querySelector(
       `[data-testid="${tid}"]`,

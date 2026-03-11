@@ -5,7 +5,10 @@ interface ValidatedInputProps {
   "data-testid"?: string;
 }
 
-export const ValidatedInput = ({ children, "data-testid": testId }: ValidatedInputProps) => (
+export const ValidatedInput = ({
+  children,
+  "data-testid": testId,
+}: ValidatedInputProps) => (
   <div data-testid={testId} style={{ padding: "8px" }}>
     {children ?? "ValidatedInput"}
   </div>

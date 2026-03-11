@@ -1,13 +1,17 @@
 import { Sandbox } from "@vercel/sandbox";
-import { SNAPSHOT_TIMEOUT_MS, PLAYWRIGHT_SYSTEM_DEPS_COMMAND } from "./constants";
+import {
+  SNAPSHOT_TIMEOUT_MS,
+  PLAYWRIGHT_SYSTEM_DEPS_COMMAND,
+} from "./constants";
 
 const INSTALL_COMMANDS = [
-  "npm i -g @anthropic-ai/claude-code @openai/codex pnpm",
+  "npm i -g @anthropic-ai/claude-code pnpm",
   PLAYWRIGHT_SYSTEM_DEPS_COMMAND,
   "npx playwright install chromium",
 ];
 
-const VERIFY_COMMAND = "claude --version && pnpm --version && npx playwright --version";
+const VERIFY_COMMAND =
+  "claude --version && pnpm --version && npx playwright --version";
 
 const createSnapshot = async (): Promise<void> => {
   console.log("Creating sandbox...");
@@ -39,7 +43,9 @@ const createSnapshot = async (): Promise<void> => {
   console.log("Creating snapshot (this stops the sandbox)...");
   const snapshot = await sandbox.snapshot({ expiration: 0 });
   console.log(`\nSnapshot created: ${snapshot.snapshotId}`);
-  console.log(`\nSet in your environment:\n  SANDBOX_SNAPSHOT_ID=${snapshot.snapshotId}`);
+  console.log(
+    `\nSet in your environment:\n  SANDBOX_SNAPSHOT_ID=${snapshot.snapshotId}`,
+  );
 };
 
 createSnapshot().catch((error) => {

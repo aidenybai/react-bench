@@ -5,7 +5,10 @@ interface FeatureToggleProps {
   "data-testid"?: string;
 }
 
-export const FeatureToggle = ({ children, "data-testid": testId }: FeatureToggleProps) => (
+export const FeatureToggle = ({
+  children,
+  "data-testid": testId,
+}: FeatureToggleProps) => (
   <div data-testid={testId} style={{ padding: "8px" }}>
     {children ?? "FeatureToggle"}
   </div>

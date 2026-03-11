@@ -203,10 +203,34 @@ import { OptionPicker } from "@/components/forms/option-picker";
 import { DropTarget } from "@/components/forms/drop-target";
 import { QueryInput } from "@/components/navigation/query-input";
 
-import { CpuTile, RamTile, DiskTile, NetworkTile, GpuTile } from "@/components/data-display/metric-tiles";
-import { CreateButton, ReadButton, UpdateButton, DeleteButton } from "@/components/actions/crud-buttons";
-import { OnlineIndicator, OfflineIndicator, BusyIndicator, AwayIndicator, DndIndicator } from "@/components/feedback/status-indicators";
-import { HomeIcon, SettingsIcon, ProfileIcon, HelpIcon, LogoutIcon, SearchIcon } from "@/components/navigation/nav-icons";
+import {
+  CpuTile,
+  RamTile,
+  DiskTile,
+  NetworkTile,
+  GpuTile,
+} from "@/components/data-display/metric-tiles";
+import {
+  CreateButton,
+  ReadButton,
+  UpdateButton,
+  DeleteButton,
+} from "@/components/actions/crud-buttons";
+import {
+  OnlineIndicator,
+  OfflineIndicator,
+  BusyIndicator,
+  AwayIndicator,
+  DndIndicator,
+} from "@/components/feedback/status-indicators";
+import {
+  HomeIcon,
+  SettingsIcon,
+  ProfileIcon,
+  HelpIcon,
+  LogoutIcon,
+  SearchIcon,
+} from "@/components/navigation/nav-icons";
 
 import { DynamicIcon } from "@/components/generated/icon-registry";
 import { DynamicLayout } from "@/components/generated/layout-registry";
@@ -242,23 +266,83 @@ import { MentionTag } from "@/components/features/collaboration/mentions/tags/me
 import { ApprovalButton } from "@/components/features/workflows/approvals/actions/approval-button";
 import { ConditionRow } from "@/components/features/workflows/conditions/rows/condition-row";
 
-const SaveAction = createAction({ label: "Save", icon: "💾", testId: "factory-save-action" });
-const DeleteAction = createAction({ label: "Delete", icon: "🗑", testId: "factory-delete-action" });
-const ShareAction = createAction({ label: "Share", icon: "📤", testId: "factory-share-action" });
-const ExportAction = createAction({ label: "Export", icon: "📊", testId: "factory-export-action" });
-const ArchiveAction = createAction({ label: "Archive", icon: "📦", testId: "factory-archive-action" });
+const SaveAction = createAction({
+  label: "Save",
+  icon: "💾",
+  testId: "factory-save-action",
+});
+const DeleteAction = createAction({
+  label: "Delete",
+  icon: "🗑",
+  testId: "factory-delete-action",
+});
+const ShareAction = createAction({
+  label: "Share",
+  icon: "📤",
+  testId: "factory-share-action",
+});
+const ExportAction = createAction({
+  label: "Export",
+  icon: "📊",
+  testId: "factory-export-action",
+});
+const ArchiveAction = createAction({
+  label: "Archive",
+  icon: "📦",
+  testId: "factory-archive-action",
+});
 
-const ConversionDisplay = createDisplay({ title: "Conversion Rate", format: "percent", testId: "factory-conversion-rate" });
-const BounceDisplay = createDisplay({ title: "Bounce Rate", format: "percent", testId: "factory-bounce-rate" });
-const SalesDisplay = createDisplay({ title: "Total Sales", format: "currency", testId: "factory-total-sales" });
-const SessionDisplay = createDisplay({ title: "Avg Session", format: "number", testId: "factory-avg-session" });
-const ErrorDisplay = createDisplay({ title: "Error Count", format: "number", testId: "factory-error-count" });
+const ConversionDisplay = createDisplay({
+  title: "Conversion Rate",
+  format: "percent",
+  testId: "factory-conversion-rate",
+});
+const BounceDisplay = createDisplay({
+  title: "Bounce Rate",
+  format: "percent",
+  testId: "factory-bounce-rate",
+});
+const SalesDisplay = createDisplay({
+  title: "Total Sales",
+  format: "currency",
+  testId: "factory-total-sales",
+});
+const SessionDisplay = createDisplay({
+  title: "Avg Session",
+  format: "number",
+  testId: "factory-avg-session",
+});
+const ErrorDisplay = createDisplay({
+  title: "Error Count",
+  format: "number",
+  testId: "factory-error-count",
+});
 
-const SearchField = createField({ label: "Search", placeholder: "Search...", testId: "factory-search-field" });
-const EmailField = createField({ label: "Email", placeholder: "you@example.com", testId: "factory-email-field" });
-const PhoneField = createField({ label: "Phone", placeholder: "+1 (555) 000-0000", testId: "factory-phone-field" });
-const UrlField = createField({ label: "URL", placeholder: "https://...", testId: "factory-url-field" });
-const NotesField = createField({ label: "Notes", placeholder: "Add notes...", testId: "factory-notes-field" });
+const SearchField = createField({
+  label: "Search",
+  placeholder: "Search...",
+  testId: "factory-search-field",
+});
+const EmailField = createField({
+  label: "Email",
+  placeholder: "you@example.com",
+  testId: "factory-email-field",
+});
+const PhoneField = createField({
+  label: "Phone",
+  placeholder: "+1 (555) 000-0000",
+  testId: "factory-phone-field",
+});
+const UrlField = createField({
+  label: "URL",
+  placeholder: "https://...",
+  testId: "factory-url-field",
+});
+const NotesField = createField({
+  label: "Notes",
+  placeholder: "Add notes...",
+  testId: "factory-notes-field",
+});
 
 const RevenueWidget = createWidget({
   title: "Revenue",
@@ -271,28 +355,91 @@ const UsersWidget = createWidget({
   testId: "factory-users-widget",
 });
 
-const InfoAlert = createAlert({ severity: "info", testId: "factory-info-alert" });
-const WarningAlert = createAlert({ severity: "warning", testId: "factory-warning-alert" });
-const ErrorAlert = createAlert({ severity: "error", testId: "factory-error-alert" });
-const SuccessAlert = createAlert({ severity: "success", testId: "factory-success-alert" });
+const InfoAlert = createAlert({
+  severity: "info",
+  testId: "factory-info-alert",
+});
+const WarningAlert = createAlert({
+  severity: "warning",
+  testId: "factory-warning-alert",
+});
+const ErrorAlert = createAlert({
+  severity: "error",
+  testId: "factory-error-alert",
+});
+const SuccessAlert = createAlert({
+  severity: "success",
+  testId: "factory-success-alert",
+});
 
-const StatusBadge = createBadge({ variant: "status", testId: "factory-status-badge" });
-const PriorityBadge = createBadge({ variant: "priority", testId: "factory-priority-badge" });
-const RoleBadge = createBadge({ variant: "role", testId: "factory-role-badge" });
-const VersionBadge = createBadge({ variant: "version", testId: "factory-version-badge" });
-const EnvBadge = createBadge({ variant: "environment", testId: "factory-env-badge" });
+const StatusBadge = createBadge({
+  variant: "status",
+  testId: "factory-status-badge",
+});
+const PriorityBadge = createBadge({
+  variant: "priority",
+  testId: "factory-priority-badge",
+});
+const RoleBadge = createBadge({
+  variant: "role",
+  testId: "factory-role-badge",
+});
+const VersionBadge = createBadge({
+  variant: "version",
+  testId: "factory-version-badge",
+});
+const EnvBadge = createBadge({
+  variant: "environment",
+  testId: "factory-env-badge",
+});
 
-const UptimeCard = createCard({ title: "Uptime", icon: "⬆", testId: "factory-uptime-card" });
-const LatencyCard = createCard({ title: "Latency", icon: "⏱", testId: "factory-latency-card" });
-const ThroughputCard = createCard({ title: "Throughput", icon: "📈", testId: "factory-throughput-card" });
-const MemoryCard = createCard({ title: "Memory", icon: "💾", testId: "factory-memory-card" });
-const CpuCard = createCard({ title: "CPU", icon: "🔥", testId: "factory-cpu-card" });
-const DiskCard = createCard({ title: "Disk", icon: "💿", testId: "factory-disk-card" });
+const UptimeCard = createCard({
+  title: "Uptime",
+  icon: "⬆",
+  testId: "factory-uptime-card",
+});
+const LatencyCard = createCard({
+  title: "Latency",
+  icon: "⏱",
+  testId: "factory-latency-card",
+});
+const ThroughputCard = createCard({
+  title: "Throughput",
+  icon: "📈",
+  testId: "factory-throughput-card",
+});
+const MemoryCard = createCard({
+  title: "Memory",
+  icon: "💾",
+  testId: "factory-memory-card",
+});
+const CpuCard = createCard({
+  title: "CPU",
+  icon: "🔥",
+  testId: "factory-cpu-card",
+});
+const DiskCard = createCard({
+  title: "Disk",
+  icon: "💿",
+  testId: "factory-disk-card",
+});
 
-const OverviewTab = createTab({ label: "Overview", testId: "factory-overview-tab" });
-const DetailsTab = createTab({ label: "Details", testId: "factory-details-tab" });
-const HistoryTab = createTab({ label: "History", testId: "factory-history-tab" });
-const SettingsTab = createTab({ label: "Settings", testId: "factory-settings-tab" });
+const OverviewTab = createTab({
+  label: "Overview",
+  testId: "factory-overview-tab",
+});
+const DetailsTab = createTab({
+  label: "Details",
+  testId: "factory-details-tab",
+});
+const HistoryTab = createTab({
+  label: "History",
+  testId: "factory-history-tab",
+});
+const SettingsTab = createTab({
+  label: "Settings",
+  testId: "factory-settings-tab",
+});
 const LogsTab = createTab({ label: "Logs", testId: "factory-logs-tab" });
 
 const TrackedCard = withTracking(StyledCard, "tracked-card");
@@ -827,7 +974,9 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Search-Resistant: Generic Names">
         <StyledGrid columns={3}>
-          <SubmitButton data-testid="generic-submit-button">Submit</SubmitButton>
+          <SubmitButton data-testid="generic-submit-button">
+            Submit
+          </SubmitButton>
           <MetricCard data-testid="generic-data-card">1,234</MetricCard>
           <ValidatedInput data-testid="generic-text-input" />
           <RouteLink data-testid="generic-nav-link">Dashboard</RouteLink>
@@ -835,7 +984,9 @@ export function ClientBenchmarks() {
           <ProcessTag data-testid="generic-status-tag">Running</ProcessTag>
           <FeatureToggle data-testid="generic-toggle-switch" />
           <KpiCell data-testid="generic-grid-cell">98.5%</KpiCell>
-          <InterruptDialog data-testid="generic-modal-dialog">Confirm?</InterruptDialog>
+          <InterruptDialog data-testid="generic-modal-dialog">
+            Confirm?
+          </InterruptDialog>
           <SegmentButton data-testid="generic-tab-button">Tab 1</SegmentButton>
           <HoverTip data-testid="generic-hover-tip">Hover info</HoverTip>
           <ContentDivider data-testid="generic-separator" />
@@ -867,14 +1018,30 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Search-Resistant: Wrong Location">
         <StyledGrid columns={3}>
-          <WizardStep label="Step 1" active={true} data-testid="hook-wizard-step" />
+          <WizardStep
+            label="Step 1"
+            active={true}
+            data-testid="hook-wizard-step"
+          />
           <ProgressRing percent={72} data-testid="util-progress-ring" />
           <ColorSwatch color="#6366f1" data-testid="util-color-swatch" />
-          <DiffLine line="const x = 1;" type="added" data-testid="util-diff-line" />
-          <TimelineDot label="Deployed" active data-testid="util-timeline-dot" />
+          <DiffLine
+            line="const x = 1;"
+            type="added"
+            data-testid="util-diff-line"
+          />
+          <TimelineDot
+            label="Deployed"
+            active
+            data-testid="util-timeline-dot"
+          />
           <ThemePreview data-testid="provider-theme-preview" />
           <AuthBadge data-testid="provider-auth-badge" />
-          <PaginationNav current={2} total={10} data-testid="hook-pagination-nav" />
+          <PaginationNav
+            current={2}
+            total={10}
+            data-testid="hook-pagination-nav"
+          />
           <ToastMessage message="Saved!" data-testid="hook-toast-message" />
           <EmptyState message="No items yet" data-testid="util-empty-state" />
           <PrimitiveCard data-testid="misleading-card-in-utils" />
@@ -888,8 +1055,16 @@ export function ClientBenchmarks() {
           <BaseButton data-testid="barrel-base-button">Click</BaseButton>
           <BaseInput label="Name" data-testid="barrel-base-input" />
           <BaseBadge data-testid="barrel-base-badge">New</BaseBadge>
-          <ReceiptLineItem label="Item 1" amount={29.99} data-testid="deep-receipt-line-item" />
-          <ThreadBubble text="Hey there!" sender="Alice" data-testid="deep-thread-bubble" />
+          <ReceiptLineItem
+            label="Item 1"
+            amount={29.99}
+            data-testid="deep-receipt-line-item"
+          />
+          <ThreadBubble
+            text="Hey there!"
+            sender="Alice"
+            data-testid="deep-thread-bubble"
+          />
           <ShippingLabel data-testid="deep-shipping-label" />
           <InvoiceRow data-testid="deep-invoice-row" />
           <PermissionChip data-testid="deep-permission-chip" />
@@ -905,8 +1080,14 @@ export function ClientBenchmarks() {
           <ChurnStatCard data-testid="sibling-churn-stat" />
           <RetentionStatCard data-testid="sibling-retention-stat" />
           <MrrStatCard data-testid="sibling-mrr-stat" />
-          <OverlayBanner message="System update" data-testid="portal-overlay-banner" />
-          <NotificationToast text="Changes saved" data-testid="portal-notification-toast" />
+          <OverlayBanner
+            message="System update"
+            data-testid="portal-overlay-banner"
+          />
+          <NotificationToast
+            text="Changes saved"
+            data-testid="portal-notification-toast"
+          />
         </StyledGrid>
       </StyledSection>
 
@@ -917,7 +1098,11 @@ export function ClientBenchmarks() {
           <DynamicWidget size="large" data-testid="dynamic-large-widget" />
           <IconLabel icon="📧" text="Email" data-testid="common-icon-label" />
           <StatusDot status="online" data-testid="common-status-dot" />
-          <KeyValue label="Version" value="2.1.0" data-testid="common-key-value" />
+          <KeyValue
+            label="Version"
+            value="2.1.0"
+            data-testid="common-key-value"
+          />
         </StyledGrid>
       </StyledSection>
 
@@ -1081,8 +1266,14 @@ export function ClientBenchmarks() {
           <DynamicLayout variant="single" data-testid="dynamic-single-layout" />
           <DynamicLayout variant="two" data-testid="dynamic-two-layout" />
           <DynamicLayout variant="three" data-testid="dynamic-three-layout" />
-          <DynamicLayout variant="sidebar" data-testid="dynamic-sidebar-layout" />
-          <DynamicLayout variant="stacked" data-testid="dynamic-stacked-layout" />
+          <DynamicLayout
+            variant="sidebar"
+            data-testid="dynamic-sidebar-layout"
+          />
+          <DynamicLayout
+            variant="stacked"
+            data-testid="dynamic-stacked-layout"
+          />
         </StyledGrid>
       </StyledSection>
     </div>

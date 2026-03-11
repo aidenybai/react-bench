@@ -61,7 +61,8 @@ const cursorBrowserResolver: Resolver = {
   name: "cursor-browser",
   resolve: (el) => {
     const inspector = (window as any).__CURSOR_BROWSER_INSPECTOR__;
-    if (!inspector) return { filePath: null, componentName: null, found: false };
+    if (!inspector)
+      return { filePath: null, componentName: null, found: false };
     const metadata = inspector.inspectElement(el);
     return {
       filePath: null,

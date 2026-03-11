@@ -11,7 +11,7 @@
     "changeset": "changeset",
     "version": "changeset version",
     "release": "pnpm build && changeset publish",
-    "benchmark": "pnpm --filter @react-bench/benchmark sandbox:run"
+    "benchmark": "pnpm --filter @react-bench/benchmark test"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",

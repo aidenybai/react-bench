@@ -17,6 +17,9 @@ import {
   type AgentResult,
 } from "./resolvers";
 
+// HACK: Claude SDK spawns subprocesses that each add an exit listener; raise limit to match concurrency
+process.setMaxListeners(AGENT_CONCURRENCY + 10);
+
 const HARNESS_INIT_TIMEOUT_MS = 15_000;
 const INIT_SETTLE_MS = 1000;
 const SKELETON_RELOAD_TIMEOUT_MS = 10_000;
@@ -181,6 +184,32 @@ const runAgentPhase = async (
     `  Running ${agentTasks.length} agent tasks (concurrency: ${AGENT_CONCURRENCY})...\n`,
   );
 
+  let completedCount = 0;
+  const totalCount = agentTasks.length;
+  const startTime = performance.now();
+
+  const logProgress = () => {
+    const elapsedSeconds = (performance.now() - startTime) / 1000;
+    const percent = Math.round((completedCount / totalCount) * 100);
+    const filledWidth = Math.round((completedCount / totalCount) * 30);
+    const bar = "█".repeat(filledWidth) + "░".repeat(30 - filledWidth);
+    const tasksPerSecond =
+      completedCount > 0 ? completedCount / elapsedSeconds : 0;
+    const remainingSeconds =
+      tasksPerSecond > 0
+        ? Math.round((totalCount - completedCount) / tasksPerSecond)
+        : 0;
+    const etaDisplay =
+      completedCount > 0
+        ? formatTime(remainingSeconds * 1000)
+        : "estimating...";
+    process.stdout.write(
+      `\r  ${bar} ${percent}% (${completedCount}/${totalCount}) | ${formatTime(elapsedSeconds * 1000)} elapsed | ETA ${etaDisplay}  `,
+    );
+  };
+
+  logProgress();
+
   await pool(
     agentTasks.map(
       (task) => () =>
@@ -188,11 +217,15 @@ const runAgentPhase = async (
           const taskKey = `${collected[task.entryIndex].entry.id}:${task.resolver.name}`;
           agentCompleted[taskKey] = result;
           saveCheckpoint({ browserCollected: collected, agentCompleted });
+          completedCount++;
+          logProgress();
           return result;
         }),
     ),
     AGENT_CONCURRENCY,
   );
+
+  process.stdout.write("\n\n");
 
   for (const [taskKey, result] of Object.entries(agentCompleted)) {
     const [idString, resolverName] = taskKey.split(":");

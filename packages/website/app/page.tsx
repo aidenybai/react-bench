@@ -29,8 +29,8 @@ const Page = () => (
         </div>
       </div>
       <p className="text-sm text-muted-foreground mb-6">
-        Benchmarking how well coding agents can locate React component source
-        files in complex, real-world codebases.
+        Evaluating coding agents on React retrieval tasks in complex,
+        real-world codebases.
       </p>
 
       <div className="space-y-6">

@@ -48,73 +48,21 @@ const Page = () => (
         </TabsList>
 
         <TabsContent value="retrieval" className="mt-6 space-y-6">
-          <div className="space-y-3 text-sm text-muted-foreground">
-            <p>
-              Given a natural-language description of a UI element, each
-              resolver must identify the correct React source file across{" "}
-              {benchData.testCases.length} test cases spanning 14 pattern
-              categories:
-            </p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <a
-                  href="https://github.com/aidenybai/react-bench/tree/main/packages/benchmark/components/atoms"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={LINK_CLASS}
-                >
-                  Plain components
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/aidenybai/react-bench/tree/main/packages/benchmark/components/common"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={LINK_CLASS}
-                >
-                  HOCs, portals, compound
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/aidenybai/react-bench/tree/main/packages/benchmark/components/features"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={LINK_CLASS}
-                >
-                  Nested HOCs + Radix + Motion
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/aidenybai/react-bench/tree/main/packages/benchmark/components/challenge"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={LINK_CLASS}
-                >
-                  Recursive trees, triple portals, factories
-                </a>
-              </li>
-            </ul>
-            <p>
-              All runs use{" "}
-              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">
-                claude-sonnet-4-6
-              </code>{" "}
-              with identical system prompts and no prior context. Last
-              benchmarked: <em>{benchData.lastBenchmarked}</em>.{" "}
-              <a
-                href="https://github.com/aidenybai/react-bench"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={LINK_CLASS}
-              >
-                Source &amp; methodology
-              </a>
-              .
-            </p>
-          </div>
+          <p className="text-sm text-muted-foreground">
+            {benchData.testCases.length} test cases across 14 pattern categories
+            inspired by real-world React/Next.js projects. Each resolver must
+            identify the correct source file from a natural-language description.
+            Last benchmarked: <em>{benchData.lastBenchmarked}</em>.{" "}
+            <a
+              href="https://github.com/aidenybai/react-bench"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={LINK_CLASS}
+            >
+              Source &amp; methodology
+            </a>
+            .
+          </p>
 
           <Suspense>
             <ResultsSection />

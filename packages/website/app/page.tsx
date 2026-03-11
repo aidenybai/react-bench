@@ -38,7 +38,11 @@ const Page = () => (
           {benchData.testCases.length} test cases spanning 14 pattern categories
           (HOC stacking, compound components, barrel re-exports, dynamic imports,
           render props, name collisions, and more), each inspired by patterns in
-          open-source projects like Cal.com, Excalidraw, LobeChat, and Plane.
+          open-source projects like{" "}
+          <a href="https://github.com/calcom/cal.com" target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>Cal.com</a>,{" "}
+          <a href="https://github.com/excalidraw/excalidraw" target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>Excalidraw</a>,{" "}
+          <a href="https://github.com/lobehub/lobe-chat" target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>LobeChat</a>, and{" "}
+          <a href="https://github.com/makeplane/plane" target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>Plane</a>.
           Given a natural-language description of a UI element, each resolver
           must identify the correct source file. Last benchmarked:{" "}
           <em>{benchData.lastBenchmarked}</em>.{" "}

@@ -4,7 +4,7 @@ Evaluating coding agents on React component source retrieval.
 
 **[View results](https://react-bench.com)**
 
-## What This Is
+## About
 
 React Bench is a benchmark harness that measures how accurately coding agents can identify the source file of a rendered React component, given a natural-language description. The harness is a real Next.js app with 298 test cases spanning 14 pattern categories, each inspired by component structures found in popular open-source React/Next.js projects.
 

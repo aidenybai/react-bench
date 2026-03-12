@@ -6,12 +6,14 @@ const TREATMENT_COLORS: Record<string, string> = {
   standalone: "oklch(0.6 0 0)",
   "react-grab": "oklch(0.7 0.25 330)",
   agentation: "#3b83f6",
+  "agentation-improved": "#3b83f6",
   "cursor-browser": "#f64e00",
 };
 
 const TREATMENT_LABELS: Record<string, string> = {
   standalone: "Model",
   agentation: "Agentation",
+  "agentation-improved": "Agentation (Improved)",
   "react-grab": "React Grab",
   "cursor-browser": "Cursor (Browser)",
 };
@@ -31,6 +33,7 @@ const MODEL_RESOLVER_MAP: Record<string, Record<string, string>> = {
   claude: {
     standalone: "claude-code",
     agentation: "agentation+claude",
+    "agentation-improved": "agentation-improved+claude",
     "react-grab": "react-grab+claude",
     "cursor-browser": "cursor-browser+claude",
   },

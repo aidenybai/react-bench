@@ -1,9 +1,10 @@
+import { hashTestId } from "@/lib/hash-test-id";
 import { ClientIsland } from "./client-island";
 
 export const ServerWithClientIsland = () => {
   return (
     <div
-      data-testid="server-with-client-island"
+      data-testid={hashTestId("server-with-client-island")}
       style={{
         padding: 16,
         borderRadius: 8,

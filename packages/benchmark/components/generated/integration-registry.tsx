@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 interface IntegrationMeta {
   slug: string;
@@ -111,7 +112,7 @@ export const IntegrationCard = ({
 
   return (
     <div
-      data-testid="generated-integration-card"
+      data-testid={hashTestId("generated-integration-card")}
       style={{
         display: "flex",
         alignItems: "center",

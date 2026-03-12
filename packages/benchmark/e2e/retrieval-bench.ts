@@ -37,7 +37,6 @@ const buildPrompt = (entry: TestEntry): string =>
   [
     `Find the source file for this React component in the Next.js app.`,
     `Description: ${entry.description}`,
-    `DOM data-testid="${entry.testId}"`,
     `Return the relative file path (e.g. "components/foo/bar.tsx") and the component name. Read-only - do not edit.`,
   ].join("\n");
 

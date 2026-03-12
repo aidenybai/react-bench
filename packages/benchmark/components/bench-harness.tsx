@@ -265,7 +265,11 @@ const createBenchAPI = (): BenchAPI => {
   return api;
 };
 
-const buildAnnotation = (api: any, element: HTMLElement, selectedText: string) => {
+const buildAnnotation = (
+  api: any,
+  element: HTMLElement,
+  selectedText: string,
+) => {
   const identity = api.identifyElementWithReact(element);
   const rect = element.getBoundingClientRect();
   return {
@@ -281,7 +285,12 @@ const buildAnnotation = (api: any, element: HTMLElement, selectedText: string) =
     computedStyles: api.getForensicComputedStyles?.(element),
     computedStylesObj: api.getDetailedComputedStyles?.(element),
     selectedText: selectedText || undefined,
-    boundingBox: { x: rect.left, y: rect.top + window.scrollY, width: rect.width, height: rect.height },
+    boundingBox: {
+      x: rect.left,
+      y: rect.top + window.scrollY,
+      width: rect.width,
+      height: rect.height,
+    },
     comment: "identify this component",
     x: 50,
     y: rect.top + window.scrollY,

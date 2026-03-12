@@ -1,4 +1,5 @@
 import type { Page } from "@playwright/test";
+import { hashTestId } from "../lib/hash-test-id";
 
 const INTERACTION_SETTLE_MS = 500;
 const MODAL_SETTLE_MS = 800;
@@ -10,12 +11,13 @@ const clickTriggerByTestId = async (
   page: Page,
   testId: string,
 ): Promise<void> => {
+  const hashedId = hashTestId(testId);
   await page.evaluate((tid) => {
     const trigger = document.querySelector(
       `[data-testid="${tid}"]`,
     ) as HTMLElement | null;
     trigger?.click();
-  }, testId);
+  }, hashedId);
   await page.waitForTimeout(INTERACTION_SETTLE_MS);
 };
 
@@ -23,6 +25,7 @@ const pointerClickTriggerByTestId = async (
   page: Page,
   testId: string,
 ): Promise<void> => {
+  const hashedId = hashTestId(testId);
   await page.evaluate((tid) => {
     const trigger = document.querySelector(
       `[data-testid="${tid}"]`,
@@ -39,7 +42,7 @@ const pointerClickTriggerByTestId = async (
     trigger.dispatchEvent(
       new MouseEvent("click", { bubbles: true, cancelable: true }),
     );
-  }, testId);
+  }, hashedId);
   await page.waitForTimeout(INTERACTION_SETTLE_MS);
 };
 
@@ -69,11 +72,10 @@ const NEEDS_INTERACTION: Record<string, (page: Page) => Promise<void>> = {
     clickTriggerByTestId(page, "nested-dialog-trigger"),
 
   "recursive-menu-deepest": async (page) => {
+    const hashedMenuId = hashTestId("recursive-menu");
     for (let round = 0; round < MAX_MENU_EXPAND_ROUNDS; round++) {
-      const didExpand = await page.evaluate(() => {
-        const container = document.querySelector(
-          '[data-testid="recursive-menu"]',
-        );
+      const didExpand = await page.evaluate((menuId) => {
+        const container = document.querySelector(`[data-testid="${menuId}"]`);
         if (!container) return false;
         let expanded = false;
         for (const button of container.querySelectorAll("button")) {
@@ -85,7 +87,7 @@ const NEEDS_INTERACTION: Record<string, (page: Page) => Promise<void>> = {
           }
         }
         return expanded;
-      });
+      }, hashedMenuId);
       if (!didExpand) break;
       await page.waitForTimeout(MENU_EXPAND_MS);
     }

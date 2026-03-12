@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 export function InlineMotionHybrid({
   "data-testid": testId,
@@ -48,7 +49,7 @@ export function InlineMotionHybrid({
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        data-testid="inline-motion-button"
+        data-testid={hashTestId("inline-motion-button")}
         style={{
           marginTop: 12,
           padding: "8px 16px",

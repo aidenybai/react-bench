@@ -3,6 +3,7 @@ import { writeFileSync } from "fs";
 import { join } from "path";
 import { TEST_MANIFEST } from "./test-cases";
 import { NEEDS_INTERACTION } from "./interactions";
+import { hashTestId } from "../lib/hash-test-id";
 import { collectElementContext } from "./utils/collect-element-context";
 import { isCorrectFile } from "./utils/is-correct-file";
 import { normalizeFilePath } from "./utils/normalize-file-path";
@@ -114,8 +115,10 @@ const collectBrowserPhase = async (
       if (BENCH_INTERACTIONS[entry.testId])
         await BENCH_INTERACTIONS[entry.testId](page);
 
+      const hashedTestId = hashTestId(entry.testId);
+
       const isVisible = await page
-        .locator(`[data-testid="${entry.testId}"]`)
+        .locator(`[data-testid="${hashedTestId}"]`)
         .first()
         .isVisible()
         .catch(() => false);
@@ -132,10 +135,10 @@ const collectBrowserPhase = async (
 
       const browserResults = (await page.evaluate(
         async (tid: string) => (window as any).__BENCH__.resolveAll(tid),
-        entry.testId,
+        hashedTestId,
       )) as BrowserCollected["browserResults"];
 
-      const elementContext = await collectElementContext(page, entry.testId);
+      const elementContext = await collectElementContext(page, hashedTestId);
       collected.push({ entry, browserResults, elementContext });
     } catch (caughtError) {
       collected.push({

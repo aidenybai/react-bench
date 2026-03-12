@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
+import { hashTestId } from "@/lib/hash-test-id";
 import styles from "./style-clash.module.css";
 
 const StyledOuter = styled.div`
@@ -44,7 +45,7 @@ export function StyleClash({
           <StyledBadge
             className="px-2 py-0.5 rounded-full text-xs bg-purple-100 text-purple-800"
             style={{ letterSpacing: "0.02em" }}
-            data-testid="style-clash-badge"
+            data-testid={hashTestId("style-clash-badge")}
           >
             Mixed
           </StyledBadge>
@@ -57,7 +58,7 @@ export function StyleClash({
         </div>
 
         <button
-          data-testid="style-clash-button"
+          data-testid={hashTestId("style-clash-button")}
           style={{
             padding: "8px 16px",
             borderRadius: 8,

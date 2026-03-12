@@ -1,10 +1,11 @@
+import { hashTestId } from "@/lib/hash-test-id";
 import { ServerStats } from "./server-stats";
 import { ServerFeatureList } from "./server-feature-list";
 
 export const ServerHero = () => {
   return (
     <section
-      data-testid="server-hero"
+      data-testid={hashTestId("server-hero")}
       style={{
         padding: 24,
         borderRadius: 12,

@@ -1,5 +1,6 @@
 "use client";
 import React, { Fragment, memo, forwardRef } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 import styled from "styled-components";
 import { withTracking } from "@/components/hoc/with-tracking";
 import { withErrorBoundary } from "@/components/hoc/with-error-boundary";
@@ -23,14 +24,14 @@ function IdentityButton({ "data-testid": testId }: { "data-testid"?: string }) {
 }
 
 function Depth1() {
-  return <IdentityButton data-testid="identity-depth-1" />;
+  return <IdentityButton data-testid={hashTestId("identity-depth-1")} />;
 }
 
 function Depth3() {
   return (
     <Fragment>
       <Fragment>
-        <IdentityButton data-testid="identity-depth-3" />
+        <IdentityButton data-testid={hashTestId("identity-depth-3")} />
       </Fragment>
     </Fragment>
   );
@@ -41,7 +42,7 @@ const Depth5Inner = memo(function Depth5Inner() {
     <Fragment>
       <Fragment>
         <Fragment>
-          <IdentityButton data-testid="identity-depth-5" />
+          <IdentityButton data-testid={hashTestId("identity-depth-5")} />
         </Fragment>
       </Fragment>
     </Fragment>
@@ -54,7 +55,7 @@ function Depth5() {
 const Depth7Core = memo(function Depth7Core() {
   return (
     <Fragment>
-      <IdentityButton data-testid="identity-depth-7" />
+      <IdentityButton data-testid={hashTestId("identity-depth-7")} />
     </Fragment>
   );
 });
@@ -74,7 +75,7 @@ const Depth7 = withTracking(Depth7Inner, "identity-7");
 const Depth9Core = memo(function Depth9Core() {
   return (
     <Fragment>
-      <IdentityButton data-testid="identity-depth-9" />
+      <IdentityButton data-testid={hashTestId("identity-depth-9")} />
     </Fragment>
   );
 });
@@ -96,7 +97,7 @@ const Depth9 = withErrorBoundary(withTracking(Depth9Inner, "identity-9"));
 const Depth11Core = memo(function Depth11Core() {
   return (
     <Fragment>
-      <IdentityButton data-testid="identity-depth-11" />
+      <IdentityButton data-testid={hashTestId("identity-depth-11")} />
     </Fragment>
   );
 });

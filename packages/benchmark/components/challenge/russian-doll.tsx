@@ -2,6 +2,7 @@
 import React, { forwardRef, memo } from "react";
 import { motion } from "motion/react";
 import styled from "styled-components";
+import { hashTestId } from "@/lib/hash-test-id";
 import { withTracking } from "@/components/hoc/with-tracking";
 import { withErrorBoundary } from "@/components/hoc/with-error-boundary";
 import { withPermissions } from "@/components/hoc/with-permissions";
@@ -55,5 +56,5 @@ const Layer14 = withPermissions(Layer13, "root");
 const RussianDollWrapped = withErrorBoundary(Layer14);
 
 export function RussianDoll() {
-  return <RussianDollWrapped data-testid="russian-doll-button" />;
+  return <RussianDollWrapped data-testid={hashTestId("russian-doll-button")} />;
 }

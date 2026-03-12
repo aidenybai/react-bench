@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 interface ConfirmBookingButtonProps {
   bookingId: string;
@@ -31,7 +32,7 @@ export const ConfirmBookingButton = ({
 
   return (
     <button
-      data-testid="deep-confirm-booking"
+      data-testid={hashTestId("deep-confirm-booking")}
       onClick={handleClick}
       disabled={disabled || loading || confirmed}
       style={{

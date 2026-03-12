@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 import { StyledCard } from "@/components/styled/styled-card";
 import { StyledButton } from "@/components/styled/styled-button";
@@ -347,178 +348,181 @@ import { DeploymentEnvSecret } from "@/components/features/deployments/config/en
 const SaveAction = createAction({
   label: "Save",
   icon: "💾",
-  testId: "factory-save-action",
+  testId: hashTestId("factory-save-action"),
 });
 const DeleteAction = createAction({
   label: "Delete",
   icon: "🗑",
-  testId: "factory-delete-action",
+  testId: hashTestId("factory-delete-action"),
 });
 const ShareAction = createAction({
   label: "Share",
   icon: "📤",
-  testId: "factory-share-action",
+  testId: hashTestId("factory-share-action"),
 });
 const ExportAction = createAction({
   label: "Export",
   icon: "📊",
-  testId: "factory-export-action",
+  testId: hashTestId("factory-export-action"),
 });
 const ArchiveAction = createAction({
   label: "Archive",
   icon: "📦",
-  testId: "factory-archive-action",
+  testId: hashTestId("factory-archive-action"),
 });
 
 const ConversionDisplay = createDisplay({
   title: "Conversion Rate",
   format: "percent",
-  testId: "factory-conversion-rate",
+  testId: hashTestId("factory-conversion-rate"),
 });
 const BounceDisplay = createDisplay({
   title: "Bounce Rate",
   format: "percent",
-  testId: "factory-bounce-rate",
+  testId: hashTestId("factory-bounce-rate"),
 });
 const SalesDisplay = createDisplay({
   title: "Total Sales",
   format: "currency",
-  testId: "factory-total-sales",
+  testId: hashTestId("factory-total-sales"),
 });
 const SessionDisplay = createDisplay({
   title: "Avg Session",
   format: "number",
-  testId: "factory-avg-session",
+  testId: hashTestId("factory-avg-session"),
 });
 const ErrorDisplay = createDisplay({
   title: "Error Count",
   format: "number",
-  testId: "factory-error-count",
+  testId: hashTestId("factory-error-count"),
 });
 
 const SearchField = createField({
   label: "Search",
   placeholder: "Search...",
-  testId: "factory-search-field",
+  testId: hashTestId("factory-search-field"),
 });
 const EmailField = createField({
   label: "Email",
   placeholder: "you@example.com",
-  testId: "factory-email-field",
+  testId: hashTestId("factory-email-field"),
 });
 const PhoneField = createField({
   label: "Phone",
   placeholder: "+1 (555) 000-0000",
-  testId: "factory-phone-field",
+  testId: hashTestId("factory-phone-field"),
 });
 const UrlField = createField({
   label: "URL",
   placeholder: "https://...",
-  testId: "factory-url-field",
+  testId: hashTestId("factory-url-field"),
 });
 const NotesField = createField({
   label: "Notes",
   placeholder: "Add notes...",
-  testId: "factory-notes-field",
+  testId: hashTestId("factory-notes-field"),
 });
 
 const RevenueWidget = createWidget({
   title: "Revenue",
   icon: "$",
-  testId: "factory-revenue-widget",
+  testId: hashTestId("factory-revenue-widget"),
 });
 const UsersWidget = createWidget({
   title: "Active Users",
   icon: "U",
-  testId: "factory-users-widget",
+  testId: hashTestId("factory-users-widget"),
 });
 
 const InfoAlert = createAlert({
   severity: "info",
-  testId: "factory-info-alert",
+  testId: hashTestId("factory-info-alert"),
 });
 const WarningAlert = createAlert({
   severity: "warning",
-  testId: "factory-warning-alert",
+  testId: hashTestId("factory-warning-alert"),
 });
 const ErrorAlert = createAlert({
   severity: "error",
-  testId: "factory-error-alert",
+  testId: hashTestId("factory-error-alert"),
 });
 const SuccessAlert = createAlert({
   severity: "success",
-  testId: "factory-success-alert",
+  testId: hashTestId("factory-success-alert"),
 });
 
 const StatusBadge = createBadge({
   variant: "status",
-  testId: "factory-status-badge",
+  testId: hashTestId("factory-status-badge"),
 });
 const PriorityBadge = createBadge({
   variant: "priority",
-  testId: "factory-priority-badge",
+  testId: hashTestId("factory-priority-badge"),
 });
 const RoleBadge = createBadge({
   variant: "role",
-  testId: "factory-role-badge",
+  testId: hashTestId("factory-role-badge"),
 });
 const VersionBadge = createBadge({
   variant: "version",
-  testId: "factory-version-badge",
+  testId: hashTestId("factory-version-badge"),
 });
 const EnvBadge = createBadge({
   variant: "environment",
-  testId: "factory-env-badge",
+  testId: hashTestId("factory-env-badge"),
 });
 
 const UptimeCard = createCard({
   title: "Uptime",
   icon: "⬆",
-  testId: "factory-uptime-card",
+  testId: hashTestId("factory-uptime-card"),
 });
 const LatencyCard = createCard({
   title: "Latency",
   icon: "⏱",
-  testId: "factory-latency-card",
+  testId: hashTestId("factory-latency-card"),
 });
 const ThroughputCard = createCard({
   title: "Throughput",
   icon: "📈",
-  testId: "factory-throughput-card",
+  testId: hashTestId("factory-throughput-card"),
 });
 const MemoryCard = createCard({
   title: "Memory",
   icon: "💾",
-  testId: "factory-memory-card",
+  testId: hashTestId("factory-memory-card"),
 });
 const CpuCard = createCard({
   title: "CPU",
   icon: "🔥",
-  testId: "factory-cpu-card",
+  testId: hashTestId("factory-cpu-card"),
 });
 const DiskCard = createCard({
   title: "Disk",
   icon: "💿",
-  testId: "factory-disk-card",
+  testId: hashTestId("factory-disk-card"),
 });
 
 const OverviewTab = createTab({
   label: "Overview",
-  testId: "factory-overview-tab",
+  testId: hashTestId("factory-overview-tab"),
 });
 const DetailsTab = createTab({
   label: "Details",
-  testId: "factory-details-tab",
+  testId: hashTestId("factory-details-tab"),
 });
 const HistoryTab = createTab({
   label: "History",
-  testId: "factory-history-tab",
+  testId: hashTestId("factory-history-tab"),
 });
 const SettingsTab = createTab({
   label: "Settings",
-  testId: "factory-settings-tab",
+  testId: hashTestId("factory-settings-tab"),
 });
-const LogsTab = createTab({ label: "Logs", testId: "factory-logs-tab" });
+const LogsTab = createTab({
+  label: "Logs",
+  testId: hashTestId("factory-logs-tab"),
+});
 
 const TrackedCard = withTracking(StyledCard, "tracked-card");
 const MemoForwardRefButton = withTooltip(
@@ -542,28 +546,33 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Easy: Baselines">
         <StyledGrid columns={3}>
-          <StyledCard title="Simple Card" data-testid="plain-styled-card">
+          <StyledCard
+            title="Simple Card"
+            data-testid={hashTestId("plain-styled-card")}
+          >
             A plain styled card with no wrapping complexity.
           </StyledCard>
 
           <div>
-            <StyledButton data-testid="plain-styled-button">
+            <StyledButton data-testid={hashTestId("plain-styled-button")}>
               Simple Button
             </StyledButton>
           </div>
 
           <div>
-            <StyledBadge data-testid="plain-styled-badge">New</StyledBadge>
+            <StyledBadge data-testid={hashTestId("plain-styled-badge")}>
+              New
+            </StyledBadge>
           </div>
 
           <RadixTabs
-            data-testid="plain-radix-tabs"
+            data-testid={hashTestId("plain-radix-tabs")}
             tabs={[
               {
                 value: "tab1",
                 label: "Tab 1",
                 content: <div>Tab 1 content</div>,
-                testId: "radix-tabs-trigger",
+                testId: hashTestId("radix-tabs-trigger"),
               },
               {
                 value: "tab2",
@@ -573,49 +582,63 @@ export function ClientBenchmarks() {
             ]}
           />
 
-          <AnimatedCard data-testid="plain-animated-card">
+          <AnimatedCard data-testid={hashTestId("plain-animated-card")}>
             Simple animated card
           </AnimatedCard>
 
-          <div data-testid="provider-child">
+          <div data-testid={hashTestId("provider-child")}>
             Content rendered inside 6 providers
           </div>
 
-          <TwCard title="Tailwind Card" data-testid="plain-tw-card">
+          <TwCard
+            title="Tailwind Card"
+            data-testid={hashTestId("plain-tw-card")}
+          >
             Pure Tailwind utility classes, no other styling.
           </TwCard>
 
           <div>
-            <TwButton data-testid="plain-tw-button">Tailwind Button</TwButton>
+            <TwButton data-testid={hashTestId("plain-tw-button")}>
+              Tailwind Button
+            </TwButton>
           </div>
 
           <div>
-            <TwBadge data-testid="plain-tw-badge" color="blue">
+            <TwBadge data-testid={hashTestId("plain-tw-badge")} color="blue">
               Tailwind
             </TwBadge>
           </div>
 
-          <ModuleCard title="Module Card" data-testid="plain-module-card">
+          <ModuleCard
+            title="Module Card"
+            data-testid={hashTestId("plain-module-card")}
+          >
             CSS Modules scoped styles.
           </ModuleCard>
 
-          <InlineCard title="Inline Card" data-testid="plain-inline-card">
+          <InlineCard
+            title="Inline Card"
+            data-testid={hashTestId("plain-inline-card")}
+          >
             Pure inline React styles, zero class names.
           </InlineCard>
 
-          <ShadcnProfileCard data-testid="shadcn-profile-card" />
+          <ShadcnProfileCard data-testid={hashTestId("shadcn-profile-card")} />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Medium: Moderate Nesting">
         <StyledGrid columns={2}>
-          <TrackedCard title="Tracked Card" data-testid="tracked-styled-card">
+          <TrackedCard
+            title="Tracked Card"
+            data-testid={hashTestId("tracked-styled-card")}
+          >
             Card wrapped in withTracking HOC
           </TrackedCard>
 
           <div>
             <MemoForwardRefButton
-              data-testid="memo-forwardref-button"
+              data-testid={hashTestId("memo-forwardref-button")}
               variant="secondary"
             >
               Memo+Ref Button
@@ -626,33 +649,33 @@ export function ClientBenchmarks() {
             triggerLabel="Open Dialog"
             title="Benchmark Dialog"
             description="This dialog renders via a portal"
-            data-testid="radix-dialog-trigger"
+            data-testid={hashTestId("radix-dialog-trigger")}
           >
             <p>Dialog content here</p>
           </RadixDialog>
 
           <RadixDropdown
             triggerLabel="Actions"
-            data-testid="radix-dropdown-trigger"
+            data-testid={hashTestId("radix-dropdown-trigger")}
             items={[
-              { label: "Edit", testId: "radix-dropdown-item" },
+              { label: "Edit", testId: hashTestId("radix-dropdown-item") },
               { label: "Delete" },
               { label: "Share" },
             ]}
           />
 
           <RadixAccordion
-            data-testid="radix-accordion"
+            data-testid={hashTestId("radix-accordion")}
             items={[
               {
                 value: "item1",
                 title: "Section 1",
                 content: (
-                  <div data-testid="radix-accordion-content">
+                  <div data-testid={hashTestId("radix-accordion-content")}>
                     Accordion content panel
                   </div>
                 ),
-                testId: "radix-accordion-trigger",
+                testId: hashTestId("radix-accordion-trigger"),
               },
               {
                 value: "item2",
@@ -663,13 +686,13 @@ export function ClientBenchmarks() {
           />
 
           <AnimatedList
-            data-testid="animated-list"
+            data-testid={hashTestId("animated-list")}
             items={[
               { id: "1", content: "First item" },
               {
                 id: "2",
                 content: "Second item",
-                testId: "animated-list-item",
+                testId: hashTestId("animated-list-item"),
               },
               { id: "3", content: "Third item" },
             ]}
@@ -677,23 +700,34 @@ export function ClientBenchmarks() {
 
           <RadixPopover
             triggerLabel="Open Popover"
-            data-testid="radix-popover-trigger"
+            data-testid={hashTestId("radix-popover-trigger")}
           >
-            <div data-testid="radix-popover-content">Popover content here</div>
+            <div data-testid={hashTestId("radix-popover-content")}>
+              Popover content here
+            </div>
           </RadixPopover>
 
           <FragmentTree>
-            <StyledAvatar initials="AB" data-testid="fragment-tree-avatar" />
+            <StyledAvatar
+              initials="AB"
+              data-testid={hashTestId("fragment-tree-avatar")}
+            />
           </FragmentTree>
 
-          <SuspenseLazyLoader data-testid="suspense-lazy-content" />
+          <SuspenseLazyLoader
+            data-testid={hashTestId("suspense-lazy-content")}
+          />
 
           <StaggerGrid
-            data-testid="stagger-grid"
+            data-testid={hashTestId("stagger-grid")}
             columns={3}
             items={[
               { id: "g1", content: "Grid 1" },
-              { id: "g2", content: "Grid 2", testId: "stagger-grid-child" },
+              {
+                id: "g2",
+                content: "Grid 2",
+                testId: hashTestId("stagger-grid-child"),
+              },
               { id: "g3", content: "Grid 3" },
               { id: "g4", content: "Grid 4" },
               { id: "g5", content: "Grid 5" },
@@ -707,7 +741,7 @@ export function ClientBenchmarks() {
                 value: "panel1",
                 label: "Panel A",
                 content: (
-                  <div data-testid="radix-tabs-panel-content">
+                  <div data-testid={hashTestId("radix-tabs-panel-content")}>
                     Tab panel content
                   </div>
                 ),
@@ -726,20 +760,20 @@ export function ClientBenchmarks() {
                 <StyledDataCell
                   label="Revenue"
                   sub="Q4 2025"
-                  data-testid="styled-data-cell"
+                  data-testid={hashTestId("styled-data-cell")}
                 />
                 <StyledDataCell label="$1.2M" sub="+12%" />
               </tr>
             </tbody>
           </table>
 
-          <TwDashboard data-testid="tw-dashboard" />
-          <TwNav data-testid="tw-nav" />
+          <TwDashboard data-testid={hashTestId("tw-dashboard")} />
+          <TwNav data-testid={hashTestId("tw-nav")} />
 
-          <ModuleTable data-testid="module-table" />
-          <ModuleNav data-testid="module-nav" />
+          <ModuleTable data-testid={hashTestId("module-table")} />
+          <ModuleNav data-testid={hashTestId("module-nav")} />
           <ModuleAccordion
-            data-testid="module-accordion"
+            data-testid={hashTestId("module-accordion")}
             items={[
               {
                 id: "ma1",
@@ -760,7 +794,7 @@ export function ClientBenchmarks() {
           />
 
           <InlineList
-            data-testid="inline-list"
+            data-testid={hashTestId("inline-list")}
             items={[
               {
                 id: "1",
@@ -778,8 +812,8 @@ export function ClientBenchmarks() {
             ]}
           />
 
-          <ShadcnForm data-testid="shadcn-form" />
-          <ShadcnDataDisplay data-testid="shadcn-data-display" />
+          <ShadcnForm data-testid={hashTestId("shadcn-form")} />
+          <ShadcnDataDisplay data-testid={hashTestId("shadcn-data-display")} />
         </StyledGrid>
       </StyledSection>
 
@@ -789,21 +823,30 @@ export function ClientBenchmarks() {
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Recursive Tree (depth=8, 256 leaves)
             </h3>
-            <RecursiveTree depth={8} data-testid="recursive-tree" />
+            <RecursiveTree
+              depth={8}
+              data-testid={hashTestId("recursive-tree")}
+            />
           </div>
 
           <div>
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Recursive Menu (10 levels)
             </h3>
-            <RecursiveMenu depth={10} data-testid="recursive-menu" />
+            <RecursiveMenu
+              depth={10}
+              data-testid={hashTestId("recursive-menu")}
+            />
           </div>
 
           <div>
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Fractal Layout
             </h3>
-            <FractalLayout depth={4} data-testid="fractal-layout" />
+            <FractalLayout
+              depth={4}
+              data-testid={hashTestId("fractal-layout")}
+            />
           </div>
 
           <div>
@@ -812,7 +855,9 @@ export function ClientBenchmarks() {
             </h3>
             <MemoWrapper>
               <ForwardRefWrapper>
-                <AnimatedCard data-testid="hoc-motion-styled-card">
+                <AnimatedCard
+                  data-testid={hashTestId("hoc-motion-styled-card")}
+                >
                   HOC-wrapped motion card inside styled layout
                 </AnimatedCard>
               </ForwardRefWrapper>
@@ -824,7 +869,7 @@ export function ClientBenchmarks() {
               Tooltip + HOC + Styled
             </h3>
             <MemoForwardRefButton
-              data-testid="tooltip-hoc-styled-button"
+              data-testid={hashTestId("tooltip-hoc-styled-button")}
               variant="ghost"
             >
               Hover for tooltip
@@ -850,7 +895,7 @@ export function ClientBenchmarks() {
             <AnimatedModal
               open={modalOpen}
               onClose={() => setModalOpen(false)}
-              data-testid="portal-motion-modal"
+              data-testid={hashTestId("portal-motion-modal")}
             >
               <h3 style={{ margin: 0, fontSize: 18, fontWeight: 600 }}>
                 Motion Modal
@@ -865,7 +910,10 @@ export function ClientBenchmarks() {
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Dynamic Renderer
             </h3>
-            <DynamicRenderer type="success" data-testid="dynamic-renderer" />
+            <DynamicRenderer
+              type="success"
+              data-testid={hashTestId("dynamic-renderer")}
+            />
           </div>
 
           <div>
@@ -875,7 +923,7 @@ export function ClientBenchmarks() {
             <ConditionalTree
               seed="benchmark"
               depth={6}
-              data-testid="conditional-tree"
+              data-testid={hashTestId("conditional-tree")}
             />
           </div>
 
@@ -884,7 +932,7 @@ export function ClientBenchmarks() {
               Animated Tabs
             </h3>
             <AnimatedTabs
-              data-testid="animated-tabs"
+              data-testid={hashTestId("animated-tabs")}
               tabs={[
                 {
                   id: "at1",
@@ -912,10 +960,12 @@ export function ClientBenchmarks() {
             <RadixDialog
               triggerLabel="Open Nested"
               title="Nested Dialog"
-              data-testid="nested-dialog-trigger"
+              data-testid={hashTestId("nested-dialog-trigger")}
             >
               <AnimatedCard>
-                <StyledButton data-testid="button-in-dialog-in-motion">
+                <StyledButton
+                  data-testid={hashTestId("button-in-dialog-in-motion")}
+                >
                   Deep Button
                 </StyledButton>
               </AnimatedCard>
@@ -926,28 +976,30 @@ export function ClientBenchmarks() {
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Style Clash (4 methods on 1 element)
             </h3>
-            <StyleClash data-testid="style-clash" />
+            <StyleClash data-testid={hashTestId("style-clash")} />
           </div>
 
           <div>
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Tailwind + styled-components Hybrid
             </h3>
-            <TwStyledHybrid data-testid="tw-styled-hybrid" />
+            <TwStyledHybrid data-testid={hashTestId("tw-styled-hybrid")} />
           </div>
 
           <div>
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               CSS Modules + Tailwind Hybrid
             </h3>
-            <ModuleTwHybrid data-testid="module-tw-hybrid" />
+            <ModuleTwHybrid data-testid={hashTestId("module-tw-hybrid")} />
           </div>
 
           <div>
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Inline + Motion Hybrid
             </h3>
-            <InlineMotionHybrid data-testid="inline-motion-hybrid" />
+            <InlineMotionHybrid
+              data-testid={hashTestId("inline-motion-hybrid")}
+            />
           </div>
         </StyledGrid>
       </StyledSection>
@@ -979,7 +1031,7 @@ export function ClientBenchmarks() {
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Animation Maze
             </h3>
-            <AnimationMaze data-testid="animation-maze-content" />
+            <AnimationMaze data-testid={hashTestId("animation-maze-content")} />
           </div>
 
           <div>
@@ -993,7 +1045,7 @@ export function ClientBenchmarks() {
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
               Shapeshifter (changes tree on render)
             </h3>
-            <Shapeshifter data-testid="shapeshifter" />
+            <Shapeshifter data-testid={hashTestId("shapeshifter")} />
           </div>
         </div>
       </StyledSection>
@@ -1052,25 +1104,39 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Search-Resistant: Generic Names">
         <StyledGrid columns={3}>
-          <SubmitButton data-testid="generic-submit-button">
+          <SubmitButton data-testid={hashTestId("generic-submit-button")}>
             Submit
           </SubmitButton>
-          <MetricCard data-testid="generic-data-card">1,234</MetricCard>
-          <ValidatedInput data-testid="generic-text-input" />
-          <RouteLink data-testid="generic-nav-link">Dashboard</RouteLink>
-          <SessionAvatar data-testid="generic-user-avatar" />
-          <ProcessTag data-testid="generic-status-tag">Running</ProcessTag>
-          <FeatureToggle data-testid="generic-toggle-switch" />
-          <KpiCell data-testid="generic-grid-cell">98.5%</KpiCell>
-          <InterruptDialog data-testid="generic-modal-dialog">
+          <MetricCard data-testid={hashTestId("generic-data-card")}>
+            1,234
+          </MetricCard>
+          <ValidatedInput data-testid={hashTestId("generic-text-input")} />
+          <RouteLink data-testid={hashTestId("generic-nav-link")}>
+            Dashboard
+          </RouteLink>
+          <SessionAvatar data-testid={hashTestId("generic-user-avatar")} />
+          <ProcessTag data-testid={hashTestId("generic-status-tag")}>
+            Running
+          </ProcessTag>
+          <FeatureToggle data-testid={hashTestId("generic-toggle-switch")} />
+          <KpiCell data-testid={hashTestId("generic-grid-cell")}>98.5%</KpiCell>
+          <InterruptDialog data-testid={hashTestId("generic-modal-dialog")}>
             Confirm?
           </InterruptDialog>
-          <SegmentButton data-testid="generic-tab-button">Tab 1</SegmentButton>
-          <HoverTip data-testid="generic-hover-tip">Hover info</HoverTip>
-          <ContentDivider data-testid="generic-separator" />
-          <RemovableToken data-testid="generic-token-chip">Tag</RemovableToken>
-          <PathSegment data-testid="generic-path-crumb">Home</PathSegment>
-          <AsyncSpinner data-testid="generic-loading-ring" />
+          <SegmentButton data-testid={hashTestId("generic-tab-button")}>
+            Tab 1
+          </SegmentButton>
+          <HoverTip data-testid={hashTestId("generic-hover-tip")}>
+            Hover info
+          </HoverTip>
+          <ContentDivider data-testid={hashTestId("generic-separator")} />
+          <RemovableToken data-testid={hashTestId("generic-token-chip")}>
+            Tag
+          </RemovableToken>
+          <PathSegment data-testid={hashTestId("generic-path-crumb")}>
+            Home
+          </PathSegment>
+          <AsyncSpinner data-testid={hashTestId("generic-loading-ring")} />
         </StyledGrid>
       </StyledSection>
 
@@ -1099,87 +1165,126 @@ export function ClientBenchmarks() {
           <WizardStep
             label="Step 1"
             active={true}
-            data-testid="hook-wizard-step"
+            data-testid={hashTestId("hook-wizard-step")}
           />
-          <ProgressRing percent={72} data-testid="util-progress-ring" />
-          <ColorSwatch color="#6366f1" data-testid="util-color-swatch" />
+          <ProgressRing
+            percent={72}
+            data-testid={hashTestId("util-progress-ring")}
+          />
+          <ColorSwatch
+            color="#6366f1"
+            data-testid={hashTestId("util-color-swatch")}
+          />
           <DiffLine
             line="const x = 1;"
             type="added"
-            data-testid="util-diff-line"
+            data-testid={hashTestId("util-diff-line")}
           />
           <TimelineDot
             label="Deployed"
             active
-            data-testid="util-timeline-dot"
+            data-testid={hashTestId("util-timeline-dot")}
           />
-          <ThemePreview data-testid="provider-theme-preview" />
-          <AuthBadge data-testid="provider-auth-badge" />
+          <ThemePreview data-testid={hashTestId("provider-theme-preview")} />
+          <AuthBadge data-testid={hashTestId("provider-auth-badge")} />
           <PaginationNav
             current={2}
             total={10}
-            data-testid="hook-pagination-nav"
+            data-testid={hashTestId("hook-pagination-nav")}
           />
-          <ToastMessage message="Saved!" data-testid="hook-toast-message" />
-          <EmptyState message="No items yet" data-testid="util-empty-state" />
-          <PrimitiveCard data-testid="misleading-card-in-utils" />
-          <ActionSheetButton data-testid="misleading-button-in-hooks" />
-          <ConfigList data-testid="misleading-list-in-config" />
+          <ToastMessage
+            message="Saved!"
+            data-testid={hashTestId("hook-toast-message")}
+          />
+          <EmptyState
+            message="No items yet"
+            data-testid={hashTestId("util-empty-state")}
+          />
+          <PrimitiveCard data-testid={hashTestId("misleading-card-in-utils")} />
+          <ActionSheetButton
+            data-testid={hashTestId("misleading-button-in-hooks")}
+          />
+          <ConfigList data-testid={hashTestId("misleading-list-in-config")} />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Search-Resistant: Barrel Re-exports & Deep Paths">
         <StyledGrid columns={3}>
-          <BaseButton data-testid="barrel-base-button">Click</BaseButton>
-          <BaseInput label="Name" data-testid="barrel-base-input" />
-          <BaseBadge data-testid="barrel-base-badge">New</BaseBadge>
+          <BaseButton data-testid={hashTestId("barrel-base-button")}>
+            Click
+          </BaseButton>
+          <BaseInput
+            label="Name"
+            data-testid={hashTestId("barrel-base-input")}
+          />
+          <BaseBadge data-testid={hashTestId("barrel-base-badge")}>
+            New
+          </BaseBadge>
           <ReceiptLineItem
             label="Item 1"
             amount={29.99}
-            data-testid="deep-receipt-line-item"
+            data-testid={hashTestId("deep-receipt-line-item")}
           />
           <ThreadBubble
             text="Hey there!"
             sender="Alice"
-            data-testid="deep-thread-bubble"
+            data-testid={hashTestId("deep-thread-bubble")}
           />
-          <ShippingLabel data-testid="deep-shipping-label" />
-          <InvoiceRow data-testid="deep-invoice-row" />
-          <PermissionChip data-testid="deep-permission-chip" />
-          <LogEntry data-testid="deep-log-entry" />
-          <PipelineStage data-testid="deep-pipeline-stage" />
+          <ShippingLabel data-testid={hashTestId("deep-shipping-label")} />
+          <InvoiceRow data-testid={hashTestId("deep-invoice-row")} />
+          <PermissionChip data-testid={hashTestId("deep-permission-chip")} />
+          <LogEntry data-testid={hashTestId("deep-log-entry")} />
+          <PipelineStage data-testid={hashTestId("deep-pipeline-stage")} />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Search-Resistant: Ambiguous Siblings & Portals">
         <StyledGrid columns={3}>
-          <RevenueStatCard data-testid="sibling-revenue-stat" />
-          <OrderStatCard data-testid="sibling-order-stat" />
-          <ChurnStatCard data-testid="sibling-churn-stat" />
-          <RetentionStatCard data-testid="sibling-retention-stat" />
-          <MrrStatCard data-testid="sibling-mrr-stat" />
+          <RevenueStatCard data-testid={hashTestId("sibling-revenue-stat")} />
+          <OrderStatCard data-testid={hashTestId("sibling-order-stat")} />
+          <ChurnStatCard data-testid={hashTestId("sibling-churn-stat")} />
+          <RetentionStatCard
+            data-testid={hashTestId("sibling-retention-stat")}
+          />
+          <MrrStatCard data-testid={hashTestId("sibling-mrr-stat")} />
           <OverlayBanner
             message="System update"
-            data-testid="portal-overlay-banner"
+            data-testid={hashTestId("portal-overlay-banner")}
           />
           <NotificationToast
             text="Changes saved"
-            data-testid="portal-notification-toast"
+            data-testid={hashTestId("portal-notification-toast")}
           />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Search-Resistant: Dynamic & Cross-Module">
         <StyledGrid columns={3}>
-          <DynamicWidget size="small" data-testid="dynamic-small-widget" />
-          <DynamicWidget size="medium" data-testid="dynamic-medium-widget" />
-          <DynamicWidget size="large" data-testid="dynamic-large-widget" />
-          <IconLabel icon="📧" text="Email" data-testid="common-icon-label" />
-          <StatusDot status="online" data-testid="common-status-dot" />
+          <DynamicWidget
+            size="small"
+            data-testid={hashTestId("dynamic-small-widget")}
+          />
+          <DynamicWidget
+            size="medium"
+            data-testid={hashTestId("dynamic-medium-widget")}
+          />
+          <DynamicWidget
+            size="large"
+            data-testid={hashTestId("dynamic-large-widget")}
+          />
+          <IconLabel
+            icon="📧"
+            text="Email"
+            data-testid={hashTestId("common-icon-label")}
+          />
+          <StatusDot
+            status="online"
+            data-testid={hashTestId("common-status-dot")}
+          />
           <KeyValue
             label="Version"
             value="2.1.0"
-            data-testid="common-key-value"
+            data-testid={hashTestId("common-key-value")}
           />
         </StyledGrid>
       </StyledSection>
@@ -1211,146 +1316,184 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Hard: Deep Feature Paths">
         <StyledGrid columns={3}>
-          <RefundButton data-testid="deep-refund-button" />
-          <SubscriptionBadge data-testid="deep-subscription-badge" />
-          <CouponInput data-testid="deep-coupon-input" />
-          <TaxLine data-testid="deep-tax-line" />
-          <RoleSelector data-testid="deep-role-selector" />
-          <AuditRow data-testid="deep-audit-row" />
-          <WebhookCard data-testid="deep-webhook-card" />
-          <ApiKeyRow data-testid="deep-api-key-row" />
-          <TemplatePreview data-testid="deep-template-preview" />
-          <ChannelBadge data-testid="deep-channel-badge" />
-          <FilterChip data-testid="deep-filter-chip" />
-          <SortButton data-testid="deep-sort-button" />
-          <StepIndicator data-testid="deep-step-indicator" />
-          <ChecklistItem data-testid="deep-checklist-item" />
-          <CronDisplay data-testid="deep-cron-display" />
-          <CalendarCell data-testid="deep-calendar-cell" />
-          <DiffHeader data-testid="deep-diff-header" />
-          <CommitMessage data-testid="deep-commit-message" />
-          <TagInput data-testid="deep-tag-input" />
-          <MediaThumb data-testid="deep-media-thumb" />
-          <EnvVarRow data-testid="deep-env-var-row" />
-          <BuildStatus data-testid="deep-build-status" />
-          <MetricSparkline data-testid="deep-metric-sparkline" />
-          <FunnelStep data-testid="deep-funnel-step" />
-          <SegmentPill data-testid="deep-segment-pill" />
-          <CommentBubble data-testid="deep-comment-bubble" />
-          <ReactionChip data-testid="deep-reaction-chip" />
-          <MentionTag data-testid="deep-mention-tag" />
-          <ApprovalButton data-testid="deep-approval-button" />
-          <ConditionRow data-testid="deep-condition-row" />
+          <RefundButton data-testid={hashTestId("deep-refund-button")} />
+          <SubscriptionBadge
+            data-testid={hashTestId("deep-subscription-badge")}
+          />
+          <CouponInput data-testid={hashTestId("deep-coupon-input")} />
+          <TaxLine data-testid={hashTestId("deep-tax-line")} />
+          <RoleSelector data-testid={hashTestId("deep-role-selector")} />
+          <AuditRow data-testid={hashTestId("deep-audit-row")} />
+          <WebhookCard data-testid={hashTestId("deep-webhook-card")} />
+          <ApiKeyRow data-testid={hashTestId("deep-api-key-row")} />
+          <TemplatePreview data-testid={hashTestId("deep-template-preview")} />
+          <ChannelBadge data-testid={hashTestId("deep-channel-badge")} />
+          <FilterChip data-testid={hashTestId("deep-filter-chip")} />
+          <SortButton data-testid={hashTestId("deep-sort-button")} />
+          <StepIndicator data-testid={hashTestId("deep-step-indicator")} />
+          <ChecklistItem data-testid={hashTestId("deep-checklist-item")} />
+          <CronDisplay data-testid={hashTestId("deep-cron-display")} />
+          <CalendarCell data-testid={hashTestId("deep-calendar-cell")} />
+          <DiffHeader data-testid={hashTestId("deep-diff-header")} />
+          <CommitMessage data-testid={hashTestId("deep-commit-message")} />
+          <TagInput data-testid={hashTestId("deep-tag-input")} />
+          <MediaThumb data-testid={hashTestId("deep-media-thumb")} />
+          <EnvVarRow data-testid={hashTestId("deep-env-var-row")} />
+          <BuildStatus data-testid={hashTestId("deep-build-status")} />
+          <MetricSparkline data-testid={hashTestId("deep-metric-sparkline")} />
+          <FunnelStep data-testid={hashTestId("deep-funnel-step")} />
+          <SegmentPill data-testid={hashTestId("deep-segment-pill")} />
+          <CommentBubble data-testid={hashTestId("deep-comment-bubble")} />
+          <ReactionChip data-testid={hashTestId("deep-reaction-chip")} />
+          <MentionTag data-testid={hashTestId("deep-mention-tag")} />
+          <ApprovalButton data-testid={hashTestId("deep-approval-button")} />
+          <ConditionRow data-testid={hashTestId("deep-condition-row")} />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Hard: Wrong Location (Hooks/Utils/Providers)">
         <StyledGrid columns={3}>
-          <DragHandle data-testid="hook-drag-handle" />
-          <ResizeGrip data-testid="hook-resize-grip" />
-          <ShortcutHint data-testid="hook-shortcut-hint" />
-          <UndoToast data-testid="hook-undo-toast" />
-          <ClipboardFeedback data-testid="hook-clipboard-feedback" />
-          <MarkdownPreview data-testid="util-markdown-preview" />
-          <JsonTree data-testid="util-json-tree" />
-          <ByteDisplay data-testid="util-byte-display" />
-          <DurationLabel data-testid="util-duration-label" />
-          <TruncatedText data-testid="util-truncated-text" />
-          <CodeBlock data-testid="util-code-block" />
-          <RelativeTime data-testid="util-relative-time" />
-          <AvatarStack data-testid="util-avatar-stack" />
-          <LocaleLabel data-testid="provider-locale-label" />
-          <FeatureFlagBadge data-testid="provider-feature-badge" />
-          <ConnectivityDot data-testid="provider-connectivity-dot" />
-          <SkeletonBlock data-testid="config-skeleton-block" />
-          <ErrorFallback data-testid="config-error-fallback" />
-          <EmptyIllustration data-testid="config-empty-illustration" />
-          <HotkeyLabel data-testid="util-hotkey-label" />
-          <PermissionGate data-testid="util-permission-gate" />
-          <ScrollIndicator data-testid="util-scroll-indicator" />
-          <CopyButton data-testid="util-copy-button" />
-          <ExternalLink data-testid="util-external-link" />
-          <CountBadge data-testid="util-count-badge" />
+          <DragHandle data-testid={hashTestId("hook-drag-handle")} />
+          <ResizeGrip data-testid={hashTestId("hook-resize-grip")} />
+          <ShortcutHint data-testid={hashTestId("hook-shortcut-hint")} />
+          <UndoToast data-testid={hashTestId("hook-undo-toast")} />
+          <ClipboardFeedback
+            data-testid={hashTestId("hook-clipboard-feedback")}
+          />
+          <MarkdownPreview data-testid={hashTestId("util-markdown-preview")} />
+          <JsonTree data-testid={hashTestId("util-json-tree")} />
+          <ByteDisplay data-testid={hashTestId("util-byte-display")} />
+          <DurationLabel data-testid={hashTestId("util-duration-label")} />
+          <TruncatedText data-testid={hashTestId("util-truncated-text")} />
+          <CodeBlock data-testid={hashTestId("util-code-block")} />
+          <RelativeTime data-testid={hashTestId("util-relative-time")} />
+          <AvatarStack data-testid={hashTestId("util-avatar-stack")} />
+          <LocaleLabel data-testid={hashTestId("provider-locale-label")} />
+          <FeatureFlagBadge
+            data-testid={hashTestId("provider-feature-badge")}
+          />
+          <ConnectivityDot
+            data-testid={hashTestId("provider-connectivity-dot")}
+          />
+          <SkeletonBlock data-testid={hashTestId("config-skeleton-block")} />
+          <ErrorFallback data-testid={hashTestId("config-error-fallback")} />
+          <EmptyIllustration
+            data-testid={hashTestId("config-empty-illustration")}
+          />
+          <HotkeyLabel data-testid={hashTestId("util-hotkey-label")} />
+          <PermissionGate data-testid={hashTestId("util-permission-gate")} />
+          <ScrollIndicator data-testid={hashTestId("util-scroll-indicator")} />
+          <CopyButton data-testid={hashTestId("util-copy-button")} />
+          <ExternalLink data-testid={hashTestId("util-external-link")} />
+          <CountBadge data-testid={hashTestId("util-count-badge")} />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Hard: Generic Names in Misleading Dirs">
         <StyledGrid columns={3}>
-          <ProgressTracker data-testid="generic-progress-bar" />
-          <NotificationBox data-testid="generic-alert-box" />
-          <ActionMenu data-testid="generic-dropdown-menu" />
-          <InfoPanel data-testid="generic-popover-panel" />
-          <ContentEditor data-testid="generic-text-area" />
-          <AgreementCheck data-testid="generic-checkbox" />
-          <PlanSelector data-testid="generic-radio-option" />
-          <RangePicker data-testid="generic-slider-range" />
-          <CalendarEntry data-testid="generic-date-cell" />
-          <MetricBar data-testid="generic-chart-bar" />
-          <RecordRow data-testid="generic-table-row" />
-          <ItemTile data-testid="generic-list-tile" />
-          <ToolTrigger data-testid="generic-icon-button" />
-          <RedirectAction data-testid="generic-link-button" />
-          <CommandItem data-testid="generic-menu-item" />
-          <DrawerEntry data-testid="generic-sidebar-link" />
-          <PageFooter data-testid="generic-footer-text" />
-          <TitleStrip data-testid="generic-header-bar" />
-          <PanelActions data-testid="generic-card-footer" />
-          <SourcePreview data-testid="generic-code-snippet" />
-          <DocumentIcon data-testid="generic-file-icon" />
-          <MilestoneDot data-testid="generic-step-circle" />
-          <SnackMessage data-testid="generic-toast-bar" />
-          <DecisionPrompt data-testid="generic-confirm-modal" />
-          <SlidePanel data-testid="generic-drawer-sheet" />
-          <LabelGroup data-testid="generic-tag-list" />
-          <BinaryToggle data-testid="generic-switch-track" />
-          <OptionPicker data-testid="generic-select-box" />
-          <DropTarget data-testid="generic-upload-zone" />
-          <QueryInput data-testid="generic-search-bar" />
+          <ProgressTracker data-testid={hashTestId("generic-progress-bar")} />
+          <NotificationBox data-testid={hashTestId("generic-alert-box")} />
+          <ActionMenu data-testid={hashTestId("generic-dropdown-menu")} />
+          <InfoPanel data-testid={hashTestId("generic-popover-panel")} />
+          <ContentEditor data-testid={hashTestId("generic-text-area")} />
+          <AgreementCheck data-testid={hashTestId("generic-checkbox")} />
+          <PlanSelector data-testid={hashTestId("generic-radio-option")} />
+          <RangePicker data-testid={hashTestId("generic-slider-range")} />
+          <CalendarEntry data-testid={hashTestId("generic-date-cell")} />
+          <MetricBar data-testid={hashTestId("generic-chart-bar")} />
+          <RecordRow data-testid={hashTestId("generic-table-row")} />
+          <ItemTile data-testid={hashTestId("generic-list-tile")} />
+          <ToolTrigger data-testid={hashTestId("generic-icon-button")} />
+          <RedirectAction data-testid={hashTestId("generic-link-button")} />
+          <CommandItem data-testid={hashTestId("generic-menu-item")} />
+          <DrawerEntry data-testid={hashTestId("generic-sidebar-link")} />
+          <PageFooter data-testid={hashTestId("generic-footer-text")} />
+          <TitleStrip data-testid={hashTestId("generic-header-bar")} />
+          <PanelActions data-testid={hashTestId("generic-card-footer")} />
+          <SourcePreview data-testid={hashTestId("generic-code-snippet")} />
+          <DocumentIcon data-testid={hashTestId("generic-file-icon")} />
+          <MilestoneDot data-testid={hashTestId("generic-step-circle")} />
+          <SnackMessage data-testid={hashTestId("generic-toast-bar")} />
+          <DecisionPrompt data-testid={hashTestId("generic-confirm-modal")} />
+          <SlidePanel data-testid={hashTestId("generic-drawer-sheet")} />
+          <LabelGroup data-testid={hashTestId("generic-tag-list")} />
+          <BinaryToggle data-testid={hashTestId("generic-switch-track")} />
+          <OptionPicker data-testid={hashTestId("generic-select-box")} />
+          <DropTarget data-testid={hashTestId("generic-upload-zone")} />
+          <QueryInput data-testid={hashTestId("generic-search-bar")} />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Hard: Ambiguous Siblings">
         <StyledGrid columns={3}>
-          <CpuTile data-testid="sibling-cpu-tile" />
-          <RamTile data-testid="sibling-ram-tile" />
-          <DiskTile data-testid="sibling-disk-tile" />
-          <NetworkTile data-testid="sibling-network-tile" />
-          <GpuTile data-testid="sibling-gpu-tile" />
-          <CreateButton data-testid="sibling-create-btn" />
-          <ReadButton data-testid="sibling-read-btn" />
-          <UpdateButton data-testid="sibling-update-btn" />
-          <DeleteButton data-testid="sibling-delete-btn" />
-          <OnlineIndicator data-testid="sibling-online-indicator" />
-          <OfflineIndicator data-testid="sibling-offline-indicator" />
-          <BusyIndicator data-testid="sibling-busy-indicator" />
-          <AwayIndicator data-testid="sibling-away-indicator" />
-          <DndIndicator data-testid="sibling-dnd-indicator" />
-          <HomeIcon data-testid="sibling-home-icon" />
-          <SettingsIcon data-testid="sibling-settings-icon" />
-          <ProfileIcon data-testid="sibling-profile-icon" />
-          <HelpIcon data-testid="sibling-help-icon" />
-          <LogoutIcon data-testid="sibling-logout-icon" />
-          <SearchIcon data-testid="sibling-search-icon" />
+          <CpuTile data-testid={hashTestId("sibling-cpu-tile")} />
+          <RamTile data-testid={hashTestId("sibling-ram-tile")} />
+          <DiskTile data-testid={hashTestId("sibling-disk-tile")} />
+          <NetworkTile data-testid={hashTestId("sibling-network-tile")} />
+          <GpuTile data-testid={hashTestId("sibling-gpu-tile")} />
+          <CreateButton data-testid={hashTestId("sibling-create-btn")} />
+          <ReadButton data-testid={hashTestId("sibling-read-btn")} />
+          <UpdateButton data-testid={hashTestId("sibling-update-btn")} />
+          <DeleteButton data-testid={hashTestId("sibling-delete-btn")} />
+          <OnlineIndicator
+            data-testid={hashTestId("sibling-online-indicator")}
+          />
+          <OfflineIndicator
+            data-testid={hashTestId("sibling-offline-indicator")}
+          />
+          <BusyIndicator data-testid={hashTestId("sibling-busy-indicator")} />
+          <AwayIndicator data-testid={hashTestId("sibling-away-indicator")} />
+          <DndIndicator data-testid={hashTestId("sibling-dnd-indicator")} />
+          <HomeIcon data-testid={hashTestId("sibling-home-icon")} />
+          <SettingsIcon data-testid={hashTestId("sibling-settings-icon")} />
+          <ProfileIcon data-testid={hashTestId("sibling-profile-icon")} />
+          <HelpIcon data-testid={hashTestId("sibling-help-icon")} />
+          <LogoutIcon data-testid={hashTestId("sibling-logout-icon")} />
+          <SearchIcon data-testid={hashTestId("sibling-search-icon")} />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Hard: Dynamic Registries">
         <StyledGrid columns={3}>
-          <DynamicIcon shape="circle" data-testid="dynamic-circle-icon" />
-          <DynamicIcon shape="square" data-testid="dynamic-square-icon" />
-          <DynamicIcon shape="triangle" data-testid="dynamic-triangle-icon" />
-          <DynamicIcon shape="star" data-testid="dynamic-star-icon" />
-          <DynamicIcon shape="diamond" data-testid="dynamic-diamond-icon" />
-          <DynamicLayout variant="single" data-testid="dynamic-single-layout" />
-          <DynamicLayout variant="two" data-testid="dynamic-two-layout" />
-          <DynamicLayout variant="three" data-testid="dynamic-three-layout" />
+          <DynamicIcon
+            shape="circle"
+            data-testid={hashTestId("dynamic-circle-icon")}
+          />
+          <DynamicIcon
+            shape="square"
+            data-testid={hashTestId("dynamic-square-icon")}
+          />
+          <DynamicIcon
+            shape="triangle"
+            data-testid={hashTestId("dynamic-triangle-icon")}
+          />
+          <DynamicIcon
+            shape="star"
+            data-testid={hashTestId("dynamic-star-icon")}
+          />
+          <DynamicIcon
+            shape="diamond"
+            data-testid={hashTestId("dynamic-diamond-icon")}
+          />
+          <DynamicLayout
+            variant="single"
+            data-testid={hashTestId("dynamic-single-layout")}
+          />
+          <DynamicLayout
+            variant="two"
+            data-testid={hashTestId("dynamic-two-layout")}
+          />
+          <DynamicLayout
+            variant="three"
+            data-testid={hashTestId("dynamic-three-layout")}
+          />
           <DynamicLayout
             variant="sidebar"
-            data-testid="dynamic-sidebar-layout"
+            data-testid={hashTestId("dynamic-sidebar-layout")}
           />
           <DynamicLayout
             variant="stacked"
-            data-testid="dynamic-stacked-layout"
+            data-testid={hashTestId("dynamic-stacked-layout")}
           />
         </StyledGrid>
       </StyledSection>
@@ -1358,26 +1501,36 @@ export function ClientBenchmarks() {
       <StyledSection title="Nightmare: Compound Components (Object.assign)">
         <StyledGrid columns={2}>
           <CompoundSidebar>
-            <CompoundSidebar.Header data-testid="compound-sidebar-header">
+            <CompoundSidebar.Header
+              data-testid={hashTestId("compound-sidebar-header")}
+            >
               Navigation
             </CompoundSidebar.Header>
             <CompoundSidebar.Content>Menu items</CompoundSidebar.Content>
-            <CompoundSidebar.Footer data-testid="compound-sidebar-footer">
+            <CompoundSidebar.Footer
+              data-testid={hashTestId("compound-sidebar-footer")}
+            >
               v2.1.0
             </CompoundSidebar.Footer>
           </CompoundSidebar>
           <CompoundDataTable>
             <CompoundDataTable.Head>Name</CompoundDataTable.Head>
             <CompoundDataTable.Row>
-              <CompoundDataTable.Cell data-testid="compound-table-cell">
+              <CompoundDataTable.Cell
+                data-testid={hashTestId("compound-table-cell")}
+              >
                 Alice
               </CompoundDataTable.Cell>
             </CompoundDataTable.Row>
           </CompoundDataTable>
           <CompoundCommand>
-            <CompoundCommand.Input data-testid="compound-command-input" />
+            <CompoundCommand.Input
+              data-testid={hashTestId("compound-command-input")}
+            />
             <CompoundCommand.Group>
-              <CompoundCommand.Item data-testid="compound-command-item">
+              <CompoundCommand.Item
+                data-testid={hashTestId("compound-command-item")}
+              >
                 Search files...
               </CompoundCommand.Item>
             </CompoundCommand.Group>
@@ -1387,24 +1540,28 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Nightmare: Alias Re-exports">
         <StyledGrid columns={3}>
-          <AliasedFooter data-testid="alias-footer" />
-          <AliasedSearchBar data-testid="alias-search-bar" />
-          <AliasedMainNav data-testid="alias-main-nav" />
-          <AliasedAlertBanner data-testid="alias-alert-banner" />
-          <AliasedConfirmModal data-testid="alias-confirm-modal" />
+          <AliasedFooter data-testid={hashTestId("alias-footer")} />
+          <AliasedSearchBar data-testid={hashTestId("alias-search-bar")} />
+          <AliasedMainNav data-testid={hashTestId("alias-main-nav")} />
+          <AliasedAlertBanner data-testid={hashTestId("alias-alert-banner")} />
+          <AliasedConfirmModal
+            data-testid={hashTestId("alias-confirm-modal")}
+          />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Nightmare: displayName-based Resolution">
         <DisplayNameMenu>
-          <DisplayNameTrigger data-testid="display-name-trigger">
+          <DisplayNameTrigger data-testid={hashTestId("display-name-trigger")}>
             Open Menu
           </DisplayNameTrigger>
-          <DisplayNameContent data-testid="display-name-content">
-            <DisplayNameItem data-testid="display-name-item">
+          <DisplayNameContent data-testid={hashTestId("display-name-content")}>
+            <DisplayNameItem data-testid={hashTestId("display-name-item")}>
               Action 1
             </DisplayNameItem>
-            <DisplayNameSeparator data-testid="display-name-separator" />
+            <DisplayNameSeparator
+              data-testid={hashTestId("display-name-separator")}
+            />
             <DisplayNameItem>Action 2</DisplayNameItem>
           </DisplayNameContent>
         </DisplayNameMenu>
@@ -1412,11 +1569,19 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Nightmare: HOC Stacking (3-4 layers)">
         <StyledGrid columns={3}>
-          <TripleWrappedButton data-testid="hoc-triple-wrapped-button" />
-          <QuadWrappedCard data-testid="hoc-quad-wrapped-card" />
-          <FeatureGatedPanel data-testid="hoc-feature-gated-panel" />
-          <AnalyticsTrackedForm data-testid="hoc-analytics-tracked-form" />
-          <LicensedPremiumBadge data-testid="hoc-licensed-premium-badge" />
+          <TripleWrappedButton
+            data-testid={hashTestId("hoc-triple-wrapped-button")}
+          />
+          <QuadWrappedCard data-testid={hashTestId("hoc-quad-wrapped-card")} />
+          <FeatureGatedPanel
+            data-testid={hashTestId("hoc-feature-gated-panel")}
+          />
+          <AnalyticsTrackedForm
+            data-testid={hashTestId("hoc-analytics-tracked-form")}
+          />
+          <LicensedPremiumBadge
+            data-testid={hashTestId("hoc-licensed-premium-badge")}
+          />
         </StyledGrid>
       </StyledSection>
 
@@ -1424,55 +1589,61 @@ export function ClientBenchmarks() {
         <StyledGrid columns={3}>
           <ElementRenderer
             elementType="text"
-            data-testid="dispatch-text-element"
+            data-testid={hashTestId("dispatch-text-element")}
           />
           <ElementRenderer
             elementType="number"
-            data-testid="dispatch-number-element"
+            data-testid={hashTestId("dispatch-number-element")}
           />
           <ElementRenderer
             elementType="date"
-            data-testid="dispatch-date-element"
+            data-testid={hashTestId("dispatch-date-element")}
           />
           <ElementRenderer
             elementType="select"
-            data-testid="dispatch-select-element"
+            data-testid={hashTestId("dispatch-select-element")}
           />
           <ElementRenderer
             elementType="rating"
-            data-testid="dispatch-rating-element"
+            data-testid={hashTestId("dispatch-rating-element")}
           />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Nightmare: Polymorphic forwardRef">
         <StyledGrid columns={2}>
-          <PolymorphicButton data-testid="polymorphic-button">
+          <PolymorphicButton data-testid={hashTestId("polymorphic-button")}>
             Polymorphic Btn
           </PolymorphicButton>
-          <PolymorphicInput data-testid="polymorphic-input" />
-          <PolymorphicCard data-testid="polymorphic-card">
+          <PolymorphicInput data-testid={hashTestId("polymorphic-input")} />
+          <PolymorphicCard data-testid={hashTestId("polymorphic-card")}>
             Polymorphic content
           </PolymorphicCard>
-          <PolymorphicList data-testid="polymorphic-list" />
+          <PolymorphicList data-testid={hashTestId("polymorphic-list")} />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Nightmare: Tunnel/Context Rendering">
         <TunnelProvider>
-          <TunnelSidebarHeader data-testid="tunnel-sidebar-header" />
-          <TunnelSidebarBody data-testid="tunnel-sidebar-body" />
-          <TunnelSidebarActions data-testid="tunnel-sidebar-actions" />
-          <TunnelSidebarStatus data-testid="tunnel-sidebar-status" />
+          <TunnelSidebarHeader
+            data-testid={hashTestId("tunnel-sidebar-header")}
+          />
+          <TunnelSidebarBody data-testid={hashTestId("tunnel-sidebar-body")} />
+          <TunnelSidebarActions
+            data-testid={hashTestId("tunnel-sidebar-actions")}
+          />
+          <TunnelSidebarStatus
+            data-testid={hashTestId("tunnel-sidebar-status")}
+          />
         </TunnelProvider>
       </StyledSection>
 
       <StyledSection title="Nightmare: Lazy .then() Named Exports">
         <StyledGrid columns={2}>
-          <LazyNamedEditor data-testid="lazy-named-editor" />
-          <LazyNamedChart data-testid="lazy-named-chart" />
-          <LazyNamedCalendar data-testid="lazy-named-calendar" />
-          <LazyNamedTable data-testid="lazy-named-table" />
+          <LazyNamedEditor data-testid={hashTestId("lazy-named-editor")} />
+          <LazyNamedChart data-testid={hashTestId("lazy-named-chart")} />
+          <LazyNamedCalendar data-testid={hashTestId("lazy-named-calendar")} />
+          <LazyNamedTable data-testid={hashTestId("lazy-named-table")} />
         </StyledGrid>
       </StyledSection>
 
@@ -1480,47 +1651,50 @@ export function ClientBenchmarks() {
         <StyledGrid columns={3}>
           <SettingsPanelRouter
             panel="general"
-            data-testid="dynamic-import-general-settings"
+            data-testid={hashTestId("dynamic-import-general-settings")}
           />
           <SettingsPanelRouter
             panel="security"
-            data-testid="dynamic-import-security-settings"
+            data-testid={hashTestId("dynamic-import-security-settings")}
           />
           <SettingsPanelRouter
             panel="billing"
-            data-testid="dynamic-import-billing-settings"
+            data-testid={hashTestId("dynamic-import-billing-settings")}
           />
           <SettingsPanelRouter
             panel="notifications"
-            data-testid="dynamic-import-notifications-settings"
+            data-testid={hashTestId("dynamic-import-notifications-settings")}
           />
           <SettingsPanelRouter
             panel="integrations"
-            data-testid="dynamic-import-integrations-settings"
+            data-testid={hashTestId("dynamic-import-integrations-settings")}
           />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Nightmare: JSX in Data/Config">
         <StyledGrid columns={3}>
-          <RoleIconDisplay role="admin" data-testid="config-role-icon-admin" />
+          <RoleIconDisplay
+            role="admin"
+            data-testid={hashTestId("config-role-icon-admin")}
+          />
           <RoleIconDisplay
             role="viewer"
-            data-testid="config-role-icon-viewer"
+            data-testid={hashTestId("config-role-icon-viewer")}
           />
           <PricingFeatureDisplay
             index={0}
-            data-testid="config-pricing-feature"
+            data-testid={hashTestId("config-pricing-feature")}
           />
           <WizardStepFromConfig
             stepIndex={0}
             part="indicator"
-            data-testid="config-step-indicator"
+            data-testid={hashTestId("config-step-indicator")}
           />
           <WizardStepFromConfig
             stepIndex={0}
             part="content"
-            data-testid="config-step-content"
+            data-testid={hashTestId("config-step-content")}
           />
         </StyledGrid>
       </StyledSection>
@@ -1528,7 +1702,7 @@ export function ClientBenchmarks() {
       <StyledSection title="Nightmare: Render Props">
         <StyledGrid columns={2}>
           <RenderPropList
-            data-testid="render-prop-list-item"
+            data-testid={hashTestId("render-prop-list-item")}
             renderItem={(item, props) => (
               <div {...props} style={{ padding: 4 }}>
                 {item}
@@ -1536,7 +1710,7 @@ export function ClientBenchmarks() {
             )}
           />
           <RenderPropForm
-            data-testid="render-prop-form-field"
+            data-testid={hashTestId("render-prop-form-field")}
             renderField={(field, props) => (
               <input
                 {...props}
@@ -1547,7 +1721,7 @@ export function ClientBenchmarks() {
             )}
           />
           <RenderPropLayout
-            data-testid="render-prop-layout-header"
+            data-testid={hashTestId("render-prop-layout-header")}
             renderHeader={(props) => (
               <div {...props} style={{ fontWeight: 600 }}>
                 Header Content
@@ -1560,7 +1734,7 @@ export function ClientBenchmarks() {
             )}
           />
           <RenderPropTable
-            data-testid="render-prop-table-cell"
+            data-testid={hashTestId("render-prop-table-cell")}
             renderCell={(value, props) => (
               <span {...props} style={{ fontFamily: "monospace" }}>
                 {value}
@@ -1572,22 +1746,22 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Nightmare: Same-Name Collisions">
         <StyledGrid columns={3}>
-          <CollisionButtonA data-testid="collision-a-button">
+          <CollisionButtonA data-testid={hashTestId("collision-a-button")}>
             Red Button
           </CollisionButtonA>
-          <CollisionButtonB data-testid="collision-b-button">
+          <CollisionButtonB data-testid={hashTestId("collision-b-button")}>
             Blue Button
           </CollisionButtonB>
-          <CollisionButtonC data-testid="collision-c-button">
+          <CollisionButtonC data-testid={hashTestId("collision-c-button")}>
             Green Button
           </CollisionButtonC>
-          <CollisionCardA data-testid="collision-a-card">
+          <CollisionCardA data-testid={hashTestId("collision-a-card")}>
             Red Card
           </CollisionCardA>
-          <CollisionCardB data-testid="collision-b-card">
+          <CollisionCardB data-testid={hashTestId("collision-b-card")}>
             Blue Card
           </CollisionCardB>
-          <CollisionCardC data-testid="collision-c-card">
+          <CollisionCardC data-testid={hashTestId("collision-c-card")}>
             Green Card
           </CollisionCardC>
         </StyledGrid>
@@ -1595,24 +1769,42 @@ export function ClientBenchmarks() {
 
       <StyledSection title="Nightmare: Components in Unexpected Files">
         <StyledGrid columns={3}>
-          <AuthBannerWidget data-testid="unexpected-middleware-banner" />
-          <AnalyticsEmbedWidget data-testid="unexpected-script-widget" />
-          <ValidationFeedbackDisplay data-testid="unexpected-schema-feedback" />
+          <AuthBannerWidget
+            data-testid={hashTestId("unexpected-middleware-banner")}
+          />
+          <AnalyticsEmbedWidget
+            data-testid={hashTestId("unexpected-script-widget")}
+          />
+          <ValidationFeedbackDisplay
+            data-testid={hashTestId("unexpected-schema-feedback")}
+          />
           <StatusIconDisplay
             status="active"
-            data-testid="unexpected-constant-status"
+            data-testid={hashTestId("unexpected-constant-status")}
           />
-          <TypePreviewCard data-testid="unexpected-type-preview" />
+          <TypePreviewCard
+            data-testid={hashTestId("unexpected-type-preview")}
+          />
         </StyledGrid>
       </StyledSection>
 
       <StyledSection title="Nightmare: Ultra-Deep Paths (8+ levels)">
         <StyledGrid columns={3}>
-          <ApprovalStepIndicator data-testid="deep-nested-approval-step" />
-          <WebhookRetryStatus data-testid="deep-nested-webhook-retry" />
-          <InvoiceLineDiscount data-testid="deep-nested-invoice-discount" />
-          <CalendarRecurringBadge data-testid="deep-nested-calendar-recurring" />
-          <DeploymentEnvSecret data-testid="deep-nested-deployment-secret" />
+          <ApprovalStepIndicator
+            data-testid={hashTestId("deep-nested-approval-step")}
+          />
+          <WebhookRetryStatus
+            data-testid={hashTestId("deep-nested-webhook-retry")}
+          />
+          <InvoiceLineDiscount
+            data-testid={hashTestId("deep-nested-invoice-discount")}
+          />
+          <CalendarRecurringBadge
+            data-testid={hashTestId("deep-nested-calendar-recurring")}
+          />
+          <DeploymentEnvSecret
+            data-testid={hashTestId("deep-nested-deployment-secret")}
+          />
         </StyledGrid>
       </StyledSection>
     </div>

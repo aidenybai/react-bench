@@ -3,10 +3,7 @@ import type { AgentResult } from "./types";
 const MAX_RETRIES = 1;
 const TASK_TIMEOUT_MS = 120_000;
 
-const withTimeout = <T>(
-  promise: Promise<T>,
-  fallback: T,
-): Promise<T> =>
+const withTimeout = <T>(promise: Promise<T>, fallback: T): Promise<T> =>
   Promise.race([
     promise,
     new Promise<T>((resolve) =>
@@ -18,7 +15,11 @@ const runWithRetries = async (
   runOnce: (prompt: string) => Promise<AgentResult>,
   prompt: string,
 ): Promise<AgentResult> => {
-  const timedOut: AgentResult = { filePath: null, componentName: null, ms: TASK_TIMEOUT_MS };
+  const timedOut: AgentResult = {
+    filePath: null,
+    componentName: null,
+    ms: TASK_TIMEOUT_MS,
+  };
   const result = await withTimeout(runOnce(prompt), timedOut);
   if (result.filePath) return result;
 

@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 export const ClientIsland = () => {
   const [count, setCount] = useState(0);
 
   return (
     <div
-      data-testid="client-island-in-server"
+      data-testid={hashTestId("client-island-in-server")}
       style={{
         marginTop: 8,
         padding: 12,
@@ -16,7 +17,7 @@ export const ClientIsland = () => {
       }}
     >
       <button
-        data-testid="client-island-button"
+        data-testid={hashTestId("client-island-button")}
         onClick={() => setCount((previous) => previous + 1)}
         style={{
           padding: "6px 12px",

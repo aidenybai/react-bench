@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 interface MenuItem {
   label: string;
@@ -84,7 +85,7 @@ export function RecursiveMenu({
           key={i}
           item={item}
           level={0}
-          data-testid="recursive-menu-deepest"
+          data-testid={hashTestId("recursive-menu-deepest")}
         />
       ))}
     </div>

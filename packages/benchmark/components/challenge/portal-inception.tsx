@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { hashTestId } from "@/lib/hash-test-id";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Popover from "@radix-ui/react-popover";
 import { motion } from "motion/react";
@@ -93,7 +94,9 @@ export function PortalInception() {
                 }}
               >
                 Portal Layer 2
-                <DeepestPortalContent data-testid="portal-inception-badge" />
+                <DeepestPortalContent
+                  data-testid={hashTestId("portal-inception-badge")}
+                />
               </Popover.Content>
             </Popover.Portal>
           </Popover.Root>

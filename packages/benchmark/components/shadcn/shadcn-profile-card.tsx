@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 import {
   Card,
   CardHeader,
@@ -23,7 +24,7 @@ export function ShadcnProfileCard({
       <CardHeader>
         <div className="flex items-center gap-3">
           <Avatar className="size-10">
-            <AvatarFallback data-testid="shadcn-avatar-fallback">
+            <AvatarFallback data-testid={hashTestId("shadcn-avatar-fallback")}>
               JD
             </AvatarFallback>
           </Avatar>
@@ -36,19 +37,26 @@ export function ShadcnProfileCard({
       <Separator />
       <CardContent>
         <div className="flex flex-wrap gap-2">
-          <Badge data-testid="shadcn-badge-default">React</Badge>
+          <Badge data-testid={hashTestId("shadcn-badge-default")}>React</Badge>
           <Badge variant="secondary">TypeScript</Badge>
-          <Badge variant="outline" data-testid="shadcn-badge-outline">
+          <Badge
+            variant="outline"
+            data-testid={hashTestId("shadcn-badge-outline")}
+          >
             Next.js
           </Badge>
           <Badge variant="destructive">Urgent</Badge>
         </div>
       </CardContent>
       <CardFooter className="gap-2">
-        <Button size="sm" data-testid="shadcn-button-primary">
+        <Button size="sm" data-testid={hashTestId("shadcn-button-primary")}>
           Follow
         </Button>
-        <Button variant="outline" size="sm" data-testid="shadcn-button-outline">
+        <Button
+          variant="outline"
+          size="sm"
+          data-testid={hashTestId("shadcn-button-outline")}
+        >
           Message
         </Button>
       </CardFooter>

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 import styles from "./module-nav.module.css";
 
 const items = ["Overview", "Metrics", "Logs", "Alerts"];
@@ -36,7 +37,7 @@ export function ModuleNav({
             <div className={styles.dropdownMenu}>
               <button
                 className={styles.dropdownItem}
-                data-testid="module-nav-dropdown-item"
+                data-testid={hashTestId("module-nav-dropdown-item")}
               >
                 Settings
               </button>

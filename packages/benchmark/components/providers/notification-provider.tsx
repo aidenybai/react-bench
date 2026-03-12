@@ -1,5 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 interface Notification {
   id: string;
@@ -42,7 +43,7 @@ export const NotificationStatusBadge = ({
   const colors = badgeColors[status] ?? badgeColors.idle;
   return (
     <span
-      data-testid="provider-status-badge"
+      data-testid={hashTestId("provider-status-badge")}
       style={{
         display: "inline-flex",
         alignItems: "center",

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 type Variant = "default" | "destructive" | "outline" | "ghost";
 type Size = "sm" | "md" | "lg";
@@ -39,7 +40,7 @@ export const PrimaryAction = ({
   onClick,
 }: PrimaryActionProps) => (
   <button
-    data-testid="barrel-primary-action"
+    data-testid={hashTestId("barrel-primary-action")}
     disabled={disabled || loading}
     onClick={onClick}
     style={{

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useCallback } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 interface ConfirmDialogProps {
   title: string;
@@ -15,7 +16,7 @@ export const ConfirmDialogContent = ({
   onCancel,
 }: ConfirmDialogProps) => (
   <div
-    data-testid="hook-confirm-dialog"
+    data-testid={hashTestId("hook-confirm-dialog")}
     style={{
       padding: "24px",
       background: "#fff",

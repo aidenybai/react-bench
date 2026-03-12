@@ -1,3 +1,4 @@
+import { hashTestId } from "@/lib/hash-test-id";
 import { ServerFeatureItem } from "./server-feature-item";
 
 const FEATURES = [
@@ -18,7 +19,7 @@ const FEATURES = [
 export const ServerFeatureList = () => {
   return (
     <ul
-      data-testid="server-feature-list"
+      data-testid={hashTestId("server-feature-list")}
       style={{
         listStyle: "none",
         padding: 0,
@@ -33,7 +34,9 @@ export const ServerFeatureList = () => {
           key={feature.title}
           title={feature.title}
           description={feature.description}
-          data-testid={index === 0 ? "server-feature-item" : undefined}
+          data-testid={
+            index === 0 ? hashTestId("server-feature-item") : undefined
+          }
         />
       ))}
     </ul>

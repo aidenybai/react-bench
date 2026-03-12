@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 interface DataPoint {
   label: string;
@@ -25,7 +26,10 @@ export const MetricChart = ({
   const barWidth = data.length > 0 ? Math.max(100 / data.length - 2, 4) : 10;
 
   return (
-    <div data-testid="deep-metric-chart" style={{ width: "100%" }}>
+    <div
+      data-testid={hashTestId("deep-metric-chart")}
+      style={{ width: "100%" }}
+    >
       {title && (
         <h3
           style={{

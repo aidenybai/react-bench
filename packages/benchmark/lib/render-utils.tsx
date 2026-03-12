@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 export const formatDate = (date: Date, locale = "en-US"): string => {
   return new Intl.DateTimeFormat(locale, {
@@ -43,7 +44,7 @@ export const StatusIndicator = ({
   label?: string;
 }) => (
   <div
-    data-testid="util-status-indicator"
+    data-testid={hashTestId("util-status-indicator")}
     style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}
   >
     <span

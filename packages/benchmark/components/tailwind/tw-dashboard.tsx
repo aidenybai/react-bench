@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 function StatCard({
   label,
@@ -97,13 +98,13 @@ export function TwDashboard({
           label="Revenue"
           value="$45.2K"
           change="+12.5%"
-          data-testid="tw-stat-revenue"
+          data-testid={hashTestId("tw-stat-revenue")}
         />
         <StatCard label="Users" value="2,340" change="+8.1%" />
         <StatCard label="Orders" value="1,203" change="-2.3%" />
         <StatCard label="Conversion" value="3.2%" change="+0.4%" />
       </div>
-      <MiniTable data-testid="tw-mini-table" />
+      <MiniTable data-testid={hashTestId("tw-mini-table")} />
     </div>
   );
 }

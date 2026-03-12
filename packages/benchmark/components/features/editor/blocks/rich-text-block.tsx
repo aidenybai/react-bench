@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 interface RichTextBlockProps {
   initialContent?: string;
@@ -43,7 +44,7 @@ export const RichTextBlock = ({
 
   return (
     <div
-      data-testid="deep-rich-text-block"
+      data-testid={hashTestId("deep-rich-text-block")}
       style={{
         border: `1px solid ${isFocused ? "#2563eb" : "#e5e7eb"}`,
         borderRadius: "8px",

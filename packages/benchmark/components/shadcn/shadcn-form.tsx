@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 import {
   Card,
   CardHeader,
@@ -38,7 +39,7 @@ export function ShadcnForm({
             <Input
               id="shadcn-name"
               placeholder="Jane Doe"
-              data-testid="shadcn-input-name"
+              data-testid={hashTestId("shadcn-input-name")}
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -47,7 +48,7 @@ export function ShadcnForm({
               id="shadcn-email"
               type="email"
               placeholder="jane@example.com"
-              data-testid="shadcn-input-email"
+              data-testid={hashTestId("shadcn-input-email")}
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -58,7 +59,10 @@ export function ShadcnForm({
               placeholder="••••••••"
             />
           </div>
-          <Button type="submit" data-testid="shadcn-submit-button">
+          <Button
+            type="submit"
+            data-testid={hashTestId("shadcn-submit-button")}
+          >
             {submitted ? "Submitted!" : "Create Account"}
           </Button>
         </form>

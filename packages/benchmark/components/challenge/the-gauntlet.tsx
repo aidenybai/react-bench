@@ -1,6 +1,7 @@
 "use client";
 import React, { Suspense, Fragment } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { hashTestId } from "@/lib/hash-test-id";
 import * as Dialog from "@radix-ui/react-dialog";
 import styled from "styled-components";
 import { ProviderStack } from "@/components/providers/provider-stack";
@@ -110,7 +111,7 @@ const Wrapped = withTracking(
 export function TheGauntlet() {
   return (
     <ProviderStack>
-      <Wrapped data-testid="gauntlet-button" />
+      <Wrapped data-testid={hashTestId("gauntlet-button")} />
     </ProviderStack>
   );
 }

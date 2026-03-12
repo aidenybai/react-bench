@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "motion/react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 export function AnimatedTabs({
   tabs,
@@ -43,7 +44,7 @@ export function AnimatedTabs({
             {activeTab === tab.id && (
               <motion.div
                 layoutId="animated-tab-indicator"
-                data-testid="animated-tab-indicator"
+                data-testid={hashTestId("animated-tab-indicator")}
                 style={{
                   position: "absolute",
                   bottom: -1,

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useCallback } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 interface DisplayNameFieldProps {
   initialValue?: string;
@@ -47,7 +48,7 @@ export const DisplayNameField = ({
 
   return (
     <div
-      data-testid="deep-display-name-field"
+      data-testid={hashTestId("deep-display-name-field")}
       style={{ display: "flex", flexDirection: "column", gap: "4px" }}
     >
       <label

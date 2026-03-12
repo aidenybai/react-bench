@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
+import { hashTestId } from "@/lib/hash-test-id";
 
 const HybridCard = styled.div`
   border: 1px solid var(--border);
@@ -39,7 +40,7 @@ export function TwStyledHybrid({
       <div className="flex gap-2">
         <HybridButton
           className="px-4 py-2 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] text-sm font-medium"
-          data-testid="tw-styled-hybrid-button"
+          data-testid={hashTestId("tw-styled-hybrid-button")}
         >
           Hybrid Primary
         </HybridButton>

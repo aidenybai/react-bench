@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -58,7 +59,7 @@ export function ShadcnDataDisplay({
               <Button
                 variant="ghost"
                 size="sm"
-                data-testid="shadcn-tooltip-button"
+                data-testid={hashTestId("shadcn-tooltip-button")}
               >
                 ?
               </Button>
@@ -70,7 +71,10 @@ export function ShadcnDataDisplay({
       <CardContent>
         {loading ? (
           <div className="flex flex-col gap-3">
-            <Skeleton className="h-4 w-full" data-testid="shadcn-skeleton" />
+            <Skeleton
+              className="h-4 w-full"
+              data-testid={hashTestId("shadcn-skeleton")}
+            />
             <Skeleton className="h-4 w-3/4" />
             <Skeleton className="h-4 w-1/2" />
           </div>
@@ -80,7 +84,7 @@ export function ShadcnDataDisplay({
               label="Response Time"
               value="142ms"
               badge="-12%"
-              testId="shadcn-stat-row"
+              testId={hashTestId("shadcn-stat-row")}
             />
             <Separator />
             <StatRow label="Uptime" value="99.97%" badge="SLA" />

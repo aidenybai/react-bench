@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 type BannerVariant = "info" | "warning" | "error" | "success";
 
@@ -41,7 +42,7 @@ export const SystemBanner = ({
 
   return (
     <div
-      data-testid="deep-system-banner"
+      data-testid={hashTestId("deep-system-banner")}
       role="alert"
       style={{
         display: "flex",

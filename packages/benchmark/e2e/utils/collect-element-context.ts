@@ -73,8 +73,7 @@ const collectElementContext = async (
         element,
         selectedText,
       );
-      improvedAnnotation.sourceFile =
-        await improved.detectSourceFile(element);
+      improvedAnnotation.sourceFile = await improved.detectSourceFile(element);
       agentationImprovedClipboard = improved.generateOutput(
         [improvedAnnotation],
         pathname,

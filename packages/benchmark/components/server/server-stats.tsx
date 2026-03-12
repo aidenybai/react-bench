@@ -1,15 +1,28 @@
+import { hashTestId } from "@/lib/hash-test-id";
 import { ServerStatCard } from "./server-stat-card";
 
 export const ServerStats = () => {
   const stats = [
-    { label: "Users", value: "12,345", testId: "server-stat-users" },
-    { label: "Revenue", value: "$89.2K", testId: "server-stat-revenue" },
-    { label: "Uptime", value: "99.97%", testId: "server-stat-uptime" },
+    {
+      label: "Users",
+      value: "12,345",
+      testId: hashTestId("server-stat-users"),
+    },
+    {
+      label: "Revenue",
+      value: "$89.2K",
+      testId: hashTestId("server-stat-revenue"),
+    },
+    {
+      label: "Uptime",
+      value: "99.97%",
+      testId: hashTestId("server-stat-uptime"),
+    },
   ];
 
   return (
     <div
-      data-testid="server-stats"
+      data-testid={hashTestId("server-stats")}
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(3, 1fr)",

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { hashTestId } from "@/lib/hash-test-id";
 
 export const formatPercentage = (value: number, decimals = 1): string => {
   return `${(value * 100).toFixed(decimals)}%`;
@@ -47,7 +48,7 @@ export const FormattedCurrency = ({
 
   return (
     <span
-      data-testid="util-formatted-currency"
+      data-testid={hashTestId("util-formatted-currency")}
       style={{
         fontVariantNumeric: "tabular-nums",
         fontWeight: 500,

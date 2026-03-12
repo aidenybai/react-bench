@@ -7,15 +7,12 @@ import {
   BarChart,
   CartesianGrid,
   Cell,
+  ErrorBar,
   XAxis,
   YAxis,
   LabelList,
 } from "recharts";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AccuracyTable } from "@/components/accuracy-table";
 import { SpeedTable } from "@/components/speed-table";
@@ -30,6 +27,9 @@ import {
 interface ChartDataEntry {
   label: string;
   value: number;
+  errorRange: [number, number];
+  ciLower: number;
+  ciUpper: number;
   fill: string;
 }
 
@@ -38,13 +38,48 @@ interface ResultsBarChartProps {
   domain: [number, number];
   ticks: number[];
   formatValue: (value: number) => string;
+  metricLabel: string;
 }
+
+const BenchTooltip = ({
+  active,
+  payload,
+  formatValue,
+  metricLabel,
+}: {
+  active?: boolean;
+  payload?: { payload: ChartDataEntry }[];
+  formatValue: (value: number) => string;
+  metricLabel: string;
+}) => {
+  if (!active || !payload?.[0]) return null;
+  const entry = payload[0].payload;
+  const hasCI = entry.ciLower !== entry.ciUpper;
+
+  return (
+    <div className="rounded-md border bg-background px-3 py-2 text-xs shadow-md">
+      <p className="font-medium mb-1">{entry.label}</p>
+      <p className="text-muted-foreground">
+        {metricLabel}:{" "}
+        <span className="text-foreground font-medium">
+          {formatValue(entry.value)}
+        </span>
+      </p>
+      {hasCI && (
+        <p className="text-muted-foreground">
+          95% CI: {formatValue(entry.ciLower)} – {formatValue(entry.ciUpper)}
+        </p>
+      )}
+    </div>
+  );
+};
 
 const ResultsBarChart = ({
   data,
   domain,
   ticks,
   formatValue,
+  metricLabel,
 }: ResultsBarChartProps) => (
   <ChartContainer config={{}} className="aspect-2/1 w-full">
     <BarChart data={data} margin={{ top: 24, right: 0, bottom: 0, left: 0 }}>
@@ -67,14 +102,24 @@ const ResultsBarChart = ({
       />
       <ChartTooltip
         cursor={false}
-        content={<ChartTooltipContent hideLabel nameKey="label" />}
+        content={
+          <BenchTooltip formatValue={formatValue} metricLabel={metricLabel} />
+        }
       />
       <Bar dataKey="value" radius={[3, 3, 0, 0]}>
+        <ErrorBar
+          dataKey="errorRange"
+          width={6}
+          strokeWidth={1.5}
+          stroke="var(--foreground)"
+          opacity={0.5}
+        />
         <LabelList
           dataKey="value"
           position="top"
           formatter={formatValue}
           style={{ fontSize: 10 }}
+          offset={12}
         />
         {data.map((entry) => (
           <Cell key={entry.label} fill={entry.fill} />
@@ -105,6 +150,22 @@ const buildSpeedScale = (
   return { domain: [0, ceiling], ticks };
 };
 
+interface BoundsRecord {
+  lower?: number;
+  upper?: number;
+}
+
+const extractCI = (
+  resolverData: Record<string, unknown>,
+  metricKey: "speed" | "accuracy",
+): BoundsRecord => {
+  const ciKey = metricKey === "speed" ? "speedCI" : "accuracyCI";
+  const candidate = resolverData[ciKey];
+  if (candidate && typeof candidate === "object")
+    return candidate as BoundsRecord;
+  return {};
+};
+
 const buildChartData = (
   filteredResolverKeys: string[],
   metricKey: "speed" | "accuracy",
@@ -116,14 +177,29 @@ const buildChartData = (
   if (!overallScenario) return [];
 
   return filteredResolverKeys
-    .map((resolverKey) => ({
-      label: getTreatmentLabel(resolverKey),
-      value:
+    .map((resolverKey) => {
+      const resolverData =
         overallScenario.results[
           resolverKey as keyof typeof overallScenario.results
-        ]?.[metricKey] ?? 0,
-      fill: getResolverColor(resolverKey),
-    }))
+        ];
+      const value = resolverData?.[metricKey] ?? 0;
+      const bounds = extractCI(
+        resolverData as Record<string, unknown>,
+        metricKey,
+      );
+
+      const ciLower = bounds.lower ?? value;
+      const ciUpper = bounds.upper ?? value;
+
+      return {
+        label: getTreatmentLabel(resolverKey),
+        value,
+        errorRange: [value - ciLower, ciUpper - value] as [number, number],
+        ciLower,
+        ciUpper,
+        fill: getResolverColor(resolverKey),
+      };
+    })
     .filter((entry) => entry.value > 0)
     .sort((entryA, entryB) =>
       sortDescending
@@ -181,6 +257,7 @@ const ResultsSection = () => {
           domain={speedScale.domain}
           ticks={speedScale.ticks}
           formatValue={formatSpeed}
+          metricLabel="Geomean"
         />
         <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
           <SpeedTable
@@ -199,6 +276,7 @@ const ResultsSection = () => {
           domain={[0, 100]}
           ticks={ACCURACY_TICKS}
           formatValue={formatAccuracy}
+          metricLabel="Accuracy"
         />
         <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
           <AccuracyTable resolverKeys={filteredResolverKeys} />

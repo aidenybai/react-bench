@@ -9,6 +9,10 @@ import { isCorrectFile } from "./utils/is-correct-file";
 import { normalizeFilePath } from "./utils/normalize-file-path";
 import { formatTime } from "./utils/format-time";
 import {
+  wilsonScoreInterval,
+  geomeanConfidenceInterval,
+} from "./utils/error-bars";
+import {
   saveCheckpoint,
   loadCheckpoint,
   type BrowserCollected,
@@ -318,25 +322,33 @@ const printResults = (
     }
   }
 
-  console.log(`\n  ${"━".repeat(80)}`);
+  console.log(`\n  ${"━".repeat(100)}`);
   for (const resolverName of allResolverNames) {
     const correctEntries = results.filter(
       (entryResult) => entryResult.resolvers[resolverName]?.correct,
     );
-    const geometricMeanTiming =
-      correctEntries.length > 0
-        ? formatTime(
-            Math.exp(
-              correctEntries.reduce(
-                (logSum, entryResult) =>
-                  logSum + Math.log(entryResult.resolvers[resolverName].ms),
-                0,
-              ) / correctEntries.length,
-            ),
-          )
-        : "\u2014";
+
+    const accuracyCI = wilsonScoreInterval(
+      correctEntries.length,
+      results.length,
+    );
+    const accuracyPercent = (
+      (correctEntries.length / results.length) *
+      100
+    ).toFixed(0);
+    const accuracyCIFormatted = `[${(accuracyCI.lower * 100).toFixed(1)}–${(accuracyCI.upper * 100).toFixed(1)}%]`;
+
+    const timingValues = correctEntries.map(
+      (entryResult) => entryResult.resolvers[resolverName].ms,
+    );
+    const speedCI = geomeanConfidenceInterval(timingValues);
+    const speedFormatted =
+      speedCI.geomean > 0
+        ? `geomean ${formatTime(speedCI.geomean)} [${formatTime(speedCI.lower)}–${formatTime(speedCI.upper)}]`
+        : "geomean \u2014";
+
     console.log(
-      `  ${resolverName.padEnd(22)} ${correctEntries.length}/${results.length} correct (${((correctEntries.length / results.length) * 100).toFixed(0)}%) \u2014 geomean ${geometricMeanTiming}`,
+      `  ${resolverName.padEnd(22)} ${correctEntries.length}/${results.length} correct (${accuracyPercent}%) ${accuracyCIFormatted} \u2014 ${speedFormatted}`,
     );
   }
   console.log();
@@ -378,25 +390,31 @@ const writeOutputFiles = (
             const correctResults = allResults.filter(
               (resolverResult) => resolverResult.correct,
             );
-            const timingResults = correctResults.length
-              ? correctResults
-              : allResults;
-            const geometricMeanMs = timingResults.length
-              ? Math.exp(
-                  timingResults.reduce(
-                    (logSum, resolverResult) =>
-                      logSum + Math.log(resolverResult.ms),
-                    0,
-                  ) / timingResults.length,
-                )
-              : 0;
+            const timingValues = (
+              correctResults.length ? correctResults : allResults
+            ).map((resolverResult) => resolverResult.ms);
+
+            const speedCI = geomeanConfidenceInterval(timingValues);
+            const accuracyCI = wilsonScoreInterval(
+              correctResults.length,
+              results.length,
+            );
+
             return [
               resolverName,
               {
-                speed: Math.round(geometricMeanMs / 100) / 10,
+                speed: Math.round(speedCI.geomean / 100) / 10,
+                speedCI: {
+                  lower: Math.round(speedCI.lower / 100) / 10,
+                  upper: Math.round(speedCI.upper / 100) / 10,
+                },
                 accuracy: results.length
                   ? Math.round((correctResults.length / results.length) * 100)
                   : 0,
+                accuracyCI: {
+                  lower: Math.round(accuracyCI.lower * 1000) / 10,
+                  upper: Math.round(accuracyCI.upper * 1000) / 10,
+                },
                 correct: correctResults.length,
               },
             ];

@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   agentation@2.3.2:
-    hash: a825175f058cca47fad894310267fe76a24e1ea6bab259e75992bb11af738673
+    hash: 0852a8463b2fa76026bb33a93d6b3eb359b4e84045014f11cf1bb2737eb6c727
     path: patches/agentation@2.3.2.patch
 
 importers:
@@ -63,7 +63,7 @@ importers:
         version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       agentation:
         specifier: ^2.3.2
-        version: 2.3.2(patch_hash=a825175f058cca47fad894310267fe76a24e1ea6bab259e75992bb11af738673)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 2.3.2(patch_hash=0852a8463b2fa76026bb33a93d6b3eb359b4e84045014f11cf1bb2737eb6c727)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       agentation-improved:
         specifier: link:/Users/aidenybai/Projects/agentation/package
         version: link:../../../agentation/package
@@ -7351,7 +7351,7 @@ snapshots:
 
   agent-base@7.1.4: {}
 
-  agentation@2.3.2(patch_hash=a825175f058cca47fad894310267fe76a24e1ea6bab259e75992bb11af738673)(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+  agentation@2.3.2(patch_hash=0852a8463b2fa76026bb33a93d6b3eb359b4e84045014f11cf1bb2737eb6c727)(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     optionalDependencies:
       react: 19.2.1
       react-dom: 19.2.1(react@19.2.1)

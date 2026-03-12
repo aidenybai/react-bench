@@ -1,8 +1,8 @@
 diff --git a/dist/index.d.mts b/dist/index.d.mts
-index 7d4dc1f0b903c61738e6a780c4a61a212bd28a3c..21c84c949013fe82d4cb691ab1688b663459c2c0 100644
+index 7d4dc1f0b903c61738e6a780c4a61a212bd28a3c..6a57accfbe2a2ecd70c83c8f429cffdc82ab856a 100644
 --- a/dist/index.d.mts
 +++ b/dist/index.d.mts
-@@ -284,4 +284,33 @@ declare function getStorageKey(pathname: string): string;
+@@ -284,4 +284,38 @@ declare function getStorageKey(pathname: string): string;
  declare function loadAnnotations<T = Annotation>(pathname: string): T[];
  declare function saveAnnotations<T = Annotation>(pathname: string, annotations: T[]): void;
  
@@ -43,10 +43,10 @@ index 7d4dc1f0b903c61738e6a780c4a61a212bd28a3c..21c84c949013fe82d4cb691ab1688b66
 +
 +export { PageFeedbackToolbarCSS as Agentation, type AgentationProps, AnimatedBunny, type Annotation, AnnotationPopupCSS, type AnnotationPopupCSSHandle, type AnnotationPopupCSSProps, type DemoAnnotation, IconChatEllipsis, IconCheck, IconCheckSmall, IconCheckSmallAnimated, IconCheckmark, IconCheckmarkCircle, IconCheckmarkLarge, IconChevronLeft, IconChevronRight, IconClose, IconCopyAlt, IconCopyAnimated, IconEdit, IconEye, IconEyeAlt, IconEyeAnimated, IconEyeClosed, IconEyeMinus, IconGear, IconHelp, IconListSparkle, IconMoon, IconPause, IconPauseAlt, IconPausePlayAnimated, IconPlayAlt, IconPlus, IconSendAnimated, IconSendArrow, IconSun, IconTrash, IconTrashAlt, IconXmark, IconXmarkLarge, PageFeedbackToolbarCSS, closestCrossingShadow, getElementClasses, getElementPath, getNearbyText, getShadowHost, getStorageKey, identifyAnimationElement, identifyElement, isInShadowDOM, loadAnnotations, saveAnnotations, getSourceLocation, findNearestComponentSource, detectSourceFile, identifyElementWithReact, getReactComponentName, generateOutput, getNearbyElements, getFullElementPath, getAccessibilityInfo, getForensicComputedStyles, getDetailedComputedStyles, type SourceLocationResult, type IdentifyWithReactResult, type ReactComponentInfo };
 diff --git a/dist/index.d.ts b/dist/index.d.ts
-index 7d4dc1f0b903c61738e6a780c4a61a212bd28a3c..21c84c949013fe82d4cb691ab1688b663459c2c0 100644
+index 7d4dc1f0b903c61738e6a780c4a61a212bd28a3c..6a57accfbe2a2ecd70c83c8f429cffdc82ab856a 100644
 --- a/dist/index.d.ts
 +++ b/dist/index.d.ts
-@@ -284,4 +284,33 @@ declare function getStorageKey(pathname: string): string;
+@@ -284,4 +284,38 @@ declare function getStorageKey(pathname: string): string;
  declare function loadAnnotations<T = Annotation>(pathname: string): T[];
  declare function saveAnnotations<T = Annotation>(pathname: string, annotations: T[]): void;
  
@@ -87,10 +87,10 @@ index 7d4dc1f0b903c61738e6a780c4a61a212bd28a3c..21c84c949013fe82d4cb691ab1688b66
 +
 +export { PageFeedbackToolbarCSS as Agentation, type AgentationProps, AnimatedBunny, type Annotation, AnnotationPopupCSS, type AnnotationPopupCSSHandle, type AnnotationPopupCSSProps, type DemoAnnotation, IconChatEllipsis, IconCheck, IconCheckSmall, IconCheckSmallAnimated, IconCheckmark, IconCheckmarkCircle, IconCheckmarkLarge, IconChevronLeft, IconChevronRight, IconClose, IconCopyAlt, IconCopyAnimated, IconEdit, IconEye, IconEyeAlt, IconEyeAnimated, IconEyeClosed, IconEyeMinus, IconGear, IconHelp, IconListSparkle, IconMoon, IconPause, IconPauseAlt, IconPausePlayAnimated, IconPlayAlt, IconPlus, IconSendAnimated, IconSendArrow, IconSun, IconTrash, IconTrashAlt, IconXmark, IconXmarkLarge, PageFeedbackToolbarCSS, closestCrossingShadow, getElementClasses, getElementPath, getNearbyText, getShadowHost, getStorageKey, identifyAnimationElement, identifyElement, isInShadowDOM, loadAnnotations, saveAnnotations, getSourceLocation, findNearestComponentSource, detectSourceFile, identifyElementWithReact, getReactComponentName, generateOutput, getNearbyElements, getFullElementPath, getAccessibilityInfo, getForensicComputedStyles, getDetailedComputedStyles, type SourceLocationResult, type IdentifyWithReactResult, type ReactComponentInfo };
 diff --git a/dist/index.js b/dist/index.js
-index f624c46d52c98b636f5002c287c7864d7ed59563..5f49f29af4e98b096e42b5f8e0ca6ea0c5d4746e 100644
+index 29ca8ded220724df12257c0a726f5172987e1b50..3374424f5a4c694f2bcf745752b68613dd014033 100644
 --- a/dist/index.js
 +++ b/dist/index.js
-@@ -79,7 +79,13 @@ __export(index_exports, {
+@@ -79,7 +79,18 @@ __export(index_exports, {
    identifyElement: () => identifyElement,
    isInShadowDOM: () => isInShadowDOM,
    loadAnnotations: () => loadAnnotations,
@@ -111,10 +111,10 @@ index f624c46d52c98b636f5002c287c7864d7ed59563..5f49f29af4e98b096e42b5f8e0ca6ea0
  module.exports = __toCommonJS(index_exports);
  
 diff --git a/dist/index.mjs b/dist/index.mjs
-index 123cbee79ccfe949a213bcd2d6ed7fec61202bdf..3196bf3dfa8421e3a69abee096ebec2391e9ce4b 100644
+index 3360dec6886515c3248f56016db0cfaf51386b43..1259372d1a73d20aa234caeeb877d815af8f2f62 100644
 --- a/dist/index.mjs
 +++ b/dist/index.mjs
-@@ -6048,6 +6048,12 @@ export {
+@@ -6050,6 +6050,17 @@ export {
    identifyElement,
    isInShadowDOM,
    loadAnnotations,

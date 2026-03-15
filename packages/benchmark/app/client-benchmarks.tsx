@@ -8,6 +8,9 @@ import { StyledBadge } from "@/components/styled/styled-badge";
 import { StyledSection, StyledGrid } from "@/components/styled/styled-layout";
 import { StyledAvatar } from "@/components/styled/styled-avatar";
 import { StyledDataCell } from "@/components/styled/styled-data-cell";
+import { StyledDivider } from "@/components/styled/styled-divider";
+import { StyledProgress } from "@/components/styled/styled-progress";
+import { StyledTooltip } from "@/components/styled/styled-tooltip";
 
 import { RadixDialog } from "@/components/radix/radix-dialog";
 import { RadixDropdown } from "@/components/radix/radix-dropdown";
@@ -41,20 +44,29 @@ import { TwButton } from "@/components/tailwind/tw-button";
 import { TwBadge } from "@/components/tailwind/tw-badge";
 import { TwDashboard } from "@/components/tailwind/tw-dashboard";
 import { TwNav } from "@/components/tailwind/tw-nav";
+import { TwHeading } from "@/components/tailwind/tw-heading";
+import { TwAlert } from "@/components/tailwind/tw-alert";
+import { TwToggle } from "@/components/tailwind/tw-toggle";
+import { TwSkeleton } from "@/components/tailwind/tw-skeleton";
 
 import { ModuleCard } from "@/components/modules/module-card";
 import { ModuleNav } from "@/components/modules/module-nav";
 import { ModuleTable } from "@/components/modules/module-table";
 import { ModuleAccordion } from "@/components/modules/module-accordion";
+import { ModuleBreadcrumb } from "@/components/modules/module-breadcrumb";
+import { ModuleSwitch } from "@/components/modules/module-switch";
 
 import { InlineCard } from "@/components/mixed/inline-card";
 import { InlineList } from "@/components/mixed/inline-list";
+import { InlineTag } from "@/components/mixed/inline-tag";
 import { StyleClash } from "@/components/mixed/style-clash";
 import { TwStyledHybrid } from "@/components/mixed/tw-styled-hybrid";
 import { ModuleTwHybrid } from "@/components/mixed/module-tw-hybrid";
 import { InlineMotionHybrid } from "@/components/mixed/inline-motion-hybrid";
 
 import { ShadcnProfileCard } from "@/components/shadcn/shadcn-profile-card";
+
+import { InstrucktToolbar } from "@/components/instruckt/instruckt-toolbar";
 import { ShadcnForm } from "@/components/shadcn/shadcn-form";
 import { ShadcnDataDisplay } from "@/components/shadcn/shadcn-data-display";
 
@@ -333,6 +345,25 @@ import { CollisionCard as CollisionCardB } from "@/components/collision-b/collis
 import { CollisionButton as CollisionButtonC } from "@/components/collision-c/collision-button";
 import { CollisionCard as CollisionCardC } from "@/components/collision-c/collision-card";
 
+import { createContextualWidget } from "@/lib/create-contextual-widget";
+import { createInlineStat } from "@/lib/create-inline-stat";
+import { createSlotContent } from "@/lib/create-slot-content";
+import { ComposedStatusBar } from "@/components/composed/composed-status-bar";
+import { ComposedMetricRow } from "@/components/composed/composed-metric-row";
+import { ComposedToolbar } from "@/components/composed/composed-toolbar";
+
+import { DeploymentStatus } from "@/components/adapter-wrapped/deployment-status";
+import { IncidentBanner } from "@/components/adapter-wrapped/incident-banner";
+import { TeamMemberRow } from "@/components/adapter-wrapped/team-member-row";
+import { QuotaGauge } from "@/components/adapter-wrapped/quota-gauge";
+import { ChangelogEntry } from "@/components/adapter-wrapped/changelog-entry";
+
+import { ProjectedUserCard } from "@/components/projected/projected-user-card";
+import { ProjectedAlertStrip } from "@/components/projected/projected-alert-strip";
+import { ProjectedActionBar } from "@/components/projected/projected-action-bar";
+import { ProjectedStatsRow } from "@/components/projected/projected-stats-row";
+import { ProjectedBreadcrumb } from "@/components/projected/projected-breadcrumb";
+
 import { AuthBannerWidget } from "@/middleware/auth-banner";
 import { AnalyticsEmbedWidget } from "@/scripts/analytics-embed";
 import { ValidationFeedbackDisplay } from "@/schemas/validation-feedback-display";
@@ -524,6 +555,53 @@ const LogsTab = createTab({
   testId: hashTestId("factory-logs-tab"),
 });
 
+const LatencyWidget = createContextualWidget({
+  title: "P99 Latency",
+  icon: "⏱",
+  theme: { background: "#fef3c7", foreground: "#92400e", accent: "#f59e0b" },
+  testId: hashTestId("contextual-latency-widget"),
+});
+const ErrorRateWidget = createContextualWidget({
+  title: "Error Rate",
+  icon: "🔴",
+  theme: { background: "#fee2e2", foreground: "#991b1b", accent: "#ef4444" },
+  testId: hashTestId("contextual-error-rate-widget"),
+});
+const UptimeWidget = createContextualWidget({
+  title: "Uptime",
+  icon: "🟢",
+  theme: { background: "#dcfce7", foreground: "#166534", accent: "#22c55e" },
+  testId: hashTestId("contextual-uptime-widget"),
+});
+
+const RequestsStat = createInlineStat({
+  label: "requests",
+  unit: "/s",
+  testId: hashTestId("inline-stat-requests"),
+});
+const ConnectionsStat = createInlineStat({
+  label: "connections",
+  testId: hashTestId("inline-stat-connections"),
+});
+const BandwidthStat = createInlineStat({
+  label: "bandwidth",
+  unit: "Mbps",
+  testId: hashTestId("inline-stat-bandwidth"),
+});
+
+const HeaderSlot = createSlotContent({
+  slotName: "header",
+  testId: hashTestId("slot-header-content"),
+});
+const FooterSlot = createSlotContent({
+  slotName: "footer",
+  testId: hashTestId("slot-footer-content"),
+});
+const SidebarSlot = createSlotContent({
+  slotName: "sidebar",
+  testId: hashTestId("slot-sidebar-content"),
+});
+
 const TrackedCard = withTracking(StyledCard, "tracked-card");
 const MemoForwardRefButton = withTooltip(
   StyledButton,
@@ -624,6 +702,40 @@ export function ClientBenchmarks() {
           </InlineCard>
 
           <ShadcnProfileCard data-testid={hashTestId("shadcn-profile-card")} />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Easy: Simple Primitives">
+        <StyledGrid columns={3}>
+          <TwHeading
+            size="md"
+            data-testid={hashTestId("plain-tw-heading")}
+          >
+            Section Title
+          </TwHeading>
+
+          <StyledDivider
+            label="or"
+            data-testid={hashTestId("plain-styled-divider")}
+          />
+
+          <TwAlert
+            variant="info"
+            data-testid={hashTestId("plain-tw-alert")}
+          >
+            This is an informational message.
+          </TwAlert>
+
+          <StyledProgress
+            percent={65}
+            label="Upload"
+            data-testid={hashTestId("plain-styled-progress")}
+          />
+
+          <TwToggle
+            label="Dark mode"
+            data-testid={hashTestId("plain-tw-toggle")}
+          />
         </StyledGrid>
       </StyledSection>
 
@@ -814,6 +926,52 @@ export function ClientBenchmarks() {
 
           <ShadcnForm data-testid={hashTestId("shadcn-form")} />
           <ShadcnDataDisplay data-testid={hashTestId("shadcn-data-display")} />
+
+          <InstrucktToolbar
+            data-testid={hashTestId("instruckt-toolbar")}
+          />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Easy-Medium: Direct Components">
+        <StyledGrid columns={3}>
+          <ModuleBreadcrumb
+            data-testid={hashTestId("module-breadcrumb")}
+            items={[
+              { label: "Home", href: "#" },
+              { label: "Settings", href: "#" },
+              { label: "Profile" },
+            ]}
+          />
+
+          <StyledTooltip
+            content="Click to copy"
+            data-testid={hashTestId("styled-tooltip")}
+          >
+            <StyledButton>Hover me</StyledButton>
+          </StyledTooltip>
+
+          <TwSkeleton
+            shape="text"
+            count={3}
+            data-testid={hashTestId("tw-skeleton")}
+          />
+
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            <InlineTag
+              color="blue"
+              data-testid={hashTestId("inline-tag")}
+            >
+              React
+            </InlineTag>
+            <InlineTag color="green">TypeScript</InlineTag>
+            <InlineTag color="purple">Next.js</InlineTag>
+          </div>
+
+          <ModuleSwitch
+            label="Notifications"
+            data-testid={hashTestId("module-switch")}
+          />
         </StyledGrid>
       </StyledSection>
 
@@ -1784,6 +1942,66 @@ export function ClientBenchmarks() {
           />
           <TypePreviewCard
             data-testid={hashTestId("unexpected-type-preview")}
+          />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Hard: Stack-Dependent (Factory + Context + HOC)">
+        <StyledGrid columns={3}>
+          <LatencyWidget value="142ms" />
+          <ErrorRateWidget value="0.03%" />
+          <UptimeWidget value="99.97%" />
+          <RequestsStat value="12.4k" />
+          <ConnectionsStat value="847" />
+          <BandwidthStat value="2.1" />
+          <HeaderSlot>Page Title Area</HeaderSlot>
+          <FooterSlot>© 2026 Acme Inc</FooterSlot>
+          <SidebarSlot>Navigation Links</SidebarSlot>
+          <ComposedStatusBar data-testid={hashTestId("composed-status-bar")} />
+          <ComposedMetricRow
+            label="Revenue"
+            value="$1.2M"
+            trend={12}
+            data-testid={hashTestId("composed-metric-row")}
+          />
+          <ComposedToolbar data-testid={hashTestId("composed-toolbar")} />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Nightmare: Content Projection (testid on outlet, content from source)">
+        <StyledGrid columns={2}>
+          <ProjectedUserCard
+            data-testid={hashTestId("projected-user-card")}
+          />
+          <ProjectedAlertStrip
+            data-testid={hashTestId("projected-alert-strip")}
+          />
+          <ProjectedActionBar
+            data-testid={hashTestId("projected-action-bar")}
+          />
+          <ProjectedStatsRow
+            data-testid={hashTestId("projected-stats-row")}
+          />
+          <ProjectedBreadcrumb
+            data-testid={hashTestId("projected-breadcrumb")}
+          />
+        </StyledGrid>
+      </StyledSection>
+
+      <StyledSection title="Hard: Adapter-Wrapped (testid rendered by generic wrapper)">
+        <StyledGrid columns={2}>
+          <DeploymentStatus
+            data-testid={hashTestId("adapter-deployment-status")}
+          />
+          <IncidentBanner
+            data-testid={hashTestId("adapter-incident-banner")}
+          />
+          <TeamMemberRow
+            data-testid={hashTestId("adapter-team-member-row")}
+          />
+          <QuotaGauge data-testid={hashTestId("adapter-quota-gauge")} />
+          <ChangelogEntry
+            data-testid={hashTestId("adapter-changelog-entry")}
           />
         </StyledGrid>
       </StyledSection>

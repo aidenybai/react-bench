@@ -1,0 +1,3 @@
+const BASE_ISOLATE_PORT = 3010;
+
+export { BASE_ISOLATE_PORT };

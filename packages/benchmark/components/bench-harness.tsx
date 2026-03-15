@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { formatAnnotationMarkdown } from "instruckt";
 import {
   Agentation,
   identifyElement,
@@ -19,21 +20,6 @@ import {
   getForensicComputedStyles,
   getDetailedComputedStyles,
 } from "agentation";
-import {
-  identifyElementWithReact as identifyElementWithReactImproved,
-  detectSourceFile as detectSourceFileImproved,
-  getReactComponentName as getReactComponentNameImproved,
-  generateOutput as generateOutputImproved,
-  identifyElement as identifyElementImproved,
-  getElementPath as getElementPathImproved,
-  getElementClasses as getElementClassesImproved,
-  getNearbyText as getNearbyTextImproved,
-  getNearbyElements as getNearbyElementsImproved,
-  getFullElementPath as getFullElementPathImproved,
-  getAccessibilityInfo as getAccessibilityInfoImproved,
-  getForensicComputedStyles as getForensicComputedStylesImproved,
-  getDetailedComputedStyles as getDetailedComputedStylesImproved,
-} from "agentation-improved";
 
 export interface SourceResult {
   filePath: string | null;
@@ -81,20 +67,6 @@ const agentationResolver: Resolver = {
   identify: (el) => identifyElement(el),
 };
 
-const agentationImprovedResolver: Resolver = {
-  name: "agentation-improved",
-  resolve: async (el) => {
-    const sourceFile = await detectSourceFileImproved(el);
-    const react = getReactComponentNameImproved(el);
-    return {
-      filePath: sourceFile ?? null,
-      componentName: react.components[0] ?? null,
-      found: Boolean(sourceFile),
-    };
-  },
-  identify: (el) => identifyElementImproved(el),
-};
-
 const cursorBrowserResolver: Resolver = {
   name: "cursor-browser",
   resolve: (el) => {
@@ -115,6 +87,81 @@ const cursorBrowserResolver: Resolver = {
     return metadata.reactComponent
       ? { name: metadata.reactComponent.name, path: metadata.domPath }
       : null;
+  },
+};
+
+const clickToComponentResolver: Resolver = {
+  name: "click-to-component",
+  resolve: async (el) => {
+    try {
+      const { getSourceForElement } = await import(
+        // @ts-expect-error patched subpath export
+        "click-to-react-component/src/getSourceForElement.js"
+      );
+      const { getReactInstanceForElement } = await import(
+        // @ts-expect-error patched subpath export
+        "click-to-react-component/src/getReactInstanceForElement.js"
+      );
+      const { getDisplayNameForInstance } = await import(
+        // @ts-expect-error patched subpath export
+        "click-to-react-component/src/getDisplayNameFromReactInstance.js"
+      );
+
+      const source = getSourceForElement(el);
+      const instance = getReactInstanceForElement(el);
+      const componentName = instance
+        ? getDisplayNameForInstance(instance)
+        : null;
+
+      return {
+        filePath: source?.fileName ?? null,
+        componentName: componentName ?? null,
+        found: Boolean(source),
+      };
+    } catch {
+      return { filePath: null, componentName: null, found: false };
+    }
+  },
+};
+
+const locatorjsResolver: Resolver = {
+  name: "locatorjs",
+  resolve: async (el) => {
+    try {
+      const { getElementInfo } = await import("@locator/runtime/adapters");
+      const info = getElementInfo(el, "react");
+
+      if (!info?.thisElement?.link) {
+        return { filePath: null, componentName: null, found: false };
+      }
+
+      return {
+        filePath: info.thisElement.link.filePath ?? null,
+        componentName: info.thisElement.label ?? null,
+        found: Boolean(info.thisElement.link.filePath),
+      };
+    } catch {
+      return { filePath: null, componentName: null, found: false };
+    }
+  },
+};
+
+const instrucktResolver: Resolver = {
+  name: "instruckt",
+  resolve: async (el) => {
+    try {
+      const { resolveSource, resolveComponentName } = await import("element-source");
+      const source = await resolveSource(el);
+      const componentName = await resolveComponentName(el);
+
+      return {
+        filePath: source?.filePath ?? null,
+        componentName: componentName ?? null,
+        found: Boolean(source?.filePath),
+      };
+    } catch {
+      return { filePath: null, componentName: null, found: false };
+    }
   },
 };
 
@@ -142,15 +189,14 @@ interface BenchAPI {
     getElementClasses: typeof getElementClasses;
     getNearbyText: typeof getNearbyText;
     getSourceLocation: typeof getSourceLocation;
+    getNearbyElements: typeof getNearbyElements;
+    getFullElementPath: typeof getFullElementPath;
+    getAccessibilityInfo: typeof getAccessibilityInfo;
+    getForensicComputedStyles: typeof getForensicComputedStyles;
+    getDetailedComputedStyles: typeof getDetailedComputedStyles;
   };
-  improved: {
-    identifyElementWithReact: typeof identifyElementWithReactImproved;
-    detectSourceFile: typeof detectSourceFileImproved;
-    getReactComponentName: typeof getReactComponentNameImproved;
-    generateOutput: typeof generateOutputImproved;
-    getElementPath: typeof getElementPathImproved;
-    getElementClasses: typeof getElementClassesImproved;
-  };
+  formatInstrucktMarkdown: typeof formatAnnotationMarkdown;
+  buildInstrucktClipboard: (element: HTMLElement, pathname: string) => Promise<string | null>;
 }
 
 const createBenchAPI = (): BenchAPI => {
@@ -241,26 +287,51 @@ const createBenchAPI = (): BenchAPI => {
       getDetailedComputedStyles,
     },
 
-    improved: {
-      identifyElementWithReact: identifyElementWithReactImproved,
-      detectSourceFile: detectSourceFileImproved,
-      getReactComponentName: getReactComponentNameImproved,
-      generateOutput: generateOutputImproved,
-      getElementPath: getElementPathImproved,
-      getElementClasses: getElementClassesImproved,
-      getNearbyText: getNearbyTextImproved,
-      getNearbyElements: getNearbyElementsImproved,
-      getFullElementPath: getFullElementPathImproved,
-      getAccessibilityInfo: getAccessibilityInfoImproved,
-      getForensicComputedStyles: getForensicComputedStylesImproved,
-      getDetailedComputedStyles: getDetailedComputedStylesImproved,
+    formatInstrucktMarkdown: formatAnnotationMarkdown,
+
+    buildInstrucktClipboard: async (element: HTMLElement, pathname: string): Promise<string | null> => {
+      try {
+        const { resolveElementInfo } = await import("element-source");
+        const elementInfo = await resolveElementInfo(element);
+        if (!elementInfo?.source) return null;
+
+        const stack = elementInfo.stack.map((frame: { filePath: string; lineNumber: number | null; columnNumber: number | null; componentName: string | null }) => ({
+          filePath: frame.filePath,
+          lineNumber: frame.lineNumber,
+          columnNumber: frame.columnNumber,
+          componentName: frame.componentName,
+        }));
+
+        const annotation = {
+          id: "bench-probe",
+          element: element.localName,
+          comment: "identify this component",
+          cssClasses: element.className?.trim() ?? "",
+          nearbyText: element.innerText?.trim().slice(0, 100) ?? "",
+          status: "pending",
+          framework: {
+            framework: "react",
+            component: elementInfo.componentName ?? "Component",
+            source_file: elementInfo.source.filePath,
+            source_line: elementInfo.source.lineNumber ?? undefined,
+            source_column: elementInfo.source.columnNumber ?? undefined,
+            component_stack: stack.length > 0 ? stack : undefined,
+          },
+        };
+
+        return formatAnnotationMarkdown([annotation] as Parameters<typeof formatAnnotationMarkdown>[0], pathname);
+      } catch {
+        return null;
+      }
     },
   };
 
   api.register(reactGrabResolver);
   api.register(agentationResolver);
-  api.register(agentationImprovedResolver);
   api.register(cursorBrowserResolver);
+  api.register(clickToComponentResolver);
+  api.register(locatorjsResolver);
+  api.register(instrucktResolver);
 
   return api;
 };
@@ -297,10 +368,31 @@ const buildAnnotation = (
   };
 };
 
+const ISOLATE_RESOLVER_LOADERS: Record<
+  string,
+  () => Promise<{ default: { createResolver: () => Resolver } }>
+> = {
+  "react-grab": () => import("../isolates/react-grab"),
+  agentation: () => import("../isolates/agentation"),
+  "cursor-browser": () => import("../isolates/cursor-browser"),
+  "click-to-component": () => import("../isolates/click-to-react-component"),
+  locatorjs: () => import("../isolates/locatorjs"),
+  instruckt: () => import("../isolates/instruckt"),
+};
+
 const useBenchHarness = () => {
   useEffect(() => {
-    (window as any).__BENCH__ = createBenchAPI();
+    const api = createBenchAPI();
+    (window as any).__BENCH__ = api;
     (window as any).__BENCH_BUILD_ANNOTATION__ = buildAnnotation;
+
+    const activeIsolateName = process.env.NEXT_PUBLIC_BENCH_ISOLATE;
+    if (activeIsolateName && ISOLATE_RESOLVER_LOADERS[activeIsolateName]) {
+      ISOLATE_RESOLVER_LOADERS[activeIsolateName]().then((isolateModule) => {
+        api.register(isolateModule.default.createResolver());
+      });
+    }
+
     return () => {
       delete (window as any).__BENCH__;
       delete (window as any).__BENCH_BUILD_ANNOTATION__;

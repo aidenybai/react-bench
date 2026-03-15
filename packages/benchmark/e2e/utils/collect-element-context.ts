@@ -15,8 +15,10 @@ const collectElementContext = async (
       reactGrab: null,
       reactGrabClipboard: null,
       agentationClipboard: null,
-      agentationImprovedClipboard: null,
       cursorBrowserClipboard: null,
+      clickToComponentClipboard: null,
+      locatorjsClipboard: null,
+      instrucktClipboard: null,
     };
 
     const element = document.querySelector(
@@ -28,7 +30,7 @@ const collectElementContext = async (
     const buildAnnotation = (window as any).__BENCH_BUILD_ANNOTATION__;
     if (!benchApi?.prod || !buildAnnotation) return emptyContext;
 
-    const { prod, improved } = benchApi;
+    const { prod } = benchApi;
     const pathname = window.location.pathname;
     const selectedText = element.innerText?.trim().slice(0, 100) ?? "";
 
@@ -66,27 +68,40 @@ const collectElementContext = async (
       }
     }
 
-    let agentationImprovedClipboard: string | null = null;
-    if (improved) {
-      const improvedAnnotation = buildAnnotation(
-        improved,
-        element,
-        selectedText,
-      );
-      improvedAnnotation.sourceFile = await improved.detectSourceFile(element);
-      agentationImprovedClipboard = improved.generateOutput(
-        [improvedAnnotation],
-        pathname,
-        "forensic",
-      );
-    }
-
     let cursorBrowserClipboard: string | null = null;
     const cursorInspector = (window as any).__CURSOR_BROWSER_INSPECTOR__;
     if (cursorInspector) {
       const metadata = cursorInspector.inspectElement(element);
       cursorBrowserClipboard = cursorInspector.formatClipboardText(metadata);
     }
+
+    const resolveOne = async (name: string) => {
+      const results = await benchApi.resolve(element, name);
+      return results[name] ?? null;
+    };
+
+    const [clickToComponentResult, locatorjsResult, instrucktResult] =
+      await Promise.all([
+        resolveOne("click-to-component"),
+        resolveOne("locatorjs"),
+        resolveOne("instruckt"),
+      ]);
+
+    const formatSimpleClipboard = (
+      result: { filePath: string | null; componentName: string | null; found: boolean } | null,
+    ): string | null => {
+      if (!result?.found || !result.filePath) return null;
+      let text = result.filePath;
+      if (result.componentName) text = `${result.componentName} at ${text}`;
+      return text;
+    };
+
+    const clickToComponentClipboard = formatSimpleClipboard(clickToComponentResult);
+    const locatorjsClipboard = formatSimpleClipboard(locatorjsResult);
+
+    const instrucktClipboard = benchApi.buildInstrucktClipboard
+      ? await benchApi.buildInstrucktClipboard(element, pathname)
+      : null;
 
     const prodIdentity = prod.identifyElementWithReact(element);
     return {
@@ -104,8 +119,10 @@ const collectElementContext = async (
       reactGrab,
       reactGrabClipboard,
       agentationClipboard,
-      agentationImprovedClipboard,
       cursorBrowserClipboard,
+      clickToComponentClipboard,
+      locatorjsClipboard,
+      instrucktClipboard,
     };
   }, testId);
 

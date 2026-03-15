@@ -18,8 +18,10 @@ interface ElementContext {
   } | null;
   reactGrabClipboard: string | null;
   agentationClipboard: string | null;
-  agentationImprovedClipboard: string | null;
   cursorBrowserClipboard: string | null;
+  clickToComponentClipboard: string | null;
+  locatorjsClipboard: string | null;
+  instrucktClipboard: string | null;
 }
 
 interface AgentResult {
@@ -55,8 +57,10 @@ const EMPTY_ELEMENT_CONTEXT: ElementContext = {
   reactGrab: null,
   reactGrabClipboard: null,
   agentationClipboard: null,
-  agentationImprovedClipboard: null,
   cursorBrowserClipboard: null,
+  clickToComponentClipboard: null,
+  locatorjsClipboard: null,
+  instrucktClipboard: null,
 };
 
 export { EMPTY_ELEMENT_CONTEXT };

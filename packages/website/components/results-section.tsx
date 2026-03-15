@@ -210,6 +210,56 @@ const buildChartData = (
 
 const DEFAULT_MODEL = "claude";
 
+const BASELINE_ACCURACY_THRESHOLD = 0.02;
+
+const buildOverallData = (
+  filteredResolverKeys: string[],
+): ChartDataEntry[] => {
+  const overallScenario = benchData.scenarios.find(
+    (scenario) => scenario.label === "overall",
+  );
+  if (!overallScenario) return [];
+
+  const controlKey = "claude-code";
+  const controlData =
+    overallScenario.results[
+      controlKey as keyof typeof overallScenario.results
+    ];
+  const baselineAccuracy = controlData?.accuracy ?? 0;
+
+  return filteredResolverKeys
+    .map((resolverKey) => {
+      const resolverData =
+        overallScenario.results[
+          resolverKey as keyof typeof overallScenario.results
+        ] as Record<string, unknown> | undefined;
+      const speed = (resolverData?.speed as number) ?? 0;
+      const accuracy = (resolverData?.accuracy as number) ?? 0;
+      if (speed === 0 || accuracy === 0) return null;
+
+      if (
+        resolverKey !== controlKey &&
+        Math.abs(accuracy - baselineAccuracy) / 100 < BASELINE_ACCURACY_THRESHOLD
+      ) {
+        return null;
+      }
+
+      const timePerCorrect =
+        Math.round((speed / (accuracy / 100)) * 10) / 10;
+
+      return {
+        label: getTreatmentLabel(resolverKey),
+        value: timePerCorrect,
+        errorRange: [0, 0] as [number, number],
+        ciLower: timePerCorrect,
+        ciUpper: timePerCorrect,
+        fill: getResolverColor(resolverKey),
+      };
+    })
+    .filter((entry): entry is ChartDataEntry => entry !== null)
+    .sort((entryA, entryB) => entryA.value - entryB.value);
+};
+
 const ResultsSection = () => {
   const [tab, setTab] = useQueryState(
     "metric",
@@ -250,14 +300,15 @@ const ResultsSection = () => {
 
       <TabsContent value="speed" className="space-y-6">
         <p className="text-sm text-muted-foreground italic">
-          Geometric mean resolution time in seconds (lower is better)
+          Average resolution time. Wrong answers penalized at 2min (lower is
+          better)
         </p>
         <ResultsBarChart
           data={speedChartData}
           domain={speedScale.domain}
           ticks={speedScale.ticks}
           formatValue={formatSpeed}
-          metricLabel="Geomean"
+          metricLabel="Avg"
         />
         <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
           <SpeedTable

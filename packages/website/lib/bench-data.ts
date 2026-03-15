@@ -7,6 +7,9 @@ const TREATMENT_COLORS: Record<string, string> = {
   "react-grab": "oklch(0.7 0.25 330)",
   agentation: "#3b83f6",
   "cursor-browser": "#f64e00",
+  "click-to-component": "#10b981",
+  locatorjs: "#8b5cf6",
+  instruckt: "#f59e0b",
 };
 
 const TREATMENT_LABELS: Record<string, string> = {
@@ -14,6 +17,9 @@ const TREATMENT_LABELS: Record<string, string> = {
   agentation: "Agentation",
   "react-grab": "React Grab",
   "cursor-browser": "Cursor (Browser)",
+  "click-to-component": "Click to Component",
+  locatorjs: "LocatorJS",
+  instruckt: "Instruckt",
 };
 
 const DEFAULT_CHART_COLOR = "oklch(0.6 0 0)";
@@ -33,6 +39,9 @@ const MODEL_RESOLVER_MAP: Record<string, Record<string, string>> = {
     agentation: "agentation+claude",
     "react-grab": "react-grab+claude",
     "cursor-browser": "cursor-browser+claude",
+    "click-to-component": "click-to-component+claude",
+    locatorjs: "locatorjs+claude",
+    instruckt: "instruckt+claude",
   },
 };
 

@@ -1,0 +1,20 @@
+diff --git a/package.json b/package.json
+index 0a67ea57d8998a5f489f3b4c7af2545572bc0825..a6271a55fb1993a87955cdc15f7058e667859ae0 100644
+--- a/package.json
++++ b/package.json
+@@ -4,9 +4,12 @@
+   "version": "1.1.3",
+   "description": "Option+Click your React components in your browser to open the source file in VS Code",
+   "exports": {
+-    "types": "./src/types.d.ts",
+-    "import": "./src/index.js",
+-    "default": "./src/index.js"
++    ".": {
++      "types": "./src/types.d.ts",
++      "import": "./src/index.js",
++      "default": "./src/index.js"
++    },
++    "./src/*": "./src/*"
+   },
+   "types": "src/types.d.ts",
+   "files": [

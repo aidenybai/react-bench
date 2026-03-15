@@ -33,28 +33,23 @@ const geomeanConfidenceInterval = (valuesMs: number[]): GeomeanWithCI => {
   const positiveValues = valuesMs.filter((value) => value > 0);
   if (positiveValues.length === 0) return { geomean: 0, lower: 0, upper: 0 };
 
-  const logValues = positiveValues.map((value) => Math.log(value));
-  const logMean =
-    logValues.reduce((sum, value) => sum + value, 0) / logValues.length;
+  const mean =
+    positiveValues.reduce((sum, value) => sum + value, 0) /
+    positiveValues.length;
 
   if (positiveValues.length < 2) {
-    const singleGeomean = Math.exp(logMean);
-    return {
-      geomean: singleGeomean,
-      lower: singleGeomean,
-      upper: singleGeomean,
-    };
+    return { geomean: mean, lower: mean, upper: mean };
   }
 
-  const logVariance =
-    logValues.reduce((sum, value) => sum + (value - logMean) ** 2, 0) /
-    (logValues.length - 1);
-  const logStandardError = Math.sqrt(logVariance / logValues.length);
+  const variance =
+    positiveValues.reduce((sum, value) => sum + (value - mean) ** 2, 0) /
+    (positiveValues.length - 1);
+  const standardError = Math.sqrt(variance / positiveValues.length);
 
   return {
-    geomean: Math.exp(logMean),
-    lower: Math.exp(logMean - Z_95 * logStandardError),
-    upper: Math.exp(logMean + Z_95 * logStandardError),
+    geomean: mean,
+    lower: Math.max(0, mean - Z_95 * standardError),
+    upper: mean + Z_95 * standardError,
   };
 };
 

@@ -25,7 +25,10 @@
   "packageManager": "pnpm@10.31.0",
   "pnpm": {
     "patchedDependencies": {
-      "agentation@2.3.2": "patches/agentation@2.3.2.patch"
+      "agentation@2.3.2": "patches/agentation@2.3.2.patch",
+      "click-to-react-component": "patches/click-to-react-component.patch",
+      "@locator/runtime": "patches/@locator__runtime.patch",
+      "instruckt": "patches/instruckt.patch"
     }
   }
 }

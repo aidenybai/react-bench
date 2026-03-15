@@ -1,0 +1,151 @@
+diff --git a/dist/instruckt.cjs.js b/dist/instruckt.cjs.js
+index 610ddb0ab22dd17f334ee0444ea0163d743bce5a..4a84b1ca16f0b8ecf7299f59b1f4ea6953552cef 100644
+--- a/dist/instruckt.cjs.js
++++ b/dist/instruckt.cjs.js
+@@ -50,7 +50,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
+ var src_exports = {};
+ __export(src_exports, {
+   Instruckt: () => Instruckt,
+-  init: () => init
++  init: () => init,
++  formatAnnotationMarkdown: () => formatAnnotationMarkdown
+ });
+ module.exports = __toCommonJS(src_exports);
+ 
+@@ -4043,6 +4044,50 @@ _Instruckt.IDB_NAME = "instruckt";
+ _Instruckt.IDB_STORE = "screenshots";
+ var Instruckt = _Instruckt;
+ 
++// src/formatAnnotationMarkdown.ts
++function formatAnnotationMarkdown(annotations, pathname) {
++  const pending = annotations.filter(function(a) { return a.status !== "resolved" && a.status !== "dismissed"; });
++  if (pending.length === 0) return "# UI Feedback\n\nNo open annotations.";
++  var lines = [];
++  lines.push("# UI Feedback: " + (pathname || "/"));
++  lines.push("");
++  pending.forEach(function(a, i) {
++    var componentSuffix = (a.framework && a.framework.component) ? " in `" + a.framework.component + "`" : "";
++    lines.push("## " + (i + 1) + ". " + (a.comment || "identify this component"));
++    if (a.id) lines.push("- ID: `" + a.id + "`");
++    lines.push("- Element: `" + (a.element || "unknown") + "`" + componentSuffix);
++    if (a.framework && a.framework.source_file) {
++      var loc = a.framework.source_file;
++      if (a.framework.source_line) {
++        loc += ":" + a.framework.source_line;
++        if (a.framework.source_column) loc += ":" + a.framework.source_column;
++      }
++      lines.push("- Source: `" + loc + "`");
++    }
++    if (a.framework && a.framework.component_stack && a.framework.component_stack.length > 1) {
++      lines.push("- Component stack:");
++      for (var fi = 0; fi < a.framework.component_stack.length; fi++) {
++        var frame = a.framework.component_stack[fi];
++        var frameLoc = frame.filePath;
++        if (frame.lineNumber) {
++          frameLoc += ":" + frame.lineNumber;
++          if (frame.columnNumber) frameLoc += ":" + frame.columnNumber;
++        }
++        var name = frame.componentName ? frame.componentName + " " : "";
++        lines.push("  - " + name + "`" + frameLoc + "`");
++      }
++    }
++    if (a.cssClasses) lines.push("- Classes: `" + a.cssClasses + "`");
++    if (a.selectedText) {
++      lines.push('- Text: "' + a.selectedText + '"');
++    } else if (a.nearbyText) {
++      lines.push('- Text: "' + a.nearbyText.slice(0, 100) + '"');
++    }
++    lines.push("");
++  });
++  return lines.join("\n").trim();
++}
++
+ // src/index.ts
+ function init(config) {
+   return new Instruckt(config);
+diff --git a/dist/instruckt.d.cts b/dist/instruckt.d.cts
+index b7016e2d7ac3c2dd1e845394e9408fe71359b869..ff04a5f81e22039ae1fdc76d6a7009605271cd82 100644
+--- a/dist/instruckt.d.cts
++++ b/dist/instruckt.d.cts
+@@ -206,4 +206,6 @@ declare class Instruckt {
+  */
+ declare function init(config: InstrucktConfig): Instruckt;
+ 
+-export { type Annotation, type AnnotationIntent, type AnnotationPayload, type AnnotationSeverity, type AnnotationStatus, type FrameworkContext, Instruckt, type InstrucktConfig, type SourceFrame, init };
++declare function formatAnnotationMarkdown(annotations: Annotation[], pathname?: string): string;
++
++export { type Annotation, type AnnotationIntent, type AnnotationPayload, type AnnotationSeverity, type AnnotationStatus, type FrameworkContext, Instruckt, type InstrucktConfig, type SourceFrame, formatAnnotationMarkdown, init };
+diff --git a/dist/instruckt.d.ts b/dist/instruckt.d.ts
+index b7016e2d7ac3c2dd1e845394e9408fe71359b869..ff04a5f81e22039ae1fdc76d6a7009605271cd82 100644
+--- a/dist/instruckt.d.ts
++++ b/dist/instruckt.d.ts
+@@ -206,4 +206,6 @@ declare class Instruckt {
+  */
+ declare function init(config: InstrucktConfig): Instruckt;
+ 
+-export { type Annotation, type AnnotationIntent, type AnnotationPayload, type AnnotationSeverity, type AnnotationStatus, type FrameworkContext, Instruckt, type InstrucktConfig, type SourceFrame, init };
++declare function formatAnnotationMarkdown(annotations: Annotation[], pathname?: string): string;
++
++export { type Annotation, type AnnotationIntent, type AnnotationPayload, type AnnotationSeverity, type AnnotationStatus, type FrameworkContext, Instruckt, type InstrucktConfig, type SourceFrame, formatAnnotationMarkdown, init };
+diff --git a/dist/instruckt.esm.js b/dist/instruckt.esm.js
+index 66079669db3e534f145228e47483fd5a42cbec39..41b1910ee4952e68803e570444d152fff4de5b2e 100644
+--- a/dist/instruckt.esm.js
++++ b/dist/instruckt.esm.js
+@@ -4019,12 +4019,57 @@ _Instruckt.IDB_NAME = "instruckt";
+ _Instruckt.IDB_STORE = "screenshots";
+ var Instruckt = _Instruckt;
+ 
++// src/formatAnnotationMarkdown.ts
++function formatAnnotationMarkdown(annotations, pathname) {
++  const pending = annotations.filter((a) => a.status !== "resolved" && a.status !== "dismissed");
++  if (pending.length === 0) return "# UI Feedback\n\nNo open annotations.";
++  const lines = [];
++  lines.push(`# UI Feedback: ${pathname || "/"}`);
++  lines.push("");
++  pending.forEach((a, i) => {
++    var _a, _b, _c, _d;
++    const componentSuffix = ((_a = a.framework) == null ? void 0 : _a.component) ? ` in \`${a.framework.component}\`` : "";
++    lines.push(`## ${i + 1}. ${a.comment || "identify this component"}`);
++    if (a.id) lines.push(`- ID: \`${a.id}\``);
++    lines.push(`- Element: \`${a.element || "unknown"}\`${componentSuffix}`);
++    if ((_b = a.framework) == null ? void 0 : _b.source_file) {
++      let loc = a.framework.source_file;
++      if (a.framework.source_line) {
++        loc += `:${a.framework.source_line}`;
++        if (a.framework.source_column) loc += `:${a.framework.source_column}`;
++      }
++      lines.push(`- Source: \`${loc}\``);
++    }
++    if (((_c = a.framework) == null ? void 0 : _c.component_stack) && a.framework.component_stack.length > 1) {
++      lines.push(`- Component stack:`);
++      for (const frame of a.framework.component_stack) {
++        let frameLoc = frame.filePath;
++        if (frame.lineNumber) {
++          frameLoc += `:${frame.lineNumber}`;
++          if (frame.columnNumber) frameLoc += `:${frame.columnNumber}`;
++        }
++        const name = frame.componentName ? `${frame.componentName} ` : "";
++        lines.push(`  - ${name}\`${frameLoc}\``);
++      }
++    }
++    if (a.cssClasses) lines.push(`- Classes: \`${a.cssClasses}\``);
++    if (a.selectedText) {
++      lines.push(`- Text: "${a.selectedText}"`);
++    } else if ((_d = a.nearbyText) == null ? void 0 : _d.slice) {
++      lines.push(`- Text: "${a.nearbyText.slice(0, 100)}"`);
++    }
++    lines.push("");
++  });
++  return lines.join("\n").trim();
++}
++
+ // src/index.ts
+ function init(config) {
+   return new Instruckt(config);
+ }
+ export {
+   Instruckt,
++  formatAnnotationMarkdown,
+   init
+ };
+ //# sourceMappingURL=instruckt.esm.js.map

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useQueryState, parseAsStringLiteral } from "nuqs";
 import {
   Bar,
@@ -22,6 +22,8 @@ import {
   getResolversForModel,
   getControlKeyForModel,
   getTreatmentLabel,
+  getToolGithubUrl,
+  getToolLogoUrl,
 } from "@/lib/bench-data";
 
 interface ChartDataEntry {
@@ -31,6 +33,8 @@ interface ChartDataEntry {
   ciLower: number;
   ciUpper: number;
   fill: string;
+  logoUrl?: string;
+  githubUrl?: string;
 }
 
 interface ResultsBarChartProps {
@@ -39,6 +43,7 @@ interface ResultsBarChartProps {
   ticks: number[];
   formatValue: (value: number) => string;
   metricLabel: string;
+  isCompact?: boolean;
 }
 
 const BenchTooltip = ({
@@ -74,14 +79,107 @@ const BenchTooltip = ({
   );
 };
 
+const TICK_LOGO_SIZE_PX = 14;
+const TICK_CONTAINER_WIDTH_PX = 150;
+const TICK_CONTAINER_HEIGHT_PX = 24;
+const TICK_LABEL_ANGLE_DEG = -35;
+const COMPACT_BREAKPOINT_PX = 640;
+const XAXIS_HEIGHT_NORMAL_PX = 50;
+const XAXIS_HEIGHT_COMPACT_PX = 80;
+
+interface LogoTickProps {
+  x?: number;
+  y?: number;
+  payload?: { value: string; index: number };
+  chartEntries?: ChartDataEntry[];
+  isCompact?: boolean;
+}
+
+const LogoTick = ({
+  x = 0,
+  y = 0,
+  payload,
+  chartEntries,
+  isCompact = false,
+}: LogoTickProps) => {
+  const entry = chartEntries?.[payload?.index ?? -1];
+  const logoUrl = entry?.logoUrl;
+  const githubUrl = entry?.githubUrl;
+
+  const label = (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "3px",
+        fontSize: "11px",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {logoUrl && (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
+          src={logoUrl}
+          alt=""
+          width={TICK_LOGO_SIZE_PX}
+          height={TICK_LOGO_SIZE_PX}
+          style={{ borderRadius: "50%" }}
+        />
+      )}
+      {payload?.value}
+    </span>
+  );
+
+  const justifyContent = isCompact ? "flex-end" : "center";
+
+  const transform = isCompact
+    ? `translate(${x},${y + 4}) rotate(${TICK_LABEL_ANGLE_DEG})`
+    : `translate(${x},${y + 14})`;
+
+  const foreignObjectX = isCompact
+    ? -TICK_CONTAINER_WIDTH_PX
+    : -TICK_CONTAINER_WIDTH_PX / 2;
+
+  return (
+    <g transform={transform}>
+      <foreignObject
+        x={foreignObjectX}
+        y={-TICK_CONTAINER_HEIGHT_PX / 2}
+        width={TICK_CONTAINER_WIDTH_PX}
+        height={TICK_CONTAINER_HEIGHT_PX}
+        style={{ overflow: "visible" }}
+      >
+        {githubUrl ? (
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              textDecoration: "none",
+              color: "currentColor",
+              display: "flex",
+              justifyContent,
+            }}
+          >
+            {label}
+          </a>
+        ) : (
+          <div style={{ display: "flex", justifyContent }}>{label}</div>
+        )}
+      </foreignObject>
+    </g>
+  );
+};
+
 const ResultsBarChart = ({
   data,
   domain,
   ticks,
   formatValue,
   metricLabel,
+  isCompact = false,
 }: ResultsBarChartProps) => (
-  <ChartContainer config={{}} className="aspect-2/1 w-full">
+  <ChartContainer config={{}} className="aspect-[5/4] sm:aspect-2/1 w-full">
     <BarChart data={data} margin={{ top: 24, right: 0, bottom: 0, left: 0 }}>
       <CartesianGrid vertical={false} strokeDasharray="3 3" />
       <XAxis
@@ -89,7 +187,11 @@ const ResultsBarChart = ({
         type="category"
         tickLine={false}
         axisLine={false}
-        tick={{ fontSize: 11 }}
+        tick={<LogoTick chartEntries={data} isCompact={isCompact} />}
+        height={
+          isCompact ? XAXIS_HEIGHT_COMPACT_PX : XAXIS_HEIGHT_NORMAL_PX
+        }
+        interval={0}
       />
       <YAxis
         type="number"
@@ -136,6 +238,9 @@ const SPEED_TICK_INTERVAL_S = 5;
 const SPEED_PADDING_S = 2;
 const ACCURACY_TICKS = [0, 25, 50, 75, 100];
 
+const getOverallScenario = () =>
+  benchData.scenarios.find((scenario) => scenario.label === "overall");
+
 const buildSpeedScale = (
   data: ChartDataEntry[],
 ): { domain: [number, number]; ticks: number[] } => {
@@ -171,9 +276,7 @@ const buildChartData = (
   metricKey: "speed" | "accuracy",
   sortDescending: boolean,
 ): ChartDataEntry[] => {
-  const overallScenario = benchData.scenarios.find(
-    (scenario) => scenario.label === "overall",
-  );
+  const overallScenario = getOverallScenario();
   if (!overallScenario) return [];
 
   return filteredResolverKeys
@@ -198,6 +301,8 @@ const buildChartData = (
         ciLower,
         ciUpper,
         fill: getResolverColor(resolverKey),
+        logoUrl: getToolLogoUrl(resolverKey),
+        githubUrl: getToolGithubUrl(resolverKey),
       };
     })
     .filter((entry) => entry.value > 0)
@@ -212,12 +317,30 @@ const DEFAULT_MODEL = "claude";
 
 const BASELINE_ACCURACY_THRESHOLD = 0.02;
 
+const sortResolverKeysByMetric = (
+  resolverKeys: string[],
+  metricKey: "speed" | "accuracy",
+  sortDescending: boolean,
+): string[] => {
+  const overallScenario = getOverallScenario();
+  if (!overallScenario) return resolverKeys;
+
+  return [...resolverKeys].sort((keyA, keyB) => {
+    const dataA =
+      overallScenario.results[keyA as keyof typeof overallScenario.results];
+    const dataB =
+      overallScenario.results[keyB as keyof typeof overallScenario.results];
+    const fallback = sortDescending ? -Infinity : Infinity;
+    const valueA = dataA?.[metricKey] ?? fallback;
+    const valueB = dataB?.[metricKey] ?? fallback;
+    return sortDescending ? valueB - valueA : valueA - valueB;
+  });
+};
+
 const buildOverallData = (
   filteredResolverKeys: string[],
 ): ChartDataEntry[] => {
-  const overallScenario = benchData.scenarios.find(
-    (scenario) => scenario.label === "overall",
-  );
+  const overallScenario = getOverallScenario();
   if (!overallScenario) return [];
 
   const controlKey = "claude-code";
@@ -254,6 +377,8 @@ const buildOverallData = (
         ciLower: timePerCorrect,
         ciUpper: timePerCorrect,
         fill: getResolverColor(resolverKey),
+        logoUrl: getToolLogoUrl(resolverKey),
+        githubUrl: getToolGithubUrl(resolverKey),
       };
     })
     .filter((entry): entry is ChartDataEntry => entry !== null)
@@ -261,6 +386,19 @@ const buildOverallData = (
 };
 
 const ResultsSection = () => {
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      `(max-width: ${COMPACT_BREAKPOINT_PX}px)`,
+    );
+    setIsCompact(mediaQuery.matches);
+    const handleChange = (event: MediaQueryListEvent) =>
+      setIsCompact(event.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   const [tab, setTab] = useQueryState(
     "metric",
     parseAsStringLiteral(["speed", "accuracy"] as const).withDefault("speed"),
@@ -272,6 +410,16 @@ const ResultsSection = () => {
   );
 
   const controlKey = useMemo(() => getControlKeyForModel(DEFAULT_MODEL), []);
+
+  const speedSortedResolverKeys = useMemo(
+    () => sortResolverKeysByMetric(filteredResolverKeys, "speed", false),
+    [filteredResolverKeys],
+  );
+
+  const accuracySortedResolverKeys = useMemo(
+    () => sortResolverKeysByMetric(filteredResolverKeys, "accuracy", true),
+    [filteredResolverKeys],
+  );
 
   const speedChartData = useMemo(
     () => buildChartData(filteredResolverKeys, "speed", false),
@@ -309,10 +457,11 @@ const ResultsSection = () => {
           ticks={speedScale.ticks}
           formatValue={formatSpeed}
           metricLabel="Avg"
+          isCompact={isCompact}
         />
         <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
           <SpeedTable
-            resolverKeys={filteredResolverKeys}
+            resolverKeys={speedSortedResolverKeys}
             controlKey={controlKey}
           />
         </div>
@@ -328,9 +477,10 @@ const ResultsSection = () => {
           ticks={ACCURACY_TICKS}
           formatValue={formatAccuracy}
           metricLabel="Accuracy"
+          isCompact={isCompact}
         />
         <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
-          <AccuracyTable resolverKeys={filteredResolverKeys} />
+          <AccuracyTable resolverKeys={accuracySortedResolverKeys} />
         </div>
       </TabsContent>
     </Tabs>

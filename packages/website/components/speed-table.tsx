@@ -7,7 +7,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { TestCaseCell } from "@/components/test-case-cell";
-import { benchData, getResolverColor } from "@/lib/bench-data";
+import { benchData } from "@/lib/bench-data";
+import { ResolverHeaderCell } from "@/components/resolver-header-cell";
 
 const CHANGE_THRESHOLD_PERCENT = 0.5;
 
@@ -35,22 +36,11 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
     <TableHeader>
       <TableRow>
         <TableHead className="text-[11px]">Test Case</TableHead>
-        {resolverKeys.map((resolverKey) => {
-          const resolver = benchData.resolvers.find(
-            (innerResolver) => innerResolver.key === resolverKey,
-          );
-          return (
-            <TableHead key={resolverKey} className="text-right text-[11px]">
-              <span className="inline-flex items-center justify-end gap-1.5">
-                <span
-                  className="size-2 shrink-0 rounded-[2px]"
-                  style={{ backgroundColor: getResolverColor(resolverKey) }}
-                />
-                {resolver?.label ?? resolverKey}
-              </span>
-            </TableHead>
-          );
-        })}
+        {resolverKeys.map((resolverKey) => (
+          <TableHead key={resolverKey} className="text-right text-[11px]">
+            <ResolverHeaderCell resolverKey={resolverKey} />
+          </TableHead>
+        ))}
       </TableRow>
     </TableHeader>
     <TableBody>

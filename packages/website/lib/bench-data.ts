@@ -22,6 +22,26 @@ const TREATMENT_LABELS: Record<string, string> = {
   instruckt: "Instruckt",
 };
 
+const TREATMENT_GITHUB_URLS: Record<string, string> = {
+  standalone: "https://github.com/anthropics/claude-code",
+  agentation: "https://github.com/benjitaylor/agentation",
+  "react-grab": "https://github.com/aidenybai/react-grab",
+  "cursor-browser": "https://cursor.com/docs/agent/browser",
+  "click-to-component": "https://github.com/ericclemmons/click-to-component",
+  locatorjs: "https://github.com/infi-pc/locatorjs",
+  instruckt: "https://github.com/joshcirre/instruckt",
+};
+
+const TREATMENT_LOGO_URLS: Record<string, string> = {
+  standalone: "https://github.com/anthropics.png?size=64",
+  agentation: "https://github.com/benjitaylor.png?size=64",
+  "react-grab": "https://github.com/aidenybai.png?size=64",
+  "cursor-browser": "https://github.com/anysphere.png?size=64",
+  "click-to-component": "https://github.com/ericclemmons.png?size=64",
+  locatorjs: "https://github.com/infi-pc.png?size=64",
+  instruckt: "https://github.com/joshcirre.png?size=64",
+};
+
 const DEFAULT_CHART_COLOR = "oklch(0.6 0 0)";
 
 const TREATMENT_KEYS = Object.keys(TREATMENT_COLORS);
@@ -60,11 +80,22 @@ const RESOLVER_TO_MODEL_KEY: Record<string, string> = Object.fromEntries(
   ),
 );
 
-const getResolverColor = (resolverKey: string): string => {
+const getTreatmentProperty = <T,>(
+  resolverKey: string,
+  map: Record<string, T>,
+): T | undefined => {
   const treatmentKey = RESOLVER_TO_TREATMENT[resolverKey];
-  const color = treatmentKey ? TREATMENT_COLORS[treatmentKey] : undefined;
-  return color ?? DEFAULT_CHART_COLOR;
+  return treatmentKey ? map[treatmentKey] : undefined;
 };
+
+const getResolverColor = (resolverKey: string): string =>
+  getTreatmentProperty(resolverKey, TREATMENT_COLORS) ?? DEFAULT_CHART_COLOR;
+
+const getToolGithubUrl = (resolverKey: string): string | undefined =>
+  getTreatmentProperty(resolverKey, TREATMENT_GITHUB_URLS);
+
+const getToolLogoUrl = (resolverKey: string): string | undefined =>
+  getTreatmentProperty(resolverKey, TREATMENT_LOGO_URLS);
 
 const getResolversForModel = (modelKey: string): string[] => {
   const treatments = MODEL_RESOLVER_MAP[modelKey];
@@ -102,4 +133,6 @@ export {
   getResolversForModel,
   getControlKeyForModel,
   getTreatmentLabel,
+  getToolGithubUrl,
+  getToolLogoUrl,
 };

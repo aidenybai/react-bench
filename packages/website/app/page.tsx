@@ -35,10 +35,10 @@ const Page = () => (
 
       <div className="space-y-6">
         <p className="text-sm text-muted-foreground">
-          {benchData.testCases.length} test cases spanning 14 pattern categories
+          {benchData.testCases.length} test cases across 14 pattern categories
           (HOC stacking, compound components, barrel re-exports, dynamic
-          imports, render props, name collisions, and more), each inspired by
-          patterns in open-source projects like{" "}
+          imports, render props, name collisions, and more). Each test case is
+          inspired by component structures found in production codebases like{" "}
           <a
             href="https://github.com/calcom/cal.com"
             target="_blank"
@@ -78,7 +78,7 @@ const Page = () => (
           must identify the correct source file. Last benchmarked:{" "}
           <em>{benchData.lastBenchmarked}</em>.{" "}
           <a
-            href="https://github.com/aidenybai/react-bench"
+            href="https://github.com/aidenybai/react-bench#readme"
             target="_blank"
             rel="noopener noreferrer"
             className={LINK_CLASS}

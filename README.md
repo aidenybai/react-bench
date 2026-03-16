@@ -6,21 +6,15 @@
 
 ## My React Grab benchmark was broken, so I built a harder one
 
-TL;DR
-
-The original React Grab benchmark had 20 test cases in a clean shadcn dashboard. That's not enough to say anything real. So I built [React Bench](https://react-bench.com): 331 test cases across 14 pattern categories, all pulled from production codebases. It tests React Grab alongside six other tools. Turns out, the easy cases aren't where tools differentiate.
-
-### Where the original benchmark fell short
-
 When I shipped [React Grab](https://www.react-grab.com/blog/intro), I benchmarked it on 20 UI tasks in a shadcn dashboard. The result was a ~3x speedup over Claude Code alone. Directionally correct, but there were obvious problems:
 
 1. The shadcn dashboard is well-structured and shallow. Components have clear names. Files live where you'd expect them. Most real apps aren't like that.
 2. React Grab wasn't the only tool solving this problem. [Agentation](https://github.com/benjitaylor/agentation), [Cursor Browser](https://cursor.com/docs/agent/browser), [Click to Component](https://github.com/ericclemmons/click-to-component), [LocatorJS](https://github.com/infi-pc/locatorjs), [Instruckt](https://github.com/joshcirre/instruckt) all claim to help agents find source files faster. Nobody had compared them.
 3. Agents are non-deterministic. Running each test once gives you a point estimate with unknown variance.
 
-I kept seeing people tweet "this tool found it instantly" or "that tool is 3x faster." Everyone had anecdotes. Nobody had data.
+I kept seeing people tweet about how tools helped them in their workflows, but there wasn't any concrete data to back those claims up.
 
-So I decided to just build the benchmark myself.
+So I decided to build the benchmark myself.
 
 ### Digging through production codebases
 

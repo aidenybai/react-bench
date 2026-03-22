@@ -447,7 +447,7 @@ const ResultsSection = () => {
       </TabsList>
 
       <TabsContent value="speed" className="space-y-6">
-        <p className="text-sm text-muted-foreground italic">
+        <p className="text-muted-foreground italic">
           Average resolution time. Wrong answers penalized at 2min (lower is
           better)
         </p>
@@ -468,7 +468,7 @@ const ResultsSection = () => {
       </TabsContent>
 
       <TabsContent value="accuracy" className="space-y-6">
-        <p className="text-sm text-muted-foreground italic">
+        <p className="text-muted-foreground italic">
           Correct resolutions in % (higher is better)
         </p>
         <ResultsBarChart

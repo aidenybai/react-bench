@@ -40,7 +40,7 @@ const TestCaseCell = ({
               render={
                 <Badge
                   variant="outline"
-                  className="text-[9px] px-1.5 py-0 h-4 cursor-default"
+                  className="text-[10px] px-1.5 py-0 h-4 cursor-default"
                 />
               }
             >
@@ -53,11 +53,11 @@ const TestCaseCell = ({
         )}
       </div>
       {description && (
-        <p className="text-[10px] text-muted-foreground font-normal whitespace-normal">
+        <p className="text-[11px] text-muted-foreground font-normal whitespace-normal">
           {description}
         </p>
       )}
-      <p className="text-[9px] text-muted-foreground/60 font-normal font-mono whitespace-normal">
+      <p className="text-[10px] text-muted-foreground/60 font-normal font-mono whitespace-normal">
         {componentName && <span>{componentName} · </span>}
         {filePath}
       </p>

@@ -35,9 +35,9 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
   <Table>
     <TableHeader>
       <TableRow>
-        <TableHead className="text-[11px]">Test Case</TableHead>
+        <TableHead className="text-xs">Test Case</TableHead>
         {resolverKeys.map((resolverKey) => (
-          <TableHead key={resolverKey} className="text-right text-[11px]">
+          <TableHead key={resolverKey} className="text-right text-xs">
             <ResolverHeaderCell resolverKey={resolverKey} />
           </TableHead>
         ))}
@@ -59,7 +59,7 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
 
         return (
           <TableRow key={testCase.id}>
-            <TableCell className="font-medium text-[11px] max-w-[300px] overflow-hidden">
+            <TableCell className="font-medium text-xs max-w-[300px] overflow-hidden">
               <TestCaseCell
                 testId={testCase.testId}
                 description={testCase.description}
@@ -85,7 +85,7 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
               return (
                 <TableCell
                   key={resolverKey}
-                  className="text-right tabular-nums text-[11px]"
+                  className="text-right tabular-nums text-xs"
                   style={{
                     color: isControl
                       ? "var(--muted-foreground)"
@@ -99,7 +99,7 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
                 >
                   {result.speed ? `${result.speed}s` : "\u2014"}
                   {changeText && (
-                    <span className="ml-1.5 text-[10px] opacity-70">
+                    <span className="ml-1.5 text-[11px] opacity-70">
                       {changeText}
                     </span>
                   )}

@@ -18,9 +18,9 @@ const AccuracyTable = ({ resolverKeys }: AccuracyTableProps) => (
   <Table>
     <TableHeader>
       <TableRow>
-        <TableHead className="text-[11px]">Test Case</TableHead>
+        <TableHead className="text-xs">Test Case</TableHead>
         {resolverKeys.map((resolverKey) => (
-          <TableHead key={resolverKey} className="text-right text-[11px]">
+          <TableHead key={resolverKey} className="text-right text-xs">
             <ResolverHeaderCell resolverKey={resolverKey} />
           </TableHead>
         ))}
@@ -29,7 +29,7 @@ const AccuracyTable = ({ resolverKeys }: AccuracyTableProps) => (
     <TableBody>
       {benchData.testCases.map((testCase) => (
         <TableRow key={testCase.id}>
-          <TableCell className="font-medium text-[11px] max-w-[300px] overflow-hidden">
+          <TableCell className="font-medium text-xs max-w-[300px] overflow-hidden">
             <TestCaseCell
               testId={testCase.testId}
               description={testCase.description}
@@ -44,7 +44,7 @@ const AccuracyTable = ({ resolverKeys }: AccuracyTableProps) => (
             return (
               <TableCell
                 key={resolverKey}
-                className="text-right tabular-nums text-[11px]"
+                className="text-right tabular-nums text-xs"
                 style={{
                   color: result.correct
                     ? "var(--foreground)"

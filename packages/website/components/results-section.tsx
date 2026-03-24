@@ -381,7 +381,7 @@ const buildOverallData = (
         githubUrl: getToolGithubUrl(resolverKey),
       };
     })
-    .filter((entry): entry is ChartDataEntry => entry !== null)
+    .filter((entry) => entry !== null)
     .sort((entryA, entryB) => entryA.value - entryB.value);
 };
 

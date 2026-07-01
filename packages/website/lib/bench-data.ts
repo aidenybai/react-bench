@@ -9,7 +9,6 @@ const TREATMENT_COLORS: Record<string, string> = {
   "cursor-browser": "#f64e00",
   "click-to-component": "#10b981",
   locatorjs: "#8b5cf6",
-  instruckt: "#f59e0b",
 };
 
 const TREATMENT_LABELS: Record<string, string> = {
@@ -19,7 +18,6 @@ const TREATMENT_LABELS: Record<string, string> = {
   "cursor-browser": "Cursor (Browser)",
   "click-to-component": "Click to Component",
   locatorjs: "LocatorJS",
-  instruckt: "Instruckt",
 };
 
 const TREATMENT_GITHUB_URLS: Record<string, string> = {
@@ -29,7 +27,6 @@ const TREATMENT_GITHUB_URLS: Record<string, string> = {
   "cursor-browser": "https://cursor.com/docs/agent/browser",
   "click-to-component": "https://github.com/ericclemmons/click-to-component",
   locatorjs: "https://github.com/infi-pc/locatorjs",
-  instruckt: "https://github.com/joshcirre/instruckt",
 };
 
 const TREATMENT_LOGO_URLS: Record<string, string> = {
@@ -39,7 +36,6 @@ const TREATMENT_LOGO_URLS: Record<string, string> = {
   "cursor-browser": "https://github.com/anysphere.png?size=64",
   "click-to-component": "https://github.com/ericclemmons.png?size=64",
   locatorjs: "https://github.com/infi-pc.png?size=64",
-  instruckt: "https://github.com/joshcirre.png?size=64",
 };
 
 const DEFAULT_CHART_COLOR = "oklch(0.6 0 0)";
@@ -61,7 +57,6 @@ const MODEL_RESOLVER_MAP: Record<string, Record<string, string>> = {
     "cursor-browser": "cursor-browser+claude",
     "click-to-component": "click-to-component+claude",
     locatorjs: "locatorjs+claude",
-    instruckt: "instruckt+claude",
   },
 };
 

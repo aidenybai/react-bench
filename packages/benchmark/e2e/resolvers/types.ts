@@ -21,7 +21,6 @@ interface ElementContext {
   cursorBrowserClipboard: string | null;
   clickToComponentClipboard: string | null;
   locatorjsClipboard: string | null;
-  instrucktClipboard: string | null;
 }
 
 interface AgentResult {
@@ -60,7 +59,6 @@ const EMPTY_ELEMENT_CONTEXT: ElementContext = {
   cursorBrowserClipboard: null,
   clickToComponentClipboard: null,
   locatorjsClipboard: null,
-  instrucktClipboard: null,
 };
 
 export { EMPTY_ELEMENT_CONTEXT };

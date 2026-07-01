@@ -4,7 +4,6 @@ import agentationIsolate from "./agentation";
 import cursorBrowserIsolate from "./cursor-browser";
 import clickToReactComponentIsolate from "./click-to-react-component";
 import locatorjsIsolate from "./locatorjs";
-import instrucktIsolate from "./instruckt";
 
 const ISOLATE_REGISTRY: IsolateDefinition[] = [
   reactGrabIsolate,
@@ -12,7 +11,6 @@ const ISOLATE_REGISTRY: IsolateDefinition[] = [
   cursorBrowserIsolate,
   clickToReactComponentIsolate,
   locatorjsIsolate,
-  instrucktIsolate,
 ];
 
 const findIsolateByName = (

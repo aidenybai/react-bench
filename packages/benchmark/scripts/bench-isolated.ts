@@ -39,11 +39,6 @@ const ISOLATE_SERVERS: ServerTarget[] = [
     port: 3014,
     env: { NEXT_PUBLIC_BENCH_ISOLATE: "locatorjs" },
   },
-  {
-    name: "instruckt",
-    port: 3015,
-    env: { NEXT_PUBLIC_BENCH_ISOLATE: "instruckt" },
-  },
 ];
 
 const ALL_SERVERS = [MAIN_SERVER, ...ISOLATE_SERVERS];

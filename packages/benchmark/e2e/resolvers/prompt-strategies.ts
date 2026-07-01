@@ -24,7 +24,6 @@ const PROMPT_STRATEGIES: PromptStrategy[] = [
   withClipboard("cursor-browser", "cursorBrowserClipboard"),
   withClipboard("click-to-component", "clickToComponentClipboard"),
   withClipboard("locatorjs", "locatorjsClipboard"),
-  withClipboard("instruckt", "instrucktClipboard"),
 ];
 
 export { PROMPT_STRATEGIES };

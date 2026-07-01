@@ -66,7 +66,6 @@ import { InlineMotionHybrid } from "@/components/mixed/inline-motion-hybrid";
 
 import { ShadcnProfileCard } from "@/components/shadcn/shadcn-profile-card";
 
-import { InstrucktToolbar } from "@/components/instruckt/instruckt-toolbar";
 import { ShadcnForm } from "@/components/shadcn/shadcn-form";
 import { ShadcnDataDisplay } from "@/components/shadcn/shadcn-data-display";
 
@@ -920,8 +919,6 @@ export function ClientBenchmarks() {
 
           <ShadcnForm data-testid={hashTestId("shadcn-form")} />
           <ShadcnDataDisplay data-testid={hashTestId("shadcn-data-display")} />
-
-          <InstrucktToolbar data-testid={hashTestId("instruckt-toolbar")} />
         </StyledGrid>
       </StyledSection>
 

@@ -1,109 +1,73 @@
 # React Bench
 
-331 test cases spanning 14 pattern categories, each inspired by component structures found in production codebases like [Cal.com](https://github.com/calcom/cal.com), [Excalidraw](https://github.com/excalidraw/excalidraw), [LobeChat](https://github.com/lobehub/lobe-chat), and [Plane](https://github.com/makeplane/plane). Given a natural-language description of a UI element, each resolver must identify the correct source file.
+React Bench is a benchmark for evaluating how reliably coding agents locate React source files. Given a natural-language description of a rendered UI element, an agent must return the file where that component is defined — the retrieval step that has to succeed before any UI edit can happen.
 
-**[View results](https://react-bench.com)**
+The set is 330 test cases across 14 pattern categories, each modeled on component structures found in production codebases like [Cal.com](https://github.com/calcom/cal.com), [Excalidraw](https://github.com/excalidraw/excalidraw), [LobeChat](https://github.com/lobehub/lobe-chat), and [Plane](https://github.com/makeplane/plane).
 
-## My React Grab benchmark was broken, so I built a harder one
+**[View results →](https://react-bench.com)**
 
-When I shipped [React Grab](https://www.react-grab.com/blog/intro), I benchmarked it on 20 UI tasks in a shadcn dashboard. The result was a ~3x speedup over Claude Code alone. Directionally correct, but there were obvious problems:
+## Why source retrieval
 
-1. The shadcn dashboard is well-structured and shallow. Components have clear names. Files live where you'd expect them. Most real apps aren't like that.
-2. React Grab wasn't the only tool solving this problem. [Agentation](https://github.com/benjitaylor/agentation), [Cursor Browser](https://cursor.com/docs/agent/browser), [Click to Component](https://github.com/ericclemmons/click-to-component), [LocatorJS](https://github.com/infi-pc/locatorjs), [Instruckt](https://github.com/joshcirre/instruckt) all claim to help agents find source files faster. Nobody had compared them.
-3. Agents are non-deterministic. Running each test once gives you a point estimate with unknown variance.
+Coding agents are increasingly driven from what a user sees on screen: "make the retry button on the error banner larger," "the avatar in the sidebar is misaligned." Before the agent can make that edit, it has to find the file the element comes from. In a well-structured demo app that step is trivial. In a production React codebase, with layers of higher-order components, dynamic imports, and re-exported names, it is often the hard part of the task.
 
-I kept seeing people tweet about how tools helped them in their workflows, but there wasn't any concrete data to back those claims up.
+A class of browser tools — [React Grab](https://github.com/aidenybai/react-grab), [Agentation](https://github.com/benjitaylor/agentation), [Cursor's browser inspector](https://cursor.com/docs/agent/browser), [Click to Component](https://github.com/ericclemmons/click-to-component), and [LocatorJS](https://github.com/infi-pc/locatorjs) — claim to close that gap by reading the React fiber tree and handing the agent a source hint. There was no shared, reproducible measurement of whether, and by how much, those tools actually help. React Bench is that measurement: it isolates the retrieval step, holds the agent and prompt fixed, and varies only the source hint each tool provides.
 
-So I decided to build the benchmark myself.
+## What makes retrieval hard
 
-### Digging through production codebases
+The test cases are drawn from patterns that recur across open-source React and Next.js projects — Cal.com, Excalidraw, Twenty, LobeChat, Plane, Novu, Formbricks, Documenso, Dub, Inbox-zero — where the rendered component name and its source location diverge:
 
-I spent a couple weeks reading through popular open-source React/Next.js projects: [Cal.com](https://github.com/calcom/cal.com), [Excalidraw](https://github.com/excalidraw/excalidraw), [Twenty](https://github.com/twentyhq/twenty), [LobeChat](https://github.com/lobehub/lobe-chat), [Plane](https://github.com/makeplane/plane), [Novu](https://github.com/novuhq/novu), [Formbricks](https://github.com/formbricks/formbricks), [Documenso](https://github.com/documenso/documenso), [Dub](https://github.com/dubinc/dub), [Inbox-zero](https://github.com/elie222/inbox-zero). I was looking for patterns that would make source-file retrieval hard.
+- **Deep wrapping.** Cal.com wraps components in `withLicenseRequired`, `withErrorBoundary`, `withTracking`, sometimes several layers deep. The "Russian Doll" case pushes this to 14 HOC layers around a single styled motion button; React DevTools shows a tower of anonymous wrappers, and grepping the component name returns nothing useful.
+- **Indirection.** Excalidraw defines content in one component and renders it elsewhere through context tunnels. LobeChat selects the component to render at runtime from a key-value import map.
+- **Name collisions.** Plane ships a `Button` in `@plane/ui` and another `Button` in `@plane/propel` — same export name, different packages.
+- **Unexpected locations.** Dub puts JSX in `variables.tsx`, Inbox-zero puts components in `utils/scripts/`, and Documenso defines icon components inside config objects. An agent searching `components/` never finds them.
 
-In short: real codebases do awful things.
+Each pattern is reproduced as one or more test cases — 330 in total, spanning deep nesting, factory components, generic names, sibling components, compound components, alias re-exports, `displayName` resolution, HOC stacking, dispatchers, polymorphic `forwardRef`, tunnel/context rendering, lazy named exports, dynamic import maps, JSX in data/config, render props, same-name collisions, and unexpected file locations.
 
-Cal.com wraps components in `withLicenseRequired`, `withErrorBoundary`, `withTracking`. Sometimes 3-4 layers deep. I turned this up to 14 layers in a test case I called "Russian Doll":
+## Methodology
 
-```typescript
-const Layer1 = withPermissions(InnerButton, "read");
-const Layer2 = withErrorBoundary(Layer1);
-const Layer3 = withTracking(Layer2, "russian-doll-1");
-// ...11 more layers...
-const RussianDollWrapped = withErrorBoundary(Layer14);
-```
+The harness is a real Next.js app. All 330 components are rendered on the page with hashed `data-testid` attributes, so the test id itself gives nothing away — an earlier version used readable ids like `russian-doll-button`, which let the agent grep for the id and find the component instantly, defeating the purpose. Hashing with FNV produces ids like `b-a8f3e2d1`.
 
-React DevTools shows a tower of anonymous wrappers. The actual `StyledMotionButton` is buried so deep that grepping for the component name returns nothing useful.
+A run has two phases.
 
-Excalidraw uses context tunnels where content is _defined_ in one component and _rendered_ in a completely different part of the tree. LobeChat uses dynamic import maps where the component to render is selected at runtime from a key-value lookup. Plane has a `Button` in `@plane/ui` and another `Button` in `@plane/propel`. Same export name, different packages. Good luck.
+**Browser phase.** Playwright visits the app and iterates over every test case. For each one it locates the rendered element and runs all browser-side resolvers against it, capturing the clipboard payload or source hint each produces. Cases that require interaction first (opening a dropdown, expanding a recursive menu, opening a dialog inside a dialog) are driven before the element is read.
 
-And then there's the truly cursed stuff. Dub puts JSX in `variables.tsx`. Inbox-zero puts components in `utils/scripts/`. Documenso defines icon components inside config objects. An agent searching `components/` will never find them.
+**Agent phase.** For each (test case × resolver) pair, we build a prompt and send it to Claude (`claude-sonnet-4-6` via the [Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk)), with access to Read, Grep, Glob, and Bash. The agent searches the codebase and returns a file path. Without a tool, the prompt is the description alone:
 
-I turned each of these patterns into test cases. 331 of them, across 14 categories.<sup>1</sup>
+> I need to find the source file for a React component in this Next.js app. Red-themed CollisionButton in collision-a directory, same export name as collision-b and collision-c variants. Where is it defined?
 
-### Benchmarking at scale
+With a resolver, that tool's clipboard output is appended to the same prompt. The agent still has to return a file path; the hint only gives it a head start. Tasks run 20-wide with checkpointing, so an interrupted run resumes. A full run fires 1,000+ agent tasks and takes roughly 20–25 minutes.
 
-The harness is a real Next.js app. All 331 components are rendered on the page with hashed `data-testid` attributes, so the test ID itself gives nothing away.<sup>2</sup>
+**Scoring.** A returned path is correct only if it matches the expected source file. For the speed metric, wrong answers are penalized at 120 seconds. That penalty is deliberate — a wrong answer is worse than a slow correct one — but it means speed and accuracy are correlated by construction, and the two should be read together.
 
-A benchmark run has two phases.
+## Results
 
-**Browser phase.** Playwright visits the app and iterates over every test case. For each one, it finds the rendered element and runs all six browser-side tools against it. Each tool produces a clipboard payload or source hint. Some cases need interaction first (clicking a dropdown trigger, expanding a recursive menu, opening a dialog inside a dialog).
+330 test cases, 6 resolvers, `claude-sonnet-4-6`. Speed is the geometric-mean resolution time (lower is better); accuracy is the share of cases resolved to the correct file (higher is better).
 
-**Agent phase.** For each test case × tool combination, we build a prompt and send it to Claude (claude-sonnet-4-6 via the [Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk)). The agent gets access to Read, Grep, Glob, and Bash. It searches the codebase and returns a file path. 20 concurrent agent tasks with checkpointing so interrupted runs can resume.
+| Resolver             | Accuracy | Speed  |
+| -------------------- | -------- | ------ |
+| React Grab           | 96%      | 20.7s  |
+| Cursor Browser       | 95%      | 30.7s  |
+| Agentation           | 96%      | 31.5s  |
+| LocatorJS            | 86%      | 41.8s  |
+| Click to Component   | 86%      | 42.8s  |
+| Claude Code (no tool)| 86%      | 45.1s  |
 
-Without any tool, the prompt looks like this:
+Without any tool, Claude Code resolves 86% of cases (285 / 330) at a geometric mean of 45.1 seconds. For most components, a well-prompted agent with grep access can find the file on its own.
 
-"I need to find the source file for a React component in this Next.js app. Red-themed CollisionButton in collision-a directory, same export name as collision-b and collision-c variants. Where is it defined?"
+Click to Component and LocatorJS do not change that. Both stay at 86% accuracy and roughly the same speed: the context they provide — a component name without a file path — is not enough to alter the agent's search behavior.
 
-With a tool (e.g. React Grab), the tool's clipboard output gets appended to the same prompt. The agent still has to return a file path, but now it has a head start.
+React Grab, Agentation, and Cursor Browser push accuracy to 95–96%. That lift of ~10 points is concentrated in the categories where a source path plus line number decides the outcome: factory components, name collisions, unexpected locations, and dynamic imports. Among the three, the gap is in speed rather than accuracy — React Grab resolves in 20.7 seconds against ~31 seconds for Agentation and Cursor Browser. The faster tool eliminates the search phase more completely, so the agent jumps straight to the file instead of running extra greps to confirm.
 
-If the returned path matches the expected file, it's correct. Wrong answers get penalized at 120 seconds for speed calculations.<sup>3</sup> The whole run takes about 20-25 minutes and fires off 1000+ agent tasks.
+The practical takeaway: the difference between using any source-hint tool and using none is larger than the difference between the top tools. The hint matters most on the hard cases — the deeply nested component, the factory-generated widget, the component that lives in `schemas/` — where on easy cases the agent finds the file in seconds regardless.
 
-### Results
+## Limitations
 
-331 test cases. 7 resolvers.
+- **One trial per case.** Agents are non-deterministic; a single run reports a point estimate. Multiple trials with confidence intervals would tighten the numbers.
+- **One model.** Every resolver is evaluated against `claude-sonnet-4-6`. The tool ranking may shift with a different backend.
+- **Self-contained corpus.** The 330 cases live in a single harness app. Results may not transfer directly to a large monorepo with real noise.
+- **Coupled metrics.** The 120-second penalty on wrong answers makes speed punish inaccuracy, so speed and accuracy move together by construction.
 
-Without any tool, Claude Code gets 86% accuracy at a geometric mean of 45.1 seconds. That's 285 out of 331 correct. For most components, a well-prompted agent with grep access _can_ find the file.
-
-Adding Click to Component or LocatorJS doesn't help. Both stay at 86% accuracy, roughly the same speed. The extra context they provide (component name without a file path) isn't enough to change the agent's search behavior.
-
-Adding React Grab, Agentation, Cursor Browser, or Instruckt pushes accuracy to 95-96%. That gap from 86% to 96% is 30-ish additional correct cases, concentrated in factory components, name collisions, unexpected locations, and dynamic imports. These are exactly the cases where a source file path + line number changes the outcome.
-
-...and turns out, there's a ~2x speed gap even among the accurate tools. React Grab and Instruckt average ~20.7 seconds. Agentation and Cursor Browser average ~31 seconds. All four hit 95%+ accuracy, but the faster ones eliminate the search phase more completely. The agent jumps straight to the file instead of doing a couple extra greps to confirm.
-
-View the full per-case breakdown at [react-bench.com](https://react-bench.com).
-
-### How it impacts you
-
-The difference between the top tools is smaller than the difference between using _any_ tool and using none. If you iterate on UI frequently, pick whichever fits your setup. All four top-tier tools (React Grab, Instruckt, Agentation, Cursor Browser) will get you to 95%+ accuracy.
-
-Where the tools matter most is the hard cases. The deeply nested component, the factory-generated widget, the component that lives in `schemas/` for some reason. On easy cases, the agent finds the file in seconds regardless. On hard cases, the source hint is the difference between a correct edit and a wasted 2 minutes.
-
-### What's next
-
-There are a lot of improvements that can be made to this benchmark:
-
-- Multiple trials and sampling. Run each test 3-5 times and report confidence intervals. One trial per case is a known limitation.
-- More models. GPT-4.1, Gemini 2.5, Claude Haiku. Does the tool ranking change with different backends?
-- More codebases. The benchmark is self-contained right now. What happens when you drop these patterns into a 200k-line monorepo with real noise?
-- Community test cases. If you've seen a pattern in your codebase that would stump an agent, [open an issue](https://github.com/aidenybai/react-bench/issues). Adding a case is four steps: write the component, write the definition, render it, done.
-
-If you want to help out or have ideas, hit me up on [Twitter](https://x.com/aidenybai) or open an issue on GitHub.
-
-### Try it out
-
-React Bench is free and open source. [Go check it out!](https://react-bench.com)
-
-[Star on GitHub](https://github.com/aidenybai/react-bench) [View results](https://react-bench.com)
-
-#### Footnotes
-
-<sup>1</sup>The categories: deep nesting, factory components, generic names, sibling components, compound components, alias re-exports, displayName resolution, HOC stacking, switch/type dispatchers, polymorphic forwardRef, tunnel/context rendering, lazy named exports, dynamic import maps, JSX in data/config, render props, same-name collisions, unexpected file locations, and more. Every test case includes a reference link to the original project that inspired it. Full list in the [README](https://github.com/aidenybai/react-bench#readme).
-
-<sup>2</sup>Early versions used readable `data-testid` values like `russian-doll-button`. The agent would just grep for the test ID and find the component instantly, defeating the purpose. Hashing with FNV produces IDs like `b-a8f3e2d1` that give away nothing about the component.
-
-<sup>3</sup>The 120-second penalty is a design decision. It makes speed scores punish inaccuracy heavily, which I think is correct. A wrong answer is worse than a slow correct one. But it means speed and accuracy are correlated by construction. Read the numbers with that in mind.
-
-## Running the Benchmark
+## Running the benchmark
 
 ### Prerequisites
 
@@ -117,13 +81,13 @@ React Bench is free and open source. [Go check it out!](https://react-bench.com)
 pnpm install
 ```
 
-### Run the benchmark harness dev server
+### Run the harness dev server
 
 ```bash
 pnpm --filter @react-bench/benchmark dev
 ```
 
-This starts the Next.js app on `http://localhost:3001` with all 331 test components rendered.
+This starts the Next.js app on `http://localhost:3001` with all 330 test components rendered.
 
 ### Run the full benchmark
 
@@ -131,9 +95,7 @@ This starts the Next.js app on `http://localhost:3001` with all 331 test compone
 ANTHROPIC_API_KEY=sk-... pnpm --filter @react-bench/benchmark test
 ```
 
-This takes about 20-25 minutes. It runs Playwright, collects browser results, sends 1000+ agent tasks to Claude, and writes output files.
-
-To resume an interrupted run:
+This runs Playwright, collects browser results, sends 1,000+ agent tasks to Claude, and writes output files. To resume an interrupted run:
 
 ```bash
 BENCH_RESUME=1 ANTHROPIC_API_KEY=sk-... pnpm --filter @react-bench/benchmark test
@@ -162,7 +124,7 @@ pnpm typecheck
 pnpm format
 ```
 
-## Adding a Test Case
+## Adding a test case
 
 1. Create a component file under `packages/benchmark/` (e.g. `components/my-pattern/my-component.tsx`).
 2. Create a test case definition at `packages/benchmark/e2e/test-cases/my-test-id.ts`:
@@ -181,10 +143,9 @@ export default testCase;
 ```
 
 3. Import and render the component in `packages/benchmark/app/client-benchmarks.tsx` with a matching `data-testid` attribute (the `testId` is derived from the filename, e.g. `my-test-id`).
-
 4. If the component requires interaction before it becomes visible (e.g. clicking a trigger), add an entry to `packages/benchmark/e2e/interactions.ts`.
 
-The test manifest is built automatically at runtime from all `.ts` files in `e2e/test-cases/` (excluding `index.ts` and `types.ts`).
+The test manifest is built automatically at runtime from every `.ts` file in `e2e/test-cases/` (excluding `index.ts` and `types.ts`).
 
 ## License
 

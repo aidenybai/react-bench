@@ -25,10 +25,6 @@
     {
       "key": "locatorjs+claude",
       "label": "LocatorJS + Claude Code"
-    },
-    {
-      "key": "instruckt+claude",
-      "label": "Instruckt + Claude Code"
     }
   ],
   "testCases": [
@@ -61,10 +57,6 @@
         },
         "locatorjs+claude": {
           "speed": 24.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 29,
           "correct": true
         }
       }
@@ -99,10 +91,6 @@
         "locatorjs+claude": {
           "speed": 24.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 40.3,
-          "correct": true
         }
       }
     },
@@ -135,10 +123,6 @@
         },
         "locatorjs+claude": {
           "speed": 24.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 18,
           "correct": true
         }
       }
@@ -173,10 +157,6 @@
         "locatorjs+claude": {
           "speed": 22.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 39.1,
-          "correct": true
         }
       }
     },
@@ -210,17 +190,13 @@
         "locatorjs+claude": {
           "speed": 21,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 27.1,
-          "correct": true
         }
       }
     },
     {
       "id": 6,
       "testId": "alias-alert-banner",
-      "description": "Alias re-export: AlertImpl → AliasedAlertBanner (inspired by Novu internal component aliasing https://github.com/novuhq/novu/blob/main/packages/react/src/components/Inbox.tsx)",
+      "description": "Alias re-export: AlertImpl \u2192 AliasedAlertBanner (inspired by Novu internal component aliasing https://github.com/novuhq/novu/blob/main/packages/react/src/components/Inbox.tsx)",
       "componentName": "AlertImpl",
       "filePath": "components/aliased/internal-alert-impl.tsx",
       "results": {
@@ -247,17 +223,13 @@
         "locatorjs+claude": {
           "speed": 19.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 17.8,
-          "correct": false
         }
       }
     },
     {
       "id": 7,
       "testId": "alias-confirm-modal",
-      "description": "Alias re-export: ModalBase → AliasedConfirmModal (inspired by Excalidraw re-export aliasing https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/index.tsx)",
+      "description": "Alias re-export: ModalBase \u2192 AliasedConfirmModal (inspired by Excalidraw re-export aliasing https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/index.tsx)",
       "componentName": "ModalBase",
       "filePath": "components/aliased/internal-modal-base.tsx",
       "results": {
@@ -284,17 +256,13 @@
         "locatorjs+claude": {
           "speed": 23.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.5,
-          "correct": true
         }
       }
     },
     {
       "id": 8,
       "testId": "alias-footer",
-      "description": "Alias re-export: FooterCenter → AliasedFooter (inspired by Excalidraw Footer/FooterCenter https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/index.tsx)",
+      "description": "Alias re-export: FooterCenter \u2192 AliasedFooter (inspired by Excalidraw Footer/FooterCenter https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/index.tsx)",
       "componentName": "FooterCenter",
       "filePath": "components/aliased/internal-footer-center.tsx",
       "results": {
@@ -321,17 +289,13 @@
         "locatorjs+claude": {
           "speed": 22.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 23.7,
-          "correct": true
         }
       }
     },
     {
       "id": 9,
       "testId": "alias-main-nav",
-      "description": "Alias re-export: NavBase → AliasedMainNav (inspired by Excalidraw aliased navigation exports https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/index.tsx)",
+      "description": "Alias re-export: NavBase \u2192 AliasedMainNav (inspired by Excalidraw aliased navigation exports https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/index.tsx)",
       "componentName": "NavBase",
       "filePath": "components/aliased/internal-nav-base.tsx",
       "results": {
@@ -358,17 +322,13 @@
         "locatorjs+claude": {
           "speed": 23.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 16,
-          "correct": false
         }
       }
     },
     {
       "id": 10,
       "testId": "alias-search-bar",
-      "description": "Alias re-export: SearchCore → AliasedSearchBar (inspired by Novu Inbox component chain https://github.com/novuhq/novu/blob/main/packages/react/src/components/Inbox.tsx)",
+      "description": "Alias re-export: SearchCore \u2192 AliasedSearchBar (inspired by Novu Inbox component chain https://github.com/novuhq/novu/blob/main/packages/react/src/components/Inbox.tsx)",
       "componentName": "SearchCore",
       "filePath": "components/aliased/internal-search-core.tsx",
       "results": {
@@ -395,10 +355,6 @@
         "locatorjs+claude": {
           "speed": 22.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15,
-          "correct": false
         }
       }
     },
@@ -431,10 +387,6 @@
         },
         "locatorjs+claude": {
           "speed": 25.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11,
           "correct": true
         }
       }
@@ -469,17 +421,13 @@
         "locatorjs+claude": {
           "speed": 21.9,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
-          "correct": true
         }
       }
     },
     {
       "id": 13,
       "testId": "barrel-base-badge",
-      "description": "A base badge component re-exported through 3 barrel files with different names at each level (BaseBadge → CommonBadge → UIBadge)",
+      "description": "A base badge component re-exported through 3 barrel files with different names at each level (BaseBadge \u2192 CommonBadge \u2192 UIBadge)",
       "componentName": "BaseBadge",
       "filePath": "components/primitives/base-badge.tsx",
       "results": {
@@ -506,17 +454,13 @@
         "locatorjs+claude": {
           "speed": 29,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 38.4,
-          "correct": true
         }
       }
     },
     {
       "id": 14,
       "testId": "barrel-base-button",
-      "description": "A base button component re-exported through 3 barrel index.ts files (primitives → common → ui) with name changes at each level",
+      "description": "A base button component re-exported through 3 barrel index.ts files (primitives \u2192 common \u2192 ui) with name changes at each level",
       "componentName": "BaseButton",
       "filePath": "components/primitives/base-button.tsx",
       "results": {
@@ -542,10 +486,6 @@
         },
         "locatorjs+claude": {
           "speed": 23.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 23.5,
           "correct": true
         }
       }
@@ -580,10 +520,6 @@
         "locatorjs+claude": {
           "speed": 71.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 41.5,
-          "correct": true
         }
       }
     },
@@ -616,10 +552,6 @@
         },
         "locatorjs+claude": {
           "speed": 31.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.7,
           "correct": true
         }
       }
@@ -654,17 +586,13 @@
         "locatorjs+claude": {
           "speed": 54.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10,
-          "correct": true
         }
       }
     },
     {
       "id": 18,
       "testId": "client-island-button",
-      "description": "Client component button rendered inside a server component wrapper (server → client boundary crossing)",
+      "description": "Client component button rendered inside a server component wrapper (server \u2192 client boundary crossing)",
       "componentName": "ClientIsland",
       "filePath": "components/server/client-island.tsx",
       "results": {
@@ -690,10 +618,6 @@
         },
         "locatorjs+claude": {
           "speed": 33.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.2,
           "correct": true
         }
       }
@@ -728,10 +652,6 @@
         "locatorjs+claude": {
           "speed": 19.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.5,
-          "correct": true
         }
       }
     },
@@ -764,10 +684,6 @@
         },
         "locatorjs+claude": {
           "speed": 25.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.5,
           "correct": true
         }
       }
@@ -802,10 +718,6 @@
         "locatorjs+claude": {
           "speed": 16.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.3,
-          "correct": true
         }
       }
     },
@@ -838,10 +750,6 @@
         },
         "locatorjs+claude": {
           "speed": 22.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.7,
           "correct": true
         }
       }
@@ -876,10 +784,6 @@
         "locatorjs+claude": {
           "speed": 16.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.1,
-          "correct": true
         }
       }
     },
@@ -912,10 +816,6 @@
         },
         "locatorjs+claude": {
           "speed": 22.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11,
           "correct": true
         }
       }
@@ -950,10 +850,6 @@
         "locatorjs+claude": {
           "speed": 91.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.6,
-          "correct": true
         }
       }
     },
@@ -986,10 +882,6 @@
         },
         "locatorjs+claude": {
           "speed": 84.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.2,
           "correct": true
         }
       }
@@ -1024,10 +916,6 @@
         "locatorjs+claude": {
           "speed": 30.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10,
-          "correct": true
         }
       }
     },
@@ -1060,10 +948,6 @@
         },
         "locatorjs+claude": {
           "speed": 26.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.4,
           "correct": true
         }
       }
@@ -1098,10 +982,6 @@
         "locatorjs+claude": {
           "speed": 27.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.3,
-          "correct": true
         }
       }
     },
@@ -1134,10 +1014,6 @@
         },
         "locatorjs+claude": {
           "speed": 24.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.3,
           "correct": true
         }
       }
@@ -1172,10 +1048,6 @@
         "locatorjs+claude": {
           "speed": 22.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12,
-          "correct": true
         }
       }
     },
@@ -1208,10 +1080,6 @@
         },
         "locatorjs+claude": {
           "speed": 17.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.2,
           "correct": true
         }
       }
@@ -1246,10 +1114,6 @@
         "locatorjs+claude": {
           "speed": 20.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.7,
-          "correct": true
         }
       }
     },
@@ -1282,10 +1146,6 @@
         },
         "locatorjs+claude": {
           "speed": 19.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.8,
           "correct": true
         }
       }
@@ -1320,10 +1180,6 @@
         "locatorjs+claude": {
           "speed": 16.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.4,
-          "correct": true
         }
       }
     },
@@ -1356,10 +1212,6 @@
         },
         "locatorjs+claude": {
           "speed": 9.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.6,
           "correct": true
         }
       }
@@ -1394,10 +1246,6 @@
         "locatorjs+claude": {
           "speed": 17.9,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14.1,
-          "correct": true
         }
       }
     },
@@ -1430,10 +1278,6 @@
         },
         "locatorjs+claude": {
           "speed": 27.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.9,
           "correct": true
         }
       }
@@ -1468,10 +1312,6 @@
         "locatorjs+claude": {
           "speed": 21.9,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 18.1,
-          "correct": true
         }
       }
     },
@@ -1504,10 +1344,6 @@
         },
         "locatorjs+claude": {
           "speed": 11,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7,
           "correct": true
         }
       }
@@ -1542,10 +1378,6 @@
         "locatorjs+claude": {
           "speed": 23.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14.3,
-          "correct": true
         }
       }
     },
@@ -1578,10 +1410,6 @@
         },
         "locatorjs+claude": {
           "speed": 25,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.7,
           "correct": true
         }
       }
@@ -1616,10 +1444,6 @@
         "locatorjs+claude": {
           "speed": 25.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.7,
-          "correct": true
         }
       }
     },
@@ -1652,10 +1476,6 @@
         },
         "locatorjs+claude": {
           "speed": 30.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 30.1,
           "correct": true
         }
       }
@@ -1690,10 +1510,6 @@
         "locatorjs+claude": {
           "speed": 42.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 17.2,
-          "correct": true
         }
       }
     },
@@ -1726,10 +1542,6 @@
         },
         "locatorjs+claude": {
           "speed": 9.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.9,
           "correct": true
         }
       }
@@ -1764,10 +1576,6 @@
         "locatorjs+claude": {
           "speed": 26,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.3,
-          "correct": true
         }
       }
     },
@@ -1800,10 +1608,6 @@
         },
         "locatorjs+claude": {
           "speed": 17.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.3,
           "correct": true
         }
       }
@@ -1838,10 +1642,6 @@
         "locatorjs+claude": {
           "speed": 23.6,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 6.8,
-          "correct": true
         }
       }
     },
@@ -1874,10 +1674,6 @@
         },
         "locatorjs+claude": {
           "speed": 24.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13,
           "correct": true
         }
       }
@@ -1912,10 +1708,6 @@
         "locatorjs+claude": {
           "speed": 8.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6,
-          "correct": true
         }
       }
     },
@@ -1948,10 +1740,6 @@
         },
         "locatorjs+claude": {
           "speed": 8.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.9,
           "correct": true
         }
       }
@@ -1986,10 +1774,6 @@
         "locatorjs+claude": {
           "speed": 25.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.8,
-          "correct": true
         }
       }
     },
@@ -2022,10 +1806,6 @@
         },
         "locatorjs+claude": {
           "speed": 16.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.1,
           "correct": true
         }
       }
@@ -2060,10 +1840,6 @@
         "locatorjs+claude": {
           "speed": 18,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.8,
-          "correct": true
         }
       }
     },
@@ -2096,10 +1872,6 @@
         },
         "locatorjs+claude": {
           "speed": 14.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.7,
           "correct": true
         }
       }
@@ -2134,10 +1906,6 @@
         "locatorjs+claude": {
           "speed": 7.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.7,
-          "correct": true
         }
       }
     },
@@ -2170,10 +1938,6 @@
         },
         "locatorjs+claude": {
           "speed": 28.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.7,
           "correct": true
         }
       }
@@ -2208,10 +1972,6 @@
         "locatorjs+claude": {
           "speed": 31.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.9,
-          "correct": true
         }
       }
     },
@@ -2244,10 +2004,6 @@
         },
         "locatorjs+claude": {
           "speed": 13,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.2,
           "correct": true
         }
       }
@@ -2282,10 +2038,6 @@
         "locatorjs+claude": {
           "speed": 11.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.5,
-          "correct": true
         }
       }
     },
@@ -2318,10 +2070,6 @@
         },
         "locatorjs+claude": {
           "speed": 133.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.6,
           "correct": true
         }
       }
@@ -2356,10 +2104,6 @@
         "locatorjs+claude": {
           "speed": 15.9,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6,
-          "correct": true
         }
       }
     },
@@ -2392,10 +2136,6 @@
         },
         "locatorjs+claude": {
           "speed": 25.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.4,
           "correct": true
         }
       }
@@ -2430,10 +2170,6 @@
         "locatorjs+claude": {
           "speed": 9.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.6,
-          "correct": true
         }
       }
     },
@@ -2466,10 +2202,6 @@
         },
         "locatorjs+claude": {
           "speed": 19.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.5,
           "correct": true
         }
       }
@@ -2504,10 +2236,6 @@
         "locatorjs+claude": {
           "speed": 29.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.3,
-          "correct": true
         }
       }
     },
@@ -2540,10 +2268,6 @@
         },
         "locatorjs+claude": {
           "speed": 26.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.4,
           "correct": true
         }
       }
@@ -2578,10 +2302,6 @@
         "locatorjs+claude": {
           "speed": 23.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.8,
-          "correct": true
         }
       }
     },
@@ -2614,10 +2334,6 @@
         },
         "locatorjs+claude": {
           "speed": 17.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.3,
           "correct": true
         }
       }
@@ -2652,10 +2368,6 @@
         "locatorjs+claude": {
           "speed": 10.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.4,
-          "correct": true
         }
       }
     },
@@ -2688,10 +2400,6 @@
         },
         "locatorjs+claude": {
           "speed": 30.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.6,
           "correct": true
         }
       }
@@ -2726,10 +2434,6 @@
         "locatorjs+claude": {
           "speed": 15.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.8,
-          "correct": true
         }
       }
     },
@@ -2762,10 +2466,6 @@
         },
         "locatorjs+claude": {
           "speed": 19,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.7,
           "correct": true
         }
       }
@@ -2800,10 +2500,6 @@
         "locatorjs+claude": {
           "speed": 16.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.3,
-          "correct": true
         }
       }
     },
@@ -2836,10 +2532,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6,
           "correct": true
         }
       }
@@ -2874,10 +2566,6 @@
         "locatorjs+claude": {
           "speed": 15.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.1,
-          "correct": true
         }
       }
     },
@@ -2910,10 +2598,6 @@
         },
         "locatorjs+claude": {
           "speed": 16,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.4,
           "correct": true
         }
       }
@@ -2948,10 +2632,6 @@
         "locatorjs+claude": {
           "speed": 12.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.8,
-          "correct": true
         }
       }
     },
@@ -2984,10 +2664,6 @@
         },
         "locatorjs+claude": {
           "speed": 16.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.1,
           "correct": true
         }
       }
@@ -3022,10 +2698,6 @@
         "locatorjs+claude": {
           "speed": 17.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.4,
-          "correct": true
         }
       }
     },
@@ -3058,10 +2730,6 @@
         },
         "locatorjs+claude": {
           "speed": 21.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.8,
           "correct": true
         }
       }
@@ -3096,10 +2764,6 @@
         "locatorjs+claude": {
           "speed": 39.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.6,
-          "correct": true
         }
       }
     },
@@ -3132,10 +2796,6 @@
         },
         "locatorjs+claude": {
           "speed": 25.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 16,
           "correct": true
         }
       }
@@ -3170,10 +2830,6 @@
         "locatorjs+claude": {
           "speed": 28.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.9,
-          "correct": true
         }
       }
     },
@@ -3206,10 +2862,6 @@
         },
         "locatorjs+claude": {
           "speed": 29.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14,
           "correct": true
         }
       }
@@ -3244,10 +2896,6 @@
         "locatorjs+claude": {
           "speed": 28.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13,
-          "correct": true
         }
       }
     },
@@ -3280,10 +2928,6 @@
         },
         "locatorjs+claude": {
           "speed": 27,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 17.1,
           "correct": true
         }
       }
@@ -3318,10 +2962,6 @@
         "locatorjs+claude": {
           "speed": 22.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.4,
-          "correct": true
         }
       }
     },
@@ -3354,10 +2994,6 @@
         },
         "locatorjs+claude": {
           "speed": 29.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 16.4,
           "correct": true
         }
       }
@@ -3392,10 +3028,6 @@
         "locatorjs+claude": {
           "speed": 31.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13,
-          "correct": true
         }
       }
     },
@@ -3428,10 +3060,6 @@
         },
         "locatorjs+claude": {
           "speed": 28.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.3,
           "correct": true
         }
       }
@@ -3466,10 +3094,6 @@
         "locatorjs+claude": {
           "speed": 38,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.7,
-          "correct": true
         }
       }
     },
@@ -3502,10 +3126,6 @@
         },
         "locatorjs+claude": {
           "speed": 40.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.8,
           "correct": true
         }
       }
@@ -3540,10 +3160,6 @@
         "locatorjs+claude": {
           "speed": 27.9,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.6,
-          "correct": true
         }
       }
     },
@@ -3576,10 +3192,6 @@
         },
         "locatorjs+claude": {
           "speed": 60.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11,
           "correct": true
         }
       }
@@ -3614,10 +3226,6 @@
         "locatorjs+claude": {
           "speed": 27,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.6,
-          "correct": true
         }
       }
     },
@@ -3650,10 +3258,6 @@
         },
         "locatorjs+claude": {
           "speed": 22.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.1,
           "correct": true
         }
       }
@@ -3688,10 +3292,6 @@
         "locatorjs+claude": {
           "speed": 30.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
-          "correct": true
         }
       }
     },
@@ -3724,10 +3324,6 @@
         },
         "locatorjs+claude": {
           "speed": 50.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.1,
           "correct": true
         }
       }
@@ -3762,10 +3358,6 @@
         "locatorjs+claude": {
           "speed": 21.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.2,
-          "correct": true
         }
       }
     },
@@ -3798,10 +3390,6 @@
         },
         "locatorjs+claude": {
           "speed": 22.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.2,
           "correct": true
         }
       }
@@ -3836,10 +3424,6 @@
         "locatorjs+claude": {
           "speed": 15.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.2,
-          "correct": true
         }
       }
     },
@@ -3872,10 +3456,6 @@
         },
         "locatorjs+claude": {
           "speed": 25.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
           "correct": true
         }
       }
@@ -3910,10 +3490,6 @@
         "locatorjs+claude": {
           "speed": 23.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.5,
-          "correct": true
         }
       }
     },
@@ -3946,10 +3522,6 @@
         },
         "locatorjs+claude": {
           "speed": 27.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.9,
           "correct": true
         }
       }
@@ -3984,10 +3556,6 @@
         "locatorjs+claude": {
           "speed": 24,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11,
-          "correct": true
         }
       }
     },
@@ -4020,10 +3588,6 @@
         },
         "locatorjs+claude": {
           "speed": 22.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.5,
           "correct": true
         }
       }
@@ -4058,10 +3622,6 @@
         "locatorjs+claude": {
           "speed": 24.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.7,
-          "correct": true
         }
       }
     },
@@ -4095,10 +3655,6 @@
         "locatorjs+claude": {
           "speed": 29.2,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 13.3,
-          "correct": true
         }
       }
     },
@@ -4132,10 +3688,6 @@
         "locatorjs+claude": {
           "speed": 27.4,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 14.6,
-          "correct": true
         }
       }
     },
@@ -4169,10 +3721,6 @@
         "locatorjs+claude": {
           "speed": 27.7,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
-          "correct": true
         }
       }
     },
@@ -4206,10 +3754,6 @@
         "locatorjs+claude": {
           "speed": 33.5,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 20.9,
-          "correct": true
         }
       }
     },
@@ -4243,10 +3787,6 @@
         "locatorjs+claude": {
           "speed": 25.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 16.6,
-          "correct": false
         }
       }
     },
@@ -4279,10 +3819,6 @@
         },
         "locatorjs+claude": {
           "speed": 23,
-          "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 15.6,
           "correct": false
         }
       }
@@ -4317,10 +3853,6 @@
         "locatorjs+claude": {
           "speed": 16.5,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.6,
-          "correct": true
         }
       }
     },
@@ -4354,10 +3886,6 @@
         "locatorjs+claude": {
           "speed": 27.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 22.2,
-          "correct": false
         }
       }
     },
@@ -4390,10 +3918,6 @@
         },
         "locatorjs+claude": {
           "speed": 16.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14.4,
           "correct": true
         }
       }
@@ -4428,10 +3952,6 @@
         "locatorjs+claude": {
           "speed": 53.8,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 21.7,
-          "correct": true
         }
       }
     },
@@ -4465,10 +3985,6 @@
         "locatorjs+claude": {
           "speed": 44,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 16.9,
-          "correct": false
         }
       }
     },
@@ -4502,10 +4018,6 @@
         "locatorjs+claude": {
           "speed": 30.4,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 8.8,
-          "correct": true
         }
       }
     },
@@ -4538,10 +4050,6 @@
         },
         "locatorjs+claude": {
           "speed": 35,
-          "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 19.2,
           "correct": false
         }
       }
@@ -4576,10 +4084,6 @@
         "locatorjs+claude": {
           "speed": 26.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.5,
-          "correct": true
         }
       }
     },
@@ -4613,10 +4117,6 @@
         "locatorjs+claude": {
           "speed": 23.8,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.9,
-          "correct": true
         }
       }
     },
@@ -4650,10 +4150,6 @@
         "locatorjs+claude": {
           "speed": 21.7,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
-          "correct": true
         }
       }
     },
@@ -4687,10 +4183,6 @@
         "locatorjs+claude": {
           "speed": 34.5,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 10,
-          "correct": true
         }
       }
     },
@@ -4723,10 +4215,6 @@
         },
         "locatorjs+claude": {
           "speed": 28.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.6,
           "correct": true
         }
       }
@@ -4761,10 +4249,6 @@
         "locatorjs+claude": {
           "speed": 20.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.4,
-          "correct": true
         }
       }
     },
@@ -4797,10 +4281,6 @@
         },
         "locatorjs+claude": {
           "speed": 19.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14.9,
           "correct": true
         }
       }
@@ -4835,10 +4315,6 @@
         "locatorjs+claude": {
           "speed": 31.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.5,
-          "correct": true
         }
       }
     },
@@ -4871,10 +4347,6 @@
         },
         "locatorjs+claude": {
           "speed": 30,
-          "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 18.4,
           "correct": false
         }
       }
@@ -4909,10 +4381,6 @@
         "locatorjs+claude": {
           "speed": 15.7,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.6,
-          "correct": true
         }
       }
     },
@@ -4946,10 +4414,6 @@
         "locatorjs+claude": {
           "speed": 24.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.9,
-          "correct": false
         }
       }
     },
@@ -4982,10 +4446,6 @@
         },
         "locatorjs+claude": {
           "speed": 30.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 19,
           "correct": true
         }
       }
@@ -5020,10 +4480,6 @@
         "locatorjs+claude": {
           "speed": 25.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.1,
-          "correct": true
         }
       }
     },
@@ -5057,10 +4513,6 @@
         "locatorjs+claude": {
           "speed": 29.2,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.5,
-          "correct": true
         }
       }
     },
@@ -5094,10 +4546,6 @@
         "locatorjs+claude": {
           "speed": 20.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.2,
-          "correct": true
         }
       }
     },
@@ -5129,10 +4577,6 @@
           "correct": false
         },
         "locatorjs+claude": {
-          "speed": 0,
-          "correct": false
-        },
-        "instruckt+claude": {
           "speed": 0,
           "correct": false
         }
@@ -5168,10 +4612,6 @@
         "locatorjs+claude": {
           "speed": 45.9,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.1,
-          "correct": false
         }
       }
     },
@@ -5204,10 +4644,6 @@
         },
         "locatorjs+claude": {
           "speed": 32.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.7,
           "correct": true
         }
       }
@@ -5242,10 +4678,6 @@
         "locatorjs+claude": {
           "speed": 30,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.7,
-          "correct": true
         }
       }
     },
@@ -5278,10 +4710,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.7,
           "correct": true
         }
       }
@@ -5316,10 +4744,6 @@
         "locatorjs+claude": {
           "speed": 9.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.1,
-          "correct": true
         }
       }
     },
@@ -5352,10 +4776,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.5,
           "correct": true
         }
       }
@@ -5390,10 +4810,6 @@
         "locatorjs+claude": {
           "speed": 25.3,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 10.2,
-          "correct": true
         }
       }
     },
@@ -5426,10 +4842,6 @@
         },
         "locatorjs+claude": {
           "speed": 24.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.5,
           "correct": true
         }
       }
@@ -5464,10 +4876,6 @@
         "locatorjs+claude": {
           "speed": 45.7,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 15.3,
-          "correct": true
         }
       }
     },
@@ -5500,10 +4908,6 @@
         },
         "locatorjs+claude": {
           "speed": 13.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.5,
           "correct": true
         }
       }
@@ -5538,10 +4942,6 @@
         "locatorjs+claude": {
           "speed": 11.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.1,
-          "correct": true
         }
       }
     },
@@ -5574,10 +4974,6 @@
         },
         "locatorjs+claude": {
           "speed": 17.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.3,
           "correct": true
         }
       }
@@ -5612,10 +5008,6 @@
         "locatorjs+claude": {
           "speed": 144.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.9,
-          "correct": true
         }
       }
     },
@@ -5649,10 +5041,6 @@
         "locatorjs+claude": {
           "speed": 54.2,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 10.1,
-          "correct": true
         }
       }
     },
@@ -5685,10 +5073,6 @@
         },
         "locatorjs+claude": {
           "speed": 47.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 72.7,
           "correct": true
         }
       }
@@ -5723,10 +5107,6 @@
         "locatorjs+claude": {
           "speed": 69.4,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 46.2,
-          "correct": true
         }
       }
     },
@@ -5759,10 +5139,6 @@
         },
         "locatorjs+claude": {
           "speed": 10,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.9,
           "correct": true
         }
       }
@@ -5797,10 +5173,6 @@
         "locatorjs+claude": {
           "speed": 21.2,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 6.9,
-          "correct": true
         }
       }
     },
@@ -5833,10 +5205,6 @@
         },
         "locatorjs+claude": {
           "speed": 10.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.2,
           "correct": true
         }
       }
@@ -5871,10 +5239,6 @@
         "locatorjs+claude": {
           "speed": 137.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.1,
-          "correct": true
         }
       }
     },
@@ -5908,10 +5272,6 @@
         "locatorjs+claude": {
           "speed": 141.2,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 136.3,
-          "correct": true
         }
       }
     },
@@ -5944,10 +5304,6 @@
         },
         "locatorjs+claude": {
           "speed": 140.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.9,
           "correct": true
         }
       }
@@ -5982,10 +5338,6 @@
         "locatorjs+claude": {
           "speed": 29,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.3,
-          "correct": true
         }
       }
     },
@@ -6018,10 +5370,6 @@
         },
         "locatorjs+claude": {
           "speed": 14.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.5,
           "correct": true
         }
       }
@@ -6056,10 +5404,6 @@
         "locatorjs+claude": {
           "speed": 151.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 147.4,
-          "correct": true
         }
       }
     },
@@ -6092,10 +5436,6 @@
         },
         "locatorjs+claude": {
           "speed": 138.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 133.6,
           "correct": true
         }
       }
@@ -6130,10 +5470,6 @@
         "locatorjs+claude": {
           "speed": 16.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 21.7,
-          "correct": true
         }
       }
     },
@@ -6167,10 +5503,6 @@
         "locatorjs+claude": {
           "speed": 30.5,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 6.6,
-          "correct": true
         }
       }
     },
@@ -6203,10 +5535,6 @@
         },
         "locatorjs+claude": {
           "speed": 14.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.9,
           "correct": true
         }
       }
@@ -6241,10 +5569,6 @@
         "locatorjs+claude": {
           "speed": 18.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.3,
-          "correct": true
         }
       }
     },
@@ -6278,10 +5602,6 @@
         "locatorjs+claude": {
           "speed": 91.5,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 9.3,
-          "correct": true
         }
       }
     },
@@ -6314,10 +5634,6 @@
         },
         "locatorjs+claude": {
           "speed": 19.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14.5,
           "correct": true
         }
       }
@@ -6352,10 +5668,6 @@
         "locatorjs+claude": {
           "speed": 29.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.4,
-          "correct": true
         }
       }
     },
@@ -6388,10 +5700,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 19.7,
           "correct": true
         }
       }
@@ -6426,10 +5734,6 @@
         "locatorjs+claude": {
           "speed": 66.7,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11,
-          "correct": true
         }
       }
     },
@@ -6462,10 +5766,6 @@
         },
         "locatorjs+claude": {
           "speed": 12.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.4,
           "correct": true
         }
       }
@@ -6500,10 +5800,6 @@
         "locatorjs+claude": {
           "speed": 13.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
-          "correct": true
         }
       }
     },
@@ -6536,10 +5832,6 @@
         },
         "locatorjs+claude": {
           "speed": 36.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 20.5,
           "correct": true
         }
       }
@@ -6574,10 +5866,6 @@
         "locatorjs+claude": {
           "speed": 22.3,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 5.9,
-          "correct": true
         }
       }
     },
@@ -6610,10 +5898,6 @@
         },
         "locatorjs+claude": {
           "speed": 19.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.6,
           "correct": true
         }
       }
@@ -6648,10 +5932,6 @@
         "locatorjs+claude": {
           "speed": 52.9,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 12.1,
-          "correct": true
         }
       }
     },
@@ -6685,10 +5965,6 @@
         "locatorjs+claude": {
           "speed": 36.7,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 7.4,
-          "correct": true
         }
       }
     },
@@ -6721,10 +5997,6 @@
         },
         "locatorjs+claude": {
           "speed": 12.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.4,
           "correct": true
         }
       }
@@ -6759,10 +6031,6 @@
         "locatorjs+claude": {
           "speed": 22,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.3,
-          "correct": true
         }
       }
     },
@@ -6795,10 +6063,6 @@
         },
         "locatorjs+claude": {
           "speed": 25.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.2,
           "correct": true
         }
       }
@@ -6833,10 +6097,6 @@
         "locatorjs+claude": {
           "speed": 29,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.3,
-          "correct": true
         }
       }
     },
@@ -6869,10 +6129,6 @@
         },
         "locatorjs+claude": {
           "speed": 22.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11,
           "correct": true
         }
       }
@@ -6907,10 +6163,6 @@
         "locatorjs+claude": {
           "speed": 61.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.7,
-          "correct": true
         }
       }
     },
@@ -6943,10 +6195,6 @@
         },
         "locatorjs+claude": {
           "speed": 33.4,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.7,
           "correct": true
         }
       }
@@ -6981,10 +6229,6 @@
         "locatorjs+claude": {
           "speed": 28,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.9,
-          "correct": true
         }
       }
     },
@@ -7017,10 +6261,6 @@
         },
         "locatorjs+claude": {
           "speed": 14.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.2,
           "correct": true
         }
       }
@@ -7055,10 +6295,6 @@
         "locatorjs+claude": {
           "speed": 23,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.4,
-          "correct": true
         }
       }
     },
@@ -7091,10 +6327,6 @@
         },
         "locatorjs+claude": {
           "speed": 19.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14.7,
           "correct": true
         }
       }
@@ -7129,10 +6361,6 @@
         "locatorjs+claude": {
           "speed": 26.4,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 13.7,
-          "correct": true
         }
       }
     },
@@ -7165,10 +6393,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.5,
           "correct": true
         }
       }
@@ -7203,10 +6427,6 @@
         "locatorjs+claude": {
           "speed": 7.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.8,
-          "correct": true
         }
       }
     },
@@ -7239,10 +6459,6 @@
         },
         "locatorjs+claude": {
           "speed": 10.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.1,
           "correct": true
         }
       }
@@ -7277,10 +6493,6 @@
         "locatorjs+claude": {
           "speed": 12.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.6,
-          "correct": true
         }
       }
     },
@@ -7313,10 +6525,6 @@
         },
         "locatorjs+claude": {
           "speed": 20.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.4,
           "correct": true
         }
       }
@@ -7351,10 +6559,6 @@
         "locatorjs+claude": {
           "speed": 24.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.3,
-          "correct": true
         }
       }
     },
@@ -7388,10 +6592,6 @@
         "locatorjs+claude": {
           "speed": 43.4,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 16.4,
-          "correct": true
         }
       }
     },
@@ -7423,10 +6623,6 @@
           "correct": false
         },
         "locatorjs+claude": {
-          "speed": 0,
-          "correct": false
-        },
-        "instruckt+claude": {
           "speed": 0,
           "correct": false
         }
@@ -7462,10 +6658,6 @@
         "locatorjs+claude": {
           "speed": 142.9,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.3,
-          "correct": true
         }
       }
     },
@@ -7498,10 +6690,6 @@
         },
         "locatorjs+claude": {
           "speed": 32,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 20.4,
           "correct": true
         }
       }
@@ -7536,10 +6724,6 @@
         "locatorjs+claude": {
           "speed": 26.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 17.3,
-          "correct": true
         }
       }
     },
@@ -7572,10 +6756,6 @@
         },
         "locatorjs+claude": {
           "speed": 33,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.9,
           "correct": true
         }
       }
@@ -7610,47 +6790,6 @@
         "locatorjs+claude": {
           "speed": 28,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.8,
-          "correct": true
-        }
-      }
-    },
-    {
-      "id": 206,
-      "testId": "instruckt-toolbar",
-      "description": "Instruckt visual feedback toolbar wrapper using dynamic import with annotation tracking",
-      "componentName": "InstrucktToolbar",
-      "filePath": "components/instruckt/instruckt-toolbar.tsx",
-      "results": {
-        "claude-code": {
-          "speed": 31,
-          "correct": true
-        },
-        "agentation+claude": {
-          "speed": 28.1,
-          "correct": true
-        },
-        "react-grab+claude": {
-          "speed": 15.5,
-          "correct": true
-        },
-        "cursor-browser+claude": {
-          "speed": 15.3,
-          "correct": true
-        },
-        "click-to-component+claude": {
-          "speed": 25.7,
-          "correct": true
-        },
-        "locatorjs+claude": {
-          "speed": 46.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 25.2,
-          "correct": true
         }
       }
     },
@@ -7683,10 +6822,6 @@
         },
         "locatorjs+claude": {
           "speed": 16.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.8,
           "correct": true
         }
       }
@@ -7721,10 +6856,6 @@
         "locatorjs+claude": {
           "speed": 27.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.7,
-          "correct": true
         }
       }
     },
@@ -7757,10 +6888,6 @@
         },
         "locatorjs+claude": {
           "speed": 21.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.9,
           "correct": true
         }
       }
@@ -7795,10 +6922,6 @@
         "locatorjs+claude": {
           "speed": 28,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.2,
-          "correct": true
         }
       }
     },
@@ -7832,10 +6955,6 @@
         "locatorjs+claude": {
           "speed": 26.9,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 10.7,
-          "correct": true
         }
       }
     },
@@ -7868,10 +6987,6 @@
         },
         "locatorjs+claude": {
           "speed": 12.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.3,
           "correct": true
         }
       }
@@ -7906,10 +7021,6 @@
         "locatorjs+claude": {
           "speed": 11.9,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.7,
-          "correct": true
         }
       }
     },
@@ -7942,10 +7053,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.1,
           "correct": true
         }
       }
@@ -7980,10 +7087,6 @@
         "locatorjs+claude": {
           "speed": 19.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.3,
-          "correct": true
         }
       }
     },
@@ -8017,10 +7120,6 @@
         "locatorjs+claude": {
           "speed": 21.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 34.2,
-          "correct": true
         }
       }
     },
@@ -8052,10 +7151,6 @@
           "correct": false
         },
         "locatorjs+claude": {
-          "speed": 0,
-          "correct": false
-        },
-        "instruckt+claude": {
           "speed": 0,
           "correct": false
         }
@@ -8091,10 +7186,6 @@
         "locatorjs+claude": {
           "speed": 0,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 0,
-          "correct": false
         }
       }
     },
@@ -8127,10 +7218,6 @@
         },
         "locatorjs+claude": {
           "speed": 17,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.3,
           "correct": true
         }
       }
@@ -8165,10 +7252,6 @@
         "locatorjs+claude": {
           "speed": 34.1,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 10.6,
-          "correct": true
         }
       }
     },
@@ -8201,10 +7284,6 @@
         },
         "locatorjs+claude": {
           "speed": 25.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.5,
           "correct": true
         }
       }
@@ -8239,10 +7318,6 @@
         "locatorjs+claude": {
           "speed": 13.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.8,
-          "correct": true
         }
       }
     },
@@ -8275,10 +7350,6 @@
         },
         "locatorjs+claude": {
           "speed": 14.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.5,
           "correct": true
         }
       }
@@ -8313,10 +7384,6 @@
         "locatorjs+claude": {
           "speed": 17.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11,
-          "correct": true
         }
       }
     },
@@ -8349,10 +7416,6 @@
         },
         "locatorjs+claude": {
           "speed": 23.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.6,
           "correct": true
         }
       }
@@ -8387,10 +7450,6 @@
         "locatorjs+claude": {
           "speed": 16.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.4,
-          "correct": true
         }
       }
     },
@@ -8423,10 +7482,6 @@
         },
         "locatorjs+claude": {
           "speed": 21,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.8,
           "correct": true
         }
       }
@@ -8461,10 +7516,6 @@
         "locatorjs+claude": {
           "speed": 20.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 19.5,
-          "correct": true
         }
       }
     },
@@ -8497,10 +7548,6 @@
         },
         "locatorjs+claude": {
           "speed": 20.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.5,
           "correct": true
         }
       }
@@ -8535,10 +7582,6 @@
         "locatorjs+claude": {
           "speed": 18.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.1,
-          "correct": true
         }
       }
     },
@@ -8571,10 +7614,6 @@
         },
         "locatorjs+claude": {
           "speed": 22,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 25.6,
           "correct": true
         }
       }
@@ -8609,10 +7648,6 @@
         "locatorjs+claude": {
           "speed": 139.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.4,
-          "correct": true
         }
       }
     },
@@ -8646,10 +7681,6 @@
         "locatorjs+claude": {
           "speed": 120,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.6,
-          "correct": true
         }
       }
     },
@@ -8682,10 +7713,6 @@
         },
         "locatorjs+claude": {
           "speed": 61.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 36,
           "correct": true
         }
       }
@@ -8720,10 +7747,6 @@
         "locatorjs+claude": {
           "speed": 120,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.3,
-          "correct": true
         }
       }
     },
@@ -8756,10 +7779,6 @@
         },
         "locatorjs+claude": {
           "speed": 94.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.1,
           "correct": true
         }
       }
@@ -8794,10 +7813,6 @@
         "locatorjs+claude": {
           "speed": 83.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 82.5,
-          "correct": false
         }
       }
     },
@@ -8830,10 +7845,6 @@
         },
         "locatorjs+claude": {
           "speed": 22.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 27.9,
           "correct": true
         }
       }
@@ -8868,10 +7879,6 @@
         "locatorjs+claude": {
           "speed": 201.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 204.8,
-          "correct": true
         }
       }
     },
@@ -8904,10 +7911,6 @@
         },
         "locatorjs+claude": {
           "speed": 146.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 137.6,
           "correct": true
         }
       }
@@ -8942,10 +7945,6 @@
         "locatorjs+claude": {
           "speed": 77,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 79.4,
-          "correct": true
         }
       }
     },
@@ -8978,10 +7977,6 @@
         },
         "locatorjs+claude": {
           "speed": 28.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 34.8,
           "correct": true
         }
       }
@@ -9016,10 +8011,6 @@
         "locatorjs+claude": {
           "speed": 25.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.4,
-          "correct": true
         }
       }
     },
@@ -9052,10 +8043,6 @@
         },
         "locatorjs+claude": {
           "speed": 17.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.5,
           "correct": true
         }
       }
@@ -9090,10 +8077,6 @@
         "locatorjs+claude": {
           "speed": 22.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.7,
-          "correct": true
         }
       }
     },
@@ -9126,10 +8109,6 @@
         },
         "locatorjs+claude": {
           "speed": 20,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.5,
           "correct": true
         }
       }
@@ -9164,10 +8143,6 @@
         "locatorjs+claude": {
           "speed": 24.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.2,
-          "correct": true
         }
       }
     },
@@ -9201,10 +8176,6 @@
         "locatorjs+claude": {
           "speed": 15.6,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 9,
-          "correct": true
         }
       }
     },
@@ -9237,10 +8208,6 @@
         },
         "locatorjs+claude": {
           "speed": 17.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.2,
           "correct": true
         }
       }
@@ -9275,10 +8242,6 @@
         "locatorjs+claude": {
           "speed": 147.2,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 9.8,
-          "correct": true
         }
       }
     },
@@ -9312,10 +8275,6 @@
         "locatorjs+claude": {
           "speed": 136.9,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11,
-          "correct": true
         }
       }
     },
@@ -9349,10 +8308,6 @@
         "locatorjs+claude": {
           "speed": 153.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 137.2,
-          "correct": true
         }
       }
     },
@@ -9384,10 +8339,6 @@
           "correct": false
         },
         "locatorjs+claude": {
-          "speed": 0,
-          "correct": false
-        },
-        "instruckt+claude": {
           "speed": 0,
           "correct": false
         }
@@ -9423,10 +8374,6 @@
         "locatorjs+claude": {
           "speed": 25.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.3,
-          "correct": true
         }
       }
     },
@@ -9459,10 +8406,6 @@
         },
         "locatorjs+claude": {
           "speed": 18.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.5,
           "correct": true
         }
       }
@@ -9497,10 +8440,6 @@
         "locatorjs+claude": {
           "speed": 19.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.6,
-          "correct": true
         }
       }
     },
@@ -9533,10 +8472,6 @@
         },
         "locatorjs+claude": {
           "speed": 20.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.8,
           "correct": true
         }
       }
@@ -9571,10 +8506,6 @@
         "locatorjs+claude": {
           "speed": 153.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14,
-          "correct": true
         }
       }
     },
@@ -9607,10 +8538,6 @@
         },
         "locatorjs+claude": {
           "speed": 138,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 133.9,
           "correct": true
         }
       }
@@ -9645,17 +8572,13 @@
         "locatorjs+claude": {
           "speed": 120,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 136.2,
-          "correct": true
         }
       }
     },
     {
       "id": 261,
       "testId": "server-stat-users",
-      "description": "Server stat card at 3 levels deep in server component tree (ServerHero → ServerStats → ServerStatCard)",
+      "description": "Server stat card at 3 levels deep in server component tree (ServerHero \u2192 ServerStats \u2192 ServerStatCard)",
       "componentName": "ServerStatCard",
       "filePath": "components/server/server-stat-card.tsx",
       "results": {
@@ -9681,10 +8604,6 @@
         },
         "locatorjs+claude": {
           "speed": 18.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.2,
           "correct": true
         }
       }
@@ -9719,10 +8638,6 @@
         "locatorjs+claude": {
           "speed": 153,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.1,
-          "correct": true
         }
       }
     },
@@ -9755,10 +8670,6 @@
         },
         "locatorjs+claude": {
           "speed": 170,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 149.5,
           "correct": true
         }
       }
@@ -9793,10 +8704,6 @@
         "locatorjs+claude": {
           "speed": 143.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 146.8,
-          "correct": true
         }
       }
     },
@@ -9829,10 +8736,6 @@
         },
         "locatorjs+claude": {
           "speed": 66,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 31,
           "correct": true
         }
       }
@@ -9867,10 +8770,6 @@
         "locatorjs+claude": {
           "speed": 20.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7,
-          "correct": true
         }
       }
     },
@@ -9903,10 +8802,6 @@
         },
         "locatorjs+claude": {
           "speed": 9.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.6,
           "correct": true
         }
       }
@@ -9941,10 +8836,6 @@
         "locatorjs+claude": {
           "speed": 11.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8,
-          "correct": true
         }
       }
     },
@@ -9977,10 +8868,6 @@
         },
         "locatorjs+claude": {
           "speed": 20.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.7,
           "correct": true
         }
       }
@@ -10015,10 +8902,6 @@
         "locatorjs+claude": {
           "speed": 11.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.3,
-          "correct": true
         }
       }
     },
@@ -10051,10 +8934,6 @@
         },
         "locatorjs+claude": {
           "speed": 9.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 4.6,
           "correct": true
         }
       }
@@ -10089,10 +8968,6 @@
         "locatorjs+claude": {
           "speed": 7.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.8,
-          "correct": true
         }
       }
     },
@@ -10125,10 +9000,6 @@
         },
         "locatorjs+claude": {
           "speed": 10.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.8,
           "correct": true
         }
       }
@@ -10163,10 +9034,6 @@
         "locatorjs+claude": {
           "speed": 10.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.1,
-          "correct": true
         }
       }
     },
@@ -10199,10 +9066,6 @@
         },
         "locatorjs+claude": {
           "speed": 8.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6,
           "correct": true
         }
       }
@@ -10237,10 +9100,6 @@
         "locatorjs+claude": {
           "speed": 8.7,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.6,
-          "correct": true
         }
       }
     },
@@ -10273,10 +9132,6 @@
         },
         "locatorjs+claude": {
           "speed": 10.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.4,
           "correct": true
         }
       }
@@ -10311,10 +9166,6 @@
         "locatorjs+claude": {
           "speed": 7.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.9,
-          "correct": true
         }
       }
     },
@@ -10347,10 +9198,6 @@
         },
         "locatorjs+claude": {
           "speed": 28.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.6,
           "correct": true
         }
       }
@@ -10385,10 +9232,6 @@
         "locatorjs+claude": {
           "speed": 12.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8,
-          "correct": true
         }
       }
     },
@@ -10421,10 +9264,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.1,
           "correct": true
         }
       }
@@ -10459,10 +9298,6 @@
         "locatorjs+claude": {
           "speed": 10.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.8,
-          "correct": true
         }
       }
     },
@@ -10495,10 +9330,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.8,
           "correct": true
         }
       }
@@ -10533,10 +9364,6 @@
         "locatorjs+claude": {
           "speed": 9.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.7,
-          "correct": true
         }
       }
     },
@@ -10569,10 +9396,6 @@
         },
         "locatorjs+claude": {
           "speed": 19.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 7.6,
           "correct": true
         }
       }
@@ -10607,10 +9430,6 @@
         "locatorjs+claude": {
           "speed": 15.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.3,
-          "correct": true
         }
       }
     },
@@ -10643,10 +9462,6 @@
         },
         "locatorjs+claude": {
           "speed": 9.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.7,
           "correct": true
         }
       }
@@ -10681,10 +9496,6 @@
         "locatorjs+claude": {
           "speed": 10,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.9,
-          "correct": true
         }
       }
     },
@@ -10717,10 +9528,6 @@
         },
         "locatorjs+claude": {
           "speed": 10.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 5.9,
           "correct": true
         }
       }
@@ -10755,10 +9562,6 @@
         "locatorjs+claude": {
           "speed": 37.5,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 21.4,
-          "correct": true
         }
       }
     },
@@ -10791,10 +9594,6 @@
         },
         "locatorjs+claude": {
           "speed": 22.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.2,
           "correct": true
         }
       }
@@ -10829,10 +9628,6 @@
         "locatorjs+claude": {
           "speed": 39.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.6,
-          "correct": true
         }
       }
     },
@@ -10865,10 +9660,6 @@
         },
         "locatorjs+claude": {
           "speed": 15.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.1,
           "correct": true
         }
       }
@@ -10903,10 +9694,6 @@
         "locatorjs+claude": {
           "speed": 28.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.3,
-          "correct": true
         }
       }
     },
@@ -10939,10 +9726,6 @@
         },
         "locatorjs+claude": {
           "speed": 39.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.7,
           "correct": true
         }
       }
@@ -10977,10 +9760,6 @@
         "locatorjs+claude": {
           "speed": 40.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.2,
-          "correct": true
         }
       }
     },
@@ -11013,10 +9792,6 @@
         },
         "locatorjs+claude": {
           "speed": 18.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 20.7,
           "correct": true
         }
       }
@@ -11051,10 +9826,6 @@
         "locatorjs+claude": {
           "speed": 50.9,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.6,
-          "correct": true
         }
       }
     },
@@ -11088,10 +9859,6 @@
         "locatorjs+claude": {
           "speed": 20.5,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.9,
-          "correct": true
         }
       }
     },
@@ -11125,10 +9892,6 @@
         "locatorjs+claude": {
           "speed": 24.6,
           "correct": false
-        },
-        "instruckt+claude": {
-          "speed": 11.2,
-          "correct": true
         }
       }
     },
@@ -11161,10 +9924,6 @@
         },
         "locatorjs+claude": {
           "speed": 26.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 17.4,
           "correct": true
         }
       }
@@ -11199,10 +9958,6 @@
         "locatorjs+claude": {
           "speed": 45.2,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 19.2,
-          "correct": true
         }
       }
     },
@@ -11235,10 +9990,6 @@
         },
         "locatorjs+claude": {
           "speed": 24,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 21.3,
           "correct": true
         }
       }
@@ -11273,10 +10024,6 @@
         "locatorjs+claude": {
           "speed": 26.8,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.4,
-          "correct": true
         }
       }
     },
@@ -11309,10 +10056,6 @@
         },
         "locatorjs+claude": {
           "speed": 27.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.6,
           "correct": true
         }
       }
@@ -11347,10 +10090,6 @@
         "locatorjs+claude": {
           "speed": 17.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.5,
-          "correct": true
         }
       }
     },
@@ -11383,10 +10122,6 @@
         },
         "locatorjs+claude": {
           "speed": 43.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.1,
           "correct": true
         }
       }
@@ -11421,10 +10156,6 @@
         "locatorjs+claude": {
           "speed": 56.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15,
-          "correct": true
         }
       }
     },
@@ -11457,10 +10188,6 @@
         },
         "locatorjs+claude": {
           "speed": 24,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.3,
           "correct": true
         }
       }
@@ -11495,10 +10222,6 @@
         "locatorjs+claude": {
           "speed": 22.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.9,
-          "correct": true
         }
       }
     },
@@ -11531,10 +10254,6 @@
         },
         "locatorjs+claude": {
           "speed": 15.2,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 13.3,
           "correct": true
         }
       }
@@ -11569,10 +10288,6 @@
         "locatorjs+claude": {
           "speed": 17.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
-          "correct": true
         }
       }
     },
@@ -11605,10 +10320,6 @@
         },
         "locatorjs+claude": {
           "speed": 15.9,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 9.2,
           "correct": true
         }
       }
@@ -11643,10 +10354,6 @@
         "locatorjs+claude": {
           "speed": 9.6,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.2,
-          "correct": true
         }
       }
     },
@@ -11679,10 +10386,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.6,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.3,
           "correct": true
         }
       }
@@ -11717,10 +10420,6 @@
         "locatorjs+claude": {
           "speed": 11.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 14.4,
-          "correct": true
         }
       }
     },
@@ -11753,10 +10452,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6,
           "correct": true
         }
       }
@@ -11791,10 +10486,6 @@
         "locatorjs+claude": {
           "speed": 8.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
-          "correct": true
         }
       }
     },
@@ -11827,10 +10518,6 @@
         },
         "locatorjs+claude": {
           "speed": 9.7,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 10.9,
           "correct": true
         }
       }
@@ -11865,10 +10552,6 @@
         "locatorjs+claude": {
           "speed": 11.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.5,
-          "correct": true
         }
       }
     },
@@ -11901,10 +10584,6 @@
         },
         "locatorjs+claude": {
           "speed": 10.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.7,
           "correct": true
         }
       }
@@ -11939,10 +10618,6 @@
         "locatorjs+claude": {
           "speed": 11,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 12.1,
-          "correct": true
         }
       }
     },
@@ -11975,10 +10650,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.3,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11,
           "correct": true
         }
       }
@@ -12013,10 +10684,6 @@
         "locatorjs+claude": {
           "speed": 13,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.4,
-          "correct": true
         }
       }
     },
@@ -12049,10 +10716,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.5,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 15.4,
           "correct": true
         }
       }
@@ -12087,10 +10750,6 @@
         "locatorjs+claude": {
           "speed": 12.3,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11.5,
-          "correct": true
         }
       }
     },
@@ -12123,10 +10782,6 @@
         },
         "locatorjs+claude": {
           "speed": 12.8,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 6.3,
           "correct": true
         }
       }
@@ -12161,10 +10816,6 @@
         "locatorjs+claude": {
           "speed": 14.4,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.5,
-          "correct": true
         }
       }
     },
@@ -12196,10 +10847,6 @@
           "correct": true
         },
         "locatorjs+claude": {
-          "speed": 12.9,
-          "correct": true
-        },
-        "instruckt+claude": {
           "speed": 12.9,
           "correct": true
         }
@@ -12235,10 +10882,6 @@
         "locatorjs+claude": {
           "speed": 15.1,
           "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 11,
-          "correct": true
         }
       }
     },
@@ -12271,10 +10914,6 @@
         },
         "locatorjs+claude": {
           "speed": 11.1,
-          "correct": true
-        },
-        "instruckt+claude": {
-          "speed": 8.9,
           "correct": true
         }
       }
@@ -12362,19 +11001,6 @@
             "upper": 89.4
           },
           "correct": 285
-        },
-        "instruckt+claude": {
-          "speed": 20.8,
-          "speedCI": {
-            "lower": 17.4,
-            "upper": 24.2
-          },
-          "accuracy": 95,
-          "accuracyCI": {
-            "lower": 91.9,
-            "upper": 96.8
-          },
-          "correct": 314
         }
       }
     }

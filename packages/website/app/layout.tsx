@@ -1,29 +1,24 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter } from "next/font/google";
-import localFont from "next/font/local";
+import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import "./globals.css";
 
-const fontSans = Inter({
+const geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-geist-sans",
 });
 
-const fontSerif = localFont({
-  src: "./fonts/IvarTextTRIAL-Regular.otf",
-  variable: "--font-ivar-text",
-});
-
-const fontMono = Geist_Mono({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
-  title: "React Grab Bench",
-  description: "Evaluating coding agents on React.js tasks",
+  title: "React Bench",
+  description:
+    "A benchmark for evaluating coding agents on React source-retrieval tasks in complex, real-world codebases.",
 };
 
 const RootLayout = ({
@@ -33,7 +28,7 @@ const RootLayout = ({
 }>) => (
   <html
     lang="en"
-    className={`dark ${fontSans.variable} ${fontSerif.variable} ${fontMono.variable}`}
+    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
   >
     <head>
       {process.env.NODE_ENV === "development" && (
@@ -44,7 +39,7 @@ const RootLayout = ({
         />
       )}
     </head>
-    <body className={`${fontSans.className} antialiased tracking-tighter`}>
+    <body>
       <NuqsAdapter>{children}</NuqsAdapter>
     </body>
   </html>

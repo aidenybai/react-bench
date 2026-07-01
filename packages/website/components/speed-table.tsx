@@ -59,7 +59,7 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
 
         return (
           <TableRow key={testCase.id}>
-            <TableCell className="font-medium text-xs max-w-[300px] overflow-hidden">
+            <TableCell className="max-w-[300px] overflow-hidden text-xs font-medium">
               <TestCaseCell
                 testId={testCase.testId}
                 description={testCase.description}
@@ -85,7 +85,7 @@ const SpeedTable = ({ resolverKeys, controlKey }: SpeedTableProps) => (
               return (
                 <TableCell
                   key={resolverKey}
-                  className="text-right tabular-nums text-xs"
+                  className="text-right text-xs tabular-nums"
                   style={{
                     color: isControl
                       ? "var(--muted-foreground)"

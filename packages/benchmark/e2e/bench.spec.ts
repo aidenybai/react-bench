@@ -65,7 +65,6 @@ const ISOLATE_TARGETS: IsolateTarget[] = [
     port: 3013,
   },
   { resolverName: "locatorjs", clipboardKey: "locatorjsClipboard", port: 3014 },
-  { resolverName: "instruckt", clipboardKey: "instrucktClipboard", port: 3015 },
 ];
 
 const RESOLVER_LABELS: Record<string, string> = {
@@ -75,7 +74,6 @@ const RESOLVER_LABELS: Record<string, string> = {
   "cursor-browser+claude": "Cursor Browser + Claude Code",
   "click-to-component+claude": "Click to Component + Claude Code",
   "locatorjs+claude": "LocatorJS + Claude Code",
-  "instruckt+claude": "Instruckt + Claude Code",
 };
 
 const BENCH_INTERACTIONS: Record<string, (page: Page) => Promise<void>> = {
@@ -515,7 +513,6 @@ const writeOutputFiles = (
     "cursor-browser",
     "click-to-component",
     "locatorjs",
-    "instruckt",
   ]);
   const chartResolverNames = allResolverNames.filter(
     (resolverName) => !BROWSER_ONLY_RESOLVERS.has(resolverName),

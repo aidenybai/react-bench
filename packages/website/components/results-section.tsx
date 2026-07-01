@@ -63,10 +63,10 @@ const BenchTooltip = ({
 
   return (
     <div className="rounded-md border bg-background px-3 py-2 text-xs shadow-md">
-      <p className="font-medium mb-1">{entry.label}</p>
+      <p className="mb-1 font-medium">{entry.label}</p>
       <p className="text-muted-foreground">
         {metricLabel}:{" "}
-        <span className="text-foreground font-medium">
+        <span className="font-medium text-foreground">
           {formatValue(entry.value)}
         </span>
       </p>
@@ -179,7 +179,7 @@ const ResultsBarChart = ({
   metricLabel,
   isCompact = false,
 }: ResultsBarChartProps) => (
-  <ChartContainer config={{}} className="aspect-[5/4] sm:aspect-2/1 w-full">
+  <ChartContainer config={{}} className="aspect-[5/4] w-full sm:aspect-2/1">
     <BarChart data={data} margin={{ top: 24, right: 0, bottom: 0, left: 0 }}>
       <CartesianGrid vertical={false} strokeDasharray="3 3" />
       <XAxis
@@ -452,7 +452,7 @@ const ResultsSection = () => {
           metricLabel="Avg"
           isCompact={isCompact}
         />
-        <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
+        <div className="mr-[calc(50%-50vw)] ml-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
           <SpeedTable
             resolverKeys={speedSortedResolverKeys}
             controlKey={controlKey}
@@ -472,7 +472,7 @@ const ResultsSection = () => {
           metricLabel="Accuracy"
           isCompact={isCompact}
         />
-        <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
+        <div className="mr-[calc(50%-50vw)] ml-[calc(50%-50vw)] overflow-x-auto px-4 sm:px-8">
           <AccuracyTable resolverKeys={accuracySortedResolverKeys} />
         </div>
       </TabsContent>

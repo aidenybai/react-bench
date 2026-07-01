@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { formatAnnotationMarkdown } from "instruckt";
 import {
   Agentation,
   identifyElement,
@@ -146,26 +145,6 @@ const locatorjsResolver: Resolver = {
   },
 };
 
-const instrucktResolver: Resolver = {
-  name: "instruckt",
-  resolve: async (el) => {
-    try {
-      const { resolveSource, resolveComponentName } =
-        await import("element-source");
-      const source = await resolveSource(el);
-      const componentName = await resolveComponentName(el);
-
-      return {
-        filePath: source?.filePath ?? null,
-        componentName: componentName ?? null,
-        found: Boolean(source?.filePath),
-      };
-    } catch {
-      return { filePath: null, componentName: null, found: false };
-    }
-  },
-};
-
 interface BenchAPI {
   resolvers: Map<string, Resolver>;
   register: (r: Resolver) => void;
@@ -196,11 +175,6 @@ interface BenchAPI {
     getForensicComputedStyles: typeof getForensicComputedStyles;
     getDetailedComputedStyles: typeof getDetailedComputedStyles;
   };
-  formatInstrucktMarkdown: typeof formatAnnotationMarkdown;
-  buildInstrucktClipboard: (
-    element: HTMLElement,
-    pathname: string,
-  ) => Promise<string | null>;
 }
 
 const createBenchAPI = (): BenchAPI => {
@@ -290,57 +264,6 @@ const createBenchAPI = (): BenchAPI => {
       getForensicComputedStyles,
       getDetailedComputedStyles,
     },
-
-    formatInstrucktMarkdown: formatAnnotationMarkdown,
-
-    buildInstrucktClipboard: async (
-      element: HTMLElement,
-      pathname: string,
-    ): Promise<string | null> => {
-      try {
-        const { resolveElementInfo } = await import("element-source");
-        const elementInfo = await resolveElementInfo(element);
-        if (!elementInfo?.source) return null;
-
-        const stack = elementInfo.stack.map(
-          (frame: {
-            filePath: string;
-            lineNumber: number | null;
-            columnNumber: number | null;
-            componentName: string | null;
-          }) => ({
-            filePath: frame.filePath,
-            lineNumber: frame.lineNumber,
-            columnNumber: frame.columnNumber,
-            componentName: frame.componentName,
-          }),
-        );
-
-        const annotation = {
-          id: "bench-probe",
-          element: element.localName,
-          comment: "identify this component",
-          cssClasses: element.className?.trim() ?? "",
-          nearbyText: element.innerText?.trim().slice(0, 100) ?? "",
-          status: "pending",
-          framework: {
-            framework: "react",
-            component: elementInfo.componentName ?? "Component",
-            source_file: elementInfo.source.filePath,
-            source_line: elementInfo.source.lineNumber ?? undefined,
-            source_column: elementInfo.source.columnNumber ?? undefined,
-            component_stack: stack.length > 0 ? stack : undefined,
-          },
-        };
-
-        return formatAnnotationMarkdown(
-          [annotation] as Parameters<typeof formatAnnotationMarkdown>[0],
-          pathname,
-        );
-      } catch {
-        return null;
-      }
-    },
   };
 
   api.register(reactGrabResolver);
@@ -348,7 +271,6 @@ const createBenchAPI = (): BenchAPI => {
   api.register(cursorBrowserResolver);
   api.register(clickToComponentResolver);
   api.register(locatorjsResolver);
-  api.register(instrucktResolver);
 
   return api;
 };
@@ -394,7 +316,6 @@ const ISOLATE_RESOLVER_LOADERS: Record<
   "cursor-browser": () => import("../isolates/cursor-browser"),
   "click-to-component": () => import("../isolates/click-to-react-component"),
   locatorjs: () => import("../isolates/locatorjs"),
-  instruckt: () => import("../isolates/instruckt"),
 };
 
 const useBenchHarness = () => {

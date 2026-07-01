@@ -18,7 +18,6 @@ const collectElementContext = async (
       cursorBrowserClipboard: null,
       clickToComponentClipboard: null,
       locatorjsClipboard: null,
-      instrucktClipboard: null,
     };
 
     const element = document.querySelector(
@@ -80,12 +79,10 @@ const collectElementContext = async (
       return results[name] ?? null;
     };
 
-    const [clickToComponentResult, locatorjsResult, instrucktResult] =
-      await Promise.all([
-        resolveOne("click-to-component"),
-        resolveOne("locatorjs"),
-        resolveOne("instruckt"),
-      ]);
+    const [clickToComponentResult, locatorjsResult] = await Promise.all([
+      resolveOne("click-to-component"),
+      resolveOne("locatorjs"),
+    ]);
 
     const formatSimpleClipboard = (
       result: {
@@ -104,10 +101,6 @@ const collectElementContext = async (
       clickToComponentResult,
     );
     const locatorjsClipboard = formatSimpleClipboard(locatorjsResult);
-
-    const instrucktClipboard = benchApi.buildInstrucktClipboard
-      ? await benchApi.buildInstrucktClipboard(element, pathname)
-      : null;
 
     const prodIdentity = prod.identifyElementWithReact(element);
     return {
@@ -128,7 +121,6 @@ const collectElementContext = async (
       cursorBrowserClipboard,
       clickToComponentClipboard,
       locatorjsClipboard,
-      instrucktClipboard,
     };
   }, testId);
 
